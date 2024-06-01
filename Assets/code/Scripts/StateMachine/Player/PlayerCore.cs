@@ -40,4 +40,10 @@ public class PlayerCore : Core<PlayerCore, PlayerStates>
         return new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
     }
 
+
+
+    public void Collect(Item item){
+        Debug.Log(item.name);
+    }
+
 }

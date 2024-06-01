@@ -28,7 +28,7 @@ public class Flashlight : MonoBehaviour
         _flashLight.transform.rotation = Quaternion.Euler(-9, -angle+90, 0);
     }
 
-    float _flashLightRange => transform.localScale.z;
+    float _flashLightRange => transform.localScale.z*1.4f;
     float _flashLightRadius => transform.localScale.x;
 
     void FlashEnemy()
