@@ -4,49 +4,8 @@ using TMPro;
 
 public class Item : MonoBehaviour
 {
-    string _playerTag = "Player";
-    bool _isCollected = false;
-    Vector3 _targetRotation = new Vector3(0,720,0);
-    Vector3 _targetPositionOffset = new Vector3(0,1,0);
-    [SerializeField] TextMeshPro _label;
-    [SerializeField] Transform _labelAnchor;
     [SerializeField] string _itemName;
     public string ItemName => _itemName;
-    bool _isShowingLabel = false;
-    void Start() {
-        _label.text = _itemName;
-    }
-    public void OnTriggerEnter(Collider col)
-    {
-        if(col.CompareTag(_playerTag)) ToggleLabel();
-    }
-    public void OnTriggerExit(Collider col)
-    {
-        if(col.CompareTag(_playerTag)) ToggleLabel();
-    }
-
-    void ToggleLabel()
-    {
-        if(_isCollected) return;
-        _isShowingLabel = !_isShowingLabel;
-        if(_isShowingLabel)
-            StartCoroutine(TweenLocalScale(_labelAnchor.transform, _labelAnchor.transform.localScale, Vector3.one, 0.3f, Ease.OutQuart));
-        else
-            StartCoroutine(TweenLocalScale(_labelAnchor.transform, _labelAnchor.transform.localScale, Vector3.zero, 0.3f, Ease.OutQuart));
-    }
-
-    void Collect(PlayerCore player) {
-        _isCollected = true;
-        player.Collect(this);
-
-        // Collected animation
-        StartCoroutine(TweenEulerAngles(transform, transform.localEulerAngles, _targetRotation, 0.6f, Ease.OutQuart));
-        StartCoroutine(TweenPosition(transform, transform.position, transform.position+_targetPositionOffset, 0.6f, Ease.OutQuart));
-        StartCoroutine(TweenLocalScale(transform, transform.localScale, Vector3.zero, 0.4f, Ease.InQuart));
-    }
-
-
-
     byte _rotKey = 0;
     IEnumerator TweenEulerAngles(Transform rt, Vector3 start, Vector3 end, float duration, Ease.Function easeFunction)
     {
