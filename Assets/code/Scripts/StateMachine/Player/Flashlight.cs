@@ -1,23 +1,35 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class Flashlight : MonoBehaviour
 {
     [SerializeField] GameObject _flashLight;
     [SerializeField] LayerMask _enemyLayer;
+    [SerializeField] float _flashLightDuration;
+    [SerializeField] Material _material;
+
+    // For fading
+    [SerializeField] [ColorUsage(true, true)] Color initColor;
+    Color transparentColor;
+
+    [SerializeField] HitRequest _hitRequest = new HitRequest{
+        Knockback = 120,
+        StunDuration = 3
+    };
+    void Start()
+    {
+        transparentColor = initColor; transparentColor.a = 0;
+    }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)) ToggleFlash();
+        if(Input.GetMouseButtonDown(0)) ToggleFlash();
         AdjustFlashRotationBasedOnMouse();
-    }
-    void FixedUpdate()
-    {
-        if(_flashLight.activeSelf) FlashEnemy();
     }
     void ToggleFlash()
     {
-        _flashLight.SetActive(!_flashLight.activeSelf);
+        StartCoroutine(StartFlashlight());
     }
     void AdjustFlashRotationBasedOnMouse()
     {
@@ -31,18 +43,36 @@ public class Flashlight : MonoBehaviour
     float _flashLightRange => transform.localScale.z*1.4f;
     float _flashLightRadius => transform.localScale.x;
 
-    void FlashEnemy()
+    void OnTriggerEnter(Collider col)
     {  
-        Vector3 direction = _flashLight.transform.forward;
-        // use box cast all
-        RaycastHit[] hits = Physics.BoxCastAll(_flashLight.transform.position, new Vector3(_flashLightRadius/2, _flashLightRadius/2, 0), direction, _flashLight.transform.rotation, _flashLightRange, _enemyLayer);
-        if(hits.Length > 0)
+        if (( _enemyLayer & (1 << col.gameObject.layer)) != 0) 
         {
-            for (int i = 0; i < hits.Length; i++)
+            HitResult _hitResult = new HitResult();
+            _hitRequest.Direction = (col.transform.position - transform.position).normalized;
+            col.GetComponent<Shadow>().OnHurt(_hitRequest, ref _hitResult);
+        }
+    }
+
+    IEnumerator StartFlashlight()
+    {
+        if(_flashLight.activeSelf) {} else {
+            _flashLight.SetActive(true);
+            float t = 0;
+            while(t < 1)
             {
-                Shadow s = hits[i].collider.gameObject.GetComponent<Shadow>();
-                s.StopMoving();
+                t += Time.deltaTime / (_flashLightDuration/2);
+                _material.color = Color.Lerp(transparentColor, initColor, Ease.OutCubic(t));
+                yield return null;
             }
+            t = 0;
+            while(t < 1)
+            {
+                t += Time.deltaTime / (_flashLightDuration/2);
+                _material.color = Color.Lerp(initColor, transparentColor, Ease.OutCubic(t));
+                yield return null;
+            }
+
+            _flashLight.SetActive(false);
         }
     }
 }

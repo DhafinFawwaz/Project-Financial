@@ -17,30 +17,50 @@ public class Shadow : MonoBehaviour
     
 
     [SerializeField] NavMeshAgent _agent;
+    [SerializeField] EnemySkin _skin;
+    [SerializeField] float _stopTimeDuration = 0.1f;
     void Start()
     {
 		_agent.updateRotation = false;
 		_agent.updateUpAxis = false;
-        StartCoroutine(TryMoveEverySecond());
     }
 
     void FixedUpdate()
     {
+        if(!_agent.enabled) return;
         _agent.SetDestination(_playerTrans.position);
     }
 
-    public void StopMoving()
-    {
-        if(!_agent.isStopped) Debug.Log("Shadow is stopping");
 
-        _agent.isStopped = true;
-    }
-    IEnumerator TryMoveEverySecond()
+    public void OnHurt(HitRequest hitRequest, ref HitResult hitResult)
     {
-        while(true)
-        {
-            yield return new WaitForSeconds(1);
-            _agent.isStopped = false;
-        }
+        if(!_agent.enabled) return;
+        hitResult.Type = HitType.Entity;
+        _skin.PlayHurtAnimation();
+        StartCoroutine(ApplyKnockback(_rb.position + hitRequest.Direction * hitRequest.Knockback, hitRequest.StunDuration));
+    }
+
+    private IEnumerator ApplyKnockback(Vector3 force, float _stoppedTime = 3f)
+    {
+        Time.timeScale = 0f;
+        yield return new WaitForSecondsRealtime(_stopTimeDuration);
+        Time.timeScale = 1f;
+
+        yield return null;
+        _agent.enabled = false;
+        _rb.useGravity = true;
+        _rb.isKinematic = false;
+        _rb.AddForce(force);
+
+        yield return new WaitForFixedUpdate();
+        yield return new WaitForSeconds(_stoppedTime);
+
+        _rb.velocity = Vector3.zero;
+        _rb.angularVelocity = Vector3.zero;
+        _rb.useGravity = false;
+        _rb.isKinematic = true;
+        _agent.Warp(transform.position);
+        _agent.enabled = true;
+
     }
 }
