@@ -3,23 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TransformAnimation : MonoBehaviour
+public class TransformAnimation : UIAnimation
 {
     [SerializeField] Transform _target;
-    [SerializeField] Vector3 _start;
     [SerializeField] Vector3 _end;
     [SerializeField] float _duration;
-    [SerializeField] Ease.Function _easeFunction;
+    [SerializeField] Ease.Function _easeFunction = Ease.OutQuart;
+
     public void TweenLocalScale()
-        => StartCoroutine(TweenLocalScaleAnimation(_target, _start, _end, _duration, _easeFunction));
+    {
+        StopAllOtherGraphics();
+        StartCoroutine(TweenLocalScaleAnimation(_target, _target.localScale, _end, _duration, _easeFunction));
+    }
 
     public void TweenEulerAngles()
-        => StartCoroutine(TweenEulerAnglesAnimation(_target, _start, _end, _duration, _easeFunction));
+    {
+        StopAllOtherGraphics();
+        StartCoroutine(TweenEulerAnglesAnimation(_target, _target.localEulerAngles, _end, _duration, _easeFunction));
+    }
 
     public void TweenPosition()
-        => StartCoroutine(TweenPositionAnimation(_target, _start, _end, _duration, _easeFunction));
+    {
+        StopAllOtherGraphics();
+        StartCoroutine(TweenPositionAnimation(_target, _target.localPosition, _end, _duration, _easeFunction));
+    }
 
-
+    public override void Stop()
+    {
+        _scaleKey++;
+        _rotKey++;
+        _posKey++;
+    }
 
     byte _rotKey = 0;
     IEnumerator TweenEulerAnglesAnimation(Transform rt, Vector3 start, Vector3 end, float duration, Ease.Function easeFunction)

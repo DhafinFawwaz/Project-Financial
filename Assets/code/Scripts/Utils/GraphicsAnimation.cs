@@ -2,22 +2,20 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GraphicsAnimation : MonoBehaviour
+public class GraphicsAnimation : UIAnimation
 {
     [SerializeField] Graphic _target;
     [SerializeField] Color _color = Color.white;
     [SerializeField] float _duration = 0.3f;
     [SerializeField] Ease.Function _easeFunction = Ease.OutQuart;
-    [SerializeField] GraphicsAnimation[] _graphicToStop;
 
     public void Play()
     {
-        foreach (var g in _graphicToStop)
-            g.Stop();
+        StopAllOtherGraphics();
         StartCoroutine(TweenColorAnimation(_target, _target.color, _color, _duration, _easeFunction));
     }
 
-    public void Stop()
+    public override void Stop()
     {
         _colorKey++;
     }
