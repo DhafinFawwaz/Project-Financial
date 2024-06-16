@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 public class SpriteMaterialAnimator : MonoBehaviour
 {
     [SerializeField] Sprite[] _spriteList;
@@ -9,10 +9,12 @@ public class SpriteMaterialAnimator : MonoBehaviour
     [SerializeField] float _animationDuration = 1;
     [SerializeField] bool _loop = false;
     [SerializeField] bool _playOnAwake = false;
+    public Action OnAnimationFinished;
 
     int _currentSpriteIndex = 0;
     float _timeElapsed = 0;
     bool _isPlaying = false;
+    public bool IsPlaying => _isPlaying;
 
     void Awake()
     {
@@ -29,27 +31,45 @@ public class SpriteMaterialAnimator : MonoBehaviour
     public void SetFirstFrame() => SetFrame(0);
     public void SetLastFrame() => SetFrame(_spriteList.Length - 1);
 
-    public void Play() => StartCoroutine(PlayAnimation());
+    public void Play()
+    {
+        if(_isPlaying) return;
+        SetFirstFrame();
+        _timeElapsed = 0;
+        StartCoroutine(PlayAnimation());
+    }
+
+    public void Stop()
+    {
+        _isPlaying = false;
+    }
 
     IEnumerator PlayAnimation()
     {
         _isPlaying = true;
         while (_isPlaying)
         {
-            _timeElapsed += Time.deltaTime;
-            if (_timeElapsed >= _animationDuration)
+            _timeElapsed += Time.deltaTime / _animationDuration;
+            _currentSpriteIndex = Mathf.FloorToInt(_timeElapsed * _spriteList.Length);
+            if (_currentSpriteIndex >= _spriteList.Length)
             {
-                _timeElapsed = 0;
-                _currentSpriteIndex++;
-                if (_currentSpriteIndex >= _spriteList.Length)
+                if (_loop)
                 {
-                    if (_loop) _currentSpriteIndex = 0;
-                    else _isPlaying = false;
+                    _currentSpriteIndex = 0;
+                    _timeElapsed = 0;
                 }
-                _material.mainTexture = _spriteList[_currentSpriteIndex].texture;
+                else
+                {
+                    _currentSpriteIndex = _spriteList.Length - 1;
+                    break;
+                }
             }
+            _material.mainTexture = _spriteList[_currentSpriteIndex].texture;
             yield return null;
         }
+
+        if(_isPlaying) OnAnimationFinished?.Invoke();
+        _isPlaying = false;
     }
     
 

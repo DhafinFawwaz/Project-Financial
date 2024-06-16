@@ -172,6 +172,139 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!1 &2898386223936931300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2019618791160589939}
+  - component: {fileID: 8474631493194273155}
+  m_Layer: 0
+  m_Name: '[SpriteAnimation] DepanKanan Start'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2019618791160589939
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2898386223936931300}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4399975957974704355}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8474631493194273155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2898386223936931300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de63fc2122986f439a50abcd296a0c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteList:
+  - {fileID: 21300000, guid: 94d998eeff0e9834780fb5c58032647d, type: 3}
+  - {fileID: 21300000, guid: d67006212fd370b47adaecab69de6094, type: 3}
+  - {fileID: 21300000, guid: 2d6ef29d233d6d8459587d832d7c894f, type: 3}
+  - {fileID: 21300000, guid: 27f578aa756828c45badf8d47d5aaca3, type: 3}
+  - {fileID: 21300000, guid: da59a7533b481564496ac9693644c667, type: 3}
+  - {fileID: 21300000, guid: 267aeb29f215bb5408506d7e006257f0, type: 3}
+  - {fileID: 21300000, guid: 573dce25e205d0049a7482729cdf7e37, type: 3}
+  - {fileID: 21300000, guid: 843eb44fe51c7d14eb44d215e99e51e5, type: 3}
+  - {fileID: 21300000, guid: c5d39a6d37b6b3f47906a72fa6d93a35, type: 3}
+  _material: {fileID: 2100000, guid: 0bae831c88897944a84222970b016e62, type: 2}
+  _animationDuration: 1
+  _loop: 1
+  _playOnAwake: 1
+--- !u!1 &3556949962184688497
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8601605884354773324}
+  - component: {fileID: 6193135371007405578}
+  m_Layer: 0
+  m_Name: '[SpriteAnimation] DepanBelakang'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8601605884354773324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3556949962184688497}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4399975957974704355}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6193135371007405578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3556949962184688497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de63fc2122986f439a50abcd296a0c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteList:
+  - {fileID: 21300000, guid: 35593b8a7cbd25d4394c685f439d959e, type: 3}
+  - {fileID: 21300000, guid: 28db8a45207283b46b26f662185b4e40, type: 3}
+  - {fileID: 21300000, guid: 082f6a90b5da2fb4fbe05e09213e0e44, type: 3}
+  - {fileID: 21300000, guid: b72e3f18116779746b176185110b9755, type: 3}
+  - {fileID: 21300000, guid: 5a11356aa0b52c14b9508a846a82f208, type: 3}
+  - {fileID: 21300000, guid: d19440d67d29d3548b34271843815074, type: 3}
+  - {fileID: 21300000, guid: 896aa429127496745bf58742d0e518a4, type: 3}
+  - {fileID: 21300000, guid: ec1fc2f4cc0ea85498bc3f191d273085, type: 3}
+  - {fileID: 21300000, guid: 84af495258fdd884f86bf2504e8bf1f3, type: 3}
+  - {fileID: 21300000, guid: 6af5cfba57fbece43a658bc204265fd1, type: 3}
+  - {fileID: 21300000, guid: c8dd426c994eaa942bb5cd033f04c474, type: 3}
+  - {fileID: 21300000, guid: 7e0c8cf82af4dc44a8fb4ce1b13c6ec7, type: 3}
+  - {fileID: 21300000, guid: dfeb3f5f1c73d0a48960313fe0fb834c, type: 3}
+  - {fileID: 21300000, guid: 30b338e3f0686694bbeb3995640e8fda, type: 3}
+  - {fileID: 21300000, guid: 2483a05e434b0a743a16a9b7475848bb, type: 3}
+  - {fileID: 21300000, guid: 6a27b503bb48eee4f8e9f993722160d0, type: 3}
+  - {fileID: 21300000, guid: d05340c6ced2855419fb0ac2b7afb4fa, type: 3}
+  - {fileID: 21300000, guid: 7a96c6237f7da9c46871198cb8db044b, type: 3}
+  - {fileID: 21300000, guid: 8febc43c8a71b0a4f9241e2db31db5b3, type: 3}
+  - {fileID: 21300000, guid: d6a835918e2bd4c4fbe5a580db4b4e4c, type: 3}
+  - {fileID: 21300000, guid: c1278945e28c42349b068985e79104bc, type: 3}
+  - {fileID: 21300000, guid: 42aaded6d1df9884da15dc31920e2e9c, type: 3}
+  - {fileID: 21300000, guid: 44980d945e39e6945bc3411adb1a6908, type: 3}
+  - {fileID: 21300000, guid: e96e1bb0b8e888140a6769db6f62420b, type: 3}
+  - {fileID: 21300000, guid: 85eea05474dedec4ba6d88b2fd663ebf, type: 3}
+  - {fileID: 21300000, guid: ffb0d8095eb59a74394ad1354b028625, type: 3}
+  _material: {fileID: 2100000, guid: 0bae831c88897944a84222970b016e62, type: 2}
+  _animationDuration: 1
+  _loop: 0
+  _playOnAwake: 0
 --- !u!1 &4399975957085243977
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,6 +319,7 @@ GameObject:
   - component: {fileID: 4399975957085244851}
   - component: {fileID: 4399975957085244850}
   - component: {fileID: 4399975957085243981}
+  - component: {fileID: 7815994901119611462}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -255,6 +389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Locomotion: {fileID: 4399975957085244850}
   Stats: {fileID: 4399975957085243981}
+  _list: {fileID: 0}
 --- !u!114 &4399975957085244850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,6 +418,23 @@ MonoBehaviour:
   MoveSpeed: 4
   Acceleration: 10
   Deceleration: 12
+--- !u!114 &7815994901119611462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4399975957085243977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3807391731f1f104cb08b7818a956c47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rb: {fileID: 4399975957085243983}
+  _playerMaterial: {fileID: 2100000, guid: 0bae831c88897944a84222970b016e62, type: 2}
+  _flipVelocityThreshold: 0.02
+  _spriteMaterialAnimatorDepan: {fileID: 0}
+  _spriteMaterialAnimatorBelakang: {fileID: 0}
 --- !u!1 &4399975957974704383
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,9 +462,15 @@ Transform:
   m_GameObject: {fileID: 4399975957974704383}
   m_LocalRotation: {x: 0.13052616, y: 0, z: 0, w: 0.9914449}
   m_LocalPosition: {x: 0, y: 0.156, z: -0.042}
-  m_LocalScale: {x: 0.146, y: 0.36260015, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_LocalScale: {x: 0.3626001, y: 0.36260015, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2019618791160589939}
+  - {fileID: 1636520173838435720}
+  - {fileID: 1695042937893821440}
+  - {fileID: 6988008396730065837}
+  - {fileID: 8601605884354773324}
+  - {fileID: 5213200411620198739}
   m_Father: {fileID: 4399975957085243982}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
@@ -366,6 +524,129 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &4542811625387812471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1636520173838435720}
+  - component: {fileID: 5258866107270387823}
+  m_Layer: 0
+  m_Name: '[SpriteAnimation] DepanKanan'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1636520173838435720
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4542811625387812471}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4399975957974704355}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5258866107270387823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4542811625387812471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de63fc2122986f439a50abcd296a0c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteList:
+  - {fileID: 21300000, guid: 2df4c78f5b3a8ed48a567fe2bcaf43b9, type: 3}
+  - {fileID: 21300000, guid: ef8bb2ab2a702bd4ebd8658bdc4f615b, type: 3}
+  - {fileID: 21300000, guid: bf122bd8bbf9ba3419c4c7218efbabe2, type: 3}
+  - {fileID: 21300000, guid: c09d8a34f984501438ad715638e80e31, type: 3}
+  - {fileID: 21300000, guid: b3998d1a5292e7b4e87c9d4e46a37804, type: 3}
+  - {fileID: 21300000, guid: 4e4618d4f5faac14299fd0b6cfebb2f3, type: 3}
+  - {fileID: 21300000, guid: 0f569995a06bdb94dbcad54b62fe71c4, type: 3}
+  - {fileID: 21300000, guid: 04561d1c0c6e95143bccf492eb1dfc64, type: 3}
+  - {fileID: 21300000, guid: 427ccce7d2be92a47ad2de8aac074699, type: 3}
+  - {fileID: 21300000, guid: a9fec1bafe8cf9842ad041c3e0d93ee5, type: 3}
+  - {fileID: 21300000, guid: dccb15a84a1c56a408c02a2621beec09, type: 3}
+  - {fileID: 21300000, guid: d05a87b7941c5854eacf781e28629e32, type: 3}
+  - {fileID: 21300000, guid: 44c5def941747f84bb9079be1b558637, type: 3}
+  - {fileID: 21300000, guid: 10e2e098f40d6714aa4c475055759977, type: 3}
+  - {fileID: 21300000, guid: d2094012adf7928469b9566149f809b8, type: 3}
+  - {fileID: 21300000, guid: 85d72fb2bcbc4d241934cef9f3c20f22, type: 3}
+  _material: {fileID: 2100000, guid: 0bae831c88897944a84222970b016e62, type: 2}
+  _animationDuration: 1
+  _loop: 0
+  _playOnAwake: 1
+--- !u!1 &4642638460492719050
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6988008396730065837}
+  - component: {fileID: 8174158900244856225}
+  m_Layer: 0
+  m_Name: '[SpriteAnimation] DepanBelakang Start'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6988008396730065837
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4642638460492719050}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4399975957974704355}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8174158900244856225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4642638460492719050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de63fc2122986f439a50abcd296a0c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteList:
+  - {fileID: 21300000, guid: 202415b5b98c872468362dd64b3f8ad5, type: 3}
+  - {fileID: 21300000, guid: b936a5e66db12dc40b6ad3e771e578f9, type: 3}
+  - {fileID: 21300000, guid: 8031fdf16128a8e4e95e8a5225fb11d5, type: 3}
+  - {fileID: 21300000, guid: a37457cfb7a9077478300f4786b433c8, type: 3}
+  - {fileID: 21300000, guid: 5dda75716cfb9e247952fb2ffcf11744, type: 3}
+  - {fileID: 21300000, guid: 8daabcc8961be6f48b1678e417adfea4, type: 3}
+  - {fileID: 21300000, guid: 1f52f779d89b95d4d948be1840530dec, type: 3}
+  - {fileID: 21300000, guid: a0bac9fdfd0ea8e4591dd7a2f63644da, type: 3}
+  - {fileID: 21300000, guid: 35593b8a7cbd25d4394c685f439d959e, type: 3}
+  _material: {fileID: 2100000, guid: 0bae831c88897944a84222970b016e62, type: 2}
+  _animationDuration: 1
+  _loop: 0
+  _playOnAwake: 0
 --- !u!1 &5718286701047629877
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,3 +678,121 @@ Transform:
   m_Father: {fileID: 4399975957085243982}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
+--- !u!1 &5942429904773570965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1695042937893821440}
+  - component: {fileID: 3219439716066213908}
+  m_Layer: 0
+  m_Name: '[SpriteAnimation] DepanKanan End'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1695042937893821440
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5942429904773570965}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4399975957974704355}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3219439716066213908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5942429904773570965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de63fc2122986f439a50abcd296a0c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteList:
+  - {fileID: 21300000, guid: a7f5f64c40360f6469fffa78b2d8a450, type: 3}
+  - {fileID: 21300000, guid: ae5428fa4ac4b5541972872b5a80cbe2, type: 3}
+  - {fileID: 21300000, guid: 1935b3444662dba458eefc28a18aa0f2, type: 3}
+  - {fileID: 21300000, guid: a5fa3a428eb349d42a3149d22de1044c, type: 3}
+  - {fileID: 21300000, guid: 955ce46150fcb42498e8972a7fc53b23, type: 3}
+  - {fileID: 21300000, guid: bcd48e619a40a3245b6f987c0fbb886e, type: 3}
+  - {fileID: 21300000, guid: 69efc29db77dc1749a76f0f4c7ba9dc4, type: 3}
+  - {fileID: 21300000, guid: f1dd74d9394cfc343a2ecd724822b8c1, type: 3}
+  - {fileID: 21300000, guid: f91da743657c63440aa06dc02d310e25, type: 3}
+  - {fileID: 21300000, guid: 2345cc30213c6184da2f064c2d3b61ec, type: 3}
+  _material: {fileID: 2100000, guid: 0bae831c88897944a84222970b016e62, type: 2}
+  _animationDuration: 1
+  _loop: 0
+  _playOnAwake: 1
+--- !u!1 &7797373709571784886
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5213200411620198739}
+  - component: {fileID: 1679007854470905936}
+  m_Layer: 0
+  m_Name: '[SpriteAnimation] DepanBelakang End'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5213200411620198739
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7797373709571784886}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4399975957974704355}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1679007854470905936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7797373709571784886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de63fc2122986f439a50abcd296a0c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteList:
+  - {fileID: 21300000, guid: 44980d945e39e6945bc3411adb1a6908, type: 3}
+  - {fileID: 21300000, guid: e96e1bb0b8e888140a6769db6f62420b, type: 3}
+  - {fileID: 21300000, guid: 85eea05474dedec4ba6d88b2fd663ebf, type: 3}
+  - {fileID: 21300000, guid: ffb0d8095eb59a74394ad1354b028625, type: 3}
+  - {fileID: 21300000, guid: 5c1123d000670154180b098a3cbe0cb7, type: 3}
+  - {fileID: 21300000, guid: 77717c72cbe24d34d91aa3d7de02dde0, type: 3}
+  - {fileID: 21300000, guid: 52325aec424dc9642affc0c00d8a07f0, type: 3}
+  - {fileID: 21300000, guid: bbc13d40fe5cdbf49b5c99510d6ab31e, type: 3}
+  - {fileID: 21300000, guid: 33f405e7bade44d4dbb00a358bfd477c, type: 3}
+  - {fileID: 21300000, guid: b5883953d89847245b0d0d2bd0ff6f74, type: 3}
+  _material: {fileID: 2100000, guid: 0bae831c88897944a84222970b016e62, type: 2}
+  _animationDuration: 1
+  _loop: 0
+  _playOnAwake: 0
