@@ -227,9 +227,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 843eb44fe51c7d14eb44d215e99e51e5, type: 3}
   - {fileID: 21300000, guid: c5d39a6d37b6b3f47906a72fa6d93a35, type: 3}
   _material: {fileID: 2100000, guid: 0bae831c88897944a84222970b016e62, type: 2}
-  _animationDuration: 1
-  _loop: 1
-  _playOnAwake: 1
+  _animationDuration: 0.15
+  _loop: 0
+  _playOnAwake: 0
 --- !u!1 &3556949962184688497
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,8 +302,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 85eea05474dedec4ba6d88b2fd663ebf, type: 3}
   - {fileID: 21300000, guid: ffb0d8095eb59a74394ad1354b028625, type: 3}
   _material: {fileID: 2100000, guid: 0bae831c88897944a84222970b016e62, type: 2}
-  _animationDuration: 1
-  _loop: 0
+  _animationDuration: 0.5
+  _loop: 1
   _playOnAwake: 0
 --- !u!1 &4399975957085243977
 GameObject:
@@ -432,9 +432,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 4399975957085243983}
   _playerMaterial: {fileID: 2100000, guid: 0bae831c88897944a84222970b016e62, type: 2}
-  _flipVelocityThreshold: 0.02
-  _spriteMaterialAnimatorDepan: {fileID: 0}
-  _spriteMaterialAnimatorBelakang: {fileID: 0}
+  _defaultSprite: {fileID: 21300000, guid: 202415b5b98c872468362dd64b3f8ad5, type: 3}
+  _flipVelocityThreshold: 0.5
+  _spriteMaterialAnimatorDepanStart: {fileID: 8474631493194273155}
+  _spriteMaterialAnimatorDepan: {fileID: 5258866107270387823}
+  _spriteMaterialAnimatorDepanEnd: {fileID: 3219439716066213908}
+  _spriteMaterialAnimatorBelakangStart: {fileID: 8174158900244856225}
+  _spriteMaterialAnimatorBelakang: {fileID: 6193135371007405578}
+  _spriteMaterialAnimatorBelakangEnd: {fileID: 1679007854470905936}
 --- !u!1 &4399975957974704383
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,9 +591,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d2094012adf7928469b9566149f809b8, type: 3}
   - {fileID: 21300000, guid: 85d72fb2bcbc4d241934cef9f3c20f22, type: 3}
   _material: {fileID: 2100000, guid: 0bae831c88897944a84222970b016e62, type: 2}
-  _animationDuration: 1
-  _loop: 0
-  _playOnAwake: 1
+  _animationDuration: 0.5
+  _loop: 1
+  _playOnAwake: 0
 --- !u!1 &4642638460492719050
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,9 +647,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8daabcc8961be6f48b1678e417adfea4, type: 3}
   - {fileID: 21300000, guid: 1f52f779d89b95d4d948be1840530dec, type: 3}
   - {fileID: 21300000, guid: a0bac9fdfd0ea8e4591dd7a2f63644da, type: 3}
-  - {fileID: 21300000, guid: 35593b8a7cbd25d4394c685f439d959e, type: 3}
   _material: {fileID: 2100000, guid: 0bae831c88897944a84222970b016e62, type: 2}
-  _animationDuration: 1
+  _animationDuration: 0.15
   _loop: 0
   _playOnAwake: 0
 --- !u!1 &5718286701047629877
@@ -734,9 +738,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f91da743657c63440aa06dc02d310e25, type: 3}
   - {fileID: 21300000, guid: 2345cc30213c6184da2f064c2d3b61ec, type: 3}
   _material: {fileID: 2100000, guid: 0bae831c88897944a84222970b016e62, type: 2}
-  _animationDuration: 1
+  _animationDuration: 0.15
   _loop: 0
-  _playOnAwake: 1
+  _playOnAwake: 0
 --- !u!1 &7797373709571784886
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,7 +786,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteList:
-  - {fileID: 21300000, guid: 44980d945e39e6945bc3411adb1a6908, type: 3}
   - {fileID: 21300000, guid: e96e1bb0b8e888140a6769db6f62420b, type: 3}
   - {fileID: 21300000, guid: 85eea05474dedec4ba6d88b2fd663ebf, type: 3}
   - {fileID: 21300000, guid: ffb0d8095eb59a74394ad1354b028625, type: 3}
@@ -793,6 +796,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 33f405e7bade44d4dbb00a358bfd477c, type: 3}
   - {fileID: 21300000, guid: b5883953d89847245b0d0d2bd0ff6f74, type: 3}
   _material: {fileID: 2100000, guid: 0bae831c88897944a84222970b016e62, type: 2}
-  _animationDuration: 1
+  _animationDuration: 0.15
   _loop: 0
   _playOnAwake: 0

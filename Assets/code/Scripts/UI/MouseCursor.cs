@@ -1,11 +1,14 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MouseCursor : MonoBehaviour
 {
     [SerializeField] float normalScale = 0.3f;
     [SerializeField] float downScale = 0.1f;
+    [SerializeField] Image _cursorImg;
+    [SerializeField] Sprite _unclickedCursor;
+    [SerializeField] Sprite _clickedCursor;
     public Vector2 MousePosition { 
         get { 
             return ScreenToRectPos(_rt.parent as RectTransform, Input.mousePosition, _canvas);
@@ -27,10 +30,12 @@ public class MouseCursor : MonoBehaviour
         _rt.anchoredPosition = MousePosition;
         if(Input.GetMouseButtonDown(0))
         {
+            _cursorImg.sprite = _clickedCursor;
             StartCoroutine(LocalScaleAnimation(transform, transform.localScale, Vector3.one * downScale, 0.2f));
         }
         else if(Input.GetMouseButtonUp(0))
         {
+            _cursorImg.sprite = _unclickedCursor;
             StartCoroutine(LocalScaleAnimation(transform, transform.localScale, Vector3.one * normalScale, 0.2f));
         }
     }

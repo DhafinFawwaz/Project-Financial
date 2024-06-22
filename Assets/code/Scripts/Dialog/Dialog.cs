@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using TMPro;
+using System;
 public class Dialog : MonoBehaviour
 {
     [SerializeField] DialogData _data;
+    public static Action<DialogData> s_OnDialogFinished;
     [SerializeField] Image _actorImage;
     [SerializeField] TextMeshProUGUI _actorName;
     [SerializeField] TextMeshProUGUI _dialogText;
@@ -29,9 +31,13 @@ public class Dialog : MonoBehaviour
     int _currentContentIndex = 0;
 
     bool _isPlaying = false;
-    public void SetData(DialogData data)
+    public void SetDataAndPlay(DialogData data)
     {
         _data = data;
+        _currentContentIndex = 0;
+        _dialogText.text = "";
+        _dialogText.maxVisibleCharacters = 0;
+        Play();
     }
 
     void Update()
@@ -92,6 +98,7 @@ public class Dialog : MonoBehaviour
     {
         _isPlaying = false;
         _animationUI.PlayReversed();
+        s_OnDialogFinished?.Invoke(_data);
     }
 
     byte _key = 0;

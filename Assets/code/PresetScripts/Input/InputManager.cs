@@ -1,15 +1,33 @@
 using UnityEngine;
-public class GlobalInput
-{
-    static InputManager _input => Singleton.Instance.Input;
-    public static void SetActiveAllInput(bool isActive) => _input.SetActiveAllInput(isActive);
-}
 public class InputManager : MonoBehaviour
 {
-    public void SetActiveAllInput(bool isActive)
+    static bool _canMouseButtonDown = true;
+    static bool _canGetKeyDown = true;
+    static bool _canGetAxisRaw = true;
+    public static bool GetMouseButtonDown(int button)
     {
-        transform.GetChild(0).gameObject.SetActive(!isActive);
+        if(!_canMouseButtonDown) return false;
+        return Input.GetMouseButtonDown(button);
     }
 
+    public static bool GetKeyDown(KeyCode key)
+    {
+        if(!_canGetKeyDown) return false;
+        return Input.GetKeyDown(key);
+    }
+
+    public static float GetAxisRaw(string axisName)
+    {
+        if(!_canGetAxisRaw) return 0;
+        return Input.GetAxisRaw(axisName);
+    }
+
+    public static void SetActiveMouseAndKey(bool active)
+    {
+        _canMouseButtonDown = active;
+        _canGetKeyDown = active;
+        _canGetAxisRaw = active;
+    }
     
+
 }

@@ -8,7 +8,6 @@ public class PlayerCore : Core<PlayerCore, PlayerStates>
     public PlayerStats Stats;
 
     // public IInteractable CurrentInteractableObject;
-    [SerializeField] ListBelanja _list;
 
     void Start()
     {
@@ -39,7 +38,7 @@ public class PlayerCore : Core<PlayerCore, PlayerStates>
     }
 
     public Vector3 GetInputDirection(){
-        return new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        return new Vector3(InputManager.GetAxisRaw("Horizontal"), 0, InputManager.GetAxisRaw("Vertical"));
     }
 
 

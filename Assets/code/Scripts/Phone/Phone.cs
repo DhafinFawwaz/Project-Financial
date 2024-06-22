@@ -10,7 +10,7 @@ public class Phone : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q)) Toggle();
+        if(InputManager.GetKeyDown(KeyCode.Q)) Toggle();
     }
 
 

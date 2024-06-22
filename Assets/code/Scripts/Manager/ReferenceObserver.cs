@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class ReferenceObserver : MonoBehaviour
 {
-    [SerializeField] LevelManager _levelManager;
-    [SerializeField] HUDManager _hudManager;
+    [SerializeField] Dialog _dialog;
 
     void OnEnable()
     {
-        PlayerStats.s_OnPlayerMoneyUpdated += _hudManager.OnPlayerMoneyUpdated;
+        NPC.s_OnNPCInteract += _dialog.SetDataAndPlay;
+        NPC.s_OnNPCInteract += DisableMouseAndKey;
+        Dialog.s_OnDialogFinished += EnableMouseAndKey;
     }
+
     void OnDisable()
     {
-        PlayerStats.s_OnPlayerMoneyUpdated -= _hudManager.OnPlayerMoneyUpdated;
+        NPC.s_OnNPCInteract -= _dialog.SetDataAndPlay;
+        NPC.s_OnNPCInteract -= DisableMouseAndKey;
+        Dialog.s_OnDialogFinished -= EnableMouseAndKey;
+    }
+
+    void EnableMouseAndKey(DialogData _)
+    {
+        InputManager.SetActiveMouseAndKey(true);
+    }
+
+    void DisableMouseAndKey(DialogData _)
+    {
+        InputManager.SetActiveMouseAndKey(false);
     }
 }

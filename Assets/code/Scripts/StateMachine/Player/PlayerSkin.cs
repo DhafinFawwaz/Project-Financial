@@ -19,7 +19,13 @@ public class PlayerSkin : MonoBehaviour
     bool _anyDepanPlaying => _spriteMaterialAnimatorDepan.IsPlaying || _spriteMaterialAnimatorDepanStart.IsPlaying || _spriteMaterialAnimatorDepanEnd.IsPlaying;
     bool _anyBelakangPlaying => _spriteMaterialAnimatorBelakang.IsPlaying || _spriteMaterialAnimatorBelakangStart.IsPlaying || _spriteMaterialAnimatorBelakangEnd.IsPlaying;
 
-    bool _isVelocityStopping => _rb.velocity.x < _flipVelocityThreshold && _rb.velocity.x > -_flipVelocityThreshold && _rb.velocity.z < _flipVelocityThreshold && _rb.velocity.z > -_flipVelocityThreshold;
+    bool _isVelocityStopping => _rb.velocity.x < _flipVelocityThreshold && _rb.velocity.x > -_flipVelocityThreshold && _zVelocity < _flipVelocityThreshold && _zVelocity > -_flipVelocityThreshold;
+
+    [SerializeField] bool _swapZtoY = false;
+    float _zVelocity { get {
+        if(_swapZtoY) return _rb.velocity.y;
+        return _rb.velocity.z;
+    }}
 
     enum AnimationState
     {
@@ -49,13 +55,13 @@ public class PlayerSkin : MonoBehaviour
 
         if(_animationState == AnimationState.Idle)
         {
-            if (_rb.velocity.z > _flipVelocityThreshold)
+            if (_zVelocity > _flipVelocityThreshold)
             {
                 _spriteMaterialAnimatorBelakang.Stop();
                 _spriteMaterialAnimatorDepanStart.Play();
                 _animationState = AnimationState.Run;
             }
-            else if (_rb.velocity.z < -_flipVelocityThreshold)
+            else if (_zVelocity < -_flipVelocityThreshold)
             {
                 _spriteMaterialAnimatorDepan.Stop();
                 _spriteMaterialAnimatorBelakangStart.Play();
@@ -88,7 +94,7 @@ public class PlayerSkin : MonoBehaviour
 
         else if(_animationState == AnimationState.Run)
         {
-            if(_rb.velocity.z > _flipVelocityThreshold && 
+            if(_zVelocity > _flipVelocityThreshold && 
                 (_spriteMaterialAnimatorBelakang.IsPlaying || _spriteMaterialAnimatorBelakangStart.IsPlaying || _spriteMaterialAnimatorBelakangEnd.IsPlaying)
             )
             {
@@ -97,7 +103,7 @@ public class PlayerSkin : MonoBehaviour
                 _spriteMaterialAnimatorBelakangEnd.Stop();
                 _spriteMaterialAnimatorDepan.Play();
             }
-            else if(_rb.velocity.z < -_flipVelocityThreshold && 
+            else if(_zVelocity < -_flipVelocityThreshold && 
                 (_spriteMaterialAnimatorDepan.IsPlaying || _spriteMaterialAnimatorDepanStart.IsPlaying || _spriteMaterialAnimatorDepanEnd.IsPlaying)
             )
             {

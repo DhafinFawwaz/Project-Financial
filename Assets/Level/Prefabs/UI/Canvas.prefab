@@ -127,19 +127,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4314467449050936047}
-  m_LocalRotation: {x: 0, y: 0, z: 0.92387956, w: 0.38268343}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4314467448905294436}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 135}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 600, y: 500}
-  m_Pivot: {x: 1, y: 0.5000001}
+  m_AnchoredPosition: {x: -138.37122, y: 58.67639}
+  m_SizeDelta: {x: 165, y: 178}
+  m_Pivot: {x: 0.1613864, y: 0.82964283}
 --- !u!222 &4314467449050936040
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -190,7 +190,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333fd7e0e6421c646a6ae55043835695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalScale: 0.2
-  downScale: 0.15
+  normalScale: 1
+  downScale: 0.9
+  _cursorImg: {fileID: 4314467449050936041}
+  _unclickedCursor: {fileID: 21300000, guid: 7110a002d6cba274e80e6b9111685b5c, type: 3}
+  _clickedCursor: {fileID: 21300000, guid: f739109d356af6849a64426a39e10559, type: 3}
   _canvas: {fileID: 4314467448905294437}
   _rt: {fileID: 4314467449050936046}

@@ -24,7 +24,7 @@ public class Flashlight : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0)) ToggleFlash();
+        if(InputManager.GetMouseButtonDown(0)) ToggleFlash();
         AdjustFlashRotationBasedOnMouse();
     }
     void ToggleFlash()

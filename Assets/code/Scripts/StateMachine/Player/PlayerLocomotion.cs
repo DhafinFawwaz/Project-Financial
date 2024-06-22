@@ -6,6 +6,7 @@ public class PlayerLocomotion : MonoBehaviour
 {
     PlayerCore _core;
     [SerializeField] Rigidbody _rb;
+    [SerializeField] bool _swapYAndZ = false;
     void Awake()
     {
         _core = GetComponent<PlayerCore>();
@@ -22,6 +23,7 @@ public class PlayerLocomotion : MonoBehaviour
     public void Move()
 	{
 		_moveInputDirection = _core.GetInputDirection();
+        if(_swapYAndZ) _moveInputDirection = new Vector3(_moveInputDirection.x, _moveInputDirection.z, _moveInputDirection.y);
 		
 		float targetSpeed = _moveInputDirection.magnitude * _core.Stats.MoveSpeed;
 		Vector3 speedDif = _moveInputDirection * _core.Stats.MoveSpeed - _rb.velocity;
