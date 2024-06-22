@@ -4,11 +4,19 @@ using UnityEngine.UI;
 
 public class MouseCursor : MonoBehaviour
 {
+    public static MouseCursor Main { get; private set; }
+    void Awake()
+    {
+        Cursor.visible = false;
+        Main = this;
+    }
+    
     [SerializeField] float normalScale = 0.3f;
     [SerializeField] float downScale = 0.1f;
     [SerializeField] Image _cursorImg;
     [SerializeField] Sprite _unclickedCursor;
     [SerializeField] Sprite _clickedCursor;
+    [SerializeField] Sprite _gosokCursor;
     public Vector2 MousePosition { 
         get { 
             return ScreenToRectPos(_rt.parent as RectTransform, Input.mousePosition, _canvas);
@@ -30,18 +38,16 @@ public class MouseCursor : MonoBehaviour
         _rt.anchoredPosition = MousePosition;
         if(Input.GetMouseButtonDown(0))
         {
-            _cursorImg.sprite = _clickedCursor;
             StartCoroutine(LocalScaleAnimation(transform, transform.localScale, Vector3.one * downScale, 0.2f));
+            if(_cursorImg.sprite == _gosokCursor) return;
+            _cursorImg.sprite = _clickedCursor;
         }
         else if(Input.GetMouseButtonUp(0))
         {
-            _cursorImg.sprite = _unclickedCursor;
             StartCoroutine(LocalScaleAnimation(transform, transform.localScale, Vector3.one * normalScale, 0.2f));
+            if(_cursorImg.sprite == _gosokCursor) return;
+            _cursorImg.sprite = _unclickedCursor;
         }
-    }
-    void Awake()
-    {
-        Cursor.visible = false;
     }
 
     byte _key;
@@ -58,5 +64,17 @@ public class MouseCursor : MonoBehaviour
         }
         if(requirement == _key)
             trans.localScale = end;
+    }
+
+
+    public void SetToGosok()
+    {
+        if(_cursorImg.sprite == _gosokCursor) return;
+        _cursorImg.sprite = _gosokCursor;
+    }
+    public void SetToCursor()
+    {
+        if(_cursorImg.sprite == _unclickedCursor || _cursorImg.sprite == _clickedCursor) return;
+        _cursorImg.sprite = _unclickedCursor;
     }
 }

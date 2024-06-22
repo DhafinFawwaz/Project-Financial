@@ -389,7 +389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Locomotion: {fileID: 4399975957085244850}
   Stats: {fileID: 4399975957085243981}
-  _list: {fileID: 0}
+  _camTarget: {fileID: 1863264067196928533}
 --- !u!114 &4399975957085244850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,6 +403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 4399975957085243983}
+  _swapYAndZ: 0
 --- !u!114 &4399975957085243981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,6 +441,7 @@ MonoBehaviour:
   _spriteMaterialAnimatorBelakangStart: {fileID: 8174158900244856225}
   _spriteMaterialAnimatorBelakang: {fileID: 6193135371007405578}
   _spriteMaterialAnimatorBelakangEnd: {fileID: 1679007854470905936}
+  _swapZtoY: 0
 --- !u!1 &4399975957974704383
 GameObject:
   m_ObjectHideFlags: 0

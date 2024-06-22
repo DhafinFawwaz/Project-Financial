@@ -29,5 +29,8 @@ public class InputManager : MonoBehaviour
         _canGetAxisRaw = active;
     }
     
-
+    void OnDisable()
+    {
+        SetActiveMouseAndKey(true);
+    }
 }
