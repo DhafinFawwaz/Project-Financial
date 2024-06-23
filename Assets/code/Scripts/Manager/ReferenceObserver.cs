@@ -5,12 +5,14 @@ using UnityEngine;
 public class ReferenceObserver : MonoBehaviour
 {
     [SerializeField] Dialog _dialog;
+    [SerializeField] OptionSession _optionSession;
 
     void OnEnable()
     {
         NPC.s_OnNPCInteract += _dialog.SetDataAndPlay;
         NPC.s_OnNPCInteract += DisableMouseAndKey;
         Dialog.s_OnDialogFinished += EnableMouseAndKey;
+        Rak.s_OnRakInteract += _optionSession.SetDataAndPlay;
     }
 
     void OnDisable()
@@ -18,6 +20,7 @@ public class ReferenceObserver : MonoBehaviour
         NPC.s_OnNPCInteract -= _dialog.SetDataAndPlay;
         NPC.s_OnNPCInteract -= DisableMouseAndKey;
         Dialog.s_OnDialogFinished -= EnableMouseAndKey;
+        Rak.s_OnRakInteract -= _optionSession.SetDataAndPlay;
     }
 
     void EnableMouseAndKey(DialogData _)

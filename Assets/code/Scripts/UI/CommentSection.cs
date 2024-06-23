@@ -9,7 +9,8 @@ public class CommentSection : MonoBehaviour
 
     void AddComment(string author, string comment)
     {
-        _commentText.text += $"<b>{author}</b>: {comment}\n";
+        // _commentText.text += $"<b>{author}</b>: {comment}\n";
+        _commentText.text += $"<color=\"yellow\"><b>{author}</b><color=\"white\">\n{comment}<line-height=120%>\n<line-height=100%>";
     }
 
     public void Play()
@@ -18,9 +19,16 @@ public class CommentSection : MonoBehaviour
     }
     IEnumerator Animation()
     {
-        foreach (var comment in _commentList.Comments)
+        // foreach (var comment in _commentList.Comments)
+        // {
+        //     AddComment(comment.Author, comment.Comment);
+        //     yield return new WaitForSeconds(_delayEachComment);
+        // }
+
+        while(true)
         {
-            AddComment(comment.Author, comment.Comment);
+            int idx = Random.Range(0, _commentList.Comments.Count);
+            AddComment(_commentList.Comments[idx].Author, _commentList.Comments[idx].Comment);
             yield return new WaitForSeconds(_delayEachComment);
         }
     }

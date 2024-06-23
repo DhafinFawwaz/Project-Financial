@@ -35,7 +35,9 @@ public class ButtonUI : Selectable, IPointerClickHandler, ISubmitHandler
     [SerializeField] UnityEvent _onPointerEnter;
     [SerializeField] UnityEvent _onPointerExit;
     [SerializeField] UnityEvent _onPointerDown;
-    [SerializeField] UnityEvent _onPointerUp;
+    public UnityEvent OnPointerDownEvent { get => _onPointerDown; set => _onPointerDown = value; }
+    [SerializeField] UnityEvent _onPointerUp;   
+    public UnityEvent OnPointerUpEvent { get => _onPointerUp; set => _onPointerUp = value; }
     [SerializeField] UnityEvent _onSelect;
     [SerializeField] UnityEvent _onDeselect;
     

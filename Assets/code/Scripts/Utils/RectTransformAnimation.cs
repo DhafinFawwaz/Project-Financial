@@ -8,14 +8,26 @@ public class RectTransformAnimation : MonoBehaviour
     [SerializeField] RectTransform _target;
     [SerializeField] Vector3 _end;
     [SerializeField] float _duration;
-    [SerializeField] Ease.Function _easeFunction = Ease.OutQuart;
+    Ease.Function _easeFunction = Ease.OutQuart;
+    [SerializeField] Ease.Type _easeType = Ease.Type.Out;
+    [SerializeField] Ease.Power _easePower = Ease.Power.Quart;
     [SerializeField] RectTransformAnimation[] _animationToStop;
+    void Start()
+    {
+        _easeFunction = Ease.GetEase(_easeType, _easePower);
+    }
 
     public void Stop()
     {
         _scaleKey++;
         _posKey++;
         _rotKey++;
+    }
+
+    public RectTransformAnimation SetEnd(Vector3 end)
+    {
+        _end = end;
+        return this;
     }
 
     public void TweenLocalScale()

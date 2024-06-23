@@ -24,6 +24,9 @@ public class PlayerCore : Core<PlayerCore, PlayerStates>
         _movePlayerToSpawnPoint = true;
     }
 
+    // I'm so tired, let's just Singleton this
+    public static PlayerCore Instance = null;
+
     void Start()
     {
         States = new PlayerStates(this);
@@ -37,6 +40,8 @@ public class PlayerCore : Core<PlayerCore, PlayerStates>
             transform.position = _spawnPosition;
             _movePlayerToSpawnPoint = false;
         }
+
+        Instance = this;
     }
 
     public override void OnHurt(HitRequest hitRequest, ref HitResult hitResult)
@@ -72,12 +77,14 @@ public class PlayerCore : Core<PlayerCore, PlayerStates>
 
     public void MoveCamera(Vector3 target){
         InputManager.SetActiveMouseAndKey(false);
+        _locPosKey++;
         StartCoroutine(TweenPositionAnimation(_camTarget, _camTarget.position, target, 0.6f, Ease.OutQuart));
         StartCoroutine(TweenFOVAnimation(_vCam.m_Lens.FieldOfView, _zoomedLensVerticalFOV, 0.6f, Ease.OutQuart));
     }
     public void MoveCameraBack(){
         InputManager.SetActiveMouseAndKey(true);
-        StartCoroutine(TweenPositionAnimation(_camTarget, _camTarget.localPosition, _camTargetInitialLocalPosition, 0.6f, Ease.OutQuart));
+        _posKey++;
+        StartCoroutine(TweenLocalPositionAnimation(_camTarget, _camTarget.localPosition, _camTargetInitialLocalPosition, 0.6f, Ease.OutQuart));
         StartCoroutine(TweenFOVAnimation(_vCam.m_Lens.FieldOfView, _initialLensVerticalFOV, 0.6f, Ease.OutQuart));
     }
 
