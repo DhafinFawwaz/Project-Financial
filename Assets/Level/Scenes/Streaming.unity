@@ -3706,7 +3706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f54930f0f8f7f2478377a55d6c33e4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TotalDuration: 0.70000005
+  TotalDuration: 1.2
   AnimationSequence:
   - AtTime: At 0s [[Blocker]] [SetActive to True]
     StartTime: 0
@@ -3792,18 +3792,18 @@ MonoBehaviour:
     StartTime: 0
     TriggerStart: 0
     TriggerEnd: 0
-    PropertyRectHeight: 20
+    PropertyRectHeight: 180
     PropertyRectY: 155
     SequenceType: 0
     EaseType: 1
     EasePower: 3
     TargetType: 1
     TargetComp: {fileID: 1882456730}
-    Duration: 0.5
+    Duration: 1
     EventDynamic:
       m_PersistentCalls:
         m_Calls: []
-    IsUnfolded: 0
+    IsUnfolded: 1
     IsDone: 0
     Target: {fileID: 0}
     IsActivating: 1
@@ -3868,22 +3868,22 @@ MonoBehaviour:
     MaxVisibleCharactersStart: 0
     MaxVisibleCharactersEnd: 0
     TestInt: 0
-  - AtTime: At 0s [Wait 0.3s]
+  - AtTime: At 0s [Wait 0.8s]
     StartTime: 0
     TriggerStart: 0
     TriggerEnd: 0
-    PropertyRectHeight: 20
-    PropertyRectY: 177
+    PropertyRectHeight: 60
+    PropertyRectY: 338
     SequenceType: 1
     EaseType: 1
     EasePower: 3
     TargetType: 1
     TargetComp: {fileID: 1761201968}
-    Duration: 0.3
+    Duration: 0.8
     EventDynamic:
       m_PersistentCalls:
         m_Calls: []
-    IsUnfolded: 0
+    IsUnfolded: 1
     IsDone: 0
     Target: {fileID: 0}
     IsActivating: 1
@@ -3948,12 +3948,12 @@ MonoBehaviour:
     MaxVisibleCharactersStart: 0
     MaxVisibleCharactersEnd: 0
     TestInt: 0
-  - AtTime: At 0.3s [[ButtonUI] Tabungan] [RectTransform]
-    StartTime: 0.3
+  - AtTime: At 0.8s [[ButtonUI] Tabungan] [RectTransform]
+    StartTime: 0.8
     TriggerStart: 0
     TriggerEnd: 0
     PropertyRectHeight: 20
-    PropertyRectY: 199
+    PropertyRectY: 400
     SequenceType: 0
     EaseType: 3
     EasePower: 2
@@ -4028,12 +4028,12 @@ MonoBehaviour:
     MaxVisibleCharactersStart: 0
     MaxVisibleCharactersEnd: 0
     TestInt: 0
-  - AtTime: At 0.3s [Wait 0.1s]
-    StartTime: 0.3
+  - AtTime: At 0.8s [Wait 0.1s]
+    StartTime: 0.8
     TriggerStart: 0
     TriggerEnd: 0
     PropertyRectHeight: 20
-    PropertyRectY: 221
+    PropertyRectY: 422
     SequenceType: 1
     EaseType: 1
     EasePower: 3
@@ -4108,12 +4108,12 @@ MonoBehaviour:
     MaxVisibleCharactersStart: 0
     MaxVisibleCharactersEnd: 0
     TestInt: 0
-  - AtTime: At 0.4s [[ButtonUI] KTP] [RectTransform]
-    StartTime: 0.4
+  - AtTime: At 0.9s [[ButtonUI] KTP] [RectTransform]
+    StartTime: 0.90000004
     TriggerStart: 0
     TriggerEnd: 0
     PropertyRectHeight: 20
-    PropertyRectY: 243
+    PropertyRectY: 444
     SequenceType: 0
     EaseType: 3
     EasePower: 2
@@ -4188,12 +4188,12 @@ MonoBehaviour:
     MaxVisibleCharactersStart: 0
     MaxVisibleCharactersEnd: 0
     TestInt: 0
-  - AtTime: At 0.4s [Wait 0.3s]
-    StartTime: 0.4
+  - AtTime: At 0.9s [Wait 0.3s]
+    StartTime: 0.90000004
     TriggerStart: 0
     TriggerEnd: 0
     PropertyRectHeight: 60
-    PropertyRectY: 265
+    PropertyRectY: 466
     SequenceType: 1
     EaseType: 3
     EasePower: 2
@@ -4268,12 +4268,12 @@ MonoBehaviour:
     MaxVisibleCharactersStart: 0
     MaxVisibleCharactersEnd: 0
     TestInt: 0
-  - AtTime: At 0.7s [[Blocker]] [SetActive to False]
-    StartTime: 0.70000005
+  - AtTime: At 1.2s [[Blocker]] [SetActive to False]
+    StartTime: 1.2
     TriggerStart: 0
     TriggerEnd: 0
     PropertyRectHeight: 20
-    PropertyRectY: 327
+    PropertyRectY: 528
     SequenceType: 3
     EaseType: 3
     EasePower: 2
@@ -4348,12 +4348,12 @@ MonoBehaviour:
     MaxVisibleCharactersStart: 0
     MaxVisibleCharactersEnd: 0
     TestInt: 0
-  - AtTime: At 0.7s [Denied] [SetActive to False]
-    StartTime: 0.70000005
+  - AtTime: At 1.2s [Denied] [SetActive to False]
+    StartTime: 1.2
     TriggerStart: 0
     TriggerEnd: 0
     PropertyRectHeight: 80
-    PropertyRectY: 349
+    PropertyRectY: 550
     SequenceType: 3
     EaseType: 3
     EasePower: 2
@@ -4428,12 +4428,12 @@ MonoBehaviour:
     MaxVisibleCharactersStart: 0
     MaxVisibleCharactersEnd: 0
     TestInt: 0
-  - AtTime: At 0.7s [Accepted] [SetActive to False]
-    StartTime: 0.70000005
+  - AtTime: At 1.2s [Accepted] [SetActive to False]
+    StartTime: 1.2
     TriggerStart: 0
     TriggerEnd: 0
     PropertyRectHeight: 80
-    PropertyRectY: 431
+    PropertyRectY: 632
     SequenceType: 3
     EaseType: 3
     EasePower: 2
