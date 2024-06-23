@@ -16,6 +16,13 @@ public class PlayerCore : Core<PlayerCore, PlayerStates>
     [SerializeField] float _zoomedLensVerticalFOV = 6;
     [SerializeField] CinemachineVirtualCamera _vCam;
     float _initialLensVerticalFOV;
+    
+    static Vector3 _spawnPosition = Vector3.zero;
+    static bool _movePlayerToSpawnPoint = true;
+    public static void SetPlayerSpawnPosition(Vector3 position){
+        _spawnPosition = position;
+        _movePlayerToSpawnPoint = true;
+    }
 
     void Start()
     {
@@ -23,7 +30,13 @@ public class PlayerCore : Core<PlayerCore, PlayerStates>
         CurrentState = States.Idle();
         CurrentState.StateEnter();
         _camTargetInitialLocalPosition = _camTarget.localPosition;
-        _initialLensVerticalFOV = _vCam.m_Lens.FieldOfView;
+        if(_vCam != null) _initialLensVerticalFOV = _vCam.m_Lens.FieldOfView;
+
+
+        if(_movePlayerToSpawnPoint){
+            transform.position = _spawnPosition;
+            _movePlayerToSpawnPoint = false;
+        }
     }
 
     public override void OnHurt(HitRequest hitRequest, ref HitResult hitResult)

@@ -390,6 +390,8 @@ MonoBehaviour:
   Locomotion: {fileID: 4399975957085244850}
   Stats: {fileID: 4399975957085243981}
   _camTarget: {fileID: 1863264067196928533}
+  _zoomedLensVerticalFOV: 6
+  _vCam: {fileID: 0}
 --- !u!114 &4399975957085244850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,7 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8fd9b60045e1a4a93b4cdb7beb1c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 4
+  MoveSpeed: 3
   Acceleration: 10
   Deceleration: 12
 --- !u!114 &7815994901119611462

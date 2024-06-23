@@ -754,6 +754,10 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3619075642270742316, guid: fec771a23d72d964dad2d2e57118142b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3619075642270742316, guid: fec771a23d72d964dad2d2e57118142b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5
       objectReference: {fileID: 0}
@@ -1199,7 +1203,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832826732}
   m_LocalRotation: {x: 0.13052616, y: -0.0000113897295, z: 0.00008651361, w: 0.9914449}
-  m_LocalPosition: {x: 0.132, y: 2.57, z: -7.7711315}
+  m_LocalPosition: {x: 0, y: 2.57, z: -7.7711315}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1306,6 +1310,10 @@ PrefabInstance:
     - target: {fileID: 3619075642270742316, guid: fec771a23d72d964dad2d2e57118142b, type: 3}
       propertyPath: m_RootOrder
       value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 3619075642270742316, guid: fec771a23d72d964dad2d2e57118142b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3619075642270742316, guid: fec771a23d72d964dad2d2e57118142b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1736,7 +1744,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.13052616, y: -0.0000113897295, z: 0.00008651361, w: 0.9914449}
-  m_LocalPosition: {x: 0.132, y: 2.57, z: -7.7711315}
+  m_LocalPosition: {x: 0, y: 2.57, z: -7.7711315}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3858,6 +3866,18 @@ PrefabInstance:
       propertyPath: _sceneToLoad
       value: World
       objectReference: {fileID: 0}
+    - target: {fileID: 8566413966477842585, guid: e2d069011175c8944bb5f5b138947ba7, type: 3}
+      propertyPath: _spawnPoint.x
+      value: 10.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8566413966477842585, guid: e2d069011175c8944bb5f5b138947ba7, type: 3}
+      propertyPath: _spawnPoint.z
+      value: 2.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8566413966477842585, guid: e2d069011175c8944bb5f5b138947ba7, type: 3}
+      propertyPath: _movePlayerToSpawnPoint
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8566413966477842587, guid: e2d069011175c8944bb5f5b138947ba7, type: 3}
       propertyPath: m_Name
       value: '[SceneTrigger] ToWorld'
@@ -3910,6 +3930,10 @@ PrefabInstance:
     - target: {fileID: 3619075642270742316, guid: fec771a23d72d964dad2d2e57118142b, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.3385
+      objectReference: {fileID: 0}
+    - target: {fileID: 3619075642270742316, guid: fec771a23d72d964dad2d2e57118142b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3619075642270742316, guid: fec771a23d72d964dad2d2e57118142b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4082,6 +4106,10 @@ PrefabInstance:
     - target: {fileID: 4399975957085243977, guid: b05fc11413872df4fa6e1ffe19c00e4b, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399975957085243981, guid: b05fc11413872df4fa6e1ffe19c00e4b, type: 3}
+      propertyPath: MoveSpeed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4399975957085243982, guid: b05fc11413872df4fa6e1ffe19c00e4b, type: 3}
       propertyPath: m_RootOrder

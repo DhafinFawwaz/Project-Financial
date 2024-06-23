@@ -8,6 +8,10 @@ public class SceneTrigger : MonoBehaviour
     [SerializeField] string _playerTag = "Player";
     [SerializeField] string _sceneToLoad = "World";
     [SerializeField] SceneTransition _sceneTransition;
+
+    [SerializeField] bool _movePlayerToSpawnPoint = false;
+    [SerializeField] Vector3 _spawnPoint = Vector3.zero;
+
     public void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag(_playerTag))
@@ -16,6 +20,9 @@ public class SceneTrigger : MonoBehaviour
             _sceneTransition.AddListenerBeforeIn(() => {
                 Time.timeScale = 1;
             }).StartSceneTransition(_sceneToLoad);
+            if(_movePlayerToSpawnPoint){
+                PlayerCore.SetPlayerSpawnPosition(_spawnPoint);
+            }
         }
     }
 }
