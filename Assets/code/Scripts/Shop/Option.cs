@@ -42,7 +42,7 @@ public class Option : MonoBehaviour
         _inflasiGO.SetActive(_optionContent.Inflasi);
         _buy1get1GO.SetActive(_optionContent.Buy1get1);
         _buyCountText.text = "x"+_buyCount.ToString();
-        _priceText.text = "Rp"+_optionContent.Price.ToString("N0");
+        _priceText.text = "Rp"+_optionContent.Price.ToStringRupiahFormat();
         _healthText.text = _optionContent.Health.ToString();
         _happinessText.text = _optionContent.Happiness.ToString();
         if(_optionContent.IsUp)

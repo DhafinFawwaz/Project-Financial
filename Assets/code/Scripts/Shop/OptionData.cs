@@ -25,7 +25,7 @@ public class OptionContent
     public bool Diskon => _diskon;
     public bool Inflasi => _inflasi;
     public bool Buy1get1 => _buy1get1;
-    public int Price => _price;
+    public long Price => _price;
     public int Health => _health;
     public int Happiness => _happiness;
     public bool IsUp => _isUp;

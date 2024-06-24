@@ -38,8 +38,9 @@ public class StreamingManager : MonoBehaviour
     [Header("Animation")]
     [SerializeField] AnimationUI _peopleAppearAnimation;
     [SerializeField] AnimationUI _closeGateHumanCeklisAnimation;
-    [SerializeField] AnimationUI _closeGateHumanX;
-    [SerializeField] AnimationUI _closeGateShadow;
+    [SerializeField] AnimationUI _closeGateHumanXAnimation;
+    [SerializeField] AnimationUI _closeGateShadowCeklisAnimation;
+    [SerializeField] AnimationUI _closeGateShadowXAnimation;
 
     [Header("Buku Tabungan")]
     [SerializeField] RectTransformAnimation _bukuTabunganRTA;
@@ -118,14 +119,15 @@ public class StreamingManager : MonoBehaviour
         foreach (var catatan in people.Catatan)
         {
             _tanggalText.text += catatan.Tanggal + "\n";
-            _pemasukanText.text += catatan.Pemasukan + "\n";
-            _pengeluaranText.text += catatan.Pengeluaran + "\n";
+            _pemasukanText.text += catatan.Pemasukan.ToStringRupiahFormat() + "\n";
+            _pengeluaranText.text += catatan.Pengeluaran.ToStringRupiahFormat() + "\n";
         }
-        _pemasukanTotalText.text = people.TotalPemasukan.ToString();
-        _pengeluaranTotalText.text = people.TotalPengeluaran.ToString();
-        _pajakBulananText.text = people.PajakBulanan.ToString();
-        _cicilanKreditText.text = people.CicilanKredit.ToString();
+        _pemasukanTotalText.text = people.TotalPemasukan.ToStringRupiahFormat();
+        _pengeluaranTotalText.text = people.TotalPengeluaran.ToStringRupiahFormat();
+        _pajakBulananText.text = people.PajakBulanan.ToStringRupiahFormat();
+        _cicilanKreditText.text = people.CicilanKredit.ToStringRupiahFormat();
     }
+
 
     void OnEnable()
     {
@@ -221,7 +223,7 @@ public class StreamingManager : MonoBehaviour
         }
         else // Shadow, accepted
         {
-            _closeGateShadow.Play();
+            _closeGateShadowCeklisAnimation.Play();
             yield return new WaitForSecondsRealtime(0.2f);
             DecreaseViews();
         }
@@ -241,12 +243,12 @@ public class StreamingManager : MonoBehaviour
                 .SetOnceComplete(() => {
                     _topText.Hide();
                     DecreaseViews();
-                    _closeGateHumanX.Play();
+                    _closeGateHumanXAnimation.Play();
             }).Play();
         }
         else // Shadow, denied
         {
-            _closeGateShadow.Play();
+            _closeGateShadowXAnimation.Play();
             yield return new WaitForSecondsRealtime(0.2f);
             IncreaseViews();
         }

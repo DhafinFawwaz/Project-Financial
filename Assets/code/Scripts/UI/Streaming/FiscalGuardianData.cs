@@ -110,6 +110,7 @@ public class FiscalGuardianDataEditor : Editor
             EditorGUILayout.LabelField($"Total Pemasukan {people.TotalPemasukan}");
             EditorGUILayout.LabelField($"Total Pengeluaran {people.TotalPengeluaran}");
             EditorGUILayout.LabelField($"Pajak Bulanan {people.PajakBulanan}");
+            EditorGUILayout.LabelField($"Cicilan {people.CicilanKredit}");
             EditorGUILayout.Space();
         }
 
