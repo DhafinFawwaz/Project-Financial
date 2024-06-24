@@ -36,8 +36,10 @@ public class StreamingManager : MonoBehaviour
     [SerializeField] Stamp _noStamp;
 
     [Header("Animation")]
-    [SerializeField] AnimationUI _closeGateAnimation;
-    [SerializeField] AnimationUI _newPeopleAnimation;
+    [SerializeField] AnimationUI _peopleAppearAnimation;
+    [SerializeField] AnimationUI _closeGateHumanCeklisAnimation;
+    [SerializeField] AnimationUI _closeGateHumanX;
+    [SerializeField] AnimationUI _closeGateShadow;
 
     [Header("Buku Tabungan")]
     [SerializeField] RectTransformAnimation _bukuTabunganRTA;
@@ -59,7 +61,7 @@ public class StreamingManager : MonoBehaviour
         _commentSection.Play();
         _views.SetAndAnimate(0, 1000, 0.5f);
 
-        _newPeopleAnimation.Play();
+        _peopleAppearAnimation.Play();
         StartCoroutine(UpdatingFace());
 
         // Make copy of CurrentFiscalGuardianData
@@ -209,8 +211,20 @@ public class StreamingManager : MonoBehaviour
         _inputBlocker.SetActive(true);
         yield return new WaitForSecondsRealtime(0.2f);
         ToggleKTP(false);
-        _closeGateAnimation.Play();
-        IncreaseViews();
+
+        // Human, accepted
+        if(!CurrentFiscalGuardianData.People[_currentPeopleIndex].IsShadow)
+        {
+            _closeGateHumanCeklisAnimation.Play();
+            yield return new WaitForSecondsRealtime(0.2f);
+            IncreaseViews();
+        }
+        else // Shadow, accepted
+        {
+            _closeGateShadow.Play();
+            yield return new WaitForSecondsRealtime(0.2f);
+            DecreaseViews();
+        }
     }
 
     IEnumerator DeniedAnimation()
@@ -219,21 +233,21 @@ public class StreamingManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.2f);
         ToggleKTP(false);
         
-        // Case angry
-
+        // Human, denied
         if(!CurrentFiscalGuardianData.People[_currentPeopleIndex].IsShadow)
         {
             _topText.SetText(CurrentFiscalGuardianData.People[_currentPeopleIndex].WrongMessage)
                 .Show()
                 .SetOnceComplete(() => {
-                    _closeGateAnimation.Play();
                     _topText.Hide();
                     DecreaseViews();
+                    _closeGateHumanX.Play();
             }).Play();
         }
-        else // Got shadow
+        else // Shadow, denied
         {
-            _closeGateAnimation.Play();
+            _closeGateShadow.Play();
+            yield return new WaitForSecondsRealtime(0.2f);
             IncreaseViews();
         }
 
@@ -250,7 +264,7 @@ public class StreamingManager : MonoBehaviour
             return;
         }
         Refresh();
-        _newPeopleAnimation.Play();
+        _peopleAppearAnimation.Play();
     }
 
 
