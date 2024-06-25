@@ -25,11 +25,11 @@ public class Kuliah : MonoBehaviour
     public void NextSpin()
     {
         if(_counter == 0) {
-            _counterText.text = "x0";
+            _counterText.text = "x1";
             StartSpinWheelHeart();
         }
         else if(_counter == 1) {
-            _counterText.text = "x1";
+            _counterText.text = "x0";
             StartSpinWheelUngu();
         }
         _counter++;
