@@ -16,6 +16,7 @@ public class Screenshot : MonoBehaviour {
     public void SaveScreenshot() {
         string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
         string filename = "SS-" + DateTime.Now.ToString("yyyy.MM.dd.HH.mm.ss") + ".png";
+        Debug.Log("Screenshot saved to: " + Path.Combine(path, filename));
         File.WriteAllBytes(Path.Combine(path, filename), CreateScreenshot().EncodeToPNG());
     }
     Texture2D CreateScreenshot() {

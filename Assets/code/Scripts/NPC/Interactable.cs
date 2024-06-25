@@ -35,7 +35,7 @@ public class Interactable : MonoBehaviour
         if(col.CompareTag(_playerTag)) SetActiveLabel(false);
     }
 
-    void SetActiveLabel(bool isActive)
+    public void SetActiveLabel(bool isActive)
     {
         _isShowingPrompt = isActive;
         if(_isShowingPrompt)

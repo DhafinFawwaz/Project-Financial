@@ -5,7 +5,8 @@ using UnityEngine;
 namespace PathCreation.Examples {
     public class RoadMeshCreator : PathSceneTool {
         [Header ("Road settings")]
-        public float roadWidth = .4f;
+        public float roadWidthStart = .4f;
+        public float roadWidthEnd = .4f;
         [Range (0, .5f)]
         public float thickness = .15f;
         public bool flattenSurface;
@@ -57,8 +58,9 @@ namespace PathCreation.Examples {
                 Vector3 localRight = (usePathNormals) ? path.GetNormal (i) : Vector3.Cross (localUp, path.GetTangent (i));
 
                 // Find position to left and right of current path vertex
-                Vector3 vertSideA = path.GetPoint (i) - localRight * Mathf.Abs (roadWidth);
-                Vector3 vertSideB = path.GetPoint (i) + localRight * Mathf.Abs (roadWidth);
+                float t = Mathf.Lerp(roadWidthStart, roadWidthEnd, (float)i / (float)(path.NumPoints-1));
+                Vector3 vertSideA = path.GetPoint (i) - localRight * Mathf.Abs (t);
+                Vector3 vertSideB = path.GetPoint (i) + localRight * Mathf.Abs (t);
 
                 // Add top of road vertices
                 verts[vertIndex + 0] = vertSideA;
