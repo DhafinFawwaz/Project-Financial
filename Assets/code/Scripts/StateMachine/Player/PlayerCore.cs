@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 public class PlayerCore : Core<PlayerCore, PlayerStates>
 {
@@ -17,15 +18,37 @@ public class PlayerCore : Core<PlayerCore, PlayerStates>
     [SerializeField] CinemachineVirtualCamera _vCam;
     float _initialLensVerticalFOV;
     
+
+    // Statics
+    [Header("Statics")]
+    [SerializeField] Light _directionalLight;
     static Vector3 _spawnPosition = Vector3.zero;
     static bool _movePlayerToSpawnPoint = true;
     public static void SetPlayerSpawnPosition(Vector3 position){
         _spawnPosition = position;
         _movePlayerToSpawnPoint = true;
     }
+    static bool _changeLightColor = false;
+    static Color _lightColor = Color.white;
+    public static void SetLightColor(Color color){
+        _lightColor = color;
+        _changeLightColor = true;
+    }
 
     // I'm so tired, let's just Singleton this
     public static PlayerCore Instance = null;
+
+    void HandleStatics()
+    {
+        if(_movePlayerToSpawnPoint){
+            transform.position = _spawnPosition;
+            _movePlayerToSpawnPoint = false;
+        }
+        if(_changeLightColor){
+            _directionalLight.color = _lightColor.linear;
+            _changeLightColor = false;
+        }
+    }
 
     void Start()
     {
@@ -36,11 +59,8 @@ public class PlayerCore : Core<PlayerCore, PlayerStates>
         if(_vCam != null) _initialLensVerticalFOV = _vCam.m_Lens.FieldOfView;
 
 
-        if(_movePlayerToSpawnPoint){
-            transform.position = _spawnPosition;
-            _movePlayerToSpawnPoint = false;
-        }
-
+        
+        HandleStatics();
         Instance = this;
     }
 
