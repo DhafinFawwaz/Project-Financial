@@ -18,21 +18,25 @@ public class FiscalGuardianLoader : MonoBehaviour
     void Awake()
     {
         StreamingManager.CurrentFiscalGuardianData = _data;
+    }
+
+    public void Play()
+    {
         StartCoroutine(DelayAwake());
     }
 
     IEnumerator DelayAwake()
     {
         yield return new WaitForSeconds(0.1f);
-        if(!_isStartWithDialog) _streamingManager.StartGame();
-        else
-        {
+        // if(!_isStartWithDialog) _streamingManager.StartGame();
+        // else
+        // {
             _dialogCloser.SetActive(false);
             _textRTA.SetEnd(Vector3.one).TweenLocalScale();
             _topText.SetText(_message).Show().Play().SetOnceComplete(() => {
                 _dialogCloser.SetActive(true);
             });
-        }
+        // }
     }
 
     public void CloseStartDialog()

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GraphicsAnimation : UIAnimation
 {
     [SerializeField] Graphic _target;
+    public Graphic Target => _target;
     [SerializeField] Color _color = Color.white;
     [SerializeField] float _duration = 0.3f;
     [SerializeField] Ease.Function _easeFunction = Ease.OutQuart;
@@ -14,6 +15,8 @@ public class GraphicsAnimation : UIAnimation
     public void Play()
     {
         StopAllOtherGraphics();
+        if(!gameObject.activeInHierarchy) return;
+        
         StartCoroutine(TweenColorAnimation(_target, _target.color, _color, _duration, _easeFunction));
     }
 

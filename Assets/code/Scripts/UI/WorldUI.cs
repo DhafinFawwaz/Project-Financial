@@ -6,6 +6,7 @@ using UnityEngine;
 public class WorldUI : MonoBehaviour
 {
     [SerializeField] BelanjaList _belanjaList;
+    public BelanjaList BelanjaList => _belanjaList;
     [SerializeField] KTPBelanja _ktpBelanja;
     [SerializeField] KTPWorld _ktpWorld;
     [SerializeField] bool _isBelanja = false;
@@ -17,6 +18,11 @@ public class WorldUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI _dateText;
     [SerializeField] Timer _diskonTimer;
     [SerializeField] Timer _inflasiTimer;
+
+    float _addedHappiness;
+    float _addedHealth;
+    public float AddedHappiness { get => _addedHappiness; set => _addedHappiness = value; }
+    public float AddedHealth { get => _addedHealth; set => _addedHealth = value; }
 
     void Awake()
     {

@@ -16,6 +16,7 @@ public class BelanjaList : MonoBehaviour
     List<ItemCount> _listToBuy = new List<ItemCount>();
     List<ItemCount> _listCart = new List<ItemCount>();
     public List<ItemCount> ListToBuy => _listToBuy;
+    public List<ItemCount> ListCart => _listCart;
     public UnityEvent<List<ItemCount>> OnListChange;
 
     public void AddItem(ItemData item)
@@ -65,7 +66,7 @@ public class BelanjaList : MonoBehaviour
             int amountInCart = _listCart.Find(x => x.Item.Name == item.Item.Name)?.Count ?? 0;
             if(amountInCart == 0) continue;
             else if(amountInCart < item.Count) text.text += " (" + amountInCart + ")";
-            else text.text = $"<s>{text.text} ({item.Count})</s>";
+            else text.text = $"<s>{text.text} ({amountInCart})</s>";
         }
         OnListChange?.Invoke(_listToBuy);
     }

@@ -91,8 +91,8 @@ public class PlayerCore : Core<PlayerCore, PlayerStates>
 
 
 
-    public void Collect(Item item){
-        StartCoroutine(CollectAnimation(item.transform, item.transform.position, transform, 0.6f, new Vector3(0,0.25f,0), 1));
+    public void Collect(Transform item){
+        StartCoroutine(CollectAnimation(item, item.position, transform, 0.6f, new Vector3(0,0.25f,0), 1));
     }
 
     public void MoveCamera(Vector3 target){

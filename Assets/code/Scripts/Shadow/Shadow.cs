@@ -29,6 +29,7 @@ public class Shadow : MonoBehaviour
     {
         if(!_agent.enabled) return;
         _agent.SetDestination(_playerTrans.position);
+        _agent.transform.position = new Vector3(_agent.transform.position.x, 0, _agent.transform.position.z);
     }
 
 
