@@ -6,10 +6,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "OptionData", menuName = "OptionData", order = 1)]
 public class OptionData : ScriptableObject
 {
+    [SerializeField] ItemData _itemData;
+    public ItemData ItemData => _itemData;
+    public string ItemName => _itemData.Name;
+    public Sprite ItemSprite => _itemData.Sprite;
     public OptionContent[] Content => _content;
     [SerializeField] OptionContent[] _content;
 }
-
 
 
 [System.Serializable]

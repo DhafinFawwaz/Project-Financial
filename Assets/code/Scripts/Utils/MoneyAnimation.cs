@@ -8,6 +8,6 @@ public class MoneyAnimation : TextAnimation
 
     protected override string getFormattedValue(float value)
     {
-        return "Rp."+Mathf.RoundToInt(value).ToString();
+        return Mathf.RoundToInt(value).ToStringRupiahFormat();
     }
 }

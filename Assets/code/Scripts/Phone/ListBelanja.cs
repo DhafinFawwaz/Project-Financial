@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ListBelanja : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI[] _text;
     
     [System.Serializable]
-    class ItemCount
+    public class ItemCount
     {
-        public Item Item;
+        public ItemData Item;
         public int Count;
-        public ItemCount(Item item, int count)
+        public ItemCount(ItemData item, int count)
         {
             Item = item;
             Count = count;
@@ -21,6 +22,8 @@ public class ListBelanja : MonoBehaviour
     [SerializeField] List<ItemCount> list = new List<ItemCount>();
 
     List<ItemCount> inventory = new List<ItemCount>();
+
+    public UnityEvent<List<ItemCount>> OnListChange;
     void Start()
     {
         UpdateDisplay();
@@ -28,6 +31,8 @@ public class ListBelanja : MonoBehaviour
 
     void UpdateDisplay()
     {
+        if(_text == null || _text.Length == 0) return;
+        
         for(int i = 0; i < _text.Length; i++)
         {
             if(i >= list.Count) {
@@ -35,20 +40,21 @@ public class ListBelanja : MonoBehaviour
                 continue;
             }
             _text[i].text = "";
-            if(inventory.Find(x => x.Item.ItemName == list[i].Item.ItemName)?.Count >= list[i].Count){
-                _text[i].text = "<s>" + list[i].Item.ItemName + " x" + list[i].Count + "</s>";
+            if(inventory.Find(x => x.Item.Name == list[i].Item.Name)?.Count >= list[i].Count){
+                _text[i].text = "<s>" + list[i].Item.Name + " x" + list[i].Count + "</s>";
             } else {
-                _text[i].text = list[i].Item.ItemName + " x" + list[i].Count;
+                _text[i].text = list[i].Item.Name + " x" + list[i].Count;
             }
         }
+        OnListChange?.Invoke(list);
     }
 
 
-    public void AddInventory(Item item, int count)
+    public void AddInventory(ItemData item, int count)
     {
         if(inventory.Exists(x => x.Item == item))
         {
-            inventory.Find(x => x.Item.ItemName == item.ItemName).Count++;
+            inventory.Find(x => x.Item.Name == item.Name).Count++;
         }
         else
         {

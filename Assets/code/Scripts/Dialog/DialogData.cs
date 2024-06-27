@@ -11,10 +11,23 @@ public class DialogData : ScriptableObject
 }
 
 
-enum DialogActor
+public enum DialogActor
 {
     Angkasa,
-    Nao
+    Nao,
+    PakRudi,
+    PakHendra,
+    Nadine,
+    Miau,
+    MasDanang,
+    Fajar,
+    BuYulianti,
+    BuRatna,
+    Bima,
+    BerandalMainJudi,
+    Anaya,
+    Riki,
+    Kunti
 }
 
 public enum SusLevel
@@ -39,13 +52,28 @@ public class DialogContent
         {
             case DialogActor.Angkasa: return "Angkasa";
             case DialogActor.Nao: return "Nao";
+            case DialogActor.PakRudi: return "Pak Rudi";
+            case DialogActor.PakHendra: return "Pak Hendra";
+            case DialogActor.Nadine: return "Nadine";
+            case DialogActor.Miau: return "Miau";
+            case DialogActor.MasDanang: return "Mas Danang";
+            case DialogActor.Fajar: return "Fajar";
+            case DialogActor.BuYulianti: return "Bu Yulianti";
+            case DialogActor.BuRatna: return "Bu Ratna";
+            case DialogActor.Bima: return "Bima";
+            case DialogActor.BerandalMainJudi: return "Berandal Main Judi";
+            case DialogActor.Anaya: return "Anaya";
+            case DialogActor.Riki: return "Riki";
+            case DialogActor.Kunti: return "Kunti";
         }
         return "Angkasa";
     }
     // [SerializeField] DialogActor _actorLeft;
     [SerializeField] DialogActor _actorRight;
+    public DialogActor DialogActor => _actorRight;
     [SerializeField] SusLevel _susLevel;
     public SusLevel SusLevel => _susLevel;
+
 
     [TextArea]
     [SerializeField] string _text;

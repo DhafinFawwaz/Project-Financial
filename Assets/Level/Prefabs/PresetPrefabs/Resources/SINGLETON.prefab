@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3455454479947644173}
   - component: {fileID: 2354384014493253768}
   - component: {fileID: 8388882301915331825}
-  - component: {fileID: 8062318065500693365}
   m_Layer: 5
   m_Name: Input
   m_TagString: Untagged
@@ -113,18 +112,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3238b33e2158c374c83ba8394c71f3bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8062318065500693365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 439454613071604319}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17e0d2a606dcd464fa957207bfe29270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &938084912695069932
@@ -853,6 +840,9 @@ MonoBehaviour:
     Volume: 1
     ClipName: 
   - Clip: {fileID: 8300000, guid: d0827a5929e77b445b80e1601cc828f6, type: 3}
+    Volume: 1
+    ClipName: 
+  - Clip: {fileID: 8300000, guid: 3b47ec20241ffbc438ac4558079b5fab, type: 3}
     Volume: 1
     ClipName: 
 --- !u!114 &2666741085910510975

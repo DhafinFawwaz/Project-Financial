@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Shadow
-  m_Shader: {fileID: 4800000, guid: cc3275375fe01324ba4e55d3bcbbc9fa, type: 3}
+  m_Shader: {fileID: 10750, guid: 0000000000000000f000000000000000, type: 0}
   m_ValidKeywords: []
   m_InvalidKeywords:
   - _ALPHATEST_ON
@@ -42,7 +42,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 5820db8297188e24db6e7633621e784b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6404b9c847e9af8489d9351ae419fe8d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:

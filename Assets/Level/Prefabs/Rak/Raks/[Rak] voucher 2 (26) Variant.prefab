@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2875105683812580470, guid: 5c100974281cde942ab96f14d283140d, type: 3}
+      propertyPath: _optionData
+      value: 
+      objectReference: {fileID: 11400000, guid: a7d0003d0c758714dbf3c0bfeb180c80, type: 2}
     - target: {fileID: 3914189445726561639, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -77,7 +81,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3914189446115555673, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_Name
-      value: '[Rak] voucher 2 (26)'
+      value: '[Rak] voucher 2 (26) Variant'
       objectReference: {fileID: 0}
     - target: {fileID: 3914189446115555673, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_IsActive

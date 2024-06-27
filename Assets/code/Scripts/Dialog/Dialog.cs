@@ -20,9 +20,60 @@ public class Dialog : MonoBehaviour
     [SerializeField] GameObject _dialogBaik;
     [SerializeField] GameObject _dialogSus;
 
-    [Header("Actor Sprites")]
-    [SerializeField] Sprite _angkasaSprite;
-    [SerializeField] Sprite[] _otherSprites;
+    [Header("Actor")]
+    [SerializeField] GameObject Angkasa;
+    [SerializeField] GameObject Nao;
+    [SerializeField] GameObject PakRudi;
+    [SerializeField] GameObject PakHendra;
+    [SerializeField] GameObject Nadine;
+    [SerializeField] GameObject Miau;
+    [SerializeField] GameObject MasDanang;
+    [SerializeField] GameObject Fajar;
+    [SerializeField] GameObject BuYulianti;
+    [SerializeField] GameObject BuRatna;
+    [SerializeField] GameObject Bima;
+    [SerializeField] GameObject BerandalMainJudi;
+    [SerializeField] GameObject Anaya;
+    [SerializeField] GameObject Riki;
+    [SerializeField] GameObject Kunti;
+
+    public void SetActor(DialogActor actor)
+    {
+        Angkasa.SetActive(false);
+        Nao.SetActive(false);
+        PakRudi.SetActive(false);
+        PakHendra.SetActive(false);
+        Nadine.SetActive(false);
+        Miau.SetActive(false);
+        MasDanang.SetActive(false);
+        Fajar.SetActive(false);
+        BuYulianti.SetActive(false);
+        BuRatna.SetActive(false);
+        Bima.SetActive(false);
+        BerandalMainJudi.SetActive(false);
+        Anaya.SetActive(false);
+        Riki.SetActive(false);
+        Kunti.SetActive(false);
+
+        switch(actor)
+        {
+            case DialogActor.Angkasa: Angkasa.SetActive(true); break;
+            case DialogActor.Nao: Nao.SetActive(true); break;
+            case DialogActor.PakRudi: PakRudi.SetActive(true); break;
+            case DialogActor.PakHendra: PakHendra.SetActive(true); break;
+            case DialogActor.Nadine: Nadine.SetActive(true); break;
+            case DialogActor.Miau: Miau.SetActive(true); break;
+            case DialogActor.MasDanang: MasDanang.SetActive(true); break;
+            case DialogActor.Fajar: Fajar.SetActive(true); break;
+            case DialogActor.BuYulianti: BuYulianti.SetActive(true); break;
+            case DialogActor.BuRatna: BuRatna.SetActive(true); break;
+            case DialogActor.Bima: Bima.SetActive(true); break;
+            case DialogActor.BerandalMainJudi: BerandalMainJudi.SetActive(true); break;
+            case DialogActor.Anaya: Anaya.SetActive(true); break;
+            case DialogActor.Riki: Riki.SetActive(true); break;
+            case DialogActor.Kunti: Kunti.SetActive(true); break;
+        }
+    }
 
     void Start()
     {
@@ -38,6 +89,7 @@ public class Dialog : MonoBehaviour
         _dialogText.text = "";
         _dialogText.maxVisibleCharacters = 0;
         Play();
+        Next();
     }
 
     void Update()
@@ -57,6 +109,8 @@ public class Dialog : MonoBehaviour
         {
             _actorName.text = _data.Content[_currentContentIndex].ActorRight;
             _dialogText.text = _data.Content[_currentContentIndex].Text;
+            SetActor(_data.Content[_currentContentIndex].DialogActor);
+            
             StartCoroutine(TextAnimation());
 
             if(_data.Content[_currentContentIndex].SusLevel == SusLevel.Angkasa) {

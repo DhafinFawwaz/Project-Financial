@@ -14,7 +14,6 @@ public class LevelManager : MonoBehaviour
     public void SetRandomHighscore()
     {
         int randomNumber = Random.Range(10, 200);
-        Save.Data.Highscore = randomNumber;
         Save.SaveData(); 
         OnSetRandomHighscore?.Invoke(randomNumber);
     }

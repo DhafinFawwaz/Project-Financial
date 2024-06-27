@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2875105683812580470, guid: 5c100974281cde942ab96f14d283140d, type: 3}
+      propertyPath: _optionData
+      value: 
+      objectReference: {fileID: 11400000, guid: 760b6c28ea43ee3488ff1d7c228272d1, type: 2}
     - target: {fileID: 3914189445726561639, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -57,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3914189446115555673, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_Name
-      value: '[Rak] sikat gigi (17)'
+      value: '[Rak] sikat gigi (17) Variant'
       objectReference: {fileID: 0}
     - target: {fileID: 3914189446115555673, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_IsActive

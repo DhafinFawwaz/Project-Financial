@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(BoxCollider))]
 public class SceneTrigger : MonoBehaviour
@@ -11,6 +12,7 @@ public class SceneTrigger : MonoBehaviour
 
     [SerializeField] bool _movePlayerToSpawnPoint = false;
     [SerializeField] Vector3 _spawnPoint = Vector3.zero;
+    [SerializeField] UnityEvent<string> OnSceneTrigger;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -23,6 +25,7 @@ public class SceneTrigger : MonoBehaviour
             if(_movePlayerToSpawnPoint){
                 PlayerCore.SetPlayerSpawnPosition(_spawnPoint);
             }
+            OnSceneTrigger?.Invoke(_sceneToLoad);
         }
     }
 }

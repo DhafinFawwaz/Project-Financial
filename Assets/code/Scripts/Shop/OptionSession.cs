@@ -2,15 +2,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class OptionSession : MonoBehaviour
 {
     [SerializeField] Option _optionPrefab;
     [SerializeField] Transform _optionContainer;
     [SerializeField] Transform _eToSelesai;
+    [SerializeField] UnityEvent<OptionSession> OnOptionChoosen;
     List<Option> _activeOptions = new List<Option>();
     bool _isPlaying = false;    
     Rak _currentRak;
+    public OptionData OptionData => _currentRak.OptionData;
     public void SetDataAndPlay(Rak rak)
     {
         _isPlaying = true;
@@ -22,6 +25,7 @@ public class OptionSession : MonoBehaviour
         {
             Option option = Instantiate(_optionPrefab, _optionContainer);
             option.SetValues(optionData.Content[i]);
+            option.SetSprite(optionData.ItemSprite);
             _activeOptions.Add(option);
             option.transform.localScale = Vector3.zero;
         }
@@ -77,6 +81,7 @@ public class OptionSession : MonoBehaviour
         if(!_isPlaying) return;
         if(Input.GetKeyDown(KeyCode.E) && Time.time - _openTime > 0.5f) // Prevent double press
         {
+            OnOptionChoosen?.Invoke(this);
             Close();
             _isPlaying = false;
             PlayerCore.Instance.MoveCameraBack();

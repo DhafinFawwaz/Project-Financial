@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Option : MonoBehaviour
 {
+    const int MAX_BUY_AMOUNT = 3;
     [SerializeField] GameObject _diskonGO;
     [SerializeField] GameObject _inflasiGO;
     [SerializeField] GameObject _buy1get1GO;
@@ -14,7 +16,10 @@ public class Option : MonoBehaviour
     [SerializeField] TextMeshProUGUI _priceText;
     [SerializeField] TextMeshProUGUI _healthText;
     [SerializeField] TextMeshProUGUI _happinessText;
+    [SerializeField] Image _itemImage;
+    [SerializeField] GameObject _multipleBuy;
     OptionContent _optionContent;
+    public OptionContent Content => _optionContent;
     int _buyCount = 0;
     public int BuyCount => _buyCount;
 
@@ -23,14 +28,23 @@ public class Option : MonoBehaviour
         _optionContent = option;
         Refresh();
     }
+
+    public void SetSprite(Sprite sprite)
+    {
+        _itemImage.sprite = sprite;
+    }
+
     public void IncrementBuyCount()
     {
+        if(_buyCount >= MAX_BUY_AMOUNT)return;
+        _multipleBuy.SetActive(true);
         _buyCount++;
         _buyCountText.text = "x"+_buyCount.ToString();
         StartCoroutine(TweenLocalScaleAnimation(transform as RectTransform, transform.localScale, Vector3.one*1.2f, 0.15f, Ease.OutBackCubic));
     }
     public void ResetBuyCount()
     {
+        _multipleBuy.SetActive(false);
         _buyCount = 0;
         _buyCountText.text = "x"+_buyCount.ToString();
         StartCoroutine(TweenLocalScaleAnimation(transform as RectTransform, transform.localScale, Vector3.one, 0.15f, Ease.OutQuart));
@@ -42,7 +56,7 @@ public class Option : MonoBehaviour
         _inflasiGO.SetActive(_optionContent.Inflasi);
         _buy1get1GO.SetActive(_optionContent.Buy1get1);
         _buyCountText.text = "x"+_buyCount.ToString();
-        _priceText.text = "Rp"+_optionContent.Price.ToStringRupiahFormat();
+        _priceText.text = _optionContent.Price.ToStringRupiahFormat();
         _healthText.text = _optionContent.Health.ToString();
         _happinessText.text = _optionContent.Happiness.ToString();
         if(_optionContent.IsUp)
