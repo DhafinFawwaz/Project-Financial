@@ -38,6 +38,12 @@ public class Bag : MonoBehaviour
             Toggle();
         }
 
+        if(InputManager.GetKeyDown(KeyCode.R))
+        {
+            Toggle();
+        }
+
+
         foreach(Gosokable gosokable in _gosokables)
         {
             if(gosokable.gameObject.activeInHierarchy && !_gosokableBlokers[gosokable.ItemID].activeInHierarchy && gosokable.ContainsCursor())
