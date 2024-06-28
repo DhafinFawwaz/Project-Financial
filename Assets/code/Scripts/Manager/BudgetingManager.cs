@@ -9,10 +9,16 @@ public class BudgetingManager : MonoBehaviour
     [SerializeField] BelanjaList _belanjaList;
     [SerializeField] SceneTransition _sceneTransition;
     [SerializeField] string _sceneToLoad = "World";
+    [SerializeField] KTPWorld _ktpWorld;
 
     void Start()
     {
         _pieChart.SetAndAnimatePie(0.2f, 0.3f, 0.5f);
+
+        _ktpWorld.SetMoney(Save.Data.Money)
+            .SetHappiness(Save.Data.Happiness)
+            .SetHealth(Save.Data.Health)
+            .SetSkillPoint(Save.Data.SkillPoin);
     }
 
 

@@ -4174,6 +4174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layoutGroup: {fileID: 871835455}
   _rt: {fileID: 871835453}
+  fiscalGuardianLoader: {fileID: 1265965231}
 --- !u!1 &946336797
 GameObject:
   m_ObjectHideFlags: 0
@@ -6055,7 +6056,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67a28cfd319f7f1418edfd8c3a0834b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _data: {fileID: 11400000, guid: 5d95798913de5b4489901106410fcf36, type: 2}
+  _data:
+  - {fileID: 11400000, guid: 5d95798913de5b4489901106410fcf36, type: 2}
+  - {fileID: 11400000, guid: d1fa29bf8f2726f45b091ef89560e997, type: 2}
+  - {fileID: 11400000, guid: 97733109a6c665447b3a2d8ae6f50073, type: 2}
+  - {fileID: 11400000, guid: dcd4cb1a26c84154c9bbdafcf09e579c, type: 2}
   _streamingManager: {fileID: 1472308244}
   _isStartWithDialog: 1
   _textRTA: {fileID: 800145552}

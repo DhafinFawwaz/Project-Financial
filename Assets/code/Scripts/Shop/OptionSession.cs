@@ -84,6 +84,7 @@ public class OptionSession : MonoBehaviour
     }
     void CancelTimerCountdown()
     {
+        _timerCountdownKey++;
         _vignetteEffect.ResetLevel();
         _vignetteEffect.gameObject.SetActive(false);
     }

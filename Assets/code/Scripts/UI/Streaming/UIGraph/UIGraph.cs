@@ -8,7 +8,7 @@ public class UIGraph : MonoBehaviour
     [SerializeField] RectTransform _dotPrefab;
     List<RectTransform> _objects = new List<RectTransform>();
     [SerializeField] RectTransform _area;
-    public void SetData(List<int> data)
+    public void SetData(List<long> data)
     {
         // Clear old data
         foreach (var obj in _objects)
@@ -22,7 +22,7 @@ public class UIGraph : MonoBehaviour
         float height = _area.rect.height;
 
         // Find max value
-        int max = 0;
+        long max = 0;
         foreach (var d in data)
             if (d > max) max = d;
 

@@ -41,12 +41,16 @@ public class KTPWorld : MonoBehaviour
     public KTPWorld SetHealth(double health) 
     {
         _healthText.text = health.ToString();
+        _redBar.fillAmount = (float)health/100;
+        _healthIcon.anchoredPosition = Vector2.Lerp(_healthPositionLeft, _healthPositionRight, _redBar.fillAmount);
         return this;
     }
 
     public KTPWorld SetHappiness(double happiness)
     {
         _happinessText.text = happiness.ToString();
+        _yellowBar.fillAmount = (float)happiness/100;
+        _happinessIcon.anchoredPosition = Vector2.Lerp(_happinessPositionLeft, _happinessPositionRight, _yellowBar.fillAmount);
         return this;
     }
 

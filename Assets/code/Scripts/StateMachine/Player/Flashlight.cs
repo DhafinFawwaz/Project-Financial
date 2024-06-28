@@ -17,13 +17,18 @@ public class Flashlight : MonoBehaviour
         Knockback = 120,
         StunDuration = 3
     };
+
+
+    bool _isInSceneBelanja;
     void Start()
     {
         transparentColor = initColor; transparentColor.a = 0;
+        _isInSceneBelanja = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Belanja";
     }
 
     void Update()
     {
+        if(!_isInSceneBelanja) return;
         if(InputManager.GetMouseButtonDown(0)) ToggleFlash();
         AdjustFlashRotationBasedOnMouse();
     }

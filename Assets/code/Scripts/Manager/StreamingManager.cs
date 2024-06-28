@@ -11,7 +11,7 @@ public class StreamingManager : MonoBehaviour
 
     [Header("Face")]
     [SerializeField] TextAnimation _views;
-    [SerializeField] int _viewCounter = 1000;
+    [SerializeField] int _viewCounter = 500;
     [SerializeField] GameObject _upViews;
     [SerializeField] GameObject _downViews;
     [SerializeField] Sprite[] _faceSprites;
@@ -52,7 +52,8 @@ public class StreamingManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI _pajakBulananText;
     [SerializeField] TextMeshProUGUI _cicilanKreditText;
 
-
+    int _correctCount = 0;
+    int _wrongCount = 0;
 
 
     public static FiscalGuardianData CurrentFiscalGuardianData;
@@ -60,7 +61,7 @@ public class StreamingManager : MonoBehaviour
     public void StartGame()
     {
         _commentSection.Play();
-        _views.SetAndAnimate(0, 1000, 0.5f);
+        _views.SetAndAnimate(0, Mathf.CeilToInt(Save.Data.SubscriberAmount/100), 0.5f);
 
         _peopleAppearAnimation.Play();
         StartCoroutine(UpdatingFace());
@@ -217,12 +218,14 @@ public class StreamingManager : MonoBehaviour
         // Human, accepted
         if(!CurrentFiscalGuardianData.People[_currentPeopleIndex].IsShadow)
         {
+            _correctCount++;
             _closeGateHumanCeklisAnimation.Play();
             yield return new WaitForSecondsRealtime(0.2f);
             IncreaseViews();
         }
         else // Shadow, accepted
         {
+            _wrongCount++;
             _closeGateShadowCeklisAnimation.Play();
             yield return new WaitForSecondsRealtime(0.2f);
             DecreaseViews();
@@ -238,6 +241,7 @@ public class StreamingManager : MonoBehaviour
         // Human, denied
         if(!CurrentFiscalGuardianData.People[_currentPeopleIndex].IsShadow)
         {
+            _wrongCount++;
             _topText.SetText(CurrentFiscalGuardianData.People[_currentPeopleIndex].WrongMessage)
                 .Show()
                 .SetOnceComplete(() => {
@@ -248,6 +252,7 @@ public class StreamingManager : MonoBehaviour
         }
         else // Shadow, denied
         {
+            _correctCount++;
             _closeGateShadowXAnimation.Play();
             yield return new WaitForSecondsRealtime(0.2f);
             IncreaseViews();
@@ -262,17 +267,47 @@ public class StreamingManager : MonoBehaviour
         if(_currentPeopleIndex == CurrentFiscalGuardianData.People.Length)
         {
             // End of the game
-            _sceneTransition.StartSceneTransition("AfterStreaming");
+            HandleGameEnd();
             return;
         }
         Refresh();
         _peopleAppearAnimation.Play();
     }
 
+    void HandleGameEnd()
+    {
+        _sceneTransition.StartSceneTransition("AfterStreaming");
+        long profit = (long) ((10.0f-_wrongCount)/10.0f * (Random.Range(30000, 40000)));
+        profit = (long)Mathf.RoundToInt(profit/1000) * 1000;
+        Save.Data.Money += profit;
+        Save.Data.Health -= 10;
+        Save.Data.Happiness -= (_wrongCount*4) - 7;
+        Save.Data.SubscriberAmount += _viewCounter;
+        Save.Data.StreamingCounter[Save.Data.CurrentDay]++;
 
+        AfterStreaming.Penonton = _viewCounter;
+        AfterStreaming.NewSubscriber = _correctCount;
+        AfterStreaming.Penghasilan = profit;
+        AfterStreaming.TotalSubscriber = Save.Data.SubscriberAmount;
+        Save.Data.GainedSubscriberEachDay[Save.Data.CurrentDay] += _viewCounter;
+        AfterStreaming.GainedSubscriberEachDay = Save.Data.GainedSubscriberEachDay;
+    }
+
+
+
+    float viewsIncreaseDelta()
+    {
+        return _viewCounter * Random.Range(0.07f, 0.13f);
+    } 
+
+    float viewsDecreaseDelta()
+    {
+        return _viewCounter * Random.Range(0.03f, 0.07f);
+    } 
     public void IncreaseViews()
     {
-        _views.SetAndAnimate(_viewCounter, (_viewCounter += Random.Range(400, 600)), 0.5f);
+        int _oldViewCounter = _viewCounter;
+        _views.SetAndAnimate(_oldViewCounter, (_viewCounter += (int)viewsIncreaseDelta()), 0.5f);
         _upViews.SetActive(true);
         _downViews.SetActive(false);
         HappyFace();
@@ -280,7 +315,7 @@ public class StreamingManager : MonoBehaviour
 
     public void DecreaseViews()
     {
-        int random = Mathf.Max(_viewCounter - Random.Range(400, 600), 0);
+        int random = Mathf.Max(_viewCounter - (int)viewsDecreaseDelta(), 0);
         _views.SetAndAnimate(_viewCounter, random, 0.5f);
         _viewCounter = random;
         _upViews.SetActive(false);

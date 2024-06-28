@@ -57,14 +57,20 @@ public class CatalogGenerator : MonoBehaviour
             if(item.Health > 0 && item.Happiness > 0)
             {
                 obj = Instantiate(_buttonTypes[2], parent);
+                obj.transform.GetChild(0).GetChild(4).GetComponent<TextMeshProUGUI>().text = item.Health.ToString();
+                obj.transform.GetChild(0).GetChild(5).GetComponent<TextMeshProUGUI>().text = item.Happiness.ToString();
             }
             else if(item.Health > 0)
             {
                 obj = Instantiate(_buttonTypes[1], parent);
+                obj.transform.GetChild(0).GetChild(4).GetComponent<TextMeshProUGUI>().text = item.Health.ToString();
+                obj.transform.GetChild(0).GetChild(5).gameObject.SetActive(false);
             }
             else if(item.Happiness > 0)
             {
                 obj = Instantiate(_buttonTypes[0], parent);
+                obj.transform.GetChild(0).GetChild(4).gameObject.SetActive(false);
+                obj.transform.GetChild(0).GetChild(5).GetComponent<TextMeshProUGUI>().text = item.Happiness.ToString();
             }
             else Debug.LogError("Item " + item.Name + " has no health nor happiness value");
 

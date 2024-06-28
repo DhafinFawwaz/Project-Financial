@@ -49,7 +49,10 @@ public class Kuliah : MonoBehaviour
         int randRotAmount = Random.Range(_minRot, _maxRot);
         StartCoroutine(TaskLocalEulerAngles(_wheel, _wheel.localEulerAngles, new Vector3(0, 0, randRot + randRotAmount*360), 4, Ease.InOutQuad));
         _onSpinHeartEnd.Invoke();
-        StartCoroutine(DelayAnimation(_animationUIs[Random.Range(0, 2)], 4));
+
+        int randVal = Random.Range(0, 2);
+        UpdateKTP(randVal);
+        StartCoroutine(DelayAnimation(_animationUIs[randVal], 4));
     }
 
     public void StartSpinWheelUngu()
@@ -65,9 +68,31 @@ public class Kuliah : MonoBehaviour
         int randRotAmount = Random.Range(_minRot, _maxRot);
         StartCoroutine(TaskLocalEulerAngles(_wheel, _wheel.localEulerAngles, new Vector3(0, 0, randRot + randRotAmount*360), 4, Ease.InOutQuad));
         _onSpinUnguEnd.Invoke();
-        StartCoroutine(DelayAnimation(_animationUIs[Random.Range(2, 4)], 4));
+
+        int randVal = Random.Range(2, 4);
+        UpdateKTP(randVal);
+        StartCoroutine(DelayAnimation(_animationUIs[randVal], 4));
 
         StartCoroutine(DelayDone(6));
+    }
+
+
+    void UpdateKTP(int index)
+    {
+        switch(index){
+            case 0: 
+                Save.Data.Health -= 15;
+                break;
+            case 1: 
+                Save.Data.Health -= 25;
+                break;
+            case 2: 
+                Save.Data.Happiness -= 30;
+                break;
+            case 3: 
+                Save.Data.Happiness -= 20;
+                break;
+        }
     }
 
     IEnumerator DelayAnimation(AnimationUI anim, float delay)

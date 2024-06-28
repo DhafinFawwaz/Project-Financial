@@ -26,11 +26,17 @@ public class WorldUI : MonoBehaviour
 
     void Awake()
     {
+        RefreshStates();
+    }
+
+    public void RefreshStates()
+    {
         _belanjaList.SetList(Save.Data.CurrentListBelanja);
+        
+        _dateText.text = (Save.Data.CurrentDay+1).ToString();
+
         if(_isBelanja) HandleBelanjaState();
         else HandleWorldState();
-
-        StartGame();
     }
 
     void HandleBelanjaState()
@@ -41,7 +47,6 @@ public class WorldUI : MonoBehaviour
         _tasBottomRightParent.gameObject.SetActive(false);
         _tasRightParent.gameObject.SetActive(true);
 
-        _dateText.text = Save.Data.CurrentDay.ToString();
 
         _ktpBelanja.gameObject.SetActive(true);
         _ktpWorld.gameObject.SetActive(false);
@@ -62,7 +67,7 @@ public class WorldUI : MonoBehaviour
 
         _ktpBelanja.gameObject.SetActive(false);
         _ktpWorld.gameObject.SetActive(true);
-        _ktpWorld.SetMoney(Save.Data.CurrentBelanjaMoney)
+        _ktpWorld.SetMoney(Save.Data.Money)
             .SetHappiness(Save.Data.Happiness)
             .SetHealth(Save.Data.Health)
             .SetSkillPoint(Save.Data.SkillPoin);
@@ -86,6 +91,16 @@ public class WorldUI : MonoBehaviour
         for(int i = 0; i < choosenOption.BuyCount; i++)
         {
             _belanjaList.AddToCart(itemData);        
+        }
+    }
+
+
+    [SerializeField] SceneTransition _sceneTransition;
+    public void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            // _sceneTransition.StartSceneTransition("MainMenu");
         }
     }
 }

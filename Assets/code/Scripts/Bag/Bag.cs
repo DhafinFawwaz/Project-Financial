@@ -6,6 +6,7 @@ using UnityEngine;
 public class Bag : MonoBehaviour
 {
     [SerializeField] AnimationUI _animationUI;
+    [SerializeField] AnimationUI _animationUIReversed;
     [SerializeField] Gosokable[] _gosokables;
     [SerializeField] GameObject[] _gosokableBlokers;
     [SerializeField] float _bagAnimationDuration = 0.3f;
@@ -26,17 +27,12 @@ public class Bag : MonoBehaviour
 
         _isShowing = !_isShowing;
         if(_isShowing) _animationUI.Play();
-        else _animationUI.PlayReversed();
+        else _animationUIReversed.Play();
     }
 
     void Update()
     {
         if(_popUpBuy.IsVisible || _popUpCannotBuy.IsVisible) return;
-
-        if(_isShowing && InputManager.GetKeyDown(KeyCode.Escape))
-        {
-            Toggle();
-        }
 
         if(InputManager.GetKeyDown(KeyCode.R))
         {

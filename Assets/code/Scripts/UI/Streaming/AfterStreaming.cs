@@ -7,20 +7,30 @@ public class AfterStreaming : MonoBehaviour
     [SerializeField] UIGraph _graph;
     [SerializeField] TextAnimation _penontonText;
     [SerializeField] TextAnimation _newSubscriberText;
-    [SerializeField] TextAnimation _penghasilanText;
+    [SerializeField] MoneyAnimation _penghasilanText;
     [SerializeField] TextAnimation _totalSubscriberText;
     [SerializeField] ImageFillAnimation _fillAnimation;
     [SerializeField] SceneTransition _sceneTransition;
 
-    public static int Penonton = 1000;
-    public static int NewSubscriber = 100;
-    public static int Penghasilan = 10;
-    public static int TotalSubscriber = 50100;
+    public static long Penonton = 1000;
+    public static long NewSubscriber = 100;
+    public static long Penghasilan = 10;
+    public static long TotalSubscriber = 50100;
     const int TARGET_SUBSCRIBER = 1000000;
+    public static List<long> GainedSubscriberEachDay = new List<long>();
 
     void Start()
     {
-        _graph.SetData(new List<int> { 100, 130, 50, 30, 70, 10, 100, 100, 50, 40 });
+        List<long> list = new List<long>();
+        for(int i = 0; i < GainedSubscriberEachDay.Count; i++)
+        {
+            if(GainedSubscriberEachDay[i] != 0)
+            {
+                list.Add(GainedSubscriberEachDay[i]);
+            }
+        }
+        list.Add(0);
+        _graph.SetData(list);
         _penontonText.SetAndAnimate(0, Penonton, 0.5f);
         _newSubscriberText.SetAndAnimate(0, NewSubscriber, 0.5f);
         _penghasilanText.SetAndAnimate(0, Penghasilan, 0.5f);

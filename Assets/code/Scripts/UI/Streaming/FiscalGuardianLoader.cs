@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class FiscalGuardianLoader : MonoBehaviour
 {
-    [SerializeField] FiscalGuardianData _data;
+    [SerializeField] FiscalGuardianData[] _data;
     [SerializeField] StreamingManager _streamingManager;
 
     [Header("Dialog")]
@@ -17,7 +17,7 @@ public class FiscalGuardianLoader : MonoBehaviour
     [SerializeField] GameObject _dialogCloser;
     void Awake()
     {
-        StreamingManager.CurrentFiscalGuardianData = _data;
+        StreamingManager.CurrentFiscalGuardianData = _data[Save.Data.StreamingCounter[Save.Data.CurrentDay] % _data.Length];
     }
 
     public void Play()

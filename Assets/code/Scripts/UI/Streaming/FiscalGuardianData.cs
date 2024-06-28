@@ -111,6 +111,7 @@ public class FiscalGuardianDataEditor : Editor
             EditorGUILayout.LabelField($"Total Pengeluaran {people.TotalPengeluaran}");
             EditorGUILayout.LabelField($"Pajak Bulanan {people.PajakBulanan}");
             EditorGUILayout.LabelField($"Cicilan {people.CicilanKredit}");
+            EditorGUILayout.LabelField($"Is Shadow {people.IsShadow}");
             EditorGUILayout.Space();
         }
 
@@ -132,6 +133,16 @@ public class FiscalGuardianDataEditor : Editor
                 if (dts[i] == dts[i - 1])
                 {
                     dts[i] = dts[i].AddDays(1);
+                }
+            }
+
+            // ensure the month is all same
+            int month = dts[0].Month;
+            for(int i = 0; i < dts.Count; i++)
+            {
+                if(dts[i].Month != month)
+                {
+                    dts[i] = new DateTime(dts[i].Year, month, dts[i].Day);
                 }
             }
 
@@ -163,7 +174,7 @@ public class FiscalGuardianDataEditor : Editor
             {
                 foreach (var catatan in people.Catatan)
                 {
-                    long val = UnityEngine.Random.Range(0, 200);
+                    long val = UnityEngine.Random.Range(0, 120);
                     catatan.Pengeluaran = val * 1000;
                 }
             }
@@ -173,7 +184,7 @@ public class FiscalGuardianDataEditor : Editor
         {
             foreach (var people in ((FiscalGuardianData)target).People)
             {
-                people.CicilanKredit = UnityEngine.Random.Range(0, 1000) * 1000;
+                people.CicilanKredit = UnityEngine.Random.Range(0, 700) * 1000;
             }
         }
 

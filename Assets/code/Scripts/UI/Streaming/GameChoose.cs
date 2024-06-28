@@ -24,6 +24,7 @@ public class GameChoose : MonoBehaviour
         _initialX = GetComponent<RectTransform>().anchoredPosition.x;
     }
 
+    [SerializeField] FiscalGuardianLoader fiscalGuardianLoader;
     void Update()
     {
         if(InputManager.GetKeyDown(KeyCode.RightArrow))
@@ -31,7 +32,12 @@ public class GameChoose : MonoBehaviour
         else if(InputManager.GetKeyDown(KeyCode.LeftArrow))
             PreviousPage();
         else if(InputManager.GetKeyDown(KeyCode.Return))
+        {
             OnGameSelected?.Invoke(_currentPage);
+            if(_currentPage == 0)
+                fiscalGuardianLoader.Play();
+
+        }
     }
 
     float _moveLength => _itemWidth + _layoutSpacing;

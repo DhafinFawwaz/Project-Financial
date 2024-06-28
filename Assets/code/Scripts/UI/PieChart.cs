@@ -24,6 +24,7 @@ public class PieChart : MonoBehaviour
 
     public void SetAndAnimatePie(float blue, float yellow, float red)
     {
+        if(!gameObject.activeInHierarchy) return;
         StartCoroutine(Animation(_bluePie, _blueArrow, blue, 1f));
         StartCoroutine(Animation(_yellowPie, _yellowArrow, yellow, 1f));
         StartCoroutine(Animation(_redPie, _redArrow, 1, 1f));
