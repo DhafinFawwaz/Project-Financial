@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 public class FiscalGuardianLoader : MonoBehaviour
@@ -15,6 +16,10 @@ public class FiscalGuardianLoader : MonoBehaviour
     [TextArea]
     [SerializeField] string _message;
     [SerializeField] GameObject _dialogCloser;
+
+    [Header("Story")]
+    [SerializeField] GameObject _firstTimeDialog;
+    [SerializeField] UnityEvent _onFirstTime;
     void Awake()
     {
         StreamingManager.CurrentFiscalGuardianData = _data[Save.Data.StreamingCounter[Save.Data.CurrentDay] % _data.Length];
@@ -22,7 +27,8 @@ public class FiscalGuardianLoader : MonoBehaviour
 
     public void Play()
     {
-        StartCoroutine(DelayAwake());
+        if(Save.Data.CurrentDay == 0 && Save.Data.StreamingCounter[0] == 0) LoadDialog();
+        else StartCoroutine(DelayAwake());
     }
 
     IEnumerator DelayAwake()
@@ -46,4 +52,10 @@ public class FiscalGuardianLoader : MonoBehaviour
         _dialogCloser.SetActive(false);
     }
 
+
+    void LoadDialog()
+    {
+        _firstTimeDialog.gameObject.SetActive(true);
+        _onFirstTime?.Invoke();
+    }
 }

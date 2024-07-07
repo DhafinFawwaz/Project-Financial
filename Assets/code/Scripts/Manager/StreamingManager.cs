@@ -52,16 +52,30 @@ public class StreamingManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI _pajakBulananText;
     [SerializeField] TextMeshProUGUI _cicilanKreditText;
 
+    [Header("Text")]
+    [SerializeField] TextMeshProUGUI _peopleLeft;
+
+    [Header("GameOver")]
+    [SerializeField] TextMeshProUGUI _correntText;
+    [SerializeField] TextMeshProUGUI _wrongText;
+    [SerializeField] GameObject[] _starGameOvers;
+    [SerializeField] AnimationUI _gameEndAnimation;
+
+
     int _correctCount = 0;
     int _wrongCount = 0;
 
 
     public static FiscalGuardianData CurrentFiscalGuardianData;
     int _currentPeopleIndex = 0;
+
+    void Awake()
+    {
+        _views.SetAndAnimate(0, Mathf.CeilToInt(Save.Data.SubscriberAmount/100), 0.5f);
+    }
     public void StartGame()
     {
         _commentSection.Play();
-        _views.SetAndAnimate(0, Mathf.CeilToInt(Save.Data.SubscriberAmount/100), 0.5f);
 
         _peopleAppearAnimation.Play();
         StartCoroutine(UpdatingFace());
@@ -78,6 +92,11 @@ public class StreamingManager : MonoBehaviour
         }
 
         Refresh();
+    }
+
+    public void InitViewsAnimated()
+    {
+        _views.SetAndAnimate(0, Mathf.CeilToInt(Save.Data.SubscriberAmount/100), 0.5f);
     }
 
     IEnumerator UpdatingFace()
@@ -127,6 +146,9 @@ public class StreamingManager : MonoBehaviour
         _pengeluaranTotalText.text = people.TotalPengeluaran.ToStringRupiahFormat();
         _pajakBulananText.text = people.PajakBulanan.ToStringRupiahFormat();
         _cicilanKreditText.text = people.CicilanKredit.ToStringRupiahFormat();
+
+
+        _peopleLeft.text = (_currentPeopleIndex+1) + "/" + CurrentFiscalGuardianData.People.Length.ToString();
     }
 
 
@@ -276,7 +298,6 @@ public class StreamingManager : MonoBehaviour
 
     void HandleGameEnd()
     {
-        _sceneTransition.StartSceneTransition("AfterStreaming");
         long profit = (long) ((10.0f-_wrongCount)/10.0f * (Random.Range(30000, 40000)));
         profit = (long)Mathf.RoundToInt(profit/1000) * 1000;
         Save.Data.Money += profit;
@@ -291,6 +312,18 @@ public class StreamingManager : MonoBehaviour
         AfterStreaming.TotalSubscriber = Save.Data.SubscriberAmount;
         Save.Data.GainedSubscriberEachDay[Save.Data.CurrentDay] += _viewCounter;
         AfterStreaming.GainedSubscriberEachDay = Save.Data.GainedSubscriberEachDay;
+
+        _correntText.text = (CurrentFiscalGuardianData.People.Length - _wrongCount).ToString();
+        _wrongText.text = _wrongCount.ToString();
+
+        if(_wrongCount == 0) _starGameOvers[2].SetActive(true);
+        else if(CurrentFiscalGuardianData.People.Length == _wrongCount) _starGameOvers[0].SetActive(true);
+        else _starGameOvers[1].SetActive(true);
+
+        Debug.Log(_wrongCount);
+        Debug.Log(CurrentFiscalGuardianData.People.Length);
+
+        _gameEndAnimation.Play();
     }
 
 

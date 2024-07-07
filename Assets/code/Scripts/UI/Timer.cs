@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 public class Timer : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class Timer : MonoBehaviour
     // public const string TimeFormat = @"hh\:mm\:ss";
     // minute and seconds only
     public const string TimeFormat = @"mm\:ss";
+
+    [SerializeField] UnityEvent _onTimeEnd;
     
     void Update()
     {
@@ -28,7 +31,11 @@ public class Timer : MonoBehaviour
         _timePlaying = TimeSpan.FromSeconds(_elapsedTime);
         _elapsedTimeStr = _timePlaying.ToString(TimeFormat);
         _timerText.text = _prefix+_elapsedTimeStr;
-        if(_elapsedTime <= 0)_timerGoing = false;
+        if(_elapsedTime <= 0)
+        {
+            _timerGoing = false;
+            _onTimeEnd?.Invoke();
+        }
     }
 
     

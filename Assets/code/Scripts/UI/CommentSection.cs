@@ -6,6 +6,12 @@ public class CommentSection : MonoBehaviour
     [SerializeField] TextMeshProUGUI _commentText;
     [SerializeField] CommentList _commentList;
     [SerializeField] float _delayEachComment = 0.3f;
+    [SerializeField] bool _playOnAwake = true;
+
+    void Awake()
+    {
+        if(_playOnAwake) Play();
+    }
 
     void AddComment(string author, string comment)
     {

@@ -8,6 +8,8 @@ public class StoryWorld : MonoBehaviour
     [SerializeField] TextMeshProUGUI _missionText;
     [SerializeField] GameObject _shopInteractable;
     [SerializeField] GameObject _itbInteractable;
+    [SerializeField] GameObject _miauInteractable;
+    [SerializeField] GameObject _houseInteractable;
     void Start()
     {
         RefreshStates();
@@ -25,6 +27,23 @@ public class StoryWorld : MonoBehaviour
         {
             _missionText.text = "Ayo ke ITB!";
             _itbInteractable.SetActive(true);
+        }
+
+
+        if(Save.Data.HasDoneKuliah)
+        {
+            _missionText.text = "Belanja di Bunga Mart Yuk!.";
+            _itbInteractable.gameObject.SetActive(false);
+            _shopInteractable.SetActive(true);
+        }
+
+        if(Save.Data.JustAfterFirstBelanja)
+        {
+            _missionText.text = "Capek, streaming atau tidur yuk!";
+            _itbInteractable.gameObject.SetActive(false);
+            _shopInteractable.SetActive(false);
+            _miauInteractable.SetActive(true);
+            _houseInteractable.SetActive(false);
         }
     }
 

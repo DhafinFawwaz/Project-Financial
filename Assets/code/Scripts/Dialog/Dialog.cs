@@ -165,5 +165,7 @@ public class Dialog : MonoBehaviour
             yield return new WaitForSeconds(_delayEachCharacter);
             if(_key != requirement) break;
         }
+        if(_key == requirement)
+            _dialogText.maxVisibleCharacters = _dialogText.text.Length;
     }
 }

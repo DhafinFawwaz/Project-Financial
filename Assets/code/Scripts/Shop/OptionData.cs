@@ -25,11 +25,11 @@ public class OptionContent
     [SerializeField] int _health;
     [SerializeField] int _happiness;
     [SerializeField] bool _isUp;
-    public bool Diskon => _diskon;
-    public bool Inflasi => _inflasi;
-    public bool Buy1get1 => _buy1get1;
-    public long Price => _price;
-    public int Health => _health;
-    public int Happiness => _happiness;
-    public bool IsUp => _isUp;
+    public bool Diskon {get => _diskon; set => _diskon = value;}
+    public bool Inflasi {get => _inflasi; set =>_inflasi = value;}
+    public bool Buy1get1 {get => _buy1get1; set => _buy1get1 = value;}
+    public int Price {get => _price; set => _price = value;}
+    public int Health {get => _health; set => _health = value;}
+    public int Happiness {get => _happiness; set => _happiness = value;}
+    public bool IsUp {get => _isUp; set => _isUp = value;}
 }

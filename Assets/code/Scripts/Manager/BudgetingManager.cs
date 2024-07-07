@@ -28,7 +28,6 @@ public class BudgetingManager : MonoBehaviour
         {
             Save.Data.CurrentListBelanja  = _belanjaList.ListToBuy;
             Save.Data.CurrentBelanjaMoney = _belanjaList.CalculateTotalPrive();
-            Save.SaveData();
             _sceneTransition.StartSceneTransition(_sceneToLoad);
         }
     }

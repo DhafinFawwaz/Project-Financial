@@ -98,6 +98,12 @@ public class CatatanDrawer : PropertyDrawer
 [CustomEditor(typeof(FiscalGuardianData))]
 public class FiscalGuardianDataEditor : Editor
 {
+    List<DateTime> SortDateTime(List<DateTime> dt)
+    {
+        // dt.Sort((a, b) => a.Day.CompareTo(b.Day));
+        return dt;
+    }
+
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
@@ -125,16 +131,6 @@ public class FiscalGuardianDataEditor : Editor
                     dts.Add(RandomDay2024());
                 }
             }
-            // sort the dates
-            dts.Sort();
-            // ensure the dates are unique
-            for (int i = 1; i < dts.Count; i++)
-            {
-                if (dts[i] == dts[i - 1])
-                {
-                    dts[i] = dts[i].AddDays(1);
-                }
-            }
 
             // ensure the month is all same
             int month = dts[0].Month;
@@ -146,12 +142,30 @@ public class FiscalGuardianDataEditor : Editor
                 }
             }
 
+            // sort the dates
+            dts = SortDateTime(dts);
+
+
+
+            // ensure the dates are unique
+            for (int i = 1; i < dts.Count; i++)
+            {
+                if (dts[i] == dts[i - 1])
+                {
+                    dts[i] = dts[i].AddDays(1);
+                }
+            }
+
             foreach (var people in ((FiscalGuardianData)target).People)
             {
-                foreach (var catatan in people.Catatan)
+                // foreach (var catatan in people.Catatan)
+                // {
+                //     catatan.Tanggal = dts[0].ToString("dd-MM-yyyy");
+                //     dts.RemoveAt(0);
+                // }
+                for(int i = 0; i < people.Catatan.Length; i++)
                 {
-                    catatan.Tanggal = dts[0].ToString("dd-MM-yyyy");
-                    dts.RemoveAt(0);
+                    people.Catatan[i].Tanggal = dts[i].ToString("dd-MM-yyyy");
                 }
             }
         }
@@ -202,7 +216,7 @@ public class FiscalGuardianDataEditor : Editor
         DateTime start = new DateTime(1995, 1, 1);
         int range = (DateTime.Today - start).Days;           
         DateTime dt = start.AddDays(gen.Next(range));
-        return new DateTime(2024,dt.Month,dt.Day);
+        return new DateTime(2024,dt.Month,UnityEngine.Random.Range(1, 29));
     }
 }
 #endif

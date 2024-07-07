@@ -8,7 +8,7 @@ public class SaveData
     public double Happiness = 100;
     public double Health = 100;
     public int SkillPoin = 0;
-    public int CurrentDay = 1;
+    public int CurrentDay = 0;
     public long SubscriberAmount = 50000;
 
     public List<ItemCount> CurrentListBelanja = new List<ItemCount>();
@@ -19,7 +19,7 @@ public class SaveData
         Money = 100000;
         Happiness = 100;
         Health = 100;
-        CurrentDay = 1;
+        CurrentDay = 0;
         CurrentListBelanja = new List<ItemCount>();
         CurrentBelanjaMoney = 0;
         SkillPoin = 0;
@@ -30,6 +30,9 @@ public class SaveData
             StreamingCounter.Add(0);
             GainedSubscriberEachDay.Add(0);
         }
+
+        HasDoneKuliah = false;
+        JustAfterFirstBelanja = false;
     }
 
 
@@ -39,5 +42,11 @@ public class SaveData
     public List<long> GainedSubscriberEachDay = new List<long>();
     public bool HasDay1Sleep = false;
     public bool HasTalkedToNaoRikiInDay2 = false;
+
+    // After kuliah
+    public bool HasDoneKuliah = false;
+    public bool JustAfterFirstBelanja = false;
+
+    public bool GameEnd = false;
 
 }

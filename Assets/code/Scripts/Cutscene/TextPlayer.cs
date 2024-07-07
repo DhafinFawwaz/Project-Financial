@@ -23,6 +23,12 @@ public class TextPlayer : MonoBehaviour
         _dialogText.text = text;
     }
 
+    public void SetTextAndPlay(string text)
+    {
+        SetText(text);
+        Play();
+    }
+
     public void Play()
     {
         StartCoroutine(TextAnimation());
@@ -38,6 +44,8 @@ public class TextPlayer : MonoBehaviour
             yield return new WaitForSeconds(_delayEachCharacter);
             if(_key != requirement) break;
         }
+        if(requirement == _key)
+            _dialogText.maxVisibleCharacters = _dialogText.text.Length;
     }
 
 }

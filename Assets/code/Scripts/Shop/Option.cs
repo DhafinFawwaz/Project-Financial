@@ -59,16 +59,16 @@ public class Option : MonoBehaviour
         _priceText.text = _optionContent.Price.ToStringRupiahFormat();
         _healthText.text = _optionContent.Health.ToString();
         _happinessText.text = _optionContent.Happiness.ToString();
-        if(_optionContent.IsUp)
-        {
-            _up.SetActive(true);
-            _down.SetActive(false);
-        }
-        else
-        {
-            _up.SetActive(false);
-            _down.SetActive(true);
-        }
+        // if(_optionContent.IsUp)
+        // {
+        //     _up.SetActive(true);
+        //     _down.SetActive(false);
+        // }
+        // else
+        // {
+        //     _up.SetActive(false);
+        //     _down.SetActive(true);
+        // }
     }
 
     public void Hide()

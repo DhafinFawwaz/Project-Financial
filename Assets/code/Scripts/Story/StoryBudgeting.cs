@@ -22,5 +22,8 @@ public class StoryBudgeting : MonoBehaviour
             _day3Bg.SetActive(true);
             _pieChart.SetActive(true);
         }
+
+
+        Save.Data.HasDoneKuliah = true;
     }
 }

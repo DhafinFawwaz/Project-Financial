@@ -1389,6 +1389,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1074637511
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1074637513}
+  - component: {fileID: 1074637512}
+  m_Layer: 0
+  m_Name: '[StoryAfterBelanja]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1074637512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074637511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5505beb33c8a03c42815c9b3c279b55b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1074637513
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074637511}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.1742463, y: 1.8632972, z: 0.11196607}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1172634158
 GameObject:
   m_ObjectHideFlags: 0
@@ -2564,7 +2608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneTransition: {fileID: 5644601496464344134, guid: 3401eac2280b27243b5b1c5da04b2024, type: 3}
-  _delay: 0.5
+  _delay: 0
 --- !u!114 &1880502383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2577,8 +2621,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 188a4d197850a004c9ce81dc686e4870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _changeLightColor: 0
-  _lightColor: {r: 1, g: 1, b: 1, a: 1}
+  _changeLightColor: 1
+  _lightColor: {r: 0.33333334, g: 0.4117647, b: 0.74509805, a: 1}
   _movePlayerToSpawnPoint: 1
   _spawnPosition: {x: 2.5, y: 0, z: -2}
 --- !u!1 &2066381902

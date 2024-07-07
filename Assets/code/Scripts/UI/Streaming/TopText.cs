@@ -50,6 +50,7 @@ public class TopText : MonoBehaviour
             yield return new WaitForSeconds(_delayEachCharacter);
             if(_key != requirement) break;
         }
+        _dialogText.maxVisibleCharacters = _dialogText.text.Length;
         yield return new WaitForSeconds(1f);
         _onceComplete?.Invoke();
         _onceComplete = null;

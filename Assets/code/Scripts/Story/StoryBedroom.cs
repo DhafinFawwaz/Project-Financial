@@ -43,6 +43,7 @@ public class StoryBedroom : MonoBehaviour
             _kasurInteractable.SetActive(false);
         }
 
+        Debug.Log(Save.Data.CurrentDay);
         if(Save.Data.CurrentDay >= 1)
         {
             _missionText.text = "Ayo kuliah ke ITB!";
