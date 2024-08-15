@@ -7,11 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MobilOrenSide
-  m_Shader: {fileID: 4800000, guid: 8c7e0db061b63914da44a0731112b807, type: 3}
+  m_Name: IMG_6518
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _ALPHATEST_ON
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -42,7 +41,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a698c3225fe589e4bb1e98cca976c700, type: 3}
+        m_Texture: {fileID: 2800000, guid: 40294f37e862b884ca8ca7383a3653a6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -57,36 +56,25 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _TextureMap:
-        m_Texture: {fileID: 2800000, guid: 873631384f5e5ec48922f02e8fa17297, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - PixelSnap: 0
-    - _Amplitude: 0
     - _BumpScale: 1
-    - _Cutoff: 0.1
+    - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Frequency: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0
+    - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
-    - _Mode: 1
+    - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _ShadowBrightness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Speed: 0
     - _SrcBlend: 1
-    - _TileAmount: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Offset: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
