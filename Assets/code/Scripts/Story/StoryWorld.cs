@@ -17,7 +17,7 @@ public class StoryWorld : MonoBehaviour
 
     void RefreshStates()
     {
-        if(Save.Data.HasDay1Sleep && Save.Data.CurrentDay == 1)
+        if(Save.Data.CurrentDay == 1)
         {
             _missionText.text = "Ngomong ke Nao dan Riki di depan ITB dulu yuk!.";
             _shopInteractable.SetActive(false);
@@ -27,10 +27,11 @@ public class StoryWorld : MonoBehaviour
         {
             _missionText.text = "Ayo ke ITB!";
             _itbInteractable.SetActive(true);
+            _shopInteractable.SetActive(false);
         }
 
 
-        if(Save.Data.HasDoneKuliah)
+        if(Save.Data.CurrentDayData.State == DayState.AfterBudgeting)
         {
             _missionText.text = "Belanja di Bunga Mart Yuk!.";
             _itbInteractable.gameObject.SetActive(false);

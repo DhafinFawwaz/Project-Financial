@@ -36,6 +36,7 @@ public class AfterStreaming : MonoBehaviour
         _penghasilanText.SetAndAnimate(0, Penghasilan, 0.5f);
         _totalSubscriberText.SetAndAnimate(0, TotalSubscriber, 0.5f);
         _fillAnimation.SetEndFill((float)TotalSubscriber / TARGET_SUBSCRIBER).Play();
+        Save.Data.CurrentDayData.State = DayState.AfterStreaming;
     }
 
 

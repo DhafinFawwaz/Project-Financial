@@ -2114,7 +2114,7 @@ MonoBehaviour:
   - {fileID: 655817358}
   - {fileID: 2033140893}
   - {fileID: 780680736}
-  INFLASI_EVERY: 180
+  INFLASI_EVERY: 30
   _inflasiAnimation: {fileID: 658316137}
   _timer: {fileID: 983666438}
 --- !u!1001 &831069229
@@ -4017,7 +4017,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -7566,6 +7566,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2089480488}
     m_Modifications:
+    - target: {fileID: 7643993119125109153, guid: bc68d8fe3a8337447ac178866e0cb63a, type: 3}
+      propertyPath: m_Size.x
+      value: 0.5077896
+      objectReference: {fileID: 0}
+    - target: {fileID: 7643993119125109153, guid: bc68d8fe3a8337447ac178866e0cb63a, type: 3}
+      propertyPath: m_Center.x
+      value: 0.07930118
+      objectReference: {fileID: 0}
     - target: {fileID: 7643993119125109166, guid: bc68d8fe3a8337447ac178866e0cb63a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -7928,10 +7936,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1148156899081703307, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1566544312699461444, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
       propertyPath: OnKerasukan.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1336517924}
+    - target: {fileID: 1778799028593004956, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2005916499913521753, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
       propertyPath: _onComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -8023,6 +8039,10 @@ PrefabInstance:
     - target: {fileID: 7555314985728541788, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
       propertyPath: m_Name
       value: '[Canvas] UI'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7946286172821636990, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8283497348958319366, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
       propertyPath: m_IsActive

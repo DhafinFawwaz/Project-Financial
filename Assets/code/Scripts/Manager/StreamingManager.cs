@@ -304,13 +304,15 @@ public class StreamingManager : MonoBehaviour
         Save.Data.Health -= 10;
         Save.Data.Happiness -= (_wrongCount*4) - 7;
         Save.Data.SubscriberAmount += _viewCounter;
-        Save.Data.StreamingCounter[Save.Data.CurrentDay]++;
+        Save.Data.CurrentDayData.StreamingCounter++;
 
         AfterStreaming.Penonton = _viewCounter;
         AfterStreaming.NewSubscriber = _correctCount;
         AfterStreaming.Penghasilan = profit;
         AfterStreaming.TotalSubscriber = Save.Data.SubscriberAmount;
-        Save.Data.GainedSubscriberEachDay[Save.Data.CurrentDay] += _viewCounter;
+        Debug.Log("Save.Data.CurrentDayData.GainedSubscriber: " + Save.Data.CurrentDayData.GainedSubscriber);
+        Save.Data.CurrentDayData.GainedSubscriber += _viewCounter;
+        Debug.Log("Save.Data.CurrentDayData.GainedSubscriber: " + Save.Data.CurrentDayData.GainedSubscriber);
         AfterStreaming.GainedSubscriberEachDay = Save.Data.GainedSubscriberEachDay;
 
         _correntText.text = (CurrentFiscalGuardianData.People.Length - _wrongCount).ToString();

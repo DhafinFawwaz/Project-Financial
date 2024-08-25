@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 public class CommentSection : MonoBehaviour
@@ -7,16 +8,22 @@ public class CommentSection : MonoBehaviour
     [SerializeField] CommentList _commentList;
     [SerializeField] float _delayEachComment = 0.3f;
     [SerializeField] bool _playOnAwake = true;
+    int _maxComments = 13;
 
     void Awake()
     {
         if(_playOnAwake) Play();
     }
 
+    Queue<string> _commentQueue = new Queue<string>(10);
     void AddComment(string author, string comment)
     {
-        // _commentText.text += $"<b>{author}</b>: {comment}\n";
-        _commentText.text += $"<color=\"yellow\"><b>{author}</b><color=\"white\">\n{comment}<line-height=120%>\n<line-height=100%>";
+        _commentQueue.Enqueue($"<color=\"yellow\"><b>{author}</b><color=\"white\">\n{comment}<line-height=120%>\n<line-height=100%>");
+        if(_commentQueue.Count > _maxComments)
+        {
+            _commentQueue.Dequeue();
+        }
+        _commentText.text = string.Join("", _commentQueue);
     }
 
     public void Play()

@@ -7,6 +7,7 @@ public class Main
     {
         Singleton.Initialize();
         ResolutionManager.Initialize();
+        ResolutionManager.SetResolution(PlayerPrefs.GetInt("Resolution", 3));
         Save.Initialize();
     }
 }

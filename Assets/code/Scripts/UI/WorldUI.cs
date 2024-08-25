@@ -19,10 +19,6 @@ public class WorldUI : MonoBehaviour
     [SerializeField] Timer _diskonTimer;
     [SerializeField] Timer _inflasiTimer;
 
-    float _addedHappiness;
-    float _addedHealth;
-    public float AddedHappiness { get => _addedHappiness; set => _addedHappiness = value; }
-    public float AddedHealth { get => _addedHealth; set => _addedHealth = value; }
 
     void Awake()
     {
@@ -55,6 +51,11 @@ public class WorldUI : MonoBehaviour
             .SetGreenBarFill(1)
             .SetHapiness(Save.Data.Happiness, 0)
             .SetHealth(Save.Data.Health, 0);
+
+
+        _addedHappiness = 0;
+        _addedHealth = 0;
+        _currentBelanjaMoney = Save.Data.CurrentBelanjaMoney;
     }
 
     void HandleWorldState()
@@ -84,6 +85,12 @@ public class WorldUI : MonoBehaviour
 
 
     // Option
+    static double _addedHappiness = 0;
+    static double _addedHealth = 0;
+    static double _currentBelanjaMoney = 0;
+    public static double AddedHappiness { get => _addedHappiness; set => _addedHappiness = value; }
+    public static double AddedHealth { get => _addedHealth; set => _addedHealth = value; }
+    public static double CurrentBelanjaMoney { get => _currentBelanjaMoney; set => _currentBelanjaMoney = value; }
     public void AddItemFromOption(OptionSession option)
     {
         ItemData itemData = Instantiate(option.OptionData.ItemData);
@@ -92,6 +99,17 @@ public class WorldUI : MonoBehaviour
         {
             _belanjaList.AddToCart(itemData);        
         }
+
+        _currentBelanjaMoney -= itemData.Price * choosenOption.BuyCount;
+        _addedHappiness += itemData.Happiness * choosenOption.BuyCount;
+        _addedHealth += itemData.Health * choosenOption.BuyCount;
+
+        _ktpBelanja.SetMoneyTop(Save.Data.Money)
+            .SetMoneyBottom((long)_currentBelanjaMoney)
+            .SetGreenBarFill((float)_currentBelanjaMoney / (float)Save.Data.CurrentBelanjaMoney)
+            .SetHapiness(Save.Data.Happiness, _addedHappiness)
+            .SetHealth(Save.Data.Health, _addedHealth);
+
     }
 
 

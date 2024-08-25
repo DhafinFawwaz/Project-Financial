@@ -19,51 +19,44 @@ public class StoryBedroom : MonoBehaviour
 
     public void RefreshStates()
     {
-        if (Save.Data.StreamingCounter[Save.Data.CurrentDay] == 3)
+        if (Save.Data.CurrentDayData.StreamingCounter == 3)
         {
             _missionText.text = "Udah woi jangan Streaming lagi, waktunya tidur!";
             _streamingInteractable.SetActive(false);
-        }
-        else
-        {
-            if(Save.Data.StreamingCounter[0] == 0)
-            {
-                _missionText.text = "Waktunya Streaming!";
-                _streamingInteractable.SetActive(true);
-            }
+            _kasurInteractable.SetActive(true);
         }
 
-        if(Save.Data.StreamingCounter[Save.Data.CurrentDay] == 1)
+        if(Save.Data.CurrentDayData.StreamingCounter == 1 || Save.Data.CurrentDayData.StreamingCounter == 2)
         {
             _missionText.text = "Waktunya tidur, atau streaming lagi hehe.";
+            _streamingInteractable.SetActive(true);
             _kasurInteractable.SetActive(true);
         } 
-        else 
+
+        if(Save.Data.CurrentDayData.StreamingCounter == 0 && Save.Data.CurrentDayData.State == DayState.AfterBelanja)
         {
+            _missionText.text = "Waktunya Streaming!";
+            _streamingInteractable.SetActive(true);
             _kasurInteractable.SetActive(false);
         }
 
-        Debug.Log(Save.Data.CurrentDay);
-        if(Save.Data.CurrentDay >= 1)
+        if(Save.Data.CurrentDayData.State == DayState.AfterSleeping)
         {
             _missionText.text = "Ayo kuliah ke ITB!";
             _keluarBlocker.SetActive(false);
             _streamingInteractable.SetActive(false);
+            _kasurInteractable.SetActive(false);
         }   
-        else
+
+        if(Save.Data.CurrentDayData.State != DayState.AfterSleeping)
         {
             _keluarBlocker.SetActive(true);
         }
 
-        if(Save.Data.CurrentDay == 0 && Save.Data.StreamingCounter[Save.Data.CurrentDay] == 0)
+        if(Save.Data.CurrentDay == 0 && Save.Data.CurrentDayData.State == DayState.AfterBelanja)
         {
-            Invoke("TriggerDialog", 0.1f);
+            this.Invoke(() => _dialogTrigger.Play(), 0.1f);
         }
-    }
-
-    void TriggerDialog()
-    {
-        _dialogTrigger.Play();
     }
 
     public void IncrementDay()
@@ -71,12 +64,6 @@ public class StoryBedroom : MonoBehaviour
         _startDate.text = (Save.Data.CurrentDay+1).ToString();
         _endDate.text = (Save.Data.CurrentDay+2).ToString();
         Save.Data.CurrentDay++;
-        Debug.Log(Save.Data.CurrentDay);
-
-        if(Save.Data.CurrentDay == 1)
-        {
-            Save.Data.HasDay1Sleep = true;
-        }
     }
 
 }

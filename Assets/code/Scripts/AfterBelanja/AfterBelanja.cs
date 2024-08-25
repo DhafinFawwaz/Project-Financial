@@ -7,8 +7,8 @@ using UnityEngine.Events;
 public class AfterBelanja : MonoBehaviour
 {
     static List<ItemCount> _listCart = new List<ItemCount>();
-    static float _addedHealth;
-    static float _addedhappiness;
+    static double _addedHealth;
+    static double _addedhappiness;
 
     [SerializeField] TextMeshProUGUI _barangText;
     [SerializeField] TextMeshProUGUI _hargaText;
@@ -21,8 +21,8 @@ public class AfterBelanja : MonoBehaviour
 
     public static void SetData(
         List<ItemCount> listCart,
-        float addedHealth,
-        float addedhappiness
+        double addedHealth,
+        double addedhappiness
     )
     {
         _listCart = listCart;
@@ -32,9 +32,6 @@ public class AfterBelanja : MonoBehaviour
 
     void Awake()
     {
-        _ktpWorld.SetMoney(Save.Data.Money)
-            .SetHappiness(Save.Data.Happiness)
-            .SetHealth(Save.Data.Health);
 
         _barangText.text = "";
         _hargaText.text = "";
@@ -56,7 +53,16 @@ public class AfterBelanja : MonoBehaviour
         _sisaText.text = (Save.Data.Money - totalHarga).ToString();
         _addedHealthText.text = _addedHealth.ToString();
         _addedHapinesssisaText.text = _addedhappiness.ToString();
+
+        Save.Data.Money -= (long)totalHarga;
+        Save.Data.Health += _addedHealth;
+        Save.Data.Happiness += _addedhappiness;
         
+        this.Invoke(() => {
+            _ktpWorld.SetMoney(Save.Data.Money)
+                .SetHappiness(Save.Data.Happiness)
+                .SetHealth(Save.Data.Health);
+        }, 0.1f);
     }
 
 

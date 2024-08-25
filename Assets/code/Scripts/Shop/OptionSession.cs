@@ -42,6 +42,10 @@ public class OptionSession : MonoBehaviour
                 {
                     if(j != I) _activeOptions[j].ResetBuyCount();
                 }
+                var option = _activeOptions[I].GetComponent<Option>();
+                option.IncrementBuyCount();
+                // if(WorldUI.CurrentBelanjaMoney >= option.Content.Price * (option.BuyCount+1)) {
+                // }
             });
         }
 

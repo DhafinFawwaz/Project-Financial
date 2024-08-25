@@ -56,7 +56,7 @@ public class KTPWorld : MonoBehaviour
 
     public KTPWorld SetMoney(long money)
     {
-        _moneyText.text = money.ToString();
+        _moneyText.text = money.ToStringCurrencyFormat();
         return this;
     }
 
@@ -64,5 +64,18 @@ public class KTPWorld : MonoBehaviour
     {
         _skillPointText.text = point.ToString();
         return this;
+    }
+
+    void Awake()
+    {
+        RefreshStates();
+    }
+
+    public void RefreshStates()
+    {
+        SetHealth(Save.Data.Health);
+        SetHappiness(Save.Data.Happiness);
+        SetMoney(Save.Data.Money);
+        SetSkillPoint(Save.Data.SkillPoin);
     }
 }

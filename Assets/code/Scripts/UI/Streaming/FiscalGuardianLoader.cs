@@ -22,12 +22,12 @@ public class FiscalGuardianLoader : MonoBehaviour
     [SerializeField] UnityEvent _onFirstTime;
     void Awake()
     {
-        StreamingManager.CurrentFiscalGuardianData = _data[Save.Data.StreamingCounter[Save.Data.CurrentDay] % _data.Length];
+        StreamingManager.CurrentFiscalGuardianData = _data[Save.Data.CurrentDayData.StreamingCounter % _data.Length];
     }
 
     public void Play()
     {
-        if(Save.Data.CurrentDay == 0 && Save.Data.StreamingCounter[0] == 0) LoadDialog();
+        if(Save.Data.CurrentDay == 0 && Save.Data.CurrentDayData.StreamingCounter == 0) LoadDialog();
         else StartCoroutine(DelayAwake());
     }
 

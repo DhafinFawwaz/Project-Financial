@@ -16,8 +16,11 @@ public static class ResolutionManager
     public static void Initialize()
     {
 #if UNITY_STANDALONE_WIN
-        _resolutions = Screen.resolutions.Select(resolution => 
-        new Resolution { width = resolution.width, height = resolution.height }).Distinct().ToArray();
+        for(int i = 0; i < 1; i++)
+        {
+            _resolutions[i].height = Display.main.systemHeight*(i+1)/1;
+            _resolutions[i].width = Display.main.systemWidth*(i+1)/1;
+        }
 #elif UNITY_WEBGL
         for(int i = 0; i < 1; i++)
         {
