@@ -563,6 +563,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1641472870096976220, guid: 6aafaeee0f6302e42bd421abbc03e4a4, type: 3}
   m_PrefabInstance: {fileID: 2348152701724978580}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &230299114 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6301314474018384584, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+  m_PrefabInstance: {fileID: 7555314987237579318}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bcb36b88ae53094fabd50f72b62f7e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &230299117 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4701239413553124324, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+  m_PrefabInstance: {fileID: 7555314987237579318}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bcb36b88ae53094fabd50f72b62f7e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &231127315 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7572138705564427784, guid: 054e334af11352e4ab900bd9f95749f2, type: 3}
@@ -2316,7 +2338,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832826732}
   m_LocalRotation: {x: 0.13052616, y: -0.0000113897295, z: 0.00008651361, w: 0.9914449}
-  m_LocalPosition: {x: -2.6352854, y: 2.598322, z: -8.772146}
+  m_LocalPosition: {x: -2.95, y: 2.5983222, z: -8.834132}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2451,7 +2473,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.13052616, y: -0.0000113897295, z: 0.00008651361, w: 0.9914449}
-  m_LocalPosition: {x: -2.6352854, y: 2.598322, z: -8.772146}
+  m_LocalPosition: {x: -2.95, y: 2.5983222, z: -8.834132}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2715,6 +2737,54 @@ MonoBehaviour:
       - m_Target: {fileID: 818246962}
         m_TargetAssemblyTypeName: BelanjaManager, Assembly-CSharp
         m_MethodName: Inflasi
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1 &986458503 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8548840070542057861, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+  m_PrefabInstance: {fileID: 7555314987237579318}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &986458507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986458503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c49af7e17d9f324cbcad38b0dd6ca27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _keyCode: 113
+  _onKeyDown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 230299117}
+        m_TargetAssemblyTypeName: RectTransformAnimation, Assembly-CSharp
+        m_MethodName: TweenPosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onKeyUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 230299114}
+        m_TargetAssemblyTypeName: RectTransformAnimation, Assembly-CSharp
+        m_MethodName: TweenPosition
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5867,12 +5937,8 @@ Transform:
   m_LocalScale: {x: 0.3626001, y: 0.36260015, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2380427578136117185}
   - {fileID: 3150774536273302586}
-  - {fileID: 3065220991505272242}
-  - {fileID: 6770526861232894495}
   - {fileID: 5355008829952905470}
-  - {fileID: 8455183899109546209}
   m_Father: {fileID: 48192508}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
@@ -6181,7 +6247,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1001 &918239561109093130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6433,50 +6499,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23eb7a7a30864c14a877830bdf191dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1270689711595540902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8032198873766424615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7de63fc2122986f439a50abcd296a0c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spriteList:
-  - {fileID: 21300000, guid: a7f5f64c40360f6469fffa78b2d8a450, type: 3}
-  - {fileID: 21300000, guid: ae5428fa4ac4b5541972872b5a80cbe2, type: 3}
-  - {fileID: 21300000, guid: 1935b3444662dba458eefc28a18aa0f2, type: 3}
-  - {fileID: 21300000, guid: a5fa3a428eb349d42a3149d22de1044c, type: 3}
-  - {fileID: 21300000, guid: 955ce46150fcb42498e8972a7fc53b23, type: 3}
-  - {fileID: 21300000, guid: bcd48e619a40a3245b6f987c0fbb886e, type: 3}
-  - {fileID: 21300000, guid: 69efc29db77dc1749a76f0f4c7ba9dc4, type: 3}
-  - {fileID: 21300000, guid: f1dd74d9394cfc343a2ecd724822b8c1, type: 3}
-  - {fileID: 21300000, guid: f91da743657c63440aa06dc02d310e25, type: 3}
-  - {fileID: 21300000, guid: 2345cc30213c6184da2f064c2d3b61ec, type: 3}
-  _material: {fileID: 2100000, guid: 0bae831c88897944a84222970b016e62, type: 2}
-  _animationDuration: 0.15
-  _loop: 0
-  _playOnAwake: 0
---- !u!1 &1528682043866190934
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2380427578136117185}
-  - component: {fileID: 5229851948708184113}
-  m_Layer: 0
-  m_Name: '[SpriteAnimation] DepanKanan Start'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!4 &1624266916698659001 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5263322313466793791, guid: 7e359dad5e04b1f4a9278528e3da608e, type: 3}
@@ -6686,21 +6708,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23eb7a7a30864c14a877830bdf191dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &2380427578136117185
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1528682043866190934}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2145087825}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2653884748623631271
 Transform:
   m_ObjectHideFlags: 0
@@ -6784,47 +6791,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23eb7a7a30864c14a877830bdf191dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3045227664997110242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5853004692001591556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7de63fc2122986f439a50abcd296a0c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spriteList:
-  - {fileID: 21300000, guid: e96e1bb0b8e888140a6769db6f62420b, type: 3}
-  - {fileID: 21300000, guid: 85eea05474dedec4ba6d88b2fd663ebf, type: 3}
-  - {fileID: 21300000, guid: ffb0d8095eb59a74394ad1354b028625, type: 3}
-  - {fileID: 21300000, guid: 5c1123d000670154180b098a3cbe0cb7, type: 3}
-  - {fileID: 21300000, guid: 77717c72cbe24d34d91aa3d7de02dde0, type: 3}
-  - {fileID: 21300000, guid: 52325aec424dc9642affc0c00d8a07f0, type: 3}
-  - {fileID: 21300000, guid: bbc13d40fe5cdbf49b5c99510d6ab31e, type: 3}
-  - {fileID: 21300000, guid: 33f405e7bade44d4dbb00a358bfd477c, type: 3}
-  - {fileID: 21300000, guid: b5883953d89847245b0d0d2bd0ff6f74, type: 3}
-  _material: {fileID: 2100000, guid: 0bae831c88897944a84222970b016e62, type: 2}
-  _animationDuration: 0.15
-  _loop: 0
-  _playOnAwake: 0
---- !u!4 &3065220991505272242
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8032198873766424615}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2145087825}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &3150774536273302586
 Transform:
   m_ObjectHideFlags: 0
@@ -6838,7 +6804,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2145087825}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3186354105485731390
 PrefabInstance:
@@ -7520,32 +7486,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23eb7a7a30864c14a877830bdf191dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5229851948708184113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1528682043866190934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7de63fc2122986f439a50abcd296a0c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spriteList:
-  - {fileID: 21300000, guid: 94d998eeff0e9834780fb5c58032647d, type: 3}
-  - {fileID: 21300000, guid: d67006212fd370b47adaecab69de6094, type: 3}
-  - {fileID: 21300000, guid: 2d6ef29d233d6d8459587d832d7c894f, type: 3}
-  - {fileID: 21300000, guid: 27f578aa756828c45badf8d47d5aaca3, type: 3}
-  - {fileID: 21300000, guid: da59a7533b481564496ac9693644c667, type: 3}
-  - {fileID: 21300000, guid: 267aeb29f215bb5408506d7e006257f0, type: 3}
-  - {fileID: 21300000, guid: 573dce25e205d0049a7482729cdf7e37, type: 3}
-  - {fileID: 21300000, guid: 843eb44fe51c7d14eb44d215e99e51e5, type: 3}
-  - {fileID: 21300000, guid: c5d39a6d37b6b3f47906a72fa6d93a35, type: 3}
-  _material: {fileID: 2100000, guid: 0bae831c88897944a84222970b016e62, type: 2}
-  _animationDuration: 0.15
-  _loop: 0
-  _playOnAwake: 0
 --- !u!1001 &5285965045273229240
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7627,33 +7567,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2145087825}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5512310167040764947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9034834135829459576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7de63fc2122986f439a50abcd296a0c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spriteList:
-  - {fileID: 21300000, guid: 202415b5b98c872468362dd64b3f8ad5, type: 3}
-  - {fileID: 21300000, guid: b936a5e66db12dc40b6ad3e771e578f9, type: 3}
-  - {fileID: 21300000, guid: 8031fdf16128a8e4e95e8a5225fb11d5, type: 3}
-  - {fileID: 21300000, guid: a37457cfb7a9077478300f4786b433c8, type: 3}
-  - {fileID: 21300000, guid: 5dda75716cfb9e247952fb2ffcf11744, type: 3}
-  - {fileID: 21300000, guid: 8daabcc8961be6f48b1678e417adfea4, type: 3}
-  - {fileID: 21300000, guid: 1f52f779d89b95d4d948be1840530dec, type: 3}
-  - {fileID: 21300000, guid: a0bac9fdfd0ea8e4591dd7a2f63644da, type: 3}
-  _material: {fileID: 2100000, guid: 0bae831c88897944a84222970b016e62, type: 2}
-  _animationDuration: 0.15
-  _loop: 0
-  _playOnAwake: 0
 --- !u!1001 &5817112680108829851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7722,23 +7637,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23eb7a7a30864c14a877830bdf191dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &5853004692001591556
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8455183899109546209}
-  - component: {fileID: 3045227664997110242}
-  m_Layer: 0
-  m_Name: '[SpriteAnimation] DepanBelakang End'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1001 &6441770321430865867
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8112,21 +8010,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23eb7a7a30864c14a877830bdf191dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &6770526861232894495
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9034834135829459576}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2145087825}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6864711343949030978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8275,6 +8158,10 @@ PrefabInstance:
       propertyPath: _onComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1336517924}
+    - target: {fileID: 7527936878618437846, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7555314985728541784, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -8443,6 +8330,7 @@ MonoBehaviour:
   _animationDuration: 0.5
   _loop: 1
   _playOnAwake: 0
+  _playOnEnable: 1
 --- !u!1001 &7940895818057406807
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8581,23 +8469,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5230005601998104936, guid: 9e5bae7e799ce004a92663d77bad646d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9e5bae7e799ce004a92663d77bad646d, type: 3}
---- !u!1 &8032198873766424615
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3065220991505272242}
-  - component: {fileID: 1270689711595540902}
-  m_Layer: 0
-  m_Name: '[SpriteAnimation] DepanKanan End'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1001 &8066401131173634486
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8886,21 +8757,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23eb7a7a30864c14a877830bdf191dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &8455183899109546209
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5853004692001591556}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2145087825}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8499669147712309725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8934,20 +8790,4 @@ MonoBehaviour:
   _animationDuration: 0.5
   _loop: 1
   _playOnAwake: 0
---- !u!1 &9034834135829459576
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6770526861232894495}
-  - component: {fileID: 5512310167040764947}
-  m_Layer: 0
-  m_Name: '[SpriteAnimation] DepanBelakang Start'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
+  _playOnEnable: 1

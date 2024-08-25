@@ -9,6 +9,7 @@ public class SpriteMaterialAnimator : MonoBehaviour
     [SerializeField] float _animationDuration = 1;
     [SerializeField] bool _loop = false;
     [SerializeField] bool _playOnAwake = false;
+    [SerializeField] bool _playOnEnable = false;
     public Action OnAnimationFinished;
 
     int _currentSpriteIndex = 0;
@@ -19,6 +20,14 @@ public class SpriteMaterialAnimator : MonoBehaviour
     void Awake()
     {
         if (_playOnAwake) Play();
+    }
+
+    void OnEnable()
+    {
+        if (_playOnEnable) {
+            _isPlaying = false;
+            Play();
+        }
     }
 
     public void SetFrame(int frameIndex)

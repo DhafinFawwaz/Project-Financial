@@ -1,0 +1,16 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
+
+public class KeyboardEvent : MonoBehaviour
+{
+    [SerializeField] KeyCode _keyCode;
+    [SerializeField] UnityEvent _onKeyDown;
+    [SerializeField] UnityEvent _onKeyUp;
+    void Update()
+    {
+        if(Input.GetKeyDown(_keyCode)) _onKeyDown?.Invoke();
+        else if(Input.GetKeyUp(_keyCode)) _onKeyUp?.Invoke();
+    }
+}
