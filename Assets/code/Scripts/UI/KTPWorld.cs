@@ -75,7 +75,7 @@ public class KTPWorld : MonoBehaviour
     {
         SetHealth(Save.Data.Health);
         SetHappiness(Save.Data.Happiness);
-        SetMoney(Save.Data.Money);
+        SetMoney(Save.Data.CashMoney);
         SetSkillPoint(Save.Data.SkillPoin);
     }
 }

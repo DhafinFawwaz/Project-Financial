@@ -7386,12 +7386,59 @@ PrefabInstance:
       propertyPath: _movePlayerToSpawnPoint
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8566413966477842585, guid: e2d069011175c8944bb5f5b138947ba7, type: 3}
+      propertyPath: OnSceneTrigger.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8566413966477842585, guid: e2d069011175c8944bb5f5b138947ba7, type: 3}
+      propertyPath: OnSceneTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8566413966477842585, guid: e2d069011175c8944bb5f5b138947ba7, type: 3}
+      propertyPath: OnSceneTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2079550777}
+    - target: {fileID: 8566413966477842585, guid: e2d069011175c8944bb5f5b138947ba7, type: 3}
+      propertyPath: OnSceneTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8566413966477842585, guid: e2d069011175c8944bb5f5b138947ba7, type: 3}
+      propertyPath: OnSceneTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Set
+      objectReference: {fileID: 0}
+    - target: {fileID: 8566413966477842585, guid: e2d069011175c8944bb5f5b138947ba7, type: 3}
+      propertyPath: OnSceneTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WorldSetter, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8566413966477842585, guid: e2d069011175c8944bb5f5b138947ba7, type: 3}
+      propertyPath: OnSceneTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8566413966477842587, guid: e2d069011175c8944bb5f5b138947ba7, type: 3}
       propertyPath: m_Name
       value: '[SceneTrigger] ToWorld'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2d069011175c8944bb5f5b138947ba7, type: 3}
+--- !u!1 &2079550776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8566413966477842587, guid: e2d069011175c8944bb5f5b138947ba7, type: 3}
+  m_PrefabInstance: {fileID: 2079550775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2079550777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079550776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 188a4d197850a004c9ce81dc686e4870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movePlayerToSpawnPoint: 0
+  _spawnPosition: {x: -4.304, y: 0, z: -2.46}
 --- !u!1 &2121289555
 GameObject:
   m_ObjectHideFlags: 0

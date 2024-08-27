@@ -15,7 +15,7 @@ public class BudgetingManager : MonoBehaviour
     {
         _pieChart.SetAndAnimatePie(0.2f, 0.3f, 0.5f);
 
-        _ktpWorld.SetMoney(Save.Data.Money)
+        _ktpWorld.SetMoney(Save.Data.CashMoney)
             .SetHappiness(Save.Data.Happiness)
             .SetHealth(Save.Data.Health)
             .SetSkillPoint(Save.Data.SkillPoin);

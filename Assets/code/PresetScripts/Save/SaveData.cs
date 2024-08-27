@@ -13,7 +13,11 @@ public enum DayState
 public class SaveData
 {
     const int MAX_DAY = 15;
-    public long Money = 100000;
+    public long CashMoney = 100000;
+    public long DesireMoney = 0;
+    public long DebitMoney = 0;
+    public long CreditMoney = 0;
+    
 
     double _happiness = 100;
     public double Happiness { get => _happiness; set => _happiness = Mathf.Clamp((float)value, 0, 100); }
@@ -26,10 +30,11 @@ public class SaveData
 
     public List<ItemCount> CurrentListBelanja = new List<ItemCount>();
     public long CurrentBelanjaMoney = 0;
+    public Vector3 Position = Vector3.zero;
     
     public SaveData()
     {
-        Money = 100000;
+        CashMoney = 100000;
         Happiness = 100;
         Health = 100;
         CurrentDay = 0;

@@ -45,7 +45,7 @@ public class BudgetCalculator : MonoBehaviour
 
     public void SetAndAnimate(List<ItemCount> itemCounts)
     {
-        long currentMoney = Save.Data.Money;
+        long currentMoney = Save.Data.CashMoney;
         long totalBought = 0;
         double totalHealth = 0;
         double totalHappiness = 0;

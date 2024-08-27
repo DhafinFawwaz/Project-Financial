@@ -46,7 +46,7 @@ public class WorldUI : MonoBehaviour
 
         _ktpBelanja.gameObject.SetActive(true);
         _ktpWorld.gameObject.SetActive(false);
-        _ktpBelanja.SetMoneyTop(Save.Data.Money)
+        _ktpBelanja.SetMoneyTop(Save.Data.CashMoney)
             .SetMoneyBottom(Save.Data.CurrentBelanjaMoney)
             .SetGreenBarFill(1)
             .SetHapiness(Save.Data.Happiness, 0)
@@ -68,7 +68,7 @@ public class WorldUI : MonoBehaviour
 
         _ktpBelanja.gameObject.SetActive(false);
         _ktpWorld.gameObject.SetActive(true);
-        _ktpWorld.SetMoney(Save.Data.Money)
+        _ktpWorld.SetMoney(Save.Data.CashMoney)
             .SetHappiness(Save.Data.Happiness)
             .SetHealth(Save.Data.Health)
             .SetSkillPoint(Save.Data.SkillPoin);
@@ -104,7 +104,7 @@ public class WorldUI : MonoBehaviour
         _addedHappiness += itemData.Happiness * choosenOption.BuyCount;
         _addedHealth += itemData.Health * choosenOption.BuyCount;
 
-        _ktpBelanja.SetMoneyTop(Save.Data.Money)
+        _ktpBelanja.SetMoneyTop(Save.Data.CashMoney)
             .SetMoneyBottom((long)_currentBelanjaMoney)
             .SetGreenBarFill((float)_currentBelanjaMoney / (float)Save.Data.CurrentBelanjaMoney)
             .SetHapiness(Save.Data.Happiness, _addedHappiness)

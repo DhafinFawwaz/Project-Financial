@@ -10,8 +10,6 @@ public class SceneTrigger : MonoBehaviour
     [SerializeField] string _sceneToLoad = "World";
     [SerializeField] SceneTransition _sceneTransition;
 
-    [SerializeField] bool _movePlayerToSpawnPoint = false;
-    [SerializeField] Vector3 _spawnPoint = Vector3.zero;
     [SerializeField] UnityEvent<string> OnSceneTrigger;
 
     public void OnTriggerEnter(Collider other)
@@ -22,9 +20,6 @@ public class SceneTrigger : MonoBehaviour
             _sceneTransition.AddListenerBeforeIn(() => {
                 Time.timeScale = 1;
             }).StartSceneTransition(_sceneToLoad);
-            if(_movePlayerToSpawnPoint){
-                PlayerCore.SetPlayerSpawnPosition(_spawnPoint);
-            }
             OnSceneTrigger?.Invoke(_sceneToLoad);
         }
     }
