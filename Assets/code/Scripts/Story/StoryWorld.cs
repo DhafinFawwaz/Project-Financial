@@ -33,7 +33,7 @@ public class StoryWorld : MonoBehaviour
         }
 
 
-        if(Save.Data.CurrentDayData.State == DayState.AfterBudgeting)
+        if(Save.Data.DayState == DayState.AfterBudgeting)
         {
             _missionText.text = "Belanja di Bunga Mart Yuk!.";
             _itbInteractable.gameObject.SetActive(false);

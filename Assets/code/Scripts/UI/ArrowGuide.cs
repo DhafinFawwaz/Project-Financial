@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class ArrowGuide : MonoBehaviour
 {
+    [SerializeField] float _jumpingSpeed = 1;
+    [SerializeField] float _jumpingHeight = 1;
     public static ArrowGuide Instance;
     Vector3 _targetPosition;
     
@@ -16,6 +18,21 @@ public class ArrowGuide : MonoBehaviour
     [SerializeField] Vector3 _bedPosition;
     [SerializeField] Vector3 _pcPosition;
     [SerializeField] Vector3 _keluarHomePosition;
+
+
+#if UNITY_EDITOR
+    [Header("Editor Only")]
+    [SerializeField] Vector3 _testPosition;
+    [ContextMenu("Test Position")]
+    public void TestPosition()
+    {
+        if(_mainCam == null) _mainCam = Camera.main;
+        _targetPosition = _testPosition;
+        ApplyTargetPosition();
+    }
+#endif
+
+
     void Start()
     {
         _mainCam = Camera.main;
@@ -25,20 +42,25 @@ public class ArrowGuide : MonoBehaviour
 
     public void Refresh()
     {
-        if(Save.Data.CurrentDay == 1 && !Save.Data.HasTalkedToNaoRikiInDay2)
+        if(Save.Data.CurrentDay == 1 && !Save.Data.HasTalkedToNaoRikiInDay2 && Save.Data.DayState == DayState.JustGotOutside)
         {
             _targetPosition = _naoRikiPosition;
             return;
         }   
 
-        if(Save.Data.CurrentDayData.State == DayState.AfterSleeping) _targetPosition = _itbPosition;
-        if(Save.Data.CurrentDayData.State == DayState.AfterBudgeting) _targetPosition = _supermarketPosition;
-        if(Save.Data.CurrentDayData.State == DayState.AfterBelanja) _targetPosition = _homePosition;
-        if(Save.Data.CurrentDayData.State == DayState.AfterStreaming) _targetPosition = _bedPosition;
+        if(Save.Data.DayState == DayState.JustGotHome) _targetPosition = _pcPosition;
+        if(Save.Data.DayState == DayState.AfterStreaming) _targetPosition = _bedPosition;
+        if(Save.Data.DayState == DayState.AfterSleeping) _targetPosition = _keluarHomePosition;
+        Debug.Log(Save.Data.DayState);
+        if(Save.Data.DayState == DayState.JustGotOutside) _targetPosition = _itbPosition;
+        if(Save.Data.DayState == DayState.AfterKuliah) _targetPosition = _supermarketPosition;
+        if(Save.Data.DayState == DayState.AfterBudgeting) _targetPosition = _supermarketPosition;
+        if(Save.Data.DayState == DayState.AfterBelanja) _targetPosition = _homePosition;
+
     }
 
     Camera _mainCam;
-    void Update()
+    void ApplyTargetPosition()
     {
         Vector3 viewportPos = _mainCam.WorldToViewportPoint(_targetPosition);
         if(viewportPos.x > 0 && viewportPos.x < 1 && viewportPos.y > 0 && viewportPos.y < 1)
@@ -61,7 +83,15 @@ public class ArrowGuide : MonoBehaviour
 
             transform.position = edgePos;
         }
-
+    }
+    void Update()
+    {
+        ApplyTargetPosition();
+        transform.position += Vector3.up * Parabole(Frac(Time.time * _jumpingSpeed)) * _jumpingHeight;
+    }
+    float Frac(float value)
+    {
+        return value - Mathf.Floor(value);
     }
 
     void OnDrawGizmos()
@@ -75,5 +105,11 @@ public class ArrowGuide : MonoBehaviour
         Gizmos.DrawCube(_bedPosition,         new Vector3(size, 100, size));
         Gizmos.DrawCube(_pcPosition,          new Vector3(size, 100, size));
         Gizmos.DrawCube(_keluarHomePosition,  new Vector3(size, 100, size));
+    }
+
+
+    float Parabole(float x)
+    {
+        return -4 * (x - 0.5f) * (x - 0.5f) + 1;
     }
 }

@@ -288,10 +288,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0907c649a3bef7b469885319647e2758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _jumpingSpeed: 2.5
+  _jumpingHeight: 30
   _naoRikiPosition: {x: -2, y: 0.4, z: 6.2}
   _itbPosition: {x: -1.462, y: 0.4, z: 6.711}
   _supermarketPosition: {x: 2.49, y: 0.4, z: -0.91}
   _homePosition: {x: -4.31, y: 0.4, z: -2}
-  _bedPosition: {x: 0.3, y: 0.4, z: -0.54}
-  _pcPosition: {x: -0.23, y: 0.4, z: 0.6}
+  _bedPosition: {x: 0.3, y: 0.15, z: -0.54}
+  _pcPosition: {x: -0.26, y: 0.52, z: 0.6}
   _keluarHomePosition: {x: -0.3, y: 0, z: -0.54}
+  _testPosition: {x: 0, y: 0, z: 0}

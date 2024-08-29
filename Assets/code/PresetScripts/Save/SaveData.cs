@@ -2,11 +2,13 @@ using System.Collections.Generic;
 using UnityEngine;
 public enum DayState
 {
+    JustGotHome,
+    AfterStreaming,
     AfterSleeping,
+    JustGotOutside,
     AfterKuliah,
     AfterBudgeting,
     AfterBelanja,
-    AfterStreaming,
 }
 
 [System.Serializable]
@@ -35,6 +37,8 @@ public class SaveData
     // Shop Stocks
     public List<int> HealthItemStocks = new List<int>();
     public List<int> HapinessItemStocks = new List<int>();
+
+    public DayState DayState = DayState.JustGotHome;
     
     public SaveData()
     {
@@ -57,6 +61,8 @@ public class SaveData
 
         HealthItemStocks = new List<int>(){3,3,3,3};
         HapinessItemStocks = new List<int>(){3,3,3,3};
+
+        DayState = DayState.JustGotHome;
     }
 
     
@@ -66,7 +72,6 @@ public class SaveData
     {
         public long StreamingCounter = 0;
         public long GainedSubscriber = 0;
-        public DayState State = DayState.AfterBelanja;
     }
 
     public List<long> GainedSubscriberEachDay => DayDatas.ConvertAll(x => x.GainedSubscriber);
