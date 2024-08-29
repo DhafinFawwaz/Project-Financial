@@ -8,6 +8,7 @@ public class Dialog : MonoBehaviour
 {
     [SerializeField] DialogData _data;
     public static Action<DialogData> s_OnDialogFinished;
+    public static Action<DialogData> s_OnDialogStart;
     [SerializeField] Image _actorImage;
     [SerializeField] TextMeshProUGUI _actorName;
     [SerializeField] TextMeshProUGUI _dialogText;
@@ -144,6 +145,7 @@ public class Dialog : MonoBehaviour
 
     public void Play()
     {
+        s_OnDialogStart?.Invoke(_data);
         _isPlaying = true;
         _animationUI.Play();
     }   
