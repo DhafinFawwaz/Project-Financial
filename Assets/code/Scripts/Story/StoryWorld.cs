@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class StoryWorld : MonoBehaviour
 {
+    [SerializeField] Transform _playerTrans;
     [SerializeField] TextMeshProUGUI _missionText;
     [SerializeField] GameObject _shopInteractable;
     [SerializeField] GameObject _itbInteractable;
@@ -12,6 +13,7 @@ public class StoryWorld : MonoBehaviour
     [SerializeField] GameObject _houseInteractable;
     void Start()
     {
+        _playerTrans.position = Save.Data.Position;
         RefreshStates();
     }
 
