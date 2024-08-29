@@ -7,7 +7,7 @@ public class NPCDayChanger : MonoBehaviour
     [SerializeField] int _currentDay = 0;
     void Start()
     {
-        if(_currentDay > 0) Save.Data.CurrentDay = _currentDay - 1;
+        if(_currentDay < 0) _currentDay = Save.Data.CurrentDay;
 
         foreach(Transform child in transform) {
             child.gameObject.SetActive(false);

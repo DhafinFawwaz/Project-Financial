@@ -17,7 +17,7 @@ public class StoryWorld : MonoBehaviour
         RefreshStates();
     }
 
-    void RefreshStates()
+    public void RefreshStates()
     {
         if(Save.Data.CurrentDay == 1)
         {

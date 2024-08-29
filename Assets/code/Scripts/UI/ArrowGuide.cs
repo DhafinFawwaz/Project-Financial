@@ -7,7 +7,6 @@ public class ArrowGuide : MonoBehaviour
 {
     [SerializeField] float _jumpingSpeed = 1;
     [SerializeField] float _jumpingHeight = 1;
-    public static ArrowGuide Instance;
     Vector3 _targetPosition;
     
     [SerializeField] Vector3 _naoRikiPosition;
@@ -37,7 +36,6 @@ public class ArrowGuide : MonoBehaviour
     {
         _mainCam = Camera.main;
         Refresh();
-        Instance = this;
     }
 
     public void Refresh()
@@ -51,12 +49,19 @@ public class ArrowGuide : MonoBehaviour
         if(Save.Data.DayState == DayState.JustGotHome) _targetPosition = _pcPosition;
         if(Save.Data.DayState == DayState.AfterStreaming) _targetPosition = _bedPosition;
         if(Save.Data.DayState == DayState.AfterSleeping) _targetPosition = _keluarHomePosition;
-        Debug.Log(Save.Data.DayState);
         if(Save.Data.DayState == DayState.JustGotOutside) _targetPosition = _itbPosition;
         if(Save.Data.DayState == DayState.AfterKuliah) _targetPosition = _supermarketPosition;
         if(Save.Data.DayState == DayState.AfterBudgeting) _targetPosition = _supermarketPosition;
         if(Save.Data.DayState == DayState.AfterBelanja) _targetPosition = _homePosition;
 
+
+        // Special case
+        Debug.Log(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        Debug.Log(Save.Data.DayState);
+        if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Bedroom" && (Save.Data.DayState == DayState.JustGotOutside || Save.Data.DayState == DayState.AfterKuliah || Save.Data.DayState == DayState.AfterBudgeting))
+        {
+            _targetPosition = _keluarHomePosition;
+        }
     }
 
     Camera _mainCam;

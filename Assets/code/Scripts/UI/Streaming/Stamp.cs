@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Stamp : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Stamp : MonoBehaviour
     [SerializeField] ButtonUI _buttonUI;
     [SerializeField] GameObject _toActivate;
     public Action OnStamped;
+    [SerializeField] UnityEvent _onStamped;
 
     void Start()
     {
@@ -41,6 +43,7 @@ public class Stamp : MonoBehaviour
         {
             _toActivate.gameObject.SetActive(true);
             OnStamped?.Invoke();
+            _onStamped?.Invoke();
         }
         else
         {

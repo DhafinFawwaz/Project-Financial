@@ -2096,7 +2096,7 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 1202603551}
           m_TargetAssemblyTypeName: ButtonUI, Assembly-CSharp
-          m_MethodName: SetInteractable
+          m_MethodName: SetInteractableImmediete
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -7771,6 +7771,21 @@ MonoBehaviour:
   _dragableStamp: {fileID: 720717387}
   _buttonUI: {fileID: 720717388}
   _toActivate: {fileID: 2025958867}
+  _onStamped:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1202603551}
+        m_TargetAssemblyTypeName: ButtonUI, Assembly-CSharp
+        m_MethodName: SetInteractable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &774270316
 GameObject:
   m_ObjectHideFlags: 0
@@ -8491,6 +8506,9 @@ MonoBehaviour:
   _dragableStamp: {fileID: 833898100}
   _buttonUI: {fileID: 833898102}
   _toActivate: {fileID: 2025958867}
+  _onStamped:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &833898102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18077,10 +18095,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4070756211686748066, guid: 8b52f7272fe415442b303e41df362880, type: 3}
       propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4070756211686748066, guid: 8b52f7272fe415442b303e41df362880, type: 3}
       propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070756211686748066, guid: 8b52f7272fe415442b303e41df362880, type: 3}
+      propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4070756211686748066, guid: 8b52f7272fe415442b303e41df362880, type: 3}
@@ -18088,7 +18110,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1472308244}
     - target: {fileID: 4070756211686748066, guid: 8b52f7272fe415442b303e41df362880, type: 3}
+      propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1202603551}
+    - target: {fileID: 4070756211686748066, guid: 8b52f7272fe415442b303e41df362880, type: 3}
       propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070756211686748066, guid: 8b52f7272fe415442b303e41df362880, type: 3}
+      propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4070756211686748066, guid: 8b52f7272fe415442b303e41df362880, type: 3}
@@ -18096,15 +18126,31 @@ PrefabInstance:
       value: ToggleKTP
       objectReference: {fileID: 0}
     - target: {fileID: 4070756211686748066, guid: 8b52f7272fe415442b303e41df362880, type: 3}
+      propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetInteractable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070756211686748066, guid: 8b52f7272fe415442b303e41df362880, type: 3}
       propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: StreamingManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070756211686748066, guid: 8b52f7272fe415442b303e41df362880, type: 3}
+      propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ButtonUI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4070756211686748066, guid: 8b52f7272fe415442b303e41df362880, type: 3}
       propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4070756211686748066, guid: 8b52f7272fe415442b303e41df362880, type: 3}
+      propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070756211686748066, guid: 8b52f7272fe415442b303e41df362880, type: 3}
       propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070756211686748066, guid: 8b52f7272fe415442b303e41df362880, type: 3}
+      propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4070756211686748068, guid: 8b52f7272fe415442b303e41df362880, type: 3}
@@ -19090,6 +19136,9 @@ MonoBehaviour:
   _dragableStamp: {fileID: 1853895335}
   _buttonUI: {fileID: 1853895337}
   _toActivate: {fileID: 1816076537}
+  _onStamped:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1853895337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23159,6 +23208,21 @@ MonoBehaviour:
   _dragableStamp: {fileID: 3720467904063779039}
   _buttonUI: {fileID: 3720467904063779032}
   _toActivate: {fileID: 1816076537}
+  _onStamped:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1202603551}
+        m_TargetAssemblyTypeName: ButtonUI, Assembly-CSharp
+        m_MethodName: SetInteractable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!224 &3720467904219094593 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4070756211686748069, guid: 8b52f7272fe415442b303e41df362880, type: 3}
