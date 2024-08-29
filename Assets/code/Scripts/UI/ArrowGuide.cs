@@ -67,7 +67,7 @@ public class ArrowGuide : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = UnityEngine.Color.red;
-        float size = 0.1f;
+        float size = 0.025f;
         Gizmos.DrawCube(_naoRikiPosition,     new Vector3(size, 100, size));
         Gizmos.DrawCube(_itbPosition,         new Vector3(size, 100, size));
         Gizmos.DrawCube(_supermarketPosition, new Vector3(size, 100, size));

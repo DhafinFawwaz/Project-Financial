@@ -31,6 +31,10 @@ public class SaveData
     public List<ItemCount> CurrentListBelanja = new List<ItemCount>();
     public long CurrentBelanjaMoney = 0;
     public Vector3 Position = Vector3.zero;
+
+    // Shop Stocks
+    public List<int> HealthItemStocks = new List<int>();
+    public List<int> HapinessItemStocks = new List<int>();
     
     public SaveData()
     {
@@ -50,6 +54,9 @@ public class SaveData
 
         HasDoneKuliah = false;
         JustAfterFirstBelanja = false;
+
+        HealthItemStocks = new List<int>(){3,3,3,3};
+        HapinessItemStocks = new List<int>(){3,3,3,3};
     }
 
     
