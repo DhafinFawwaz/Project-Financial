@@ -2,11 +2,13 @@ using System.Collections.Generic;
 using UnityEngine;
 public enum DayState
 {
+    JustGotHome,
+    AfterStreaming,
     AfterSleeping,
+    JustGotOutside,
     AfterKuliah,
     AfterBudgeting,
     AfterBelanja,
-    AfterStreaming,
 }
 
 [System.Serializable]
@@ -31,6 +33,12 @@ public class SaveData
     public List<ItemCount> CurrentListBelanja = new List<ItemCount>();
     public long CurrentBelanjaMoney = 0;
     public Vector3 Position = Vector3.zero;
+
+    // Shop Stocks
+    public List<int> HealthItemStocks = new List<int>();
+    public List<int> HapinessItemStocks = new List<int>();
+
+    public DayState DayState = DayState.JustGotHome;
     
     public SaveData()
     {
@@ -50,6 +58,11 @@ public class SaveData
 
         HasDoneKuliah = false;
         JustAfterFirstBelanja = false;
+
+        HealthItemStocks = new List<int>(){3,3,3,3};
+        HapinessItemStocks = new List<int>(){3,3,3,3};
+
+        DayState = DayState.JustGotHome;
     }
 
     
@@ -59,7 +72,6 @@ public class SaveData
     {
         public long StreamingCounter = 0;
         public long GainedSubscriber = 0;
-        public DayState State = DayState.AfterBelanja;
     }
 
     public List<long> GainedSubscriberEachDay => DayDatas.ConvertAll(x => x.GainedSubscriber);

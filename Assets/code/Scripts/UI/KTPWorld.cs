@@ -65,17 +65,4 @@ public class KTPWorld : MonoBehaviour
         _skillPointText.text = point.ToString();
         return this;
     }
-
-    void Awake()
-    {
-        RefreshStates();
-    }
-
-    public void RefreshStates()
-    {
-        SetHealth(Save.Data.Health);
-        SetHappiness(Save.Data.Happiness);
-        SetMoney(Save.Data.CashMoney);
-        SetSkillPoint(Save.Data.SkillPoin);
-    }
 }

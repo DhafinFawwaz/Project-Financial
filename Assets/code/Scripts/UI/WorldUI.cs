@@ -19,6 +19,9 @@ public class WorldUI : MonoBehaviour
     [SerializeField] Timer _diskonTimer;
     [SerializeField] Timer _inflasiTimer;
 
+    [Header("For Apotek")]    
+    [SerializeField] bool _ktpOnly = false;
+
 
     void Awake()
     {
@@ -33,6 +36,17 @@ public class WorldUI : MonoBehaviour
 
         if(_isBelanja) HandleBelanjaState();
         else HandleWorldState();
+
+        RefreshKTP();
+
+        if(_ktpOnly)
+        {
+            _bottomLeftPhoneBelanja.gameObject.SetActive(false);
+            _bottomLeftPhoneWorld.gameObject.SetActive(false);
+            _leftHandParent.gameObject.SetActive(false);
+            _tasBottomRightParent.gameObject.SetActive(false);
+            _tasRightParent.gameObject.SetActive(false);
+        }
     }
 
     void HandleBelanjaState()
@@ -46,11 +60,6 @@ public class WorldUI : MonoBehaviour
 
         _ktpBelanja.gameObject.SetActive(true);
         _ktpWorld.gameObject.SetActive(false);
-        _ktpBelanja.SetMoneyTop(Save.Data.CashMoney)
-            .SetMoneyBottom(Save.Data.CurrentBelanjaMoney)
-            .SetGreenBarFill(1)
-            .SetHapiness(Save.Data.Happiness, 0)
-            .SetHealth(Save.Data.Health, 0);
 
 
         _addedHappiness = 0;
@@ -68,10 +77,22 @@ public class WorldUI : MonoBehaviour
 
         _ktpBelanja.gameObject.SetActive(false);
         _ktpWorld.gameObject.SetActive(true);
+
+    }
+
+    public void RefreshKTP()
+    {
+        _ktpBelanja.SetMoneyTop(Save.Data.DesireMoney)
+            .SetMoneyBottom(Save.Data.CurrentBelanjaMoney)
+            .SetGreenBarFill(1)
+            .SetHapiness(Save.Data.Happiness, 0)
+            .SetHealth(Save.Data.Health, 0);
+
         _ktpWorld.SetMoney(Save.Data.CashMoney)
             .SetHappiness(Save.Data.Happiness)
             .SetHealth(Save.Data.Health)
             .SetSkillPoint(Save.Data.SkillPoin);
+
     }
 
 

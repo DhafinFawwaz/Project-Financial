@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class StoryWorld : MonoBehaviour
 {
+    [SerializeField] Transform _playerTrans;
     [SerializeField] TextMeshProUGUI _missionText;
     [SerializeField] GameObject _shopInteractable;
     [SerializeField] GameObject _itbInteractable;
@@ -12,10 +13,11 @@ public class StoryWorld : MonoBehaviour
     [SerializeField] GameObject _houseInteractable;
     void Start()
     {
+        _playerTrans.position = Save.Data.Position;
         RefreshStates();
     }
 
-    void RefreshStates()
+    public void RefreshStates()
     {
         if(Save.Data.CurrentDay == 1)
         {
@@ -31,7 +33,7 @@ public class StoryWorld : MonoBehaviour
         }
 
 
-        if(Save.Data.CurrentDayData.State == DayState.AfterBudgeting)
+        if(Save.Data.DayState == DayState.AfterBudgeting)
         {
             _missionText.text = "Belanja di Bunga Mart Yuk!.";
             _itbInteractable.gameObject.SetActive(false);
