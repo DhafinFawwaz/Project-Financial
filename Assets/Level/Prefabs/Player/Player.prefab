@@ -230,6 +230,7 @@ MonoBehaviour:
   _animationDuration: 0.15
   _loop: 0
   _playOnAwake: 0
+  _playOnEnable: 0
 --- !u!1 &3556949962184688497
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,6 +306,7 @@ MonoBehaviour:
   _animationDuration: 0.5
   _loop: 1
   _playOnAwake: 0
+  _playOnEnable: 0
 --- !u!1 &4399975957085243977
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,11 +317,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4399975957085243982}
   - component: {fileID: 4399975957085243983}
-  - component: {fileID: 4399975957085243980}
   - component: {fileID: 4399975957085244851}
   - component: {fileID: 4399975957085244850}
   - component: {fileID: 4399975957085243981}
   - component: {fileID: 7815994901119611462}
+  - component: {fileID: 4399975957085243980}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -361,20 +363,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 116
   m_CollisionDetection: 1
---- !u!136 &4399975957085243980
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4399975957085243977}
-  m_Material: {fileID: 13400000, guid: 2a756955b6095db46bc9721fe7c8e3d2, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.049081355
-  m_Height: 0.3
-  m_Direction: 1
-  m_Center: {x: 0.017493933, y: 0.15, z: 0}
 --- !u!114 &4399975957085244851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,7 +380,6 @@ MonoBehaviour:
   _camTarget: {fileID: 1863264067196928533}
   _zoomedLensVerticalFOV: 6
   _vCam: {fileID: 0}
-  _directionalLight: {fileID: 0}
 --- !u!114 &4399975957085244850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,6 +432,20 @@ MonoBehaviour:
   _spriteMaterialAnimatorBelakang: {fileID: 6193135371007405578}
   _spriteMaterialAnimatorBelakangEnd: {fileID: 1679007854470905936}
   _swapZtoY: 0
+--- !u!136 &4399975957085243980
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4399975957085243977}
+  m_Material: {fileID: 13400000, guid: 2a756955b6095db46bc9721fe7c8e3d2, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.049081355
+  m_Height: 0.3
+  m_Direction: 1
+  m_Center: {x: 0.017493933, y: 0.15, z: 0}
 --- !u!1 &4399975957974704383
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,6 +600,7 @@ MonoBehaviour:
   _animationDuration: 0.5
   _loop: 1
   _playOnAwake: 0
+  _playOnEnable: 0
 --- !u!1 &4642638460492719050
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,6 +658,7 @@ MonoBehaviour:
   _animationDuration: 0.15
   _loop: 0
   _playOnAwake: 0
+  _playOnEnable: 0
 --- !u!1 &5718286701047629877
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,6 +749,7 @@ MonoBehaviour:
   _animationDuration: 0.15
   _loop: 0
   _playOnAwake: 0
+  _playOnEnable: 0
 --- !u!1 &7797373709571784886
 GameObject:
   m_ObjectHideFlags: 0
@@ -804,3 +808,4 @@ MonoBehaviour:
   _animationDuration: 0.15
   _loop: 0
   _playOnAwake: 0
+  _playOnEnable: 0

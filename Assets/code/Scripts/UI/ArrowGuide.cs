@@ -5,17 +5,22 @@ using UnityEngine;
 
 public class ArrowGuide : MonoBehaviour
 {
+    public static ArrowGuide Instance;
     Vector3 _targetPosition;
     
     [SerializeField] Vector3 _naoRikiPosition;
     [SerializeField] Vector3 _itbPosition;
     [SerializeField] Vector3 _supermarketPosition;
     [SerializeField] Vector3 _homePosition;
+
     [SerializeField] Vector3 _bedPosition;
+    [SerializeField] Vector3 _pcPosition;
+    [SerializeField] Vector3 _keluarHomePosition;
     void Start()
     {
         _mainCam = Camera.main;
         Refresh();
+        Instance = this;
     }
 
     public void Refresh()
@@ -67,6 +72,8 @@ public class ArrowGuide : MonoBehaviour
         Gizmos.DrawCube(_itbPosition,         new Vector3(size, 100, size));
         Gizmos.DrawCube(_supermarketPosition, new Vector3(size, 100, size));
         Gizmos.DrawCube(_homePosition,        new Vector3(size, 100, size));
-
+        Gizmos.DrawCube(_bedPosition,         new Vector3(size, 100, size));
+        Gizmos.DrawCube(_pcPosition,          new Vector3(size, 100, size));
+        Gizmos.DrawCube(_keluarHomePosition,  new Vector3(size, 100, size));
     }
 }

@@ -1,0 +1,43 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+
+public class ApotekManager : MonoBehaviour
+{
+    [SerializeField] PopUp _popUpInsufficient;
+    [SerializeField] PopUp _popUpConfirm;
+    [SerializeField] TextMeshProUGUI _priceText;
+    [SerializeField] TextMeshProUGUI _messageText;
+    [SerializeField] WorldUI _worldUI;
+
+
+    [System.Serializable]
+    public class Medicine
+    {
+        public string Name;
+        public int Price;
+        public int Health;
+        public int Happiness;
+    }
+
+    [SerializeField] Medicine[] _prices;
+    int _currentItemIdx;
+    public void Buy(int itemIdx)
+    {
+        _currentItemIdx = itemIdx;
+        _priceText.text = _prices[itemIdx].Price.ToString();
+        _messageText.text = $"Apakah kamu yakin ingin membeli {_prices[itemIdx].Name}?";
+        if(Save.Data.CashMoney < _prices[itemIdx].Price) _popUpInsufficient.Show();
+        else _popUpConfirm.Show();
+    }
+
+    public void Confirm()
+    {
+        Save.Data.CashMoney -= _prices[_currentItemIdx].Price;
+        Save.Data.Health += _prices[_currentItemIdx].Health;
+        Save.Data.Happiness += _prices[_currentItemIdx].Happiness;
+        _popUpConfirm.Hide();
+        _worldUI.RefreshKTP();
+    }
+}
