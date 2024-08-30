@@ -26,7 +26,6 @@ public class SinePosition : MonoBehaviour
         float t = Time.time / _period;
         float sine = Mathf.Sin(t * Mathf.PI * 2);
         Vector3 position = _initialPosition;
-        if(_useLocalPosition) position = transform.localPosition;
         if (_useX)
         {
             position.x += sine * _amplitude;
