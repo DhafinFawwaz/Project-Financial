@@ -13,9 +13,12 @@ public class SinePosition : MonoBehaviour
 
     Vector3 _initialPosition;
 
+    [SerializeField] bool _useLocalPosition = false;
+
     void Start()
     {
         _initialPosition = transform.position;
+        if(_useLocalPosition) _initialPosition = transform.localPosition;
     }
 
     void Update()
@@ -23,6 +26,7 @@ public class SinePosition : MonoBehaviour
         float t = Time.time / _period;
         float sine = Mathf.Sin(t * Mathf.PI * 2);
         Vector3 position = _initialPosition;
+        if(_useLocalPosition) position = transform.localPosition;
         if (_useX)
         {
             position.x += sine * _amplitude;
@@ -32,5 +36,6 @@ public class SinePosition : MonoBehaviour
             position.y += sine * _amplitude;
         }
         transform.position = position;
+        if(_useLocalPosition) transform.localPosition = position;
     }
 }
