@@ -42,6 +42,10 @@ public class AfterStreaming : MonoBehaviour
 
     public void ToBedroom()
     {
+        Penonton = 0;
+        NewSubscriber = 0;
+        Penghasilan = 0;
+        TotalSubscriber = 0;
         _sceneTransition.StartSceneTransition("Bedroom");
     }
 }

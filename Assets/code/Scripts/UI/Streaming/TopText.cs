@@ -33,12 +33,15 @@ public class TopText : MonoBehaviour
         _dialogText.text = text;
         return this;
     }
+    public void SetTextImmediete(string text) => SetText(text);
 
     public TopText Play()
     {
         StartCoroutine(TextAnimation());
         return this;
     }
+
+    public void PlayImmediete() => Play();
 
     byte _key = 0;
     IEnumerator TextAnimation()

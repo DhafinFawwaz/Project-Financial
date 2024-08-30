@@ -22,7 +22,6 @@ public class FiscalGuardianLoader : MonoBehaviour
     [SerializeField] UnityEvent _onFirstTime;
     void Awake()
     {
-        StreamingManager.CurrentFiscalGuardianData = _data[Save.Data.CurrentDayData.StreamingCounter % _data.Length];
     }
 
     public void Play()
@@ -48,7 +47,6 @@ public class FiscalGuardianLoader : MonoBehaviour
     public void CloseStartDialog()
     {
         _textRTA.SetEnd(Vector3.zero).TweenLocalScale();
-        _streamingManager.StartGame();
         _dialogCloser.SetActive(false);
     }
 
