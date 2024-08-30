@@ -14,6 +14,7 @@ public class Thief : MonoBehaviour
     
     [SerializeField] Transform _walletPrefab;
     [SerializeField] VignetteStolen _vignette;
+    [SerializeField] WorldUI _worldUI;
 
 
     bool _hasPlayerStolen = false;
@@ -31,6 +32,7 @@ public class Thief : MonoBehaviour
 
         // Do Stuff
         Save.Data.NeedsMoney = 0;
+        _worldUI.RefreshKTP();
     }
 
     void Start()
