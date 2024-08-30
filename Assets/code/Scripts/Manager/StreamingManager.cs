@@ -300,7 +300,7 @@ public class StreamingManager : MonoBehaviour
     {
         long profit = (long) ((10.0f-_wrongCount)/10.0f * (Random.Range(30000, 40000)));
         profit = (long)Mathf.RoundToInt(profit/1000) * 1000;
-        Save.Data.CashMoney += profit;
+        Save.Data.NeedsMoney += profit;
         Save.Data.Health -= 10;
         Save.Data.Happiness -= (_wrongCount*4) - 7;
         Save.Data.SubscriberAmount += _viewCounter;

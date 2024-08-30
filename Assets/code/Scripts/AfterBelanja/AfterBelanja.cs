@@ -50,16 +50,16 @@ public class AfterBelanja : MonoBehaviour
         }
 
         _totalhargaText.text = totalHarga.ToString();
-        _sisaText.text = (Save.Data.CashMoney - totalHarga).ToString();
+        _sisaText.text = (Save.Data.NeedsMoney - totalHarga).ToString();
         _addedHealthText.text = _addedHealth.ToString();
         _addedHapinesssisaText.text = _addedhappiness.ToString();
 
-        Save.Data.CashMoney -= (long)totalHarga;
+        Save.Data.NeedsMoney -= (long)totalHarga;
         Save.Data.Health += _addedHealth;
         Save.Data.Happiness += _addedhappiness;
         
         this.Invoke(() => {
-            _ktpWorld.SetMoney(Save.Data.CashMoney)
+            _ktpWorld.SetMoney(Save.Data.NeedsMoney)
                 .SetHappiness(Save.Data.Happiness)
                 .SetHealth(Save.Data.Health);
         }, 0.1f);

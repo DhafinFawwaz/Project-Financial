@@ -38,13 +38,13 @@ public class ApotekManager : MonoBehaviour
         }
         _priceText.text = _medicines[itemIdx].Price.ToString();
         _messageText.text = $"Yakin ingin membeli {_medicines[itemIdx].Name}?\n(+{_medicines[itemIdx].Health} Health)";
-        if(Save.Data.CashMoney < _medicines[itemIdx].Price) _popUpInsufficient.Show();
+        if(Save.Data.NeedsMoney < _medicines[itemIdx].Price) _popUpInsufficient.Show();
         else _popUpConfirm.Show();
     }
 
     public void Confirm()
     {
-        Save.Data.CashMoney -= _medicines[_currentItemIdx].Price;
+        Save.Data.NeedsMoney -= _medicines[_currentItemIdx].Price;
         Save.Data.Health += _medicines[_currentItemIdx].Health;
         Save.Data.Happiness += _medicines[_currentItemIdx].Happiness;
         _medicines[_currentItemIdx].Stock--;

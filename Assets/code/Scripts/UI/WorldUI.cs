@@ -88,7 +88,7 @@ public class WorldUI : MonoBehaviour
             .SetHapiness(Save.Data.Happiness, 0)
             .SetHealth(Save.Data.Health, 0);
 
-        _ktpWorld.SetMoney(Save.Data.CashMoney)
+        _ktpWorld.SetMoney(Save.Data.NeedsMoney)
             .SetHappiness(Save.Data.Happiness)
             .SetHealth(Save.Data.Health)
             .SetSkillPoint(Save.Data.SkillPoin);
@@ -125,7 +125,7 @@ public class WorldUI : MonoBehaviour
         _addedHappiness += itemData.Happiness * choosenOption.BuyCount;
         _addedHealth += itemData.Health * choosenOption.BuyCount;
 
-        _ktpBelanja.SetMoneyTop(Save.Data.CashMoney)
+        _ktpBelanja.SetMoneyTop(Save.Data.NeedsMoney)
             .SetMoneyBottom((long)_currentBelanjaMoney)
             .SetGreenBarFill((float)_currentBelanjaMoney / (float)Save.Data.CurrentBelanjaMoney)
             .SetHapiness(Save.Data.Happiness, _addedHappiness)

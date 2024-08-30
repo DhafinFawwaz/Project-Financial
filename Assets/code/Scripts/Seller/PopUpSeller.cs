@@ -38,13 +38,13 @@ public class PopUpSeller : MonoBehaviour
         }
         _priceText.text = _snack.Price.ToString();
         _messageText.text = $"Yakin ingin membeli {_snack.Name}?\n(+{_snack.Happiness} Health)";
-        if(Save.Data.CashMoney < _snack.Price) _popUpInsufficient.Show();
+        if(Save.Data.NeedsMoney < _snack.Price) _popUpInsufficient.Show();
         else _popUpConfirm.Show();
     }
 
     public void Confirm()
     {
-        Save.Data.CashMoney -= _snack.Price;
+        Save.Data.NeedsMoney -= _snack.Price;
         Save.Data.Health += _snack.Happiness;
         Save.Data.Happiness += _snack.Happiness;
         _snack.Stock--;
