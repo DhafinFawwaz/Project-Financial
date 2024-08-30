@@ -21,92 +21,116 @@ Shader "Custom/SpriteDistortWithShadows"
             "RenderType"="Transparent" 
             "PreviewType"="Plane"
             "CanUseSpriteAtlas"="True"
+            "LightMode"="ForwardBase"
         }
 
         Cull Off
         ZWrite On
         Blend SrcAlpha OneMinusSrcAlpha
 
-        CGPROGRAM
-        #pragma surface surf Lambert alpha:fade addshadow
-        #pragma target 3.0
-
-        struct Input
-        {
-            float2 uv_MainTex;
-            float4 color : COLOR;
-        };
-
-        fixed4 _Color;
-        float _Frequency;
-        float _Amplitude;
-        float _Speed;
-        float4 _Offset;
-        sampler2D _MainTex;
-        sampler2D _AlphaTex;
-        float _AlphaSplitEnabled;
-        float _Cutoff;
-
-        fixed4 SampleSpriteTexture(float2 uv)
-        {
-            uv.x = (uv.x + _Offset.x) + (uv.y + _Offset.y) * sin((uv.y + _Offset.y) * _Frequency + _Time.y * _Speed) * _Amplitude;
-
-            fixed4 color = tex2D(_MainTex, uv);
-
-            #if UNITY_TEXTURE_ALPHASPLIT_ALLOWED
-            if (_AlphaSplitEnabled)
-                color.a = tex2D(_AlphaTex, uv).r;
-            #endif // UNITY_TEXTURE_ALPHASPLIT_ALLOWED
-
-            return color;
-        }
-
-        void surf(Input IN, inout SurfaceOutput o)
-        {
-            fixed4 c = SampleSpriteTexture(IN.uv_MainTex) * IN.color;
-            o.Albedo = c.rgb;
-            o.Alpha = c.a;
-        }
-        ENDCG
-
-        // Shadow caster pass
         Pass
         {
-            Name "ShadowCaster"
-            Tags { "LightMode" = "ShadowCaster" }
-
-            ZWrite On
-            ColorMask 0
             CGPROGRAM
-// Upgrade NOTE: excluded shader from DX11; has structs without semantics (struct v2f members uv_MainTex)
-#pragma exclude_renderers d3d11
+            #pragma vertex vert
+            #pragma fragment frag
+            #pragma multi_compile_shadowcaster
+            #include "UnityCG.cginc"
+            #include "Lighting.cginc"
+
+            sampler2D _MainTex;
+            float4 _Color;
+            float _Frequency;
+            float _Amplitude;
+            float _Speed;
+            float4 _Offset;
+            float _Cutoff;
+
+            struct appdata
+            {
+                float4 vertex : POSITION;
+                float2 uv : TEXCOORD0;
+                float4 color : COLOR;
+            };
+
+            struct v2f
+            {
+                float4 pos : SV_POSITION;
+                float2 uv : TEXCOORD0;
+                float4 color : COLOR;
+                float3 worldNormal : TEXCOORD1;
+                float3 worldPos : TEXCOORD2;
+            };
+
+            v2f vert(appdata v)
+            {
+                v2f o;
+                o.pos = UnityObjectToClipPos(v.vertex);
+                o.uv = v.uv;
+                o.color = v.color;
+                o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
+                o.worldNormal = float3(0, 0, 1); // Assume a flat surface facing up (adjust if needed)
+                return o;
+            }
+
+            fixed4 frag(v2f i) : SV_Target
+            {
+                // UV Distortion
+                float2 distortedUV = i.uv;
+                distortedUV.x = (distortedUV.x + _Offset.x) + (distortedUV.y + _Offset.y) * sin((distortedUV.y + _Offset.y) * _Frequency + _Time.y * _Speed) * _Amplitude;
+
+                fixed4 texColor = tex2D(_MainTex, distortedUV);
+                clip(texColor.a - _Cutoff);
+
+                texColor *= i.color * _Color;
+                texColor.rgb *= _LightColor0*1.5;
+                
+                return texColor;
+                // return _LightColor0;
+            }
+            ENDCG
+        }
+
+        Pass
+        {
+            Tags {"LightMode"="ShadowCaster"}
+
+            CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
             #pragma multi_compile_shadowcaster
             #include "UnityCG.cginc"
 
-            struct v2f
-            {
+            struct v2f { 
                 V2F_SHADOW_CASTER;
-                float2 uv_MainTex;
+                float2 uv : TEXCOORD0;
             };
 
-            v2f vert(appdata_tan v)
+            struct appdata {
+                float4 vertex : POSITION;
+                float4 tangent : TANGENT;
+                float3 normal : NORMAL;
+                float4 uv : TEXCOORD0;
+                fixed4 color : COLOR;
+            };
+
+            sampler2D _MainTex;
+            float4 _MainTex_ST;
+            float _Cutoff;
+
+            v2f vert(appdata v)
             {
                 v2f o;
-                TRANSFER_SHADOW_CASTER(o);
-                o.uv_MainTex = v.texcoord;
+                TRANSFER_SHADOW_CASTER_NORMALOFFSET(o)
+                o.uv = v.uv;
                 return o;
             }
 
-            sampler2D _MainTex;
-            float _Cutoff;
-
-            fixed4 frag(v2f i) : SV_Target
+            float4 frag(v2f i) : SV_Target
             {
-                fixed4 col = tex2D(_MainTex, i.uv_MainTex);
-                clip(col.a - _Cutoff); // Use _Cutoff to discard fragments based on alpha
-                return col;
+                fixed4 col = tex2D(_MainTex, i.uv);
+                clip(col.a - _Cutoff);
+                
+                SHADOW_CASTER_FRAGMENT(i)
             }
             ENDCG
         }

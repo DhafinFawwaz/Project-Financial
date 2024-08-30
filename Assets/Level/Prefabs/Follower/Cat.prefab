@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1691325231247708623}
+  - component: {fileID: 149233867543709621}
   m_Layer: 0
   m_Name: '[SpriteAnimation]'
   m_TagString: Untagged
@@ -31,6 +32,54 @@ Transform:
   m_Father: {fileID: 3922689233292834290}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &149233867543709621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2541940227281123928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de63fc2122986f439a50abcd296a0c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteList:
+  - {fileID: 21300000, guid: 6748ca301aadbd44e99e9b7eecf6fecc, type: 3}
+  - {fileID: 21300000, guid: 88e48057d8c698e4a807de9b3d760c5f, type: 3}
+  - {fileID: 21300000, guid: 966c4a9076f0b8249bfc55b98f36fd3b, type: 3}
+  - {fileID: 21300000, guid: b0af62d94074cad4aa2f69e535e1a2cf, type: 3}
+  - {fileID: 21300000, guid: 36a45bc49382351498444c465525e553, type: 3}
+  - {fileID: 21300000, guid: a4b86c42da368a34fbfcf83141317d74, type: 3}
+  - {fileID: 21300000, guid: a96b50a6e5ad20344bf011964c3507f5, type: 3}
+  - {fileID: 21300000, guid: 297041c3460e15044b7a943bfc85fb9b, type: 3}
+  - {fileID: 21300000, guid: 0597df523b911114aa3f5c8ac882f839, type: 3}
+  - {fileID: 21300000, guid: 48867c5db757e8143bdb22774cfa0b03, type: 3}
+  - {fileID: 21300000, guid: 0e3975e6231984d4fbd6a0d506eea9a6, type: 3}
+  - {fileID: 21300000, guid: 6129f1f1b75595d49b706505234c82b3, type: 3}
+  - {fileID: 21300000, guid: 97540b00d9d8c6e43acafead9a1311c4, type: 3}
+  - {fileID: 21300000, guid: 48af998f337b3d1488508d56d0cb3249, type: 3}
+  - {fileID: 21300000, guid: 9880b2ca02224bf439537d1df3c2dd39, type: 3}
+  - {fileID: 21300000, guid: 2236ea1ae5833a64ea45385462383722, type: 3}
+  - {fileID: 21300000, guid: 25bf78596e1282d4381d6175da6bc19a, type: 3}
+  - {fileID: 21300000, guid: 0cc873c04bc8485489be437388b825bd, type: 3}
+  - {fileID: 21300000, guid: 94236fd84b2968044b2670b6da28f7b2, type: 3}
+  - {fileID: 21300000, guid: d981491c170a8ef42b269cd3499efdd4, type: 3}
+  - {fileID: 21300000, guid: 6ae7394ed58400c4183049b36750908a, type: 3}
+  - {fileID: 21300000, guid: ea568754cbaae094eacb2a693de206c8, type: 3}
+  - {fileID: 21300000, guid: 5a77eb79492aa7f4d855e20d46b89876, type: 3}
+  - {fileID: 21300000, guid: 7d8fcfc3361e4954a98ab71fc14e997a, type: 3}
+  - {fileID: 21300000, guid: 5145a1b9682548544a577a599f9a8101, type: 3}
+  - {fileID: 21300000, guid: b9271da5df0c1114cbb421f746a560be, type: 3}
+  - {fileID: 21300000, guid: afa1e669678cc4e4d9c4f003bed9b9b0, type: 3}
+  - {fileID: 21300000, guid: 282d63ef2af2997438ff42de304b1181, type: 3}
+  - {fileID: 21300000, guid: af21ee1bb818bdb49b7211679b4ac626, type: 3}
+  - {fileID: 21300000, guid: 1ac70787d1c46bb459e09f70504a5a89, type: 3}
+  _material: {fileID: 2100000, guid: d33bcd12abb705840bc1629f6d0c490d, type: 2}
+  _animationDuration: 0.4
+  _loop: 1
+  _playOnAwake: 0
+  _playOnEnable: 1
 --- !u!1 &3922689233292834293
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,6 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _agent: {fileID: 3922689233292834303}
   _skin: {fileID: 3922689235121807199}
+  _animator: {fileID: 149233867543709621}
 --- !u!1 &3922689235121807171
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,8 +193,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3922689235121807171}
   m_LocalRotation: {x: 0.13052616, y: 0, z: 0, w: 0.9914449}
-  m_LocalPosition: {x: 0.0168, y: 0.035, z: -0.032}
-  m_LocalScale: {x: 0.15, y: 0.112500004, z: 0.15}
+  m_LocalPosition: {x: 0.0168, y: 0.0596, z: -0.0254}
+  m_LocalScale: {x: 0.31487596, y: 0.16353, z: 0.21804002}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3922689233292834290}

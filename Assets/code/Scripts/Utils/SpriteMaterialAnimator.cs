@@ -7,6 +7,8 @@ public class SpriteMaterialAnimator : MonoBehaviour
     [SerializeField] Sprite[] _spriteList;
     [SerializeField] Material _material;
     [SerializeField] float _animationDuration = 1;
+    public void SetDuration(float duration) => _animationDuration = duration;
+
     [SerializeField] bool _loop = false;
     [SerializeField] bool _playOnAwake = false;
     [SerializeField] bool _playOnEnable = false;

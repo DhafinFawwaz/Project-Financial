@@ -9,6 +9,7 @@ public class CatFollower : MonoBehaviour
 
     [SerializeField] NavMeshAgent _agent;
     [SerializeField] Transform _skin;
+    [SerializeField] SpriteMaterialAnimator _animator;
     Vector3 _initialScale;
     void Start()
     {
@@ -30,5 +31,7 @@ public class CatFollower : MonoBehaviour
         } else if(_agent.velocity.x < 0) {
             _skin.localScale = new Vector3(_initialScale.x, _initialScale.y, _initialScale.z);
         }
+
+        _animator.SetDuration(1f/_agent.velocity.magnitude);
     }
 }
