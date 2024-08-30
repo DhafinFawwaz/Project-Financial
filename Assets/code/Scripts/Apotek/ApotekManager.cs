@@ -32,7 +32,7 @@ public class ApotekManager : MonoBehaviour
         _currentItemIdx = itemIdx;
         if(_medicines[itemIdx].Stock <= 0)
         {
-            _stockEmptyText.text = $"Maaf stok {_medicines[itemIdx].Name} habis! Silakan kembali di lain hari.";
+            _stockEmptyText.text = $"Maaf stok {_medicines[itemIdx].Name} habis! Silakan kembali dalam {SaveData.DaysUntilNewStock()} hari.";
             _popUpEmptyStock.Show();
             return;
         }

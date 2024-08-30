@@ -10,6 +10,7 @@ public class StoryBedroom : MonoBehaviour
     [SerializeField] GameObject _kasurInteractable;
     [SerializeField] DialogTrigger _dialogTrigger;
     [SerializeField] TextMeshProUGUI _startDate;
+    [SerializeField] TextMeshProUGUI _startDate2;
     [SerializeField] TextMeshProUGUI _endDate;
     [SerializeField] TextMeshProUGUI _missionText;
     void Awake()
@@ -82,6 +83,7 @@ public class StoryBedroom : MonoBehaviour
     public void IncrementDay()
     {
         _startDate.text = (Save.Data.CurrentDay+1).ToString();
+        _startDate2.text = (Save.Data.CurrentDay+1).ToString();
         _endDate.text = (Save.Data.CurrentDay+2).ToString();
         Save.Data.CurrentDay++;
         ApplyDayState();
@@ -90,8 +92,19 @@ public class StoryBedroom : MonoBehaviour
     [SerializeField] DayData _dayData;
     void ApplyDayState()
     {
-        Save.Data.HapinessItemStocks = _dayData.State[Save.Data.CurrentDay].HapinessItemStocks;
-        Save.Data.HealthItemStocks = _dayData.State[Save.Data.CurrentDay].HealthItemStocks;
+        // lol hard coded i dont want to mess this up
+        int d = Save.Data.CurrentDay;
+        if(d == 1) ApplyStocks(0);
+        else if(d == 2) ApplyStocks(1);
+        else if(d == 5) ApplyStocks(2);
+        else if(d == 8) ApplyStocks(3);
+        else if(d == 11) ApplyStocks(4);
+        else if(d == 14) ApplyStocks(5);
+    }
+    void ApplyStocks(int _dayIndex)
+    {
+        Save.Data.HapinessItemStocks = _dayData.State[_dayIndex].HapinessItemStocks;
+        Save.Data.HealthItemStocks = _dayData.State[_dayIndex].HealthItemStocks;
     }
 
 }

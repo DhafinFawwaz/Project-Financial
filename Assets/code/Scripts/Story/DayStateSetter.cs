@@ -10,4 +10,7 @@ public class DayStateSetter : MonoBehaviour
     public void SetAfterBudgeting() => Save.Data.DayState = DayState.AfterBudgeting;
     public void SetAfterBelanja() => Save.Data.DayState = DayState.AfterBelanja;
 
+
+    public void SetMiauCutsceneDone() => Save.Data.IsMiauCutsceneDone = true;
+
 }

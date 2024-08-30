@@ -19,35 +19,50 @@ public class StoryWorld : MonoBehaviour
 
     public void RefreshStates()
     {
-        if(Save.Data.CurrentDay == 1)
+        if(Save.Data.CurrentDay == 1 && !Save.Data.HasTalkedToNaoRikiInDay2)
         {
             _missionText.text = "Ngomong ke Nao dan Riki di depan ITB dulu yuk!.";
             _shopInteractable.SetActive(false);
             _itbInteractable.SetActive(false);
+            _miauInteractable.SetActive(false);
+            _houseInteractable.SetActive(true);
         }   
-        if(Save.Data.HasTalkedToNaoRikiInDay2)
+        else if(Save.Data.DayState == DayState.JustGotOutside)
         {
             _missionText.text = "Ayo ke ITB!";
-            _itbInteractable.SetActive(true);
             _shopInteractable.SetActive(false);
+            _itbInteractable.SetActive(true);
+            _miauInteractable.SetActive(false);
+            _houseInteractable.SetActive(true);
         }
 
 
         if(Save.Data.DayState == DayState.AfterBudgeting)
         {
             _missionText.text = "Belanja di Bunga Mart Yuk!.";
-            _itbInteractable.gameObject.SetActive(false);
             _shopInteractable.SetActive(true);
-        }
-
-        if(Save.Data.JustAfterFirstBelanja)
-        {
-            _missionText.text = "Capek, streaming atau tidur yuk!";
-            _itbInteractable.gameObject.SetActive(false);
-            _shopInteractable.SetActive(false);
-            _miauInteractable.SetActive(true);
+            _itbInteractable.SetActive(false);
+            _miauInteractable.SetActive(false);
             _houseInteractable.SetActive(false);
         }
+
+        if(Save.Data.DayState == DayState.AfterBelanja)
+        {
+            _missionText.text = "Capek, pulang streaming yuk!";
+            _shopInteractable.SetActive(false);
+            _itbInteractable.SetActive(false);
+            _miauInteractable.SetActive(false);
+            _houseInteractable.SetActive(true);
+            
+            if(Save.Data.CurrentDay == 2 && !Save.Data.IsMiauCutsceneDone)
+            {
+                _shopInteractable.SetActive(false);
+                _itbInteractable.SetActive(false);
+                _miauInteractable.SetActive(true);
+                _houseInteractable.SetActive(false);
+            }
+        }
+
     }
 
     public void TalkDone()

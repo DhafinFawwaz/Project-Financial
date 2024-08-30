@@ -4867,6 +4867,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3971823244255289310, guid: 7a53993d627a386468bade91e6694a17, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4314467448905294436, guid: 7a53993d627a386468bade91e6694a17, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4954,6 +4958,10 @@ PrefabInstance:
     - target: {fileID: 4314467448905294440, guid: 7a53993d627a386468bade91e6694a17, type: 3}
       propertyPath: m_Name
       value: '[Canvas] Cursor'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6179814058378683055, guid: 7a53993d627a386468bade91e6694a17, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a53993d627a386468bade91e6694a17, type: 3}
@@ -5168,9 +5176,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 188a4d197850a004c9ce81dc686e4870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _changeLightColor: 1
-  _lightColor: {r: 0.6901961, g: 0.34117648, b: 0.19215687, a: 1}
-  _movePlayerToSpawnPoint: 1
   _spawnPosition: {x: -1.535, y: 0, z: 5.856}
 --- !u!1 &2063156139
 GameObject:
