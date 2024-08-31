@@ -11,10 +11,16 @@ public class StreamCutscene : MonoBehaviour
     [SerializeField] Transform _toasterParent;
 
     List<Toaster> _toasters = new List<Toaster>();
+
+    StreamCutsceneData _currentCutscene;
+    [SerializeField] TopText _topText;
     void Start()
     {
-        
+        Play();
     }
+    [SerializeField] GameObject _blocker;
+
+
 
     [ContextMenu("Test Toast")]
     public void TestToast()
@@ -22,7 +28,7 @@ public class StreamCutscene : MonoBehaviour
         SpawnToaster("Test", "Test test test");
     }
 
-    float _tweenDuration = 2f;
+    [SerializeField] float _tweenDuration = 0.3f;
     public void SpawnToaster(string title, string message)
     {
         Toaster toaster = Instantiate(_toaster, _toasterParent);
@@ -33,32 +39,95 @@ public class StreamCutscene : MonoBehaviour
         _toasters.Insert(0, toaster);
         MoveOtherToasters();
     }
+    public void DespawnAllToasters()
+    {
+        foreach(var toaster in _toasters)
+        {
+            RectTransform rt = toaster.gameObject.GetComponent<RectTransform>();
+            toaster.Move(rt, rt.anchoredPosition, _toasterThrowPosition, _tweenDuration, Ease.OutQuart, () => Destroy(rt.gameObject));
+        }
+        _toasters.Clear();
+    }
     void MoveOtherToasters()
     {
         for(int i = 0; i < Mathf.Min(_toasterPositions.Length, _toasters.Count); i++)
         {
             RectTransform rt = _toasters[i].gameObject.GetComponent<RectTransform>();
-            StartCoroutine(TweenAnchoredPositionAnimation(rt, rt.anchoredPosition, _toasterPositions[i], _tweenDuration, Ease.OutQuart));
+            _toasters[i].Move(rt, rt.anchoredPosition, _toasterPositions[i], _tweenDuration, Ease.OutQuart);
         }
         if(_toasters.Count > _toasterPositions.Length) {
-            RectTransform rt = _toasters[_toasterPositions.Length].gameObject.GetComponent<RectTransform>();
+            var toaster = _toasters[_toasterPositions.Length];
+            RectTransform rt = toaster.gameObject.GetComponent<RectTransform>();
             _toasters.RemoveAt(_toasters.Count-1);
-            StartCoroutine(TweenAnchoredPositionAnimation(rt, rt.anchoredPosition, _toasterThrowPosition, _tweenDuration, Ease.OutQuart, () => Destroy(rt.gameObject)));
+            toaster.Move(rt, rt.anchoredPosition, _toasterThrowPosition, _tweenDuration, Ease.OutQuart, () => Destroy(rt.gameObject));
         }
 
     }
 
-    IEnumerator TweenAnchoredPositionAnimation(RectTransform rt, Vector3 start, Vector3 end, float duration, Ease.Function easeFunction, Action OnComplete = null)
+
+
+    [SerializeField] StreamCutsceneData[] _cutscenes;
+    int _cutsceneIndex = -1;
+    
+    bool _isPlaying = false;
+    public void Play()
     {
-        float startTime = Time.time;
-        float t = (Time.time-startTime)/duration;
-        while (t <= 1)
-        {
-            t = Mathf.Clamp((Time.time-startTime)/duration, 0, 2);
-            rt.anchoredPosition = Vector3.LerpUnclamped(start, end, easeFunction(t));
-            yield return null;
-        }
-        rt.anchoredPosition = end;
-        OnComplete?.Invoke();
+        _currentCutscene = _cutscenes[Save.Data.CurrentDay];
+        _blocker.SetActive(true);
+        _cutsceneIndex = -1;
+
+        // spawn 3 initial toasters
+        this.Invoke(() => {
+            for(int i = 0; i < 3; i++)
+            {
+                var dialog = _currentCutscene.Initial3Dialogs[i];
+                this.Invoke(() => SpawnToaster(GetRandomUsername(), dialog.Message), i * _tweenDuration*0.65f);
+            }
+            this.Invoke(() => _isPlaying = true, 3 * _tweenDuration);
+        }, 0.5f);
     }
+
+    void Update()
+    {
+        if(!_isPlaying) return;
+
+        if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space))
+        {
+            Next();
+        }
+    }
+
+    void Next()
+    {
+        _cutsceneIndex++;
+        if(_cutsceneIndex >= _currentCutscene.Dialogs.Length)
+        {
+            _topText.Hide();
+            DespawnAllToasters();
+            _isPlaying = false;
+            this.Invoke(() => _blocker.SetActive(false), 0.5f);
+            return;
+        }
+        var dialog = _currentCutscene.Dialogs[_cutsceneIndex];
+        if(dialog.type == StreamCutsceneData.Dialog.Type.Streamer)
+        {
+            _topText.SetText(dialog.Message).Show().Play();
+        }
+        else
+        {
+            SpawnToaster(GetRandomUsername(), dialog.Message);
+            _topText.Hide();
+        }
+    }
+
+
+    [Header("Toaster Names")]
+    [TextArea]
+    [SerializeField]
+    string _toasterNames;
+    public string GetRandomUsername()
+    {
+        var names = _toasterNames.Split('\n');
+        return names[UnityEngine.Random.Range(0, names.Length)];
+    } 
 }

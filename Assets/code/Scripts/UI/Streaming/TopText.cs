@@ -58,4 +58,6 @@ public class TopText : MonoBehaviour
         _onceComplete?.Invoke();
         _onceComplete = null;
     }
+
+    
 }

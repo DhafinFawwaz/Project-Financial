@@ -2356,7 +2356,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0013427734, y: 0}
+  m_AnchoredPosition: {x: -0.0014648438, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &774270318
@@ -2593,7 +2593,7 @@ RectTransform:
   m_GameObject: {fileID: 920726037}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1823428300}
@@ -2601,8 +2601,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -632, y: 326.79004}
-  m_SizeDelta: {x: -0.00012207031, y: 0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &920726039
 MonoBehaviour:
@@ -4122,6 +4122,124 @@ MonoBehaviour:
   - {x: -381.415, y: -167.9291, z: 0}
   _toasterThrowPosition: {x: -381.415, y: 167.9291, z: 0}
   _toasterParent: {fileID: 444710210}
+  _topText: {fileID: 1087620855}
+  _blocker: {fileID: 920726037}
+  _tweenDuration: 0.3
+  _cutscenes:
+  - {fileID: 11400000, guid: 012111753b06ea541a4a566fa5c1d4fe, type: 2}
+  - {fileID: 11400000, guid: 012111753b06ea541a4a566fa5c1d4fe, type: 2}
+  - {fileID: 11400000, guid: 012111753b06ea541a4a566fa5c1d4fe, type: 2}
+  - {fileID: 11400000, guid: 012111753b06ea541a4a566fa5c1d4fe, type: 2}
+  - {fileID: 11400000, guid: 012111753b06ea541a4a566fa5c1d4fe, type: 2}
+  _toasterNames: 'Bintang Samara
+
+    Chandra Wijaya
+
+    Dinda Angkasa
+
+    Elara
+    Satria
+
+    Fajar Kirana
+
+    Galuh Perdana
+
+    Hana Cahya
+
+    Ika Langit
+
+    Jingga
+    Bumi
+
+    Karina Bayu
+
+    Laras Mentari
+
+    Maya Angin
+
+    Nadia Samudra
+
+    Olivia
+    Pena
+
+    Putri Hujan
+
+    Qila Cahaya
+
+    Rani Bulan
+
+    Salsabila Bintang
+
+    Tasya
+    Mega
+
+    Utami Aurora
+
+    Valensia Cahaya
+
+    Widya Surya
+
+    Xandra Gemilang
+
+    Yasmin
+    Angkasa
+
+    Zara Bintang
+
+    Aksa Samara
+
+    Bagas Wijaya
+
+    Candra Satria
+
+    Dimas
+    Angkasa
+
+    Eka Kirana
+
+    Fajar Perdana
+
+    Galuh Cahya
+
+    Hanif Langit
+
+    Indra
+    Bumi
+
+    Junaidi Bayu
+
+    Karsa Mentari
+
+    Laksana Angin
+
+    Maha Samudra
+
+    Nanda
+    Pena
+
+    Putra Hujan
+
+    Quinn Cahaya
+
+    Raka Bulan
+
+    Satria Bintang
+
+    Tama
+    Mega
+
+    Uwais Aurora
+
+    Valentino Cahaya
+
+    Widya Surya
+
+    Xavier Gemilang
+
+    Yasmin
+    Angkasa
+
+    Zara Bintang'
 --- !u!1 &1472308241
 GameObject:
   m_ObjectHideFlags: 0
