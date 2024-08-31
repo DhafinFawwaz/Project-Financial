@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -56,8 +57,10 @@ public class PieChartDraggable : MonoBehaviour
         _draggedPie = null;
     }
 
+    public Action<float[]> OnPieValuesChanged;
     void Update()
     {
+        RefreshBase();
         if (_draggedPie == null || _draggedPie.PieBaseImg == null) return;
 
         Vector3 mousePos = Input.mousePosition;
@@ -65,10 +68,11 @@ public class PieChartDraggable : MonoBehaviour
         Vector3 dir = (mousePos - piePos).normalized;
         Vector3 clamped = ClampUpVector(dir, prevUpVector, nextUpVector, initialUpVector);
         _draggedPie.PieArrowImg.transform.up = clamped;
-        RefreshBase();
+        // RefreshBase();
+        OnPieValuesChanged?.Invoke(GetPieValues());
     }
 
-    void RefreshBase()
+    public void RefreshBase()
     {
         for(int i = 0; i < _pies.Length; i++)
         {
@@ -96,6 +100,20 @@ public class PieChartDraggable : MonoBehaviour
             values[i] = _pies[i].PieBaseImg.fillAmount;
         }
         return values;
+    }
+
+    public void SetPieValues(float[] values)
+    {
+        float total = 0; for (int i = 0; i < values.Length; i++) total += values[i];
+        float currentTotal = 0;
+        for (int i = 0; i < _pies.Length; i++)
+        {
+            if(i != 0) currentTotal += values[i - 1];
+            Vector2 dir = Quaternion.Euler(0, 0, -currentTotal/total * 360) * Vector2.up;
+            _pies[i].PieArrowImg.transform.up = dir;
+        }
+        // this.Invoke(RefreshBase, 0.05f);
+        // RefreshBase();
     }
 
     public Vector3 GetPieBaseCenterDirection(int i)

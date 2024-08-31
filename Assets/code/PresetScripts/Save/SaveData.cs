@@ -17,9 +17,10 @@ public class SaveData
     public const int INCREASE_STOCK_EVERY = 3;
     const int MAX_DAY = 15;
     public long NeedsMoney = 100000;
-    public long DesireMoney = 0;
-    public long DebitMoney = 0;
-    public long CreditMoney = 0;
+    public long DesireMoney = 30000;
+    public long DebitMoney = 40000;
+    public long CreditMoney = 10000;
+    public long TotalMoney => NeedsMoney + DesireMoney + DebitMoney + CreditMoney;
     
 
     double _happiness = 100;

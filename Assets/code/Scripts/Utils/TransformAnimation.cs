@@ -10,6 +10,11 @@ public class TransformAnimation : UIAnimation
     [SerializeField] float _duration;
     [SerializeField] Ease.Function _easeFunction = Ease.OutQuart;
 
+    public void SetEase(Ease.Function easeFunction)
+    {
+        _easeFunction = easeFunction;
+    }
+
     public void TweenLocalScale()
     {
         StopAllOtherGraphics();
