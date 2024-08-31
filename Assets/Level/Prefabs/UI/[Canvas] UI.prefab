@@ -836,6 +836,7 @@ MonoBehaviour:
   _dateText: {fileID: 7555314985186161695}
   _diskonTimer: {fileID: 8225444384833956743}
   _inflasiTimer: {fileID: 4773732852432682780}
+  _ktpOnly: 0
   _sceneTransition: {fileID: 5644601496464344134, guid: 3401eac2280b27243b5b1c5da04b2024, type: 3}
 --- !u!1 &7687502803353578878
 GameObject:
@@ -1336,10 +1337,6 @@ PrefabInstance:
     - target: {fileID: 357859711781477801, guid: 71d18f475c7d39c4c994f286e89fbeba, type: 3}
       propertyPath: m_Color.a
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 482232676029020426, guid: 71d18f475c7d39c4c994f286e89fbeba, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -547
       objectReference: {fileID: 0}
     - target: {fileID: 500158676970118360, guid: 71d18f475c7d39c4c994f286e89fbeba, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2048,34 +2045,6 @@ PrefabInstance:
     - target: {fileID: 8605386952806117976, guid: 71d18f475c7d39c4c994f286e89fbeba, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722520397953285661, guid: 71d18f475c7d39c4c994f286e89fbeba, type: 3}
-      propertyPath: CurrentTime
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722520397953285661, guid: 71d18f475c7d39c4c994f286e89fbeba, type: 3}
-      propertyPath: AnimationSequence.Array.data[0].PropertyRectY
-      value: 133
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722520397953285661, guid: 71d18f475c7d39c4c994f286e89fbeba, type: 3}
-      propertyPath: AnimationSequence.Array.data[1].PropertyRectY
-      value: 155
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722520397953285661, guid: 71d18f475c7d39c4c994f286e89fbeba, type: 3}
-      propertyPath: AnimationSequence.Array.data[2].PropertyRectY
-      value: 177
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722520397953285661, guid: 71d18f475c7d39c4c994f286e89fbeba, type: 3}
-      propertyPath: AnimationSequence.Array.data[3].PropertyRectY
-      value: 199
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722520397953285661, guid: 71d18f475c7d39c4c994f286e89fbeba, type: 3}
-      propertyPath: AnimationSequence.Array.data[4].PropertyRectY
-      value: 221
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722520397953285661, guid: 71d18f475c7d39c4c994f286e89fbeba, type: 3}
-      propertyPath: AnimationSequence.Array.data[5].PropertyRectY
-      value: 243
       objectReference: {fileID: 0}
     - target: {fileID: 8985296924960204656, guid: 71d18f475c7d39c4c994f286e89fbeba, type: 3}
       propertyPath: m_Color.a

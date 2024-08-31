@@ -279,7 +279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
       propertyPath: AnimationSequence.Array.data[2].AtTime
-      value: At 0.2s [Canvas] [SetActive to False]
+      value: At 0.2s [[Canvas] Money] [SetActive to False]
       objectReference: {fileID: 0}
     - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
       propertyPath: AnimationSequence.Array.data[2].Target
@@ -287,7 +287,7 @@ PrefabInstance:
       objectReference: {fileID: 105736584}
     - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
       propertyPath: AnimationSequence.Array.data[3].AtTime
-      value: At 0.2s [Canvas (1)] [SetActive to True]
+      value: At 0.2s [[Canvas] Kredit] [SetActive to True]
       objectReference: {fileID: 0}
     - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
       propertyPath: AnimationSequence.Array.data[3].Target
@@ -705,7 +705,7 @@ GameObject:
   - component: {fileID: 105736586}
   - component: {fileID: 105736585}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: '[Canvas] Money'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1428,8 +1428,9 @@ GameObject:
   - component: {fileID: 610839669}
   - component: {fileID: 610839668}
   - component: {fileID: 610839667}
+  - component: {fileID: 610839671}
   m_Layer: 5
-  m_Name: Canvas (2)
+  m_Name: '[Canvas] Overlay Buttons'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1510,6 +1511,7 @@ RectTransform:
   m_Children:
   - {fileID: 1682132947}
   - {fileID: 1281373302}
+  - {fileID: 699693162}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1518,6 +1520,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &610839671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610839666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c99b67f13e5c93409dcdd3500bbca13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &660207914
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2005,7 +2019,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1712038926}
+    m_TransformParent: {fileID: 610839670}
     m_Modifications:
     - target: {fileID: 7584350720312742672, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
       propertyPath: m_Name
@@ -2021,23 +2035,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7584350720312742673, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7584350720312742673, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7584350720312742673, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7584350720312742673, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7584350720312742673, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7584350720312742673, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
       propertyPath: m_SizeDelta.x
@@ -2045,7 +2059,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7584350720312742673, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 109.6028
+      value: 109.60278
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584350720312742673, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584350720312742673, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584350720312742673, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7584350720312742673, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2077,11 +2103,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7584350720312742673, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 731
+      value: -212
       objectReference: {fileID: 0}
     - target: {fileID: 7584350720312742673, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -445
+      value: 81
       objectReference: {fileID: 0}
     - target: {fileID: 7584350720312742673, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2097,11 +2123,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7584350720312742674, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
       propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584350720312742674, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
+      propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 610839671}
+    - target: {fileID: 7584350720312742674, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
+      propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetAfterBudgeting
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584350720312742674, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
+      propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DayStateSetter, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7584350720312742674, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
       propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Bedroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584350720312742674, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
+      propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7584350720312742684, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
       propertyPath: _delay
@@ -2415,7 +2457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
       propertyPath: AnimationSequence.Array.data[2].AtTime
-      value: At 0.2s [Canvas] [SetActive to True]
+      value: At 0.2s [[Canvas] Money] [SetActive to True]
       objectReference: {fileID: 0}
     - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
       propertyPath: AnimationSequence.Array.data[2].Target
@@ -2423,7 +2465,7 @@ PrefabInstance:
       objectReference: {fileID: 105736584}
     - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
       propertyPath: AnimationSequence.Array.data[3].AtTime
-      value: At 0.2s [Canvas (1)] [SetActive to False]
+      value: At 0.2s [[Canvas] Kredit] [SetActive to False]
       objectReference: {fileID: 0}
     - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
       propertyPath: AnimationSequence.Array.data[3].Target
@@ -4517,7 +4559,7 @@ GameObject:
   - component: {fileID: 1712038924}
   - component: {fileID: 1712038923}
   m_Layer: 5
-  m_Name: Canvas (1)
+  m_Name: '[Canvas] Kredit'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4605,7 +4647,6 @@ RectTransform:
   - {fileID: 1330748802}
   - {fileID: 1664505067}
   - {fileID: 207288929}
-  - {fileID: 699693162}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

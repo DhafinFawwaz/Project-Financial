@@ -8004,10 +8004,6 @@ PrefabInstance:
       propertyPath: AnimationSequence.Array.data[3].AnchoredPositionStart.y
       value: -771
       objectReference: {fileID: 0}
-    - target: {fileID: 2277595365851024428, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -547
-      objectReference: {fileID: 0}
     - target: {fileID: 2951640873786325277, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
       propertyPath: _isBelanja
       value: 0
@@ -8033,30 +8029,6 @@ PrefabInstance:
       value: 221
       objectReference: {fileID: 0}
     - target: {fileID: 6928232695230188347, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
-      propertyPath: CurrentTime
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6928232695230188347, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
-      propertyPath: AnimationSequence.Array.data[0].IsUnfolded
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6928232695230188347, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
-      propertyPath: AnimationSequence.Array.data[1].ColorEnd.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6928232695230188347, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
-      propertyPath: AnimationSequence.Array.data[1].IsUnfolded
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6928232695230188347, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
-      propertyPath: AnimationSequence.Array.data[3].IsUnfolded
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6928232695230188347, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
-      propertyPath: AnimationSequence.Array.data[1].ColorStart.a
-      value: 0.6745098
-      objectReference: {fileID: 0}
-    - target: {fileID: 6928232695230188347, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
       propertyPath: AnimationSequence.Array.data[0].PropertyRectY
       value: 133
       objectReference: {fileID: 0}
@@ -8074,55 +8046,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6928232695230188347, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
       propertyPath: AnimationSequence.Array.data[4].PropertyRectY
-      value: 221
+      value: 382
       objectReference: {fileID: 0}
     - target: {fileID: 6928232695230188347, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
       propertyPath: AnimationSequence.Array.data[5].PropertyRectY
-      value: 243
-      objectReference: {fileID: 0}
-    - target: {fileID: 6928232695230188347, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
-      propertyPath: AnimationSequence.Array.data[0].PropertyRectHeight
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6928232695230188347, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
-      propertyPath: AnimationSequence.Array.data[1].PropertyRectHeight
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6928232695230188347, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
-      propertyPath: AnimationSequence.Array.data[3].PropertyRectHeight
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6928232695230188347, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
-      propertyPath: AnimationSequence.Array.data[0].AnchoredPositionEnd.x
-      value: 361
-      objectReference: {fileID: 0}
-    - target: {fileID: 6928232695230188347, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
-      propertyPath: AnimationSequence.Array.data[0].AnchoredPositionEnd.y
-      value: -1140
-      objectReference: {fileID: 0}
-    - target: {fileID: 6928232695230188347, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
-      propertyPath: AnimationSequence.Array.data[0].LocalEulerAnglesEnd.z
-      value: -60
-      objectReference: {fileID: 0}
-    - target: {fileID: 6928232695230188347, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
-      propertyPath: AnimationSequence.Array.data[3].AnchoredPositionEnd.y
-      value: -547
-      objectReference: {fileID: 0}
-    - target: {fileID: 6928232695230188347, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
-      propertyPath: AnimationSequence.Array.data[0].AnchoredPositionStart.x
-      value: -13.9122
-      objectReference: {fileID: 0}
-    - target: {fileID: 6928232695230188347, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
-      propertyPath: AnimationSequence.Array.data[0].AnchoredPositionStart.y
-      value: -203.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 6928232695230188347, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
-      propertyPath: AnimationSequence.Array.data[0].LocalEulerAnglesStart.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6928232695230188347, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
-      propertyPath: AnimationSequence.Array.data[3].AnchoredPositionStart.y
-      value: -874.2
+      value: 404
       objectReference: {fileID: 0}
     - target: {fileID: 7555314985520080242, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
       propertyPath: AnimationSequence.Array.data[0].PropertyRectY

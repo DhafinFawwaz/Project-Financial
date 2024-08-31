@@ -19,7 +19,6 @@ public class BudgetingManager : MonoBehaviour
             .SetHappiness(Save.Data.Happiness)
             .SetHealth(Save.Data.Health)
             .SetSkillPoint(Save.Data.SkillPoin);
-        Save.Data.DayState = DayState.AfterBudgeting;
     }
 
 

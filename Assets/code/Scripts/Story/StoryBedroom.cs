@@ -27,17 +27,9 @@ public class StoryBedroom : MonoBehaviour
         }
 
 
-
-        if (Save.Data.CurrentDayData.StreamingCounter == 3)
+        if(Save.Data.CurrentDayData.StreamingCounter >= 1 && Save.Data.DayState == DayState.AfterStreaming)
         {
-            _missionText.text = "Udah woi jangan Streaming lagi, waktunya tidur!";
-            _streamingInteractable.SetActive(false);
-            _kasurInteractable.SetActive(true);
-            _keluarBlocker.SetActive(true);
-        }
-        else if(Save.Data.CurrentDayData.StreamingCounter == 1 || Save.Data.CurrentDayData.StreamingCounter == 2)
-        {
-            _missionText.text = "Waktunya tidur, atau streaming lagi hehe.";
+            _missionText.text = "Waktunya tidur !";
             _streamingInteractable.SetActive(true);
             _kasurInteractable.SetActive(true);
             _keluarBlocker.SetActive(true);
@@ -95,15 +87,16 @@ public class StoryBedroom : MonoBehaviour
         // lol hard coded i dont want to mess this up
         int d = Save.Data.CurrentDay;
         if(d == 1) ApplyStocks(0);
-        else if(d == 2) ApplyStocks(1);
-        else if(d == 5) ApplyStocks(2);
-        else if(d == 8) ApplyStocks(3);
-        else if(d == 11) ApplyStocks(4);
-        else if(d == 14) ApplyStocks(5);
+        else if(d == 2) ApplyStocks(2);
+        else if(d == 5) ApplyStocks(5);
+        else if(d == 8) ApplyStocks(8);
+        else if(d == 11) ApplyStocks(11);
+        else if(d == 14) ApplyStocks(14);
+
+        Save.Data.HapinessItemStocks = _dayData.State[d].HapinessItemStocks;
     }
     void ApplyStocks(int _dayIndex)
     {
-        Save.Data.HapinessItemStocks = _dayData.State[_dayIndex].HapinessItemStocks;
         Save.Data.HealthItemStocks = _dayData.State[_dayIndex].HealthItemStocks;
     }
 

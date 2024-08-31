@@ -32,7 +32,7 @@ public class PopUpSeller : MonoBehaviour
 
         if(_snack.Stock <= 0)
         {
-            _stockEmptyText.text = $"Maaf stok {_snack.Name} habis! Silakan kembali dalam {SaveData.DaysUntilNewStock()} hari.";
+            _stockEmptyText.text = $"Maaf stok {_snack.Name} habis! Silakan coba kembali besok.";
             _popUpEmptyStock.Show();
             return;
         }
