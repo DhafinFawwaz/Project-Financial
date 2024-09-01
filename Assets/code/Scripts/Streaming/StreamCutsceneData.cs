@@ -13,6 +13,7 @@ public class StreamCutsceneData : ScriptableObject
         {
             Streamer,
             Toaster,
+            ToasterDanger
         }
         public Type type;
         public string Name;
@@ -39,7 +40,9 @@ public class DialogDrawer : UnityEditor.PropertyDrawer
         Rect typeRect = new Rect(position.x, position.y, 80, position.height);
         
         UnityEditor.EditorGUI.PropertyField(typeRect, property.FindPropertyRelative("type"), GUIContent.none);
-        if((StreamCutsceneData.Dialog.Type)property.FindPropertyRelative("type").enumValueIndex == StreamCutsceneData.Dialog.Type.Toaster)
+
+        StreamCutsceneData.Dialog.Type enumVal = (StreamCutsceneData.Dialog.Type)property.FindPropertyRelative("type").enumValueIndex;
+        if(enumVal == StreamCutsceneData.Dialog.Type.ToasterDanger)
         {
             Rect nameRect = new Rect(position.x + 80, position.y, 80, position.height);
             Rect messageRect = new Rect(position.x + 160, position.y, position.width - 160, position.height);

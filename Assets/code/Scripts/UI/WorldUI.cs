@@ -132,14 +132,4 @@ public class WorldUI : MonoBehaviour
             .SetHealth(Save.Data.Health, _addedHealth);
 
     }
-
-
-    [SerializeField] SceneTransition _sceneTransition;
-    public void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            // _sceneTransition.StartSceneTransition("MainMenu");
-        }
-    }
 }

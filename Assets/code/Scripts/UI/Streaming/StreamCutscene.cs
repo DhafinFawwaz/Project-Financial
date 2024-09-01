@@ -6,6 +6,7 @@ using UnityEngine;
 public class StreamCutscene : MonoBehaviour
 {
     [SerializeField] Toaster _toaster;
+    [SerializeField] Toaster _toasterDanger;
     [SerializeField] Vector3[] _toasterPositions;
     [SerializeField] Vector3 _toasterThrowPosition;
     [SerializeField] Transform _toasterParent;
@@ -29,15 +30,28 @@ public class StreamCutscene : MonoBehaviour
     }
 
     [SerializeField] float _tweenDuration = 0.3f;
-    public void SpawnToaster(string title, string message)
+
+
+    void ApplyToaster(Toaster toaster, string title, string message)
     {
-        Toaster toaster = Instantiate(_toaster, _toasterParent);
         toaster.SetText(title, message);
         RectTransform rt = toaster.GetComponent<RectTransform>();
         Vector2 pos = _toasterPositions[0];
         rt.anchoredPosition = new Vector2(-pos.x, pos.y);
         _toasters.Insert(0, toaster);
         MoveOtherToasters();
+    }
+
+    public void SpawnToaster(string title, string message)
+    {
+        Toaster toaster = Instantiate(_toaster, _toasterParent);
+        ApplyToaster(toaster, title, message);
+    }
+
+    public void SpawnToasterDanger(string title, string message)
+    {
+        Toaster toaster = Instantiate(_toasterDanger, _toasterParent);
+        ApplyToaster(toaster, title, message);
     }
     public void DespawnAllToasters()
     {
@@ -81,7 +95,10 @@ public class StreamCutscene : MonoBehaviour
             for(int i = 0; i < 3; i++)
             {
                 var dialog = _currentCutscene.Initial3Dialogs[i];
-                this.Invoke(() => SpawnToaster(GetRandomUsername(), dialog.Message), i * _tweenDuration*0.65f);
+                this.Invoke(() => {
+                    if(dialog.type == StreamCutsceneData.Dialog.Type.Toaster) SpawnToaster(GetRandomUsername(), dialog.Message);
+                    else SpawnToasterDanger(GetRandomUsername(), dialog.Message);
+                }, i * _tweenDuration*0.65f);
             }
             this.Invoke(() => _isPlaying = true, 3 * _tweenDuration);
         }, 0.5f);
@@ -115,7 +132,8 @@ public class StreamCutscene : MonoBehaviour
         }
         else
         {
-            SpawnToaster(GetRandomUsername(), dialog.Message);
+            if(dialog.type == StreamCutsceneData.Dialog.Type.Toaster) SpawnToaster(GetRandomUsername(), dialog.Message);
+            else SpawnToasterDanger(dialog.Name, dialog.Message);
             _topText.Hide();
         }
     }

@@ -24,7 +24,7 @@ public class VignetteStolen : MonoBehaviour
             _vignette.SetEndColor(new Color(0,0,0,0));
             _vignette.Play();
             Time.timeScale = 1;
-        }, 1);
+        }, 0.5f);
     }
 
     byte _key = 0;
