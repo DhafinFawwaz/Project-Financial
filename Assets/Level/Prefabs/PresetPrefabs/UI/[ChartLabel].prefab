@@ -465,6 +465,7 @@ GameObject:
   - component: {fileID: 7541294612412270464}
   - component: {fileID: 7541294612412270470}
   - component: {fileID: 7541294612412270471}
+  - component: {fileID: 6966855679656237492}
   m_Layer: 5
   m_Name: Icon
   m_TagString: Untagged
@@ -530,3 +531,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6966855679656237492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7541294612412270465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b067ce1ecc88f64783b1bc9b2c3bc42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animationToInterrupt: []
+  _target: {fileID: 7541294612412270464}
+  _end: {x: 1, y: 1, z: 1}
+  _duration: 0.5

@@ -19,6 +19,7 @@ public class SaveData
     public long NeedsMoney = 100000;
     public long DesireMoney = 30000;
     public long DebitMoney = 40000;
+    public long DebitTabunganMoney = 150000;
     public long TotalMoney => NeedsMoney + DesireMoney + DebitMoney;
     
 
@@ -43,14 +44,18 @@ public class SaveData
     
     public SaveData()
     {
-        NeedsMoney = 100000;
         Happiness = 100;
         Health = 100;
-        CurrentDay = 0;
+        CurrentDay = 2;
         CurrentListBelanja = new List<ItemCount>();
         CurrentBelanjaMoney = 0;
         SkillPoin = 0;
         SubscriberAmount = 50000;
+
+        NeedsMoney = 100000;
+        DesireMoney = 30000;
+        DebitMoney = 40000;
+        DebitTabunganMoney = 150000;
 
         for(int i = 0; i < MAX_DAY; i++)
         {
@@ -74,6 +79,26 @@ public class SaveData
         public long StreamingCounter = 0;
         public long GainedSubscriber = 0;
         public long CreditMoney = 50000;
+        public long GainedMoney = 100000;
+
+        public DayData()
+        {
+            StreamingCounter = 0;
+            GainedSubscriber = 0;
+            CreditMoney = 50000;
+            GainedMoney = 100000;
+        }
+    }
+
+
+    const int GET_MONEY_EVERY = 3;
+    public long TotalGainedMoneyFromToday(){
+        int day = CurrentDay;
+        long total = 0;
+        for(int i = day-GET_MONEY_EVERY+1; i <= day; i++){
+            total += DayDatas[i].GainedMoney;
+        }
+        return total;
     }
 
     public List<long> GainedSubscriberEachDay => DayDatas.ConvertAll(x => x.GainedSubscriber);

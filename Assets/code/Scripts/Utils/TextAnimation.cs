@@ -5,8 +5,8 @@ using TMPro;
 using System;
 public class TextAnimation : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI _text;
-    string _prefix = "";
+    [SerializeField] protected TextMeshProUGUI _text;
+    protected string _prefix = "";
 
     public void SetAndAnimate(float initialValue, float finalValue, float duration)
     {
@@ -19,7 +19,7 @@ public class TextAnimation : MonoBehaviour
         while(t < 1)
         {
             t += Time.deltaTime/duration;
-            _text.text = getFormattedValue(Mathf.Lerp(initialValue, finalValue, Ease.OutQuart(t)));
+            _text.text = getFormattedValue(Mathf.Lerp(initialValue, finalValue, Ease.OutQuad(t)));
             yield return null;
         }
         _text.text = getFormattedValue(finalValue);
@@ -33,5 +33,10 @@ public class TextAnimation : MonoBehaviour
     public virtual void SetPrefix(string prefix)
     {
         _prefix = prefix;
+    }
+
+    void Reset()
+    {
+        _text = GetComponent<TextMeshProUGUI>();
     }
 }

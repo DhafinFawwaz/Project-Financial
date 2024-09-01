@@ -7,6 +7,7 @@ public class PieChartItemSpawner : MonoBehaviour
     [SerializeField] PieChartDraggable _pieChart;
     [SerializeField] GameObject _itemPrefab;
     [SerializeField] Transform[] _targetTransforms;
+    [SerializeField] TransformAnimation[] _iconTransforms;
     float _spawnDelay = 0.1f;
 
     float[] _itemValues;
@@ -59,6 +60,12 @@ public class PieChartItemSpawner : MonoBehaviour
             StartCoroutine(TweenScale(item.transform, Vector3.one, Vector3.zero, 0.2f));
         }, 0.1f);
         Destroy(item.gameObject, 0.45f);
+
+        // Wallet scale animation
+        this.Invoke(() => {
+            _iconTransforms[targetIdx].transform.localScale = Vector3.one * 1.5f;
+            _iconTransforms[targetIdx].TweenLocalScale();
+        }, 0.3f);
     }
 
     void TargetToTarget(int idx1, int idx2)
@@ -79,6 +86,13 @@ public class PieChartItemSpawner : MonoBehaviour
             StartCoroutine(TweenScale(item.transform, Vector3.one, Vector3.zero, 0.2f));
         }, 0.1f);
         Destroy(item.gameObject, 0.45f);
+
+
+        // Wallet scale animation
+        this.Invoke(() => {
+            _iconTransforms[idx].transform.localScale = Vector3.one * 1.5f;
+            _iconTransforms[idx].TweenLocalScale();
+        }, 0.3f);
     }
 
     void ItemPieToTarget(int idx)
