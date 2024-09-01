@@ -22,7 +22,7 @@ public class EndStreamButton : MonoBehaviour
     void Update()
     {
         if(Save.Data.CurrentDayData.StreamingCounter == 0) return;
-        if(Input.GetKeyDown(KeyCode.E)) {
+        if(InputManager.GetKeyDown(KeyCode.E)) {
             _onEDown?.Invoke();
             enabled = false;
         }

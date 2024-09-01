@@ -97,6 +97,7 @@ public class Thief : MonoBehaviour
 
         if(!IsPlayerInArea()) {
             _agent.SetDestination(_areaCenter);
+            ApplyAnimation();
             return;
         }
 

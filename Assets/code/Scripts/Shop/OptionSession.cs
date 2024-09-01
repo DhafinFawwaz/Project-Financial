@@ -135,7 +135,7 @@ public class OptionSession : MonoBehaviour
     void Update()
     {
         if(!_isPlaying) return;
-        if(Input.GetKeyDown(KeyCode.E) && Time.time - _openTime > 0.5f) // Prevent double press
+        if(InputManager.GetKeyDown(KeyCode.E) && Time.time - _openTime > 0.5f) // Prevent double press
         {
             if(GetChoosenOption() == null) return; // case not buying anything
 

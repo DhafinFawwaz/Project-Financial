@@ -1562,17 +1562,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 685445994}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &695375767 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5012220997152878200, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
-  m_PrefabInstance: {fileID: 7555314987237579318}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &732334820
 GameObject:
   m_ObjectHideFlags: 0
@@ -4302,7 +4291,7 @@ MonoBehaviour:
   _startDate: {fileID: 899407153}
   _startDate2: {fileID: 1918429698}
   _endDate: {fileID: 175519674}
-  _missionText: {fileID: 695375767}
+  _missionText: {fileID: 7555314987237579320}
   _dayData: {fileID: 11400000, guid: fc25845cf77f10b4b9e8e6ed738f81a0, type: 2}
 --- !u!114 &1559678393
 MonoBehaviour:
@@ -4316,7 +4305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e2104587f2655f4e854c8019517455f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _commentList: {fileID: 11400000, guid: 9fb55b3dbb7b6374490a0d7e5c22b9dc, type: 2}
+  _dialogData: {fileID: 11400000, guid: 9fb55b3dbb7b6374490a0d7e5c22b9dc, type: 2}
 --- !u!1 &1568275566 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6179814058378683055, guid: 7a53993d627a386468bade91e6694a17, type: 3}
@@ -8207,5 +8196,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dea5d3f6b92c39d49aec591aa095be0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7555314987237579320 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4254482359655888765, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+  m_PrefabInstance: {fileID: 7555314987237579318}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

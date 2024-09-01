@@ -24,7 +24,7 @@ public class BudgetingManager : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if(InputManager.GetKeyDown(KeyCode.E))
         {
             Save.Data.CurrentListBelanja  = _belanjaList.ListToBuy;
             Save.Data.CurrentBelanjaMoney = _belanjaList.CalculateTotalPrive();

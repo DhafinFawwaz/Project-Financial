@@ -69,7 +69,7 @@ public class AfterBelanja : MonoBehaviour
     [SerializeField] UnityEvent onE;
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if(InputManager.GetKeyDown(KeyCode.E))
         {
             onE?.Invoke();
         }

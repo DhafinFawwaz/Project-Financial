@@ -133,6 +133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 127545620}
   - component: {fileID: 127545621}
+  - component: {fileID: 127545622}
+  - component: {fileID: 127545623}
   m_Layer: 0
   m_Name: '[Kuliah]'
   m_TagString: Untagged
@@ -193,11 +195,48 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 127545622}
+        m_TargetAssemblyTypeName: DayStateSetter, Assembly-CSharp
+        m_MethodName: SetAfterKuliah
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _animationUIs:
   - {fileID: 337362616}
   - {fileID: 252523534}
   - {fileID: 1617823690}
   - {fileID: 2064650221}
+--- !u!114 &127545622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127545619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c99b67f13e5c93409dcdd3500bbca13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &127545623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127545619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 188a4d197850a004c9ce81dc686e4870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnPosition: {x: -1.5, y: 0, z: 5.55}
 --- !u!1 &145131090
 GameObject:
   m_ObjectHideFlags: 0
@@ -5976,7 +6015,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4070756210407498853}
-  - {fileID: 4070756211473874917}
   m_Father: {fileID: 4070756211845027031}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6014,7 +6052,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4070756211473874917}
   m_Father: {fileID: 4070756210161954431}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6086,18 +6125,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4070756211473874916}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4070756210161954431}
-  m_RootOrder: 1
+  m_Father: {fileID: 4070756210407498853}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 139.4, y: 24.1}
-  m_SizeDelta: {x: -325.3909, y: -70.0802}
+  m_SizeDelta: {x: -329.6709, y: -74.0934}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4070756211473874918
 MonoBehaviour:
@@ -6218,9 +6257,9 @@ MonoBehaviour:
   m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.2627451, g: 0.2627451, b: 0.2627451, a: 1}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_SelectedColor: {r: 0.2627451, g: 0.2627451, b: 0.2627451, a: 1}
+    m_HighlightedColor: {r: 0.88, g: 0.88, b: 0.88, a: 1}
+    m_PressedColor: {r: 0.75, g: 0.75, b: 0.75, a: 1}
+    m_SelectedColor: {r: 0.88, g: 0.88, b: 0.88, a: 1}
     m_DisabledColor: {r: 0.44313726, g: 0.44313726, b: 0.44313726, a: 1}
     m_ColorMultiplier: 0
     m_FadeDuration: 0.15
@@ -6236,7 +6275,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 4070756210161954426}
+  m_TargetGraphic: {fileID: 4070756210407498854}
   _textColors:
     m_NormalColor: {r: 0, g: 0, b: 0, a: 1}
     m_HighlightedColor: {r: 0, g: 0, b: 0, a: 1}
@@ -6247,8 +6286,8 @@ MonoBehaviour:
     m_FadeDuration: 0.15
   _scales:
     m_NormalScale: 1
-    m_HighlightedScale: 1.15
-    m_PressedScale: 1.3
+    m_HighlightedScale: 1.1
+    m_PressedScale: 1.17
     m_SelectedScale: 1.15
     m_DisabledScale: 1
     m_ScaleMultiplier: 1
