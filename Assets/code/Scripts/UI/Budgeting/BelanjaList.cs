@@ -33,6 +33,14 @@ public class BelanjaList : MonoBehaviour
         UpdateDisplay();
     }
 
+
+    public void AddAllItem(List<ItemData> items)
+    {
+        foreach(ItemData item in items)
+        {
+            AddItem(item);
+        }
+    }
     public void RemoveItem(ItemData item)
     {
         if(_listToBuy.Exists(x => x.Item.Name == item.Name))
@@ -43,6 +51,12 @@ public class BelanjaList : MonoBehaviour
                 _listToBuy.Remove(_listToBuy.Find(x => x.Item.Name == item.Name));
             }
         }
+        UpdateDisplay();
+    }
+
+    public void Clear()
+    {
+        _listToBuy.Clear();
         UpdateDisplay();
     }
 
@@ -85,6 +99,19 @@ public class BelanjaList : MonoBehaviour
             total += item.Item.Price * item.Count;
         }
         return total;
+    }
+
+    public void CalculateInfo(out double totalHealth, out double totalHappiness, out long totalPrice)
+    {
+        totalHealth = 0;
+        totalHappiness = 0;
+        totalPrice = 0;
+        foreach(ItemCount item in _listToBuy)
+        {
+            totalHealth += item.Item.Health * item.Count;
+            totalHappiness += item.Item.Happiness * item.Count;
+            totalPrice += item.Item.Price * item.Count;
+        }
     }
 
     public void AddToCart(ItemData item)

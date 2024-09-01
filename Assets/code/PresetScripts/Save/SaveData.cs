@@ -15,6 +15,9 @@ public enum DayState
 public class SaveData
 {
     public const int INCREASE_STOCK_EVERY = 3;
+    public const int KREDIT_DEADLINE = 3;
+
+
     const int MAX_DAY = 15;
     public long NeedsMoney = 100000;
     public long DesireMoney = 30000;
@@ -92,7 +95,7 @@ public class SaveData
 
 
     const int GET_MONEY_EVERY = 3;
-    public long TotalGainedMoneyFromToday(){
+    public long GetSalaryFromToday(){
         int day = CurrentDay;
         long total = 0;
         for(int i = day-GET_MONEY_EVERY+1; i <= day; i++){

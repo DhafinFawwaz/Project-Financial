@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class BudgetingController : MonoBehaviour
 {
@@ -11,31 +13,12 @@ public class BudgetingController : MonoBehaviour
     [SerializeField] TextMeshProUGUI[] _textPercentFields;
     [SerializeField] TMP_InputField _transferInput;
     [SerializeField] GameObject _confirmButton;
+    [SerializeField] GameObject _okButton;
+    [SerializeField] GameObject _lunasPage;
 
     void Awake()
     {
-        Refresh();
-    }
-
-
-
-    public void Refresh()
-    {
-        _pieChart.SetPieValues(new float[]{
-            Save.Data.DebitMoney,
-            Save.Data.DesireMoney,
-            Save.Data.NeedsMoney,
-        });
-        _textFields[0].text = Save.Data.DebitMoney.ToStringCurrencyFormat();
-        _textFields[1].text = Save.Data.DesireMoney.ToStringCurrencyFormat();
-        _textFields[2].text = Save.Data.NeedsMoney.ToStringCurrencyFormat();
-
-        long total = Save.Data.TotalMoney;
-        _textPercentFields[0].text = (Save.Data.DebitMoney / (float)total * 100).ToString("0.0") + "%";
-        _textPercentFields[1].text = (Save.Data.DesireMoney / (float)total * 100).ToString("0.0") + "%";
-        _textPercentFields[2].text = (Save.Data.NeedsMoney / (float)total * 100).ToString("0.0") + "%";
-
-        _kreditText.text = CurrentCreditMoney.ToStringCurrencyFormat();
+        // Kredit
         _transferInput.contentType = TMP_InputField.ContentType.DecimalNumber;
         _transferInput.onSubmit.AddListener((string s) => {
             EventSystem.current.SetSelectedGameObject(null);
@@ -49,19 +32,75 @@ public class BudgetingController : MonoBehaviour
             }
         });
 
-        // Money types
-        _moneyObjsText[0].GetComponent<TextMeshProUGUI>().text = Save.Data.NeedsMoney.ToStringRupiahFormat();
-        _moneyObjsText[1].GetComponent<TextMeshProUGUI>().text = Save.Data.DesireMoney.ToStringRupiahFormat();
-        _moneyObjsText[2].GetComponent<TextMeshProUGUI>().text = Save.Data.DebitMoney.ToStringRupiahFormat();
+
+        // Debit
+        _transferDebitInput.contentType = TMP_InputField.ContentType.DecimalNumber;
+        _transferDebitInput.onSubmit.AddListener((string s) => {
+            EventSystem.current.SetSelectedGameObject(null);
+            TransferDebit();
+        });
+
+        Refresh();
+    }
+
+
+
+    public void Refresh()
+    {
+        _pieChart.SetPieValues(new float[]{
+            Save.Data.DebitMoney,
+            Save.Data.DesireMoney,
+            Save.Data.NeedsMoney,
+        });
+        _textFields[0].text = "<color=#00000066>" + Save.Data.DebitTabunganMoney.ToStringRupiahFormat() + " + <color=#000>" + Save.Data.DebitMoney.ToStringRupiahFormat();
+        _textFields[1].text = Save.Data.DesireMoney.ToStringRupiahFormat();
+        _textFields[2].text = Save.Data.NeedsMoney.ToStringRupiahFormat();
+
+        long total = Save.Data.TotalMoney;
+        _textPercentFields[0].text = (Save.Data.DebitMoney / (float)total * 100).ToString("0.0") + "%";
+        _textPercentFields[1].text = (Save.Data.DesireMoney / (float)total * 100).ToString("0.0") + "%";
+        _textPercentFields[2].text = (Save.Data.NeedsMoney / (float)total * 100).ToString("0.0") + "%";
+
+        _kreditText.text = CurrentCreditMoney.ToStringRupiahFormat();
 
 
         // Kredit
+
+        // Money types
+        _moneyObjsText[0].GetComponent<TextMeshProUGUI>().text = "<color=#000>" + Save.Data.DebitTabunganMoney.ToStringRupiahFormat() + " + <color=#00000066>" + Save.Data.DebitMoney.ToStringRupiahFormat();
+        _moneyObjsText[1].GetComponent<TextMeshProUGUI>().text = Save.Data.DesireMoney.ToStringRupiahFormat();
+        _moneyObjsText[2].GetComponent<TextMeshProUGUI>().text = Save.Data.NeedsMoney.ToStringRupiahFormat();
+
+        // Tagihan
         _kreditDayText.text = "Tagihan Hari Ke-" + (_choosenKreditDay + 1);
+        _kreditDeadlineText.text = "Deadline Hari Ke-" + (_choosenKreditDay + SaveData.KREDIT_DEADLINE);
         _kreditMinimumText.text = "Minimum: 10000";
-        _kreditText.text = CurrentCreditMoney.ToStringCurrencyFormat();
+        _kreditText.text = CurrentCreditMoney.ToStringRupiahFormat();
         
         _prevButton.SetActive(IsPrevKreditExist());
         _nextButton.SetActive(IsNextKreditExist());
+
+        // if there is no kredit, show lunas
+        if(!IsKreditExist()) {
+            // show lunas
+            _lunasPage.SetActive(true);
+        } else {
+            // if the current page credit is 0, find any credit
+            if(CurrentCreditMoney == 0) {
+                _choosenKreditDay = 0;
+                NextKreditPage();
+            }
+        }
+
+
+
+        // Debit
+
+        // Money types
+        _moneyDebitObjsText[0].GetComponent<TextMeshProUGUI>().text = Save.Data.DesireMoney.ToStringRupiahFormat();
+        _moneyDebitObjsText[1].GetComponent<TextMeshProUGUI>().text = Save.Data.NeedsMoney.ToStringRupiahFormat();
+
+        _debitText.text = Save.Data.DebitTabunganMoney.ToStringRupiahFormat() + "<color=#00000066> + " + Save.Data.DebitMoney.ToStringRupiahFormat();
     }
 
 
@@ -94,14 +133,17 @@ public class BudgetingController : MonoBehaviour
 
         for (int i = 0; i < values.Length; i++)
         {
-            _textFields[i].text = (values[i] * _totalMoney).ToStringCurrencyFormat();
+            _textFields[i].text = (values[i] * _totalMoney).ToStringRupiahFormat();
             _textPercentFields[i].text = (values[i] * 100).ToString("0.0") + "%";
         }
+
+        _textFields[0].text = "<color=#00000066>" + Save.Data.DebitTabunganMoney.ToStringRupiahFormat() + " + <color=#000>" + (values[0] * _totalMoney).ToStringRupiahFormat();
     }
 
 
 
     // Kredit transfer
+
     [SerializeField] TransformAnimation[] _moneyObjs;
     [SerializeField] TransformAnimation[] _moneyObjsSmall;
     [SerializeField] TransformAnimation[] _moneyObjsText;
@@ -151,6 +193,7 @@ public class BudgetingController : MonoBehaviour
         if(amount <= 0) {
             _popUpText.text = "Jumlah uang harus lebih dari 0!";
             _popUp.Show();
+            EventSystem.current.SetSelectedGameObject(_okButton);
             return;
         }
 
@@ -206,6 +249,7 @@ public class BudgetingController : MonoBehaviour
     {
         _popUpText.text = type + " tidak cukup! Coba ganti dengan uang lain atau atur ulang alokasi uang!";
         _popUp.Show();
+        EventSystem.current.SetSelectedGameObject(_okButton);
     }
 
 
@@ -216,11 +260,22 @@ public class BudgetingController : MonoBehaviour
     [SerializeField] TextMeshProUGUI _kreditText;
     [SerializeField] TextMeshProUGUI _kreditDayText;
     [SerializeField] TextMeshProUGUI _kreditMinimumText;
+    [SerializeField] TextMeshProUGUI _kreditDeadlineText;
     int _choosenKreditDay = 0;
     long CurrentCreditMoney {
         get => Save.Data.DayDatas[_choosenKreditDay].CreditMoney;
         set => Save.Data.DayDatas[_choosenKreditDay].CreditMoney = value;
     }
+
+    bool IsKreditExist()
+    {
+        for (int i = 0; i < Save.Data.DayDatas.Count; i++)
+        {
+            if(Save.Data.DayDatas[i].CreditMoney > 0) return true;
+        }
+        return false;
+    }
+
     bool IsNextKreditExist()
     {
         for (int i = _choosenKreditDay + 1; i < Save.Data.DayDatas.Count; i++)
@@ -252,5 +307,198 @@ public class BudgetingController : MonoBehaviour
             _choosenKreditDay--;
         }
         Refresh();
+    }
+
+
+
+    // Debit transfer
+    [Header("Debit")]
+    [SerializeField] TextMeshProUGUI _debitText;
+    [SerializeField] Image _leftToRightImg;
+    [SerializeField] TransformAnimation _leftToRightAnim;
+    [SerializeField] Sprite _leftToRightSprite;
+    [SerializeField] Sprite _rightToLeftSprite;
+
+    [SerializeField] TMP_InputField _transferDebitInput;
+    [SerializeField] PopUp _confirmDebitPopUp;
+    [SerializeField] GameObject _confirmDebitButton;
+    [SerializeField] TextMeshProUGUI _confirmDebitText;
+    [SerializeField] TransformAnimation[] _moneyDebitObjs;
+    [SerializeField] TransformAnimation[] _moneyDebitObjsSmall;
+    [SerializeField] TransformAnimation[] _moneyDebitObjsText;
+    
+    int _pageDebit = 0;
+    bool _leftToRight = true;
+
+    public void ToggleLeftToRight()
+    {
+        _leftToRight = !_leftToRight;
+        _leftToRightImg.sprite = _leftToRight ? _leftToRightSprite : _rightToLeftSprite;
+        _leftToRightAnim.transform.localScale = Vector3.one * 1.5f;
+        _leftToRightAnim.TweenLocalScale();
+    }
+
+    public void NextPageDebit()
+    {
+        _pageDebit++;
+        if (_pageDebit >= _moneyDebitObjs.Length)
+        {
+            _pageDebit = 0;
+        }
+        for (int i = 0; i < _moneyDebitObjs.Length; i++)
+        {
+            bool isCurrent = i == _pageDebit;
+            _moneyDebitObjs[i].gameObject.SetActive(isCurrent);
+            _moneyDebitObjsSmall[i].gameObject.SetActive(isCurrent);
+            _moneyDebitObjsText[i].gameObject.SetActive(isCurrent);
+            if(!isCurrent) continue;
+            
+            _moneyDebitObjs[i].transform.localScale = Vector3.one * 0.5f;
+            _moneyDebitObjsSmall[i].transform.localScale = Vector3.one * 0.5f;
+            _moneyDebitObjsText[i].transform.localScale = Vector3.one * 0.5f;
+
+            _moneyDebitObjs[i].SetEase(Ease.OutBackCubic);
+            _moneyDebitObjsSmall[i].SetEase(Ease.OutBackCubic);
+            _moneyDebitObjsText[i].SetEase(Ease.OutBackCubic);
+
+            _moneyDebitObjs[i].TweenLocalScale();
+            _moneyDebitObjsSmall[i].TweenLocalScale();
+            _moneyDebitObjsText[i].TweenLocalScale();
+        }
+    }
+
+    long amountDebit = 0;   
+    public void TransferDebit()
+    {
+        try{
+            amountDebit = long.Parse(_transferDebitInput.text);
+        } catch {
+            return;
+        }
+
+        if(amountDebit <= 0) {
+            _popUpText.text = "Jumlah uang harus lebih dari 0!";
+            _popUp.Show();
+            EventSystem.current.SetSelectedGameObject(_okButton);
+            return;
+        }
+
+        if(!_leftToRight) {
+            if(_pageDebit == 0) // keinginan
+            {
+                if(Save.Data.DesireMoney < amountDebit) {
+                    NotEnoughtMoney("Uang Keinginan");
+                    return;
+                }
+                _type = "Uang Keinginan";
+            }
+            else if(_pageDebit == 1) // kebutuhan
+            {
+                if(Save.Data.NeedsMoney < amountDebit) {
+                    NotEnoughtMoney("Uang Kebutuhan");
+                    return;
+                }
+                _type = "Uang Kebutuhan";
+            }
+            else if(_pageDebit == 2) // debit
+            {
+                if(Save.Data.DebitMoney < amountDebit) {
+                    NotEnoughtMoney("Uang Debit");
+                    return;
+                }
+                _type = "Uang Debit";
+            }
+
+            _confirmDebitText.text = "Apakah anda yakin ingin mentransfer " + amountDebit.ToStringRupiahFormat() + " dari " + _type + " ke Debit?";
+            _confirmDebitPopUp.Show();
+            EventSystem.current.SetSelectedGameObject(_confirmDebitButton);
+        
+        } else {
+
+            if(Save.Data.DebitTabunganMoney < amountDebit) {
+                NotEnoughtMoney("Uang Debit Tabungan");
+                return;
+            }
+
+            if(_pageDebit == 0) // keinginan
+            {
+                _type = "Uang Keinginan";
+            }
+            else if(_pageDebit == 1) // kebutuhan
+            {
+                _type = "Uang Kebutuhan";
+            }
+
+            _confirmDebitText.text = "Apakah anda yakin ingin mentransfer " + amountDebit.ToStringRupiahFormat() + " dari Debit ke " + _type + " ?";
+            _confirmDebitPopUp.Show();
+            EventSystem.current.SetSelectedGameObject(_confirmDebitButton);
+        }
+
+    }
+    
+    public void ConfirmDebit()
+    {
+        _confirmDebitPopUp.Hide();
+        if(!_leftToRight) { // wallet to debit
+            if(_pageDebit == 0) Save.Data.DesireMoney -= amountDebit;
+            else if(_pageDebit == 1) Save.Data.NeedsMoney -= amountDebit;
+            Save.Data.DebitTabunganMoney += amountDebit;
+        } else {
+            if(_pageDebit == 0) Save.Data.DesireMoney += amountDebit;
+            else if(_pageDebit == 1) Save.Data.NeedsMoney += amountDebit;
+            Save.Data.DebitTabunganMoney -= amountDebit;
+        }
+
+        Refresh();
+    }
+
+
+
+
+    public void EnsureChartSafe()
+    {
+        Debug.Log(Save.Data.DebitMoney == 0
+            || Save.Data.DesireMoney == 0
+            || Save.Data.NeedsMoney == 0);
+        if(
+            Save.Data.DebitMoney == 0
+            || Save.Data.DesireMoney == 0
+            || Save.Data.NeedsMoney == 0
+        ){
+            _popUpText.text = "Karena ada uang yang 0, alokasi uang akan diatur otomatis agar chart tidak sulit ditarik.";
+            _popUp.Show();
+
+            long total = Save.Data.TotalMoney;
+            Save.Data.DebitMoney = total/3;
+            Save.Data.DesireMoney = total/3;
+            Save.Data.NeedsMoney = total/3;
+            Refresh();
+
+
+            EventSystem.current.SetSelectedGameObject(_okButton);
+            return;
+        }
+    }
+
+
+
+    [SerializeField] SceneTransitionStarter _sceneTransitionStarter;
+    [SerializeField] BelanjaList _belanjaList;
+    public void Exit()
+    {
+        if(_belanjaList.ListToBuy.Count <= 0) {
+            _popUpText.text = "Tolong atur agar belanjaan tidak kosong!";
+            _popUp.Show();
+            EventSystem.current.SetSelectedGameObject(_okButton);
+            return;
+        }
+        _sceneTransitionStarter.StartTransition("World");
+    }
+
+
+
+    public void ResetPieChart()
+    {
+        _pieChart.SetPieValues(new float[]{1f/3, 1f/3, 1f/3});
     }
 }

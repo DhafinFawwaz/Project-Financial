@@ -119,6 +119,26 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 7439269738667800493, guid: b1a971313e8d5204d8a1e9d8198497bf, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439269738667800493, guid: b1a971313e8d5204d8a1e9d8198497bf, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439269738667800493, guid: b1a971313e8d5204d8a1e9d8198497bf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -27.882
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439269738667800493, guid: b1a971313e8d5204d8a1e9d8198497bf, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -11.209
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439269738667800494, guid: b1a971313e8d5204d8a1e9d8198497bf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cc73af2585057414e93f58cb11f9b118, type: 3}
     - target: {fileID: 7439269739220327824, guid: b1a971313e8d5204d8a1e9d8198497bf, type: 3}
       propertyPath: m_Colors.m_SelectedColor.b
       value: 0.7490196
@@ -130,6 +150,10 @@ PrefabInstance:
     - target: {fileID: 7439269739220327824, guid: b1a971313e8d5204d8a1e9d8198497bf, type: 3}
       propertyPath: m_Colors.m_SelectedColor.r
       value: 0.7490196
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439269739406363140, guid: b1a971313e8d5204d8a1e9d8198497bf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7439269739662697652, guid: b1a971313e8d5204d8a1e9d8198497bf, type: 3}
       propertyPath: m_Colors.m_SelectedColor.b

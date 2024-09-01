@@ -18,7 +18,7 @@ public class TransferManager : MonoBehaviour
     {
         _jajan.SetValues(Save.Data.DesireMoney, 0);
         _kebutuhan.SetValues(Save.Data.NeedsMoney, 0);
-        _tabungan.SetValues(0, Save.Data.DebitTabunganMoney + Save.Data.NeedsMoney + Save.Data.DesireMoney);
+        _tabungan.SetValues(Save.Data.DebitTabunganMoney, Save.Data.DebitTabunganMoney + Save.Data.NeedsMoney + Save.Data.DesireMoney);
 
 
         Save.Data.DebitTabunganMoney += Save.Data.NeedsMoney + Save.Data.DesireMoney;
@@ -28,7 +28,7 @@ public class TransferManager : MonoBehaviour
 
     public void SetToStreaming()
     {
-        long total = Save.Data.TotalGainedMoneyFromToday();
+        long total = Save.Data.GetSalaryFromToday();
         _streaming.SetValues(total, 0);
 
         Save.Data.DesireMoney = total/3;

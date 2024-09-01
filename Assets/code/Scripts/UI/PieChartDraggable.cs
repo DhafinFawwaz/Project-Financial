@@ -69,8 +69,21 @@ public class PieChartDraggable : MonoBehaviour
         Vector3 clamped = ClampUpVector(dir, prevUpVector, nextUpVector, initialUpVector);
         _draggedPie.PieArrowImg.transform.up = clamped;
         // RefreshBase();
+        ValidateChart();
         OnPieValuesChanged?.Invoke(GetPieValues());
     }
+
+    void ValidateChart()
+    {
+        // check if _pies[0] is between _pies[1] and _pies[n-1]
+        // check if _pies[1] is between _pies[2] and _pies[0]
+        // check if _pies[2] is between _pies[3] and _pies[1]
+        // if any of this is wrong, move all the pies to the correct position. like a few degrees after the previous pie
+        // TODO: implement this
+
+    }
+
+    
 
     public void RefreshBase()
     {
@@ -109,7 +122,9 @@ public class PieChartDraggable : MonoBehaviour
         for (int i = 0; i < _pies.Length; i++)
         {
             if(i != 0) currentTotal += values[i - 1];
-            Vector2 dir = Quaternion.Euler(0, 0, -currentTotal/total * 360) * Vector2.up;
+            float val = -currentTotal/total * 360;
+            if(float.IsNaN(val)) val = -1f*i;
+            Vector2 dir = Quaternion.Euler(0, 0, val) * Vector2.up;
             _pies[i].PieArrowImg.transform.up = dir;
         }
         // this.Invoke(RefreshBase, 0.05f);
