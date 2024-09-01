@@ -19,8 +19,7 @@ public class SaveData
     public long NeedsMoney = 100000;
     public long DesireMoney = 30000;
     public long DebitMoney = 40000;
-    public long CreditMoney = 10000;
-    public long TotalMoney => NeedsMoney + DesireMoney + DebitMoney + CreditMoney;
+    public long TotalMoney => NeedsMoney + DesireMoney + DebitMoney;
     
 
     double _happiness = 100;
@@ -74,6 +73,7 @@ public class SaveData
     {
         public long StreamingCounter = 0;
         public long GainedSubscriber = 0;
+        public long CreditMoney = 50000;
     }
 
     public List<long> GainedSubscriberEachDay => DayDatas.ConvertAll(x => x.GainedSubscriber);
