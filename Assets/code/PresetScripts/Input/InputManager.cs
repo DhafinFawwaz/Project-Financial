@@ -10,6 +10,18 @@ public class InputManager : MonoBehaviour
         return Input.GetMouseButtonDown(button);
     }
 
+    public static bool GetMouseButton(int button)
+    {
+        if(!_canMouseButtonDown) return false;
+        return Input.GetMouseButton(button);
+    }
+
+    public static bool GetMouseButtonUp(int button)
+    {
+        if(!_canMouseButtonDown) return false;
+        return Input.GetMouseButtonUp(button);
+    }
+
     public static bool GetKeyDown(KeyCode key)
     {
         if(!_canGetKeyDown) return false;

@@ -27,7 +27,12 @@ public enum DialogActor
     BerandalMainJudi,
     Anaya,
     Riki,
-    Kunti
+    Kunti,
+
+    RikiNervous,
+    RikiPanik,
+    RikiSenyumLebar,
+    RikiSenyumTipis,
 }
 
 public enum SusLevel
@@ -65,6 +70,11 @@ public class DialogContent
             case DialogActor.Anaya: return "Anaya";
             case DialogActor.Riki: return "Riki";
             case DialogActor.Kunti: return "Kunti";
+
+            case DialogActor.RikiNervous: return "Riki";
+            case DialogActor.RikiPanik: return "Riki";
+            case DialogActor.RikiSenyumLebar: return "Riki";
+            case DialogActor.RikiSenyumTipis: return "Riki";
         }
         return "Angkasa";
     }

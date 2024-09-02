@@ -37,6 +37,11 @@ public class Dialog : MonoBehaviour
     [SerializeField] GameObject Anaya;
     [SerializeField] GameObject Riki;
     [SerializeField] GameObject Kunti;
+    
+    [SerializeField] GameObject RikiNervous;
+    [SerializeField] GameObject RikiPanik;
+    [SerializeField] GameObject RikiSenyumLebar;
+    [SerializeField] GameObject RikiSenyumTipis;
 
     public void SetActor(DialogActor actor)
     {
@@ -55,6 +60,13 @@ public class Dialog : MonoBehaviour
         Anaya.SetActive(false);
         Riki.SetActive(false);
         Kunti.SetActive(false);
+        
+        RikiNervous.SetActive(false);
+        RikiPanik.SetActive(false);
+        RikiSenyumLebar.SetActive(false);
+        RikiSenyumTipis.SetActive(false);
+
+
 
         switch(actor)
         {
@@ -73,6 +85,11 @@ public class Dialog : MonoBehaviour
             case DialogActor.Anaya: Anaya.SetActive(true); break;
             case DialogActor.Riki: Riki.SetActive(true); break;
             case DialogActor.Kunti: Kunti.SetActive(true); break;
+
+            case DialogActor.RikiNervous: RikiNervous.SetActive(true); break;
+            case DialogActor.RikiPanik: RikiPanik.SetActive(true); break;
+            case DialogActor.RikiSenyumLebar: RikiSenyumLebar.SetActive(true); break;
+            case DialogActor.RikiSenyumTipis: RikiSenyumTipis.SetActive(true); break;
         }
     }
 

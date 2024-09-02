@@ -59,9 +59,12 @@ public class PlayerCore : Core<PlayerCore, PlayerStates>
     }
 
 
-
+    [Header("Collect Animation")]
+    [SerializeField] float _collectDuration = 0.6f;
+    [SerializeField] Vector3 _collectOffset = new Vector3(0,0.25f,0);
+    [SerializeField] float _collectHeight = 0.8f;
     public void Collect(Transform item){
-        StartCoroutine(CollectAnimation(item, item.position, transform, 0.6f, new Vector3(0,0.25f,0), 1));
+        StartCoroutine(CollectAnimation(item, item.position, transform, _collectDuration, _collectOffset, _collectHeight));
     }
 
     public void MoveCamera(Vector3 target){

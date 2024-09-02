@@ -26,6 +26,7 @@ public class VignetteEffect : MonoBehaviour
         {
             ga.gameObject.SetActive(false);
         }
+        _currentLevel = 0;
     }
     
 }
