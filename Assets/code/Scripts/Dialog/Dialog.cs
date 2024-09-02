@@ -37,11 +37,26 @@ public class Dialog : MonoBehaviour
     [SerializeField] GameObject Anaya;
     [SerializeField] GameObject Riki;
     [SerializeField] GameObject Kunti;
-    
+
     [SerializeField] GameObject RikiNervous;
     [SerializeField] GameObject RikiPanik;
     [SerializeField] GameObject RikiSenyumLebar;
     [SerializeField] GameObject RikiSenyumTipis;
+
+    [SerializeField] GameObject _miauActually;
+    [SerializeField] GameObject _miauNgejek;
+    [SerializeField] GameObject _miauTsundere;
+    [SerializeField] GameObject _miauNormal;
+
+    [SerializeField] GameObject _naoBlush;
+    [SerializeField] GameObject _naoKepo;
+    [SerializeField] GameObject _naoMakeupDefault;
+    [SerializeField] GameObject _naoMakeupKibas;
+    [SerializeField] GameObject _naoMakeupNervous;
+    [SerializeField] GameObject _naoMakeupSmirk;
+    [SerializeField] GameObject _naoSakit;
+    [SerializeField] GameObject _naoSakitSenyum;
+    [SerializeField] GameObject _naoSmirk;
 
     public void SetActor(DialogActor actor)
     {
@@ -65,6 +80,22 @@ public class Dialog : MonoBehaviour
         RikiPanik.SetActive(false);
         RikiSenyumLebar.SetActive(false);
         RikiSenyumTipis.SetActive(false);
+
+        _miauActually.SetActive(false);
+        _miauNgejek.SetActive(false);
+        _miauTsundere.SetActive(false);
+        _miauNormal.SetActive(false);
+
+        _naoBlush.SetActive(false);
+        _naoKepo.SetActive(false);
+        _naoMakeupDefault.SetActive(false);
+        _naoMakeupKibas.SetActive(false);
+        _naoMakeupNervous.SetActive(false);
+        _naoMakeupSmirk.SetActive(false);
+        _naoSakit.SetActive(false);
+        _naoSakitSenyum.SetActive(false);
+        _naoSmirk.SetActive(false);
+
 
 
 
@@ -90,6 +121,22 @@ public class Dialog : MonoBehaviour
             case DialogActor.RikiPanik: RikiPanik.SetActive(true); break;
             case DialogActor.RikiSenyumLebar: RikiSenyumLebar.SetActive(true); break;
             case DialogActor.RikiSenyumTipis: RikiSenyumTipis.SetActive(true); break;
+
+            case DialogActor.MiauActually: _miauActually.SetActive(true); break;
+            case DialogActor.MiauNgejek: _miauNgejek.SetActive(true); break;
+            case DialogActor.MiauTsundere: _miauTsundere.SetActive(true); break;
+            case DialogActor.MiauNormal: _miauNormal.SetActive(true); break;
+
+            case DialogActor.NaoBlush: _naoBlush.SetActive(true); break;
+            case DialogActor.NaoKepo: _naoKepo.SetActive(true); break;
+            case DialogActor.NaoMakeupDefault: _naoMakeupDefault.SetActive(true); break;
+            case DialogActor.NaoMakeupKibas: _naoMakeupKibas.SetActive(true); break;
+            case DialogActor.NaoMakeupNervous: _naoMakeupNervous.SetActive(true); break;
+            case DialogActor.NaoMakeupSmirk: _naoMakeupSmirk.SetActive(true); break;
+            case DialogActor.NaoSakit: _naoSakit.SetActive(true); break;
+            case DialogActor.NaoSakitSenyum: _naoSakitSenyum.SetActive(true); break;
+            case DialogActor.NaoSmirk: _naoSmirk.SetActive(true); break;
+            
         }
     }
 

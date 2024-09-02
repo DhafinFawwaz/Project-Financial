@@ -33,6 +33,22 @@ public enum DialogActor
     RikiPanik,
     RikiSenyumLebar,
     RikiSenyumTipis,
+
+    MiauActually,
+    MiauNgejek,
+    MiauTsundere,
+    MiauNormal,
+
+    NaoBlush,
+    NaoKepo,
+    NaoMakeupDefault,
+    NaoMakeupKibas,
+    NaoMakeupNervous,
+    NaoMakeupSmirk,
+    NaoSakit,
+    NaoSakitSenyum,
+    NaoSmirk,
+
 }
 
 public enum SusLevel
@@ -75,6 +91,22 @@ public class DialogContent
             case DialogActor.RikiPanik: return "Riki";
             case DialogActor.RikiSenyumLebar: return "Riki";
             case DialogActor.RikiSenyumTipis: return "Riki";
+
+            case DialogActor.MiauActually: return "Miau";
+            case DialogActor.MiauNgejek: return "Miau";
+            case DialogActor.MiauTsundere: return "Miau";
+            case DialogActor.MiauNormal: return "Miau";
+
+            case DialogActor.NaoBlush: return "Nao";
+            case DialogActor.NaoKepo: return "Nao";
+            case DialogActor.NaoMakeupDefault: return "Nao";
+            case DialogActor.NaoMakeupKibas: return "Nao";
+            case DialogActor.NaoMakeupNervous: return "Nao";
+            case DialogActor.NaoMakeupSmirk: return "Nao";
+            case DialogActor.NaoSakit: return "Nao";
+            case DialogActor.NaoSakitSenyum: return "Nao";
+            case DialogActor.NaoSmirk: return "Nao";
+
         }
         return "Angkasa";
     }
