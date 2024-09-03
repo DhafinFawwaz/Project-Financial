@@ -10,7 +10,8 @@ public class GraphicsAnimation : UIAnimation
     [SerializeField] Color _color = Color.white;
     [SerializeField] float _duration = 0.3f;
     [SerializeField] Ease.Function _easeFunction = Ease.OutQuart;
-    Action _onEnd;
+    Action _onceEnd;
+    public Action OnceEnd { get => _onceEnd; set => _onceEnd = value; }
 
     public void Play()
     {
@@ -32,7 +33,7 @@ public class GraphicsAnimation : UIAnimation
     }
     public GraphicsAnimation SetOnceEnd(Action onEnd)
     {
-        _onEnd = onEnd;
+        _onceEnd = onEnd;
         return this;
     }
     
@@ -51,8 +52,8 @@ public class GraphicsAnimation : UIAnimation
         if(_colorKey == requirement)
         {
             g.color = end;
-            _onEnd?.Invoke();
-            _onEnd = null;
+            _onceEnd?.Invoke();
+            _onceEnd = null;
         }
     }
 }

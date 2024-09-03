@@ -11,7 +11,7 @@ public class VignetteEffect : MonoBehaviour
     public void IncreaseLevel()
     {
         gameObject.SetActive(true);
-        if(_currentLevel < _vignetteLevels.Length - 1)
+        if(_currentLevel < _vignetteLevels.Length)
         {
             _vignetteLevels[_currentLevel].gameObject.SetActive(true);
             _vignetteLevels[_currentLevel].Target.color = new Color(1,1,1,0);
@@ -24,7 +24,7 @@ public class VignetteEffect : MonoBehaviour
     {
         foreach(GraphicsAnimation ga in _vignetteLevels)
         {
-            ga.gameObject.SetActive(false);
+            ga.SetEndColor(new Color(1,1,1,0)).Play();
         }
         _currentLevel = 0;
     }

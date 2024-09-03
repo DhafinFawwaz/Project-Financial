@@ -15,8 +15,11 @@ public class OptionSession : MonoBehaviour
     List<Option> _activeOptions = new List<Option>();
     Rak _currentRak;
     public OptionData OptionData => _currentRak.OptionData;
+    [SerializeField] UnityEvent _onOptionStart;
+    [SerializeField] UnityEvent _onOptionEnd;
     public void SetDataAndPlay(Rak rak)
     {
+        _onOptionStart?.Invoke();
         _openTime = Time.time;
         _currentRak = rak;
         // Populate
@@ -58,6 +61,7 @@ public class OptionSession : MonoBehaviour
     [SerializeField] VignetteEffect _vignetteEffect;
     byte _timerCountdownKey = 0;
     [SerializeField] UnityEvent OnKerasukan;
+    [SerializeField] float _darkenTime = 4;
     IEnumerator TimerCountdown(float time)
     {
         _vignetteEffect.gameObject.SetActive(true);
@@ -66,8 +70,8 @@ public class OptionSession : MonoBehaviour
         byte requirement = ++_timerCountdownKey;
 
 
-        yield return new WaitForSeconds(time-5);
-        for(int i = 0; i < 5; i++)
+        yield return new WaitForSeconds(time-_darkenTime);
+        for(int i = 0; i < _darkenTime; i++)
         {
             if(_timerCountdownKey != requirement) break;
             _vignetteEffect.IncreaseLevel();
@@ -105,6 +109,7 @@ public class OptionSession : MonoBehaviour
 
     public void Close()
     {
+        _onOptionEnd?.Invoke();
         for (int i = 0; i < _activeOptions.Count; i++)
             _activeOptions[i].Hide();
         _activeOptions.Clear();

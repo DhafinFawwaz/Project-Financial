@@ -58,6 +58,8 @@ public class Dialog : MonoBehaviour
     [SerializeField] GameObject _naoSakitSenyum;
     [SerializeField] GameObject _naoSmirk;
 
+    [SerializeField] GameObject _shadow;
+
     public void SetActor(DialogActor actor)
     {
         Angkasa.SetActive(false);
@@ -95,6 +97,8 @@ public class Dialog : MonoBehaviour
         _naoSakit.SetActive(false);
         _naoSakitSenyum.SetActive(false);
         _naoSmirk.SetActive(false);
+
+        _shadow.SetActive(false);
 
 
 
@@ -136,6 +140,8 @@ public class Dialog : MonoBehaviour
             case DialogActor.NaoSakit: _naoSakit.SetActive(true); break;
             case DialogActor.NaoSakitSenyum: _naoSakitSenyum.SetActive(true); break;
             case DialogActor.NaoSmirk: _naoSmirk.SetActive(true); break;
+
+            case DialogActor.Shadow: _shadow.SetActive(true); break;
             
         }
     }

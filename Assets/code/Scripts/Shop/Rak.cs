@@ -91,4 +91,14 @@ public class Rak : Interactable
                 _optionData.Content[2].Price = (int)(_optionData.Content[2].Price * UnityEngine.Random.Range(0.7f, 0.9f));
 
     }
+
+
+
+
+
+    [SerializeField] GameObject _lightenGO;
+    public void SetLightenUp(bool lighten)
+    {
+        _lightenGO.SetActive(lighten);
+    }
 }

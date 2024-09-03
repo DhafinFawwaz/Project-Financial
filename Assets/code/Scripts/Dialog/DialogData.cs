@@ -49,6 +49,8 @@ public enum DialogActor
     NaoSakitSenyum,
     NaoSmirk,
 
+    Shadow
+
 }
 
 public enum SusLevel
@@ -106,6 +108,8 @@ public class DialogContent
             case DialogActor.NaoSakit: return "Nao";
             case DialogActor.NaoSakitSenyum: return "Nao";
             case DialogActor.NaoSmirk: return "Nao";
+
+            case DialogActor.Shadow: return "Shadow";
 
         }
         return "Angkasa";

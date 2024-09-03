@@ -21,6 +21,7 @@ public class Shadow : MonoBehaviour
     [SerializeField] EnemySkin _skin;
     [SerializeField] float _stopTimeDuration = 0.1f;
 
+    [SerializeField] ShadowNearAttack _shadowNearAttack;
     [SerializeField] UnityEvent _onHurt;
     void Start()
     {
@@ -67,5 +68,21 @@ public class Shadow : MonoBehaviour
         _agent.Warp(transform.position);
         _agent.enabled = true;
 
+    }
+
+
+    public void Freeze()
+    {
+        _shadowNearAttack.CancelTimer();
+        _shadowNearAttack.enabled = false;
+        _agent.enabled = false;
+        enabled = false;
+    }
+
+    public void UnFreeze()
+    {
+        _shadowNearAttack.enabled = true;
+        _agent.enabled = true;
+        enabled = true;
     }
 }
