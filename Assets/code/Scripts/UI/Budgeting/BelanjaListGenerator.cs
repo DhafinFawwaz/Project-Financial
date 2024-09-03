@@ -28,7 +28,7 @@ public class BelanjaListGenerator : MonoBehaviour
     }
 
 
-    float _currentValue;
+    float _currentValue = 1;
     void OnPieValuesChanged(float[] values)
     {
         if(_currentValue == values[2]) return;
@@ -48,21 +48,30 @@ public class BelanjaListGenerator : MonoBehaviour
         _debounceCoroutine = StartCoroutine(DebounceCoroutine(action, delay));
     }
 
+    [ContextMenu("Generate List")]
     public void GenerateList()
     {
         _belanjaList.Clear();
+        Generate();
+        Refresh();
+    }
+
+    void Refresh()
+    {
+        _belanjaList.CalculateInfo(out double totalHealthInfo, out double totalHappinessInfo, out long totalPriceInfo);
+        _healthText.text = totalHealthInfo.ToString("F2");
+        _happinessText.text = totalHappinessInfo.ToString("F2");
+        _moneyText.text = totalPriceInfo.ToStringRupiahFormat();
+    }
 
 
+    // pick random items 
+    // the total price of the items should be less than or equal to needsMoney
+    // max of each item is 3
+    // calculate the total health and happiness
+    void Generate()
+    {
         long needsMoney = (long)(Save.Data.NeedsMoney * _currentValue);
-
-        
-    
-        // pick random items 
-        // the total price of the items should be less than or equal to needsMoney
-        // max of each item is 3
-        // calculate the total health and happiness
-
-
         int maxRetries = 20;
         int retries = 0;
         while(retries++ < maxRetries)
@@ -100,16 +109,6 @@ public class BelanjaListGenerator : MonoBehaviour
 
             break;
         }
-
-
-
-
-
-        _belanjaList.CalculateInfo(out double totalHealthInfo, out double totalHappinessInfo, out long totalPriceInfo);
-        _healthText.text = totalHealthInfo.ToString("F2");
-        _happinessText.text = totalHappinessInfo.ToString("F2");
-        _moneyText.text = totalPriceInfo.ToStringRupiahFormat();
-
     }
     
 }

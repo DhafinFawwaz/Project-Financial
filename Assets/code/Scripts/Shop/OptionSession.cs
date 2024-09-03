@@ -13,12 +13,10 @@ public class OptionSession : MonoBehaviour
     [SerializeField] UnityEvent<OptionSession> OnOptionChoosen;
     [SerializeField] Timer _timeLimit;
     List<Option> _activeOptions = new List<Option>();
-    bool _isPlaying = false;    
     Rak _currentRak;
     public OptionData OptionData => _currentRak.OptionData;
     public void SetDataAndPlay(Rak rak)
     {
-        _isPlaying = true;
         _openTime = Time.time;
         _currentRak = rak;
         // Populate
@@ -132,23 +130,20 @@ public class OptionSession : MonoBehaviour
     }
 
     float _openTime;
-    void Update()
+
+    public void ChooseOption()
     {
-        if(!_isPlaying) return;
-        if(InputManager.GetKeyDown(KeyCode.E) && Time.time - _openTime > 0.5f) // Prevent double press
-        {
-            if(GetChoosenOption() == null) return; // case not buying anything
+        if(!(Time.time - _openTime > 0.5f)) return;
 
+        if(GetChoosenOption() == null) return; // case not buying anything
 
-            OnOptionChoosen?.Invoke(this);
-            Close();
-            _isPlaying = false;
-            if(PlayerCore.Instance != null)
-                PlayerCore.Instance.MoveCameraBack();
-            StartCoroutine(DisableCollected(_currentRak));
+        OnOptionChoosen?.Invoke(this);
+        Close();
+        if(PlayerCore.Instance != null)
+            PlayerCore.Instance.MoveCameraBack();
+        StartCoroutine(DisableCollected(_currentRak));
 
-            _itemThrower.Buy(this);
-        }
+        _itemThrower.Buy(this);
     }
 
     IEnumerator DisableCollected(Rak rak)

@@ -5,6 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class Shadow : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class Shadow : MonoBehaviour
     [SerializeField] NavMeshAgent _agent;
     [SerializeField] EnemySkin _skin;
     [SerializeField] float _stopTimeDuration = 0.1f;
+
+    [SerializeField] UnityEvent _onHurt;
     void Start()
     {
 		_agent.updateRotation = false;
@@ -39,6 +42,7 @@ public class Shadow : MonoBehaviour
         hitResult.Type = HitType.Entity;
         _skin.PlayHurtAnimation();
         StartCoroutine(ApplyKnockback(_rb.position + hitRequest.Direction * hitRequest.Knockback, hitRequest.StunDuration));
+        _onHurt?.Invoke();
     }
 
     private IEnumerator ApplyKnockback(Vector3 force, float _stoppedTime = 3f)
