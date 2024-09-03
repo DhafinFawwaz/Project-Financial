@@ -35,8 +35,31 @@ public class BelanjaListGenerator : MonoBehaviour
     {
         if(_currentValue == values[2]) return;
         _currentValue = values[2];
-        Debounce(GenerateList, _debounceDuration);
+        // Debounce(GenerateList, _debounceDuration);
+
+        GenerateCalculation();
     }
+
+
+    [Header("Calculation")]
+    [SerializeField] TextMeshProUGUI _kebutuhanText;
+    [SerializeField] TextMeshProUGUI _kebutuhanDiv3Text;
+    
+    [Header("Data")]
+    [SerializeField] BudgetingData _budgetingData;
+    void GenerateCalculation()
+    {
+        long needsMoney = (long)(Save.Data.NeedsMoney * _currentValue);
+        _kebutuhanText.text = needsMoney.ToStringRupiahFormat();
+        _kebutuhanDiv3Text.text = (needsMoney / 3).ToStringRupiahFormat();
+        _happinessText.text = Clamp0to100(_budgetingData.PredictHappiness(needsMoney, Save.Data.CurrentDay)).ToString("F2");
+        _healthText.text = Clamp0to100(_budgetingData.PredictHealth(needsMoney, Save.Data.CurrentDay)).ToString("F2");
+    }
+    float Clamp0to100(float value)
+    {
+        return Mathf.Clamp(value, 0, 100);
+    }
+
 
     Coroutine _debounceCoroutine;
     IEnumerator DebounceCoroutine(Action action, float delay)

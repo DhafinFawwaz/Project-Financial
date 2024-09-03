@@ -151,12 +151,14 @@ public class Rak : Interactable
     public void SetDarken(bool darken)
     {
         _darkenGO.SetActive(darken);
-        _isLocked = darken;
 
         if(!darken) {
             _isCollected = false;
-            SessionTime = INITIAL_SESSION_TIME;
+
+            if(_isLocked) SessionTime = INITIAL_SESSION_TIME;
         }
+
+        _isLocked = darken;
     }
     public static Action s_OnAccessedWhenLocked;
 
