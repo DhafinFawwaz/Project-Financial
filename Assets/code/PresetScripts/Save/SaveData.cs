@@ -49,7 +49,7 @@ public class SaveData
     {
         Happiness = 100;
         Health = 100;
-        CurrentDay = 2;
+        CurrentDay = 0;
         CurrentListBelanja = new List<ItemCount>();
         CurrentBelanjaMoney = 0;
         SkillPoin = 0;

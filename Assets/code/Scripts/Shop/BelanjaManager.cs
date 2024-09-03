@@ -17,6 +17,7 @@ public class BelanjaManager : MonoBehaviour
     [SerializeField] BelanjaList _belanjaList;
 
     [SerializeField] AnimationUI _diskonBesarAnimation;
+    [SerializeField] Timer _timerDiscountStartInvisible;
     [SerializeField] Timer _timerDiscount;
     [SerializeField] float _discountDuration = 10;
     void Start()
@@ -26,10 +27,8 @@ public class BelanjaManager : MonoBehaviour
 
 
         float diskonTime = Random.Range(_diskonBesarMin, _diskonBesarMax);
-        this.Invoke(() => {
-            DiskonBesar();
-        }, diskonTime);
-        Debug.Log(diskonTime);
+        _timerDiscountStartInvisible.SetTime(diskonTime);
+        _timerDiscountStartInvisible.Begin();
     }
 
 
@@ -68,6 +67,7 @@ public class BelanjaManager : MonoBehaviour
             rak.Discount();
         }
         _timerDiscount.SetTime(_discountDuration);
+        _timerDiscount.gameObject.SetActive(true);
         _timerDiscount.Begin();
     }
 
