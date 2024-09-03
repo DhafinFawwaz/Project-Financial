@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class AfterBelanja : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class AfterBelanja : MonoBehaviour
     [SerializeField] TextMeshProUGUI _sisaText;
     [SerializeField] TextMeshProUGUI _addedHealthText;
     [SerializeField] TextMeshProUGUI _addedHapinesssisaText;
+    [SerializeField] ImageFillAnimation _qualityBar;
 
     [SerializeField] KTPWorld _ktpWorld;
 
@@ -30,8 +32,29 @@ public class AfterBelanja : MonoBehaviour
         _addedhappiness = addedhappiness;
     }
 
+
+    static int _totalItems = 0;
+    static int _totalPercentage = 0;
+    public static void SetData(int totalItems, int totalPercentage) {
+        _totalItems = totalItems;
+        _totalPercentage = totalPercentage;
+    }
+
+    [SerializeField] BudgetingData _budgetingData;
+
+    
     void Awake()
     {
+        if(_totalItems == 0) // this means we're debugging
+        {
+            _totalPercentage = 500;
+            _totalItems = 6;
+        }
+        float val = _totalPercentage/_totalItems;
+        _addedHealthText.text = (_budgetingData.PredictHealth(Save.Data.NeedsMoney, Save.Data.CurrentDay) * val).ToString();
+        _addedHapinesssisaText.text = (_budgetingData.PredictHappiness(Save.Data.NeedsMoney, Save.Data.CurrentDay) * val).ToString();
+        _qualityBar.SetEndFill((float)val/100).Play();
+
 
         _barangText.text = "";
         _hargaText.text = "";
@@ -51,8 +74,11 @@ public class AfterBelanja : MonoBehaviour
 
         _totalhargaText.text = totalHarga.ToString();
         _sisaText.text = (Save.Data.NeedsMoney - totalHarga).ToString();
-        _addedHealthText.text = _addedHealth.ToString();
-        _addedHapinesssisaText.text = _addedhappiness.ToString();
+        // _addedHealthText.text = _addedHealth.ToString();
+        // _addedHapinesssisaText.text = _addedhappiness.ToString();
+
+
+
 
         Save.Data.NeedsMoney -= (long)totalHarga;
         Save.Data.Health += _addedHealth;

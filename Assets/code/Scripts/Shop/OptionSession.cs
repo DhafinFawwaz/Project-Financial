@@ -10,7 +10,7 @@ public class OptionSession : MonoBehaviour
     [SerializeField] Option _optionPrefab;
     [SerializeField] Transform _optionContainer;
     [SerializeField] Transform _eToSelesai;
-    [SerializeField] UnityEvent<OptionSession> OnOptionChoosen;
+    public UnityEvent<OptionSession> OnOptionChoosen;
     [SerializeField] Timer _timeLimit;
     List<Option> _activeOptions = new List<Option>();
     Rak _currentRak;
@@ -23,6 +23,7 @@ public class OptionSession : MonoBehaviour
         _openTime = Time.time;
         _isOpen = true;
         _currentRak = rak;
+        _currentRak.ReGacha();
         this.Invoke(_vignetteEffect.ResetLevel, 0.1f);
 
         // Populate
