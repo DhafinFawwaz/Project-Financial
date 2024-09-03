@@ -22,12 +22,12 @@ public class Timer : MonoBehaviour
     // minute and seconds only
     public const string TimeFormat = @"mm\:ss";
 
+    [SerializeField] bool _useUnscaledTime = true;
     [SerializeField] UnityEvent _onTimeEnd;
-    
     void Update()
     {
         if(!_timerGoing)return;
-        _elapsedTime -= Time.unscaledDeltaTime;
+        _elapsedTime -= _useUnscaledTime ? Time.unscaledDeltaTime : Time.deltaTime;
         _timePlaying = TimeSpan.FromSeconds(_elapsedTime);
         _elapsedTimeStr = _timePlaying.ToString(TimeFormat);
         _timerText.text = _prefix+_elapsedTimeStr;
@@ -36,6 +36,17 @@ public class Timer : MonoBehaviour
             _timerGoing = false;
             _onTimeEnd?.Invoke();
         }
+    }
+
+
+    public void Pause()
+    {
+        _timerGoing = false;
+    }
+
+    public void Resume()
+    {
+        _timerGoing = true;
     }
 
     

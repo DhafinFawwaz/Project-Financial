@@ -19,11 +19,13 @@ public class BelanjaListGenerator : MonoBehaviour
 
     void OnEnable()
     {
+        if(_pieChart)
         _pieChart.OnPieValuesChanged += OnPieValuesChanged;
     }
 
     void OnDisable()
     {
+        if(_pieChart)
         _pieChart.OnPieValuesChanged -= OnPieValuesChanged;
     }
 
@@ -59,8 +61,11 @@ public class BelanjaListGenerator : MonoBehaviour
     void Refresh()
     {
         _belanjaList.CalculateInfo(out double totalHealthInfo, out double totalHappinessInfo, out long totalPriceInfo);
+        if(_healthText)
         _healthText.text = totalHealthInfo.ToString("F2");
+        if(_happinessText)
         _happinessText.text = totalHappinessInfo.ToString("F2");
+        if(_moneyText)
         _moneyText.text = totalPriceInfo.ToStringRupiahFormat();
     }
 

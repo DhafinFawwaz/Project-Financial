@@ -93,24 +93,73 @@ public class ShadowNearAttack : MonoBehaviour
     {
         _vignetteEffect.gameObject.SetActive(true);
         byte requirement = ++_timerCountdownKey;
-        for(int i = 0; i < _darkenTime; i++)
-        {
-            if(_timerCountdownKey != requirement) break;
-            _vignetteEffect.IncreaseLevel();
-            yield return new WaitForSeconds(1);
-        }
+        // for(int i = 0; i < _darkenTime; i++)
+        // {
+        //     if(_timerCountdownKey != requirement) break;
+        //     // _vignetteEffect.IncreaseLevel();
+        //     yield return new WaitForSeconds(1);
+        // }
 
+        // if(_timerCountdownKey == requirement)
+        // {
+        //     OnKerasukan?.Invoke();
+        // }
+
+        float t = 4;
+        while(t > 0 && _timerCountdownKey == requirement)
+        {
+            if(_isPaused)
+            {
+                yield return null;
+                continue;
+            }
+
+            t -= Time.deltaTime;
+            yield return null;
+
+            if(t > 3 && t <= 4)
+            {
+                _vignetteEffect.SetLevel(0);
+            }
+            else if(t > 2 && t <= 3)
+            {
+                _vignetteEffect.SetLevel(1);
+            }
+            else if(t > 1 && t <= 2)
+            {
+                _vignetteEffect.SetLevel(2);
+            }
+            else if(t > 0 && t <= 1)
+            {
+                _vignetteEffect.SetLevel(3);
+            }
+        }
         if(_timerCountdownKey == requirement)
         {
             OnKerasukan?.Invoke();
         }
     }
 
+
+    bool _isPaused = false;
+    public void PauseTimer()
+    {   
+        _isPaused = true;
+        _vignetteEffect.ResetLevel();
+    }
+
+    public void ResumeTimer()
+    {
+        _isPaused = false;
+    }
+
     public void CancelTimer()
     {
         _timerCountdownKey++;
-        _vignetteEffect.ResetLevel();
         _isPlayerInRadius = false;
+        
+        _vignetteEffect.ResetLevel();
+        if(gameObject.activeInHierarchy) this.Invoke(_vignetteEffect.ResetLevel, 0.1f);
     }
 
 }

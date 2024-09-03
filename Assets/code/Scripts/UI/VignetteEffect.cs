@@ -7,7 +7,12 @@ using UnityEngine.UI;
 public class VignetteEffect : MonoBehaviour
 {
     [SerializeField] GraphicsAnimation[] _vignetteLevels;
-    int _currentLevel = 0;
+    int _currentLevel = -1;
+    void Awake()
+    {
+        _currentLevel = -1;
+    }
+
     public void IncreaseLevel()
     {
         gameObject.SetActive(true);
@@ -20,13 +25,30 @@ public class VignetteEffect : MonoBehaviour
         }
     }
 
+    public void SetLevel(int level)
+    {
+        if(_currentLevel == level) return;
+        if(level < 0 || level >= _vignetteLevels.Length) return;
+        _currentLevel = level;
+        for(int i = 0; i < _currentLevel+1; i++)
+        {
+            _vignetteLevels[i].gameObject.SetActive(true);
+            _vignetteLevels[i].SetEndColor(Color.white).Play();
+        }
+        for(int i = _currentLevel+1; i < _vignetteLevels.Length; i++)
+        {
+            _vignetteLevels[i].SetEndColor(new Color(1,1,1,0)).Play();
+        }
+    }
+
+
     public void ResetLevel()
     {
         foreach(GraphicsAnimation ga in _vignetteLevels)
         {
             ga.SetEndColor(new Color(1,1,1,0)).Play();
         }
-        _currentLevel = 0;
+        _currentLevel = -1;
     }
     
 }

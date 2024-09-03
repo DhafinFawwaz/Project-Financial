@@ -6,6 +6,7 @@ public class Flashlight : MonoBehaviour
 {
     [SerializeField] GameObject _flashLight;
     [SerializeField] LayerMask _enemyLayer;
+    [SerializeField] LayerMask _rakLayer;
     [SerializeField] float _flashLightDuration;
     [SerializeField] Material _material;
 
@@ -55,6 +56,12 @@ public class Flashlight : MonoBehaviour
             HitResult _hitResult = new HitResult();
             _hitRequest.Direction = (col.transform.position - transform.position).normalized;
             col.GetComponent<Shadow>().OnHurt(_hitRequest, ref _hitResult);
+        } 
+        else if (( _rakLayer & (1 << col.gameObject.layer)) != 0) 
+        {
+            if(col.TryGetComponent<Rak>(out Rak rak)) {
+                rak.SetDarken(false);
+            }
         }
     }
 

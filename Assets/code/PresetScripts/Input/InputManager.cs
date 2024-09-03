@@ -40,6 +40,12 @@ public class InputManager : MonoBehaviour
         _canGetKeyDown = active;
         _canGetAxisRaw = active;
     }
+
+    public static void SetActiveAxisRawAndMouseButtonDown(bool active)
+    {
+        _canGetAxisRaw = active;
+        _canMouseButtonDown = active;
+    }
     
     void OnDisable()
     {

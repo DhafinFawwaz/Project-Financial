@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.Events;
 public class Rak : Interactable
 {
     public static Action<Rak> s_OnRakInteract;
     [SerializeField] Transform _cameraTarget;
     
     [SerializeField] Item _item;
+    public ItemData ItemData => _optionData.ItemData;
     [SerializeField] OptionData _optionData;
     public OptionData OptionData => _optionData;
+
+    const float INITIAL_SESSION_TIME = 10;
+    public float SessionTime = INITIAL_SESSION_TIME; // will be set by OptionSession
 
 
     const float INFLATE_PERCENTAGE = 1.2f;
@@ -40,6 +45,11 @@ public class Rak : Interactable
         s_OnRakInteract?.Invoke(this);
     }
     protected override void OnPlayerInteract() {
+        if(_isLocked) {
+            s_OnAccessedWhenLocked?.Invoke();
+            return;
+        }
+
         base.OnPlayerInteract();
         if(_isCollected) return;
         Collect(_playerInstance);
@@ -95,10 +105,59 @@ public class Rak : Interactable
 
 
 
-
+    // Discount
     [SerializeField] GameObject _lightenGO;
     public void SetLightenUp(bool lighten)
     {
         _lightenGO.SetActive(lighten);
     }
+    const float DISCOUNT_PERCENTAGE = 0.5f;
+
+    public void Discount()
+    {
+        SetLightenUp(true);
+
+        _optionData.Content[0].Price = (int)(_optionData.Content[0].Price * DISCOUNT_PERCENTAGE);
+        _optionData.Content[1].Price = (int)(_optionData.Content[1].Price * DISCOUNT_PERCENTAGE);
+        if(_optionData.Content[2] != null)
+            _optionData.Content[2].Price = (int)(_optionData.Content[2].Price * DISCOUNT_PERCENTAGE);
+
+        
+        _optionData.Content[0].Diskon = true;
+        _optionData.Content[1].Diskon = true;
+        if(_optionData.Content[2] != null)
+            _optionData.Content[2].Diskon = true;
+    }
+    public void StopDiscount()
+    {
+        SetLightenUp(false);
+
+        _optionData.Content[0].Price = (int)(_optionData.Content[0].Price / DISCOUNT_PERCENTAGE);
+        _optionData.Content[1].Price = (int)(_optionData.Content[1].Price / DISCOUNT_PERCENTAGE);
+        if(_optionData.Content[2] != null)
+            _optionData.Content[2].Price = (int)(_optionData.Content[2].Price / DISCOUNT_PERCENTAGE);
+
+        
+        _optionData.Content[0].Diskon = false;
+        _optionData.Content[1].Diskon = false;
+        if(_optionData.Content[2] != null)
+            _optionData.Content[2].Diskon = false;
+    }
+
+
+    // Locked
+    [SerializeField] GameObject _darkenGO;
+    bool _isLocked = false;
+    public void SetDarken(bool darken)
+    {
+        _darkenGO.SetActive(darken);
+        _isLocked = darken;
+
+        if(!darken) {
+            _isCollected = false;
+            SessionTime = INITIAL_SESSION_TIME;
+        }
+    }
+    public static Action s_OnAccessedWhenLocked;
+
 }
