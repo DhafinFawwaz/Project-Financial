@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3446775201285911917}
   - component: {fileID: 3446775201285911918}
   - component: {fileID: 3446775201285911919}
+  - component: {fileID: 6391986492218581638}
   m_Layer: 0
   m_Name: Nao
   m_TagString: Untagged
@@ -79,7 +80,32 @@ MonoBehaviour:
   _onInteract:
     m_PersistentCalls:
       m_Calls: []
-  _commentList: {fileID: 11400000, guid: 4fc517c1f99e3ed4f89850e482e3b666, type: 2}
+  _commentListJustGotHome: {fileID: 0}
+  _commentListAfterStreaming: {fileID: 0}
+  _commentListAfterSleeping: {fileID: 0}
+  _commentListJustGotOutside: {fileID: 0}
+  _commentListAfterKuliah: {fileID: 0}
+  _commentListAfterBudgeting: {fileID: 0}
+  _commentListAfterBelanja: {fileID: 0}
+--- !u!114 &6391986492218581638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3446775201285911916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a584dda42b3864984ebfc0f9c2591f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _justGotHome: 1
+  _afterStreaming: 1
+  _afterSleeping: 1
+  _justGotOutside: 1
+  _afterKuliah: 1
+  _afterBudgeting: 1
+  _afterBelanja: 1
 --- !u!1 &3446775202141282266
 GameObject:
   m_ObjectHideFlags: 0
