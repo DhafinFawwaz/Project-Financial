@@ -69,8 +69,8 @@ public class SaveData
         HasDoneKuliah = false;
         JustAfterFirstBelanja = false;
 
-        HealthItemStocks = new List<int>(){3,3,3,3};
-        HapinessItemStocks = new List<int>(){3,3,3,3};
+        HealthItemStocks = new List<int>(){1,2,3,0};
+        HapinessItemStocks = new List<int>(){1,2,3};
 
         DayState = DayState.JustGotHome;
     }
