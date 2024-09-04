@@ -28,6 +28,10 @@ public class Seller : Interactable
     [SerializeField] TextMeshPro _itemName;
     [SerializeField] TextMeshPro _itemStock;
     [SerializeField] TextMeshPro _itemPrice;
+    [SerializeField] TextMeshPro _itemHapiness;
+
+    [SerializeField] Transform _itemPrefab;
+    
     
     
     void Start()
@@ -40,7 +44,8 @@ public class Seller : Interactable
         _snack.Stock = Save.Data.HapinessItemStocks[_snack.Index];
         _itemName.text = _snack.Name;
         _itemStock.text = _snack.Stock.ToString();
-        _itemPrice.text = _snack.Happiness.ToString();
+        _itemPrice.text = _snack.Price.ToString();
+        _itemHapiness.text = _snack.Happiness.ToString();
     }
 
 
@@ -49,5 +54,14 @@ public class Seller : Interactable
         base.OnPlayerInteract();
         s_OnNPCInteract?.Invoke(this);
         Refresh();
+    }
+
+
+    [SerializeField] float _throwItemScale = 0.22f;
+    public void ThrowItem()
+    {
+        var item = Instantiate(_itemPrefab, transform.position, Quaternion.identity);
+        item.localScale = Vector3.one * _throwItemScale;
+        PlayerCore.Instance.Collect(item);
     }
 }
