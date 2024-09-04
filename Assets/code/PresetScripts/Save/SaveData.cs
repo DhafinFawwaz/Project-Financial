@@ -20,6 +20,7 @@ public class SaveData
 
     const int MAX_DAY = 15;
     public long NeedsMoney = 100000;
+    public long CurrentNeedsMoney = 100000;
     public long DesireMoney = 30000;
     public long DebitMoney = 40000;
     public long DebitTabunganMoney = 150000;

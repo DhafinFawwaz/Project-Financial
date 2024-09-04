@@ -62,9 +62,13 @@ public class WorldUI : MonoBehaviour
         _ktpWorld.gameObject.SetActive(false);
 
 
-        _addedHappiness = 0;
-        _addedHealth = 0;
-        _currentBelanjaMoney = Save.Data.CurrentBelanjaMoney;
+        // _addedHappiness = 0;
+        // _addedHealth = 0;
+        // _currentBelanjaMoney = Save.Data.CurrentBelanjaMoney;
+
+        _ktpBelanja.SetMoneyTop(Save.Data.NeedsMoney)
+            .SetMoneyBottom(Save.Data.CurrentNeedsMoney)
+            .SetGreenBarFill((float)Save.Data.NeedsMoney/Save.Data.CurrentNeedsMoney);
     }
 
     void HandleWorldState()
@@ -82,11 +86,9 @@ public class WorldUI : MonoBehaviour
 
     public void RefreshKTP()
     {
-        _ktpBelanja.SetMoneyTop(Save.Data.DesireMoney)
-            .SetMoneyBottom(Save.Data.CurrentBelanjaMoney)
-            .SetGreenBarFill(1)
-            .SetHapiness(Save.Data.Happiness, 0)
-            .SetHealth(Save.Data.Health, 0);
+        _ktpBelanja.SetMoneyTop(Save.Data.NeedsMoney)
+            .SetMoneyBottom(Save.Data.CurrentNeedsMoney)
+            .SetGreenBarFill((float)Save.Data.NeedsMoney/Save.Data.CurrentNeedsMoney);
 
         _ktpWorld.SetMoney(Save.Data.NeedsMoney)
             .SetHappiness(Save.Data.Happiness)
@@ -121,15 +123,22 @@ public class WorldUI : MonoBehaviour
             _belanjaList.AddToCart(itemData);        
         }
 
-        _currentBelanjaMoney -= itemData.Price * choosenOption.BuyCount;
-        _addedHappiness += itemData.Happiness * choosenOption.BuyCount;
-        _addedHealth += itemData.Health * choosenOption.BuyCount;
+        // _currentBelanjaMoney -= itemData.Price * choosenOption.BuyCount;
+        // _addedHappiness += itemData.Happiness * choosenOption.BuyCount;
+        // _addedHealth += itemData.Health * choosenOption.BuyCount;
 
+        // _ktpBelanja.SetMoneyTop(Save.Data.NeedsMoney)
+        //     .SetMoneyBottom((long)_currentBelanjaMoney)
+        //     .SetGreenBarFill((float)_currentBelanjaMoney / (float)Save.Data.CurrentBelanjaMoney)
+        //     .SetHapiness(Save.Data.Happiness, _addedHappiness)
+        //     .SetHealth(Save.Data.Health, _addedHealth);
+
+        Save.Data.CurrentNeedsMoney -= itemData.Price * choosenOption.BuyCount;
+
+        
         _ktpBelanja.SetMoneyTop(Save.Data.NeedsMoney)
-            .SetMoneyBottom((long)_currentBelanjaMoney)
-            .SetGreenBarFill((float)_currentBelanjaMoney / (float)Save.Data.CurrentBelanjaMoney)
-            .SetHapiness(Save.Data.Happiness, _addedHappiness)
-            .SetHealth(Save.Data.Health, _addedHealth);
+            .SetMoneyBottom(Save.Data.CurrentNeedsMoney)
+            .SetGreenBarFill((float)Save.Data.NeedsMoney/Save.Data.CurrentNeedsMoney);
 
     }
 }
