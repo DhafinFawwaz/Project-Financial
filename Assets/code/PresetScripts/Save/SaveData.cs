@@ -14,6 +14,10 @@ public enum DayState
 [System.Serializable]
 public class SaveData
 {
+    // Increment this when you change the structure of SaveData
+    public const int Version = 1;
+    public int CurrentVersion = -1;
+
     public const int INCREASE_STOCK_EVERY = 3;
     public const int KREDIT_DEADLINE = 3;
 
@@ -48,6 +52,7 @@ public class SaveData
     
     public SaveData()
     {
+        CurrentVersion = Version;
         Happiness = 100;
         Health = 100;
         CurrentDay = 0;
@@ -99,7 +104,9 @@ public class SaveData
     public long GetSalaryFromToday(){
         int day = CurrentDay;
         long total = 0;
-        for(int i = day-GET_MONEY_EVERY+1; i <= day; i++){
+        int startDay = day - GET_MONEY_EVERY + 1;
+        if(startDay < 0) startDay = 0;
+        for(int i = startDay; i <= day; i++){
             total += DayDatas[i].GainedMoney;
         }
         return total;
