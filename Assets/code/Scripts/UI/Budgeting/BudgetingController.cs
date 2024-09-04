@@ -76,7 +76,7 @@ public class BudgetingController : MonoBehaviour
 
         // Tagihan
         _kreditDayText.text = "Tagihan Hari Ke-" + (_choosenKreditDay + 1);
-        _kreditDeadlineText.text = "Deadline Hari Ke-" + (_choosenKreditDay + SaveData.KREDIT_DEADLINE);
+        _kreditDeadlineText.text = (_choosenKreditDay + SaveData.KREDIT_DEADLINE).ToString();
         _kreditMinimumText.text = "Minimum: 10000";
         _kreditText.text = CurrentCreditMoney.ToStringRupiahFormat();
         
@@ -168,12 +168,14 @@ public class BudgetingController : MonoBehaviour
             bool isCurrent = i == _page;
             _moneyObjs[i].gameObject.SetActive(isCurrent);
             _moneyObjsSmall[i].gameObject.SetActive(isCurrent);
-            _moneyObjsText[i].gameObject.SetActive(isCurrent);
+            // _moneyObjsText[i].gameObject.SetActive(isCurrent);
+            if(_moneyObjsText[i].transform.parent) _moneyObjsText[i].transform.parent.gameObject.SetActive(isCurrent);
             if(!isCurrent) continue;
             
             _moneyObjs[i].transform.localScale = Vector3.one * 0.5f;
             _moneyObjsSmall[i].transform.localScale = Vector3.one * 0.5f;
-            _moneyObjsText[i].transform.localScale = Vector3.one * 0.5f;
+            // _moneyObjsText[i].transform.localScale = Vector3.one * 0.5f;
+            if(_moneyObjsText[i].transform.parent) _moneyObjsText[i].transform.parent.localScale = Vector3.one * 0.5f;
 
             _moneyObjs[i].SetEase(Ease.OutBackCubic);
             _moneyObjsSmall[i].SetEase(Ease.OutBackCubic);
@@ -359,11 +361,13 @@ public class BudgetingController : MonoBehaviour
             _moneyDebitObjs[i].gameObject.SetActive(isCurrent);
             _moneyDebitObjsSmall[i].gameObject.SetActive(isCurrent);
             _moneyDebitObjsText[i].gameObject.SetActive(isCurrent);
+            if(_moneyDebitObjsText[i].transform.parent) _moneyDebitObjsText[i].transform.parent.gameObject.SetActive(isCurrent);
             if(!isCurrent) continue;
             
             _moneyDebitObjs[i].transform.localScale = Vector3.one * 0.5f;
             _moneyDebitObjsSmall[i].transform.localScale = Vector3.one * 0.5f;
-            _moneyDebitObjsText[i].transform.localScale = Vector3.one * 0.5f;
+            // _moneyDebitObjsText[i].transform.localScale = Vector3.one * 0.5f;
+            if(_moneyDebitObjsText[i].transform.parent) _moneyDebitObjsText[i].transform.parent.localScale = Vector3.one * 0.5f;
 
             _moneyDebitObjs[i].SetEase(Ease.OutBackCubic);
             _moneyDebitObjsSmall[i].SetEase(Ease.OutBackCubic);
@@ -465,9 +469,6 @@ public class BudgetingController : MonoBehaviour
 
     public void EnsureChartSafe()
     {
-        Debug.Log(Save.Data.DebitMoney == 0
-            || Save.Data.DesireMoney == 0
-            || Save.Data.NeedsMoney == 0);
         if(
             Save.Data.DebitMoney == 0
             || Save.Data.DesireMoney == 0
