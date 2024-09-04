@@ -41,10 +41,6 @@ public class StoryBedroom : MonoBehaviour
             _streamingInteractable.SetActive(true);
             _kasurInteractable.SetActive(false);
             _keluarBlocker.SetActive(true);
-            if(Save.Data.CurrentDay == 0 && Save.Data.DayState == DayState.JustGotHome)
-            {
-                this.Invoke(() => _dialogTrigger.Play(), 0.1f);
-            }
         }
 
         else if(Save.Data.DayState == DayState.AfterSleeping)
