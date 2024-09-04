@@ -143,6 +143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51b9870022f60df4cab1aed8c1d3cc35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _energy: 0
+  _rechargeDuration: 3
   _flashLight: {fileID: 609771645}
   _enemyLayer:
     serializedVersion: 2
@@ -155,7 +157,7 @@ MonoBehaviour:
   initColor: {r: 2.670157, g: 1.0396996, b: 0, a: 1}
   _hitRequest:
     Damage: 0
-    Knockback: 120
+    Knockback: 320
     Direction: {x: 0, y: 0, z: 0}
     StunDuration: 3
     Element: 0

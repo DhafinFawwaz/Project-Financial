@@ -17,9 +17,12 @@ public class PlayerKerasukan : MonoBehaviour
 
     [SerializeField] GameObject _playerShadow;
     [SerializeField] GameObject _shadow;
+    [SerializeField] GameObject _playerSkin;
+    [SerializeField] Flashlight _flashLight;
 
     public void StartKerasukan()
     {
+        _playerSkin.SetActive(false);
         _rb.velocity = Vector3.zero;
         _rb.angularVelocity = Vector3.zero;
         _rb.isKinematic = true;
@@ -48,6 +51,7 @@ public class PlayerKerasukan : MonoBehaviour
 
     public void StopKerasukan()
     {
+        _playerSkin.SetActive(true);
         _agent.enabled = false;
         _rb.useGravity = true;
         _rb.isKinematic = false;
@@ -59,6 +63,17 @@ public class PlayerKerasukan : MonoBehaviour
         _shadow.SetActive(true);
         _shadow.transform.position = _agent.transform.position;
         _shadow.GetComponent<NavMeshAgent>().Warp(_agent.transform.position);
+
+        PushShadowRandomDirection();
+    }
+
+    void PushShadowRandomDirection()
+    {
+        Vector3 randomDirection = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f)).normalized;
+        HitResult _hitResult = new HitResult();
+        HitRequest _hitRequest = _flashLight.HitRequest;
+        _hitRequest.Direction = randomDirection;
+        _shadow.GetComponent<Shadow>().OnHurt(_hitRequest, ref _hitResult);
     }
 
 

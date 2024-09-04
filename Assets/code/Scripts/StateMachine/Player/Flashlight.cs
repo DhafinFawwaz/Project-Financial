@@ -24,6 +24,8 @@ public class Flashlight : MonoBehaviour
         StunDuration = 3
     };
 
+    public HitRequest HitRequest => _hitRequest;
+
 
     bool _isInSceneBelanja;
     void Start()
