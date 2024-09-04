@@ -60,6 +60,20 @@ public class Dialog : MonoBehaviour
 
     [SerializeField] GameObject _shadow;
 
+    [SerializeField] GameObject _naoMakeupShadowKibas;
+    [SerializeField] GameObject _naoSakitShadow;
+    [SerializeField] GameObject _naoMakeupKepo;
+    [SerializeField] GameObject _naoMakeupShadowSmirk;
+
+    [SerializeField] GameObject _pencopetDefault;
+    [SerializeField] GameObject _pencopetMarah;
+    [SerializeField] GameObject _pencopetShadow;
+
+    [SerializeField] GameObject _miauSenynum;
+    [SerializeField] GameObject _miauTegas;
+
+
+
     public void SetActor(DialogActor actor)
     {
         Angkasa.SetActive(false);
@@ -99,6 +113,19 @@ public class Dialog : MonoBehaviour
         _naoSmirk.SetActive(false);
 
         _shadow.SetActive(false);
+
+        _naoMakeupShadowKibas.SetActive(false);
+        _naoSakitShadow.SetActive(false);
+        _naoMakeupKepo.SetActive(false);
+        _naoMakeupShadowSmirk.SetActive(false);
+
+        _pencopetDefault.SetActive(false);
+        _pencopetMarah.SetActive(false);
+        _pencopetShadow.SetActive(false);
+
+        _miauSenynum.SetActive(false);
+        _miauTegas.SetActive(false);
+
 
 
 
@@ -142,6 +169,18 @@ public class Dialog : MonoBehaviour
             case DialogActor.NaoSmirk: _naoSmirk.SetActive(true); break;
 
             case DialogActor.Shadow: _shadow.SetActive(true); break;
+
+            case DialogActor.NaoMakeupShadowKibas: _naoMakeupShadowKibas.SetActive(true); break;
+            case DialogActor.NaoSakitShadow: _naoSakitShadow.SetActive(true); break;
+            case DialogActor.NaoMakeupKepo: _naoMakeupKepo.SetActive(true); break;
+            case DialogActor.NaoMakeupShadowSmirk: _naoMakeupShadowSmirk.SetActive(true); break;
+
+            case DialogActor.PencopetDefault: _pencopetDefault.SetActive(true); break;
+            case DialogActor.PencopetMarah: _pencopetMarah.SetActive(true); break;
+            case DialogActor.PencopetShadow: _pencopetShadow.SetActive(true); break;
+
+            case DialogActor.MiauSenyum: _miauSenynum.SetActive(true); break;
+            case DialogActor.MiauTegas: _miauTegas.SetActive(true); break;
             
         }
     }

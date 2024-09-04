@@ -49,7 +49,20 @@ public enum DialogActor
     NaoSakitSenyum,
     NaoSmirk,
 
-    Shadow
+    Shadow,
+
+
+    NaoMakeupShadowKibas,
+    NaoSakitShadow,
+    NaoMakeupKepo,
+    NaoMakeupShadowSmirk,
+
+    PencopetDefault,
+    PencopetMarah,
+    PencopetShadow,
+
+    MiauSenyum,
+    MiauTegas,    
 
 }
 
@@ -110,6 +123,19 @@ public class DialogContent
             case DialogActor.NaoSmirk: return "Nao";
 
             case DialogActor.Shadow: return "Shadow";
+
+            case DialogActor.NaoMakeupShadowKibas: return "Nao";
+            case DialogActor.NaoSakitShadow: return "Nao";
+            case DialogActor.NaoMakeupKepo: return "Nao";
+            case DialogActor.NaoMakeupShadowSmirk: return "Nao";
+
+            case DialogActor.PencopetDefault: return "Pencopet";
+            case DialogActor.PencopetMarah: return "Pencopet";
+            case DialogActor.PencopetShadow: return "Pencopet";
+
+            case DialogActor.MiauSenyum: return "Miau";
+            case DialogActor.MiauTegas: return "Miau";
+            
 
         }
         return "Angkasa";
