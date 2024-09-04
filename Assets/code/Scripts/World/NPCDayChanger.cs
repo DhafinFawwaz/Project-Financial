@@ -7,6 +7,7 @@ public class NPCDayChanger : MonoBehaviour
     [SerializeField] int _currentDay = 0;
     void Start()
     {
+        Debug.Log("Current Day: " + Save.Data.CurrentDay);
         if(_currentDay < 0) _currentDay = Save.Data.CurrentDay;
 
         try {

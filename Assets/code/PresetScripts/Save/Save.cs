@@ -31,9 +31,9 @@ public static class Save
     /// <summary>
     /// Save Save.Data to a path.
     /// </summary>
-    public static void SaveData()
+    public static void SaveDataToFile()
     {
-        SaveData(Data);
+        SaveDataToFile(Data);
     }
 
     /// <summary>
@@ -65,7 +65,7 @@ public static class Save
     /// Save data to a path.
     /// </summary>
     /// <param name="data">SaveData object to save into json.</param>
-    static void SaveData(SaveData data)
+    static void SaveDataToFile(SaveData data)
     {
         string json = JsonUtility.ToJson(data);
         Rijndael crypto = new Rijndael();
@@ -93,6 +93,15 @@ public static class Save
             byte[] soupBackIn = File.ReadAllBytes(Path);
             string jsonFromFile = crypto.Decrypt(soupBackIn, JSONEncryptedKey);
             SaveData data = JsonUtility.FromJson<SaveData>(jsonFromFile);
+
+
+            if(data.CurrentVersion != SaveData.Version)
+            {
+                Debug.Log("Save Data version mismatch. Creating new save data.");
+                data = new SaveData();
+            }
+
+
             return data;
 		}
 		else

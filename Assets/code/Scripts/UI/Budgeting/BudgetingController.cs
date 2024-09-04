@@ -16,6 +16,9 @@ public class BudgetingController : MonoBehaviour
     [SerializeField] GameObject _okButton;
     [SerializeField] GameObject _lunasPage;
 
+    [SerializeField] GameObject _clickableCreditButton;
+    [SerializeField] GameObject _unclickableCreditButton;
+
     void Awake()
     {
         // Kredit
@@ -57,9 +60,9 @@ public class BudgetingController : MonoBehaviour
         _textFields[2].text = Save.Data.NeedsMoney.ToStringRupiahFormat();
 
         long total = Save.Data.TotalMoney;
-        _textPercentFields[0].text = (Save.Data.DebitMoney / (float)total * 100).ToString("0.0") + "%";
-        _textPercentFields[1].text = (Save.Data.DesireMoney / (float)total * 100).ToString("0.0") + "%";
-        _textPercentFields[2].text = (Save.Data.NeedsMoney / (float)total * 100).ToString("0.0") + "%";
+        _textPercentFields[0].text = (Save.Data.DebitMoney / (float)total * 100).ToString("0.00") + "%";
+        _textPercentFields[1].text = (Save.Data.DesireMoney / (float)total * 100).ToString("0.00") + "%";
+        _textPercentFields[2].text = (Save.Data.NeedsMoney / (float)total * 100).ToString("0.00") + "%";
 
         _kreditText.text = CurrentCreditMoney.ToStringRupiahFormat();
 
@@ -84,7 +87,12 @@ public class BudgetingController : MonoBehaviour
         if(!IsKreditExist()) {
             // show lunas
             _lunasPage.SetActive(true);
+            _clickableCreditButton.SetActive(false);
+            _unclickableCreditButton.SetActive(true);
         } else {
+            _lunasPage.SetActive(false);
+            _clickableCreditButton.SetActive(true);
+            _unclickableCreditButton.SetActive(false);
             // if the current page credit is 0, find any credit
             if(CurrentCreditMoney == 0) {
                 _choosenKreditDay = 0;
@@ -134,7 +142,7 @@ public class BudgetingController : MonoBehaviour
         for (int i = 0; i < values.Length; i++)
         {
             _textFields[i].text = (values[i] * _totalMoney).ToStringRupiahFormat();
-            _textPercentFields[i].text = (values[i] * 100).ToString("0.0") + "%";
+            _textPercentFields[i].text = (values[i] * 100).ToString("0.00") + "%";
         }
 
         _textFields[0].text = "<color=#00000066>" + Save.Data.DebitTabunganMoney.ToStringRupiahFormat() + " + <color=#000>" + (values[0] * _totalMoney).ToStringRupiahFormat();

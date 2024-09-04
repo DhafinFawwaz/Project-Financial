@@ -7,14 +7,14 @@ public class SaveHelper : MonoBehaviour
     public void SetSaveData()
     {
         Save.Data = _newSaveDataToSet;
-        Save.SaveData();
+        Save.SaveDataToFile();
         Debug.Log("Data value has been set to " + Save.Path);
     }
     
     public void ResetSaveData()
     {
         Save.Data = new SaveData();
-        Save.SaveData();
+        Save.SaveDataToFile();
         Debug.Log("Data value has been reset to default value");
     }
     public void DeleteSaveData()
