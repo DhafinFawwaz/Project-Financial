@@ -465,6 +465,80 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8514002549923720655, guid: 465814d9009618540a057a1fa3b75646, type: 3}
   m_PrefabInstance: {fileID: 22862943}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &24768677
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 217071116}
+    m_Modifications:
+    - target: {fileID: 145731129219653592, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 936185077}
+    - target: {fileID: 145731129219653592, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 645347842}
+    - target: {fileID: 145731129219653592, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 936185077}
+    - target: {fileID: 3301378736975770876, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: m_Name
+      value: NPC Day (1) (impossibro)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301378736975770879, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301378736975770879, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301378736975770879, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301378736975770879, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301378736975770879, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301378736975770879, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301378736975770879, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301378736975770879, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301378736975770879, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301378736975770879, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301378736975770879, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f469ff65e93eed841801f13acadda952, type: 3}
+--- !u!4 &24768678 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3301378736975770879, guid: f469ff65e93eed841801f13acadda952, type: 3}
+  m_PrefabInstance: {fileID: 24768677}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &25111471
 GameObject:
   m_ObjectHideFlags: 0
@@ -4407,6 +4481,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 24768678}
   - {fileID: 2054749902}
   - {fileID: 808668766}
   m_Father: {fileID: 527195664}
@@ -8878,7 +8953,7 @@ GameObject:
   m_Component:
   - component: {fileID: 416740960}
   m_Layer: 0
-  m_Name: NPC Day (0) (Impossibro)
+  m_Name: NPC Day (1) (Impossibro)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17969,11 +18044,11 @@ PrefabInstance:
       objectReference: {fileID: 936185077}
     - target: {fileID: 3301378736975770876, guid: f469ff65e93eed841801f13acadda952, type: 3}
       propertyPath: m_Name
-      value: NPC Day (2)
+      value: NPC Day (3)
       objectReference: {fileID: 0}
     - target: {fileID: 3301378736975770879, guid: f469ff65e93eed841801f13acadda952, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3301378736975770879, guid: f469ff65e93eed841801f13acadda952, type: 3}
       propertyPath: m_LocalPosition.x
@@ -48206,7 +48281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1945877846}
   m_Layer: 0
-  m_Name: NPC Day (1)
+  m_Name: NPC Day (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52888,11 +52963,11 @@ PrefabInstance:
       objectReference: {fileID: 936185077}
     - target: {fileID: 3301378736975770876, guid: f469ff65e93eed841801f13acadda952, type: 3}
       propertyPath: m_Name
-      value: NPC Day (1)
+      value: NPC Day (2)
       objectReference: {fileID: 0}
     - target: {fileID: 3301378736975770879, guid: f469ff65e93eed841801f13acadda952, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3301378736975770879, guid: f469ff65e93eed841801f13acadda952, type: 3}
       propertyPath: m_LocalPosition.x
