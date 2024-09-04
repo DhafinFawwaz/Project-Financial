@@ -20,6 +20,7 @@ public class SaveData
 
     const int MAX_DAY = 15;
     public long NeedsMoney = 100000;
+    public long CurrentNeedsMoney = 100000;
     public long DesireMoney = 30000;
     public long DebitMoney = 40000;
     public long DebitTabunganMoney = 150000;
@@ -49,7 +50,7 @@ public class SaveData
     {
         Happiness = 100;
         Health = 100;
-        CurrentDay = 2;
+        CurrentDay = 0;
         CurrentListBelanja = new List<ItemCount>();
         CurrentBelanjaMoney = 0;
         SkillPoin = 0;
@@ -68,8 +69,8 @@ public class SaveData
         HasDoneKuliah = false;
         JustAfterFirstBelanja = false;
 
-        HealthItemStocks = new List<int>(){3,3,3,3};
-        HapinessItemStocks = new List<int>(){3,3,3,3};
+        HealthItemStocks = new List<int>(){1,2,3,0};
+        HapinessItemStocks = new List<int>(){1,2,3};
 
         DayState = DayState.JustGotHome;
     }

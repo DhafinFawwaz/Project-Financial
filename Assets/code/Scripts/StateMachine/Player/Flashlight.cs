@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class Flashlight : MonoBehaviour
 {
+    public static Action<float> s_OnRecharging;
+    [SerializeField] float _energy = 0;
+    [SerializeField] float _rechargeDuration = 10;
+
+
     [SerializeField] GameObject _flashLight;
     [SerializeField] LayerMask _enemyLayer;
+    [SerializeField] LayerMask _rakLayer;
     [SerializeField] float _flashLightDuration;
     [SerializeField] Material _material;
 
@@ -17,6 +23,8 @@ public class Flashlight : MonoBehaviour
         Knockback = 120,
         StunDuration = 3
     };
+
+    public HitRequest HitRequest => _hitRequest;
 
 
     bool _isInSceneBelanja;
@@ -31,9 +39,14 @@ public class Flashlight : MonoBehaviour
         if(!_isInSceneBelanja) return;
         if(InputManager.GetMouseButtonDown(0)) ToggleFlash();
         AdjustFlashRotationBasedOnMouse();
+
+        _energy += Time.deltaTime / _rechargeDuration;
+        s_OnRecharging?.Invoke(_energy);
     }
     void ToggleFlash()
     {
+        if(_energy < 1) return;
+        _energy = 0;
         StartCoroutine(StartFlashlight());
     }
     void AdjustFlashRotationBasedOnMouse()
@@ -55,6 +68,12 @@ public class Flashlight : MonoBehaviour
             HitResult _hitResult = new HitResult();
             _hitRequest.Direction = (col.transform.position - transform.position).normalized;
             col.GetComponent<Shadow>().OnHurt(_hitRequest, ref _hitResult);
+        } 
+        else if (( _rakLayer & (1 << col.gameObject.layer)) != 0) 
+        {
+            if(col.TryGetComponent<Rak>(out Rak rak)) {
+                rak.SetDarken(false);
+            }
         }
     }
 

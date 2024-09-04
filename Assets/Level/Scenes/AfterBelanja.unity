@@ -511,6 +511,7 @@ RectTransform:
   - {fileID: 1485379992}
   - {fileID: 2066381903}
   - {fileID: 591229631}
+  - {fileID: 1566369376}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2109,6 +2110,99 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502823895}
   m_CullTransparentMesh: 1
+--- !u!1 &1566369375
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1566369376}
+  - component: {fileID: 1566369378}
+  - component: {fileID: 1566369377}
+  - component: {fileID: 1566369379}
+  m_Layer: 5
+  m_Name: QualityBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1566369376
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566369375}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 338916699}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 171, y: 106}
+  m_SizeDelta: {x: 917.9585, y: 37.2253}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1566369377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566369375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 7482667652216324306, guid: 3e7814af13b7fa74bb3bcb489c94b9c8, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 0
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1566369378
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566369375}
+  m_CullTransparentMesh: 1
+--- !u!114 &1566369379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566369375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b90c53a7efdc6e5419928290037d4579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animationToInterrupt: []
+  _target: {fileID: 1566369377}
+  _fill: 1
+  _duration: 4
 --- !u!1 &1639752113
 GameObject:
   m_ObjectHideFlags: 0
@@ -2260,6 +2354,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3971823244255289310, guid: 7a53993d627a386468bade91e6694a17, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4314467448905294436, guid: 7a53993d627a386468bade91e6694a17, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2347,6 +2445,10 @@ PrefabInstance:
     - target: {fileID: 4314467448905294440, guid: 7a53993d627a386468bade91e6694a17, type: 3}
       propertyPath: m_Name
       value: '[Canvas] Cursor'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6179814058378683055, guid: 7a53993d627a386468bade91e6694a17, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a53993d627a386468bade91e6694a17, type: 3}
@@ -2567,7 +2669,9 @@ MonoBehaviour:
   _sisaText: {fileID: 236286797}
   _addedHealthText: {fileID: 1485379993}
   _addedHapinesssisaText: {fileID: 2066381904}
+  _qualityBar: {fileID: 1566369379}
   _ktpWorld: {fileID: 1172634160}
+  _budgetingData: {fileID: 11400000, guid: f3379591a2e94224989606f04fefc081, type: 2}
   onE:
     m_PersistentCalls:
       m_Calls:
@@ -2621,9 +2725,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 188a4d197850a004c9ce81dc686e4870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _changeLightColor: 1
-  _lightColor: {r: 0.33333334, g: 0.4117647, b: 0.74509805, a: 1}
-  _movePlayerToSpawnPoint: 1
   _spawnPosition: {x: 2.5, y: 0, z: -2}
 --- !u!1 &2066381902
 GameObject:

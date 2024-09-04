@@ -276,6 +276,18 @@ MonoBehaviour:
   _onComplete:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 7059281181552219449}
+        m_TargetAssemblyTypeName: VignetteEffect, Assembly-CSharp
+        m_MethodName: ResetLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerKerasukan, Assembly-CSharp
         m_MethodName: StopKerasukan
@@ -287,6 +299,30 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ShadowNearAttack, Assembly-CSharp
+        m_MethodName: CancelTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &1980614114781848966
 GameObject:
@@ -306,7 +342,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4567446650172131625
 RectTransform:
   m_ObjectHideFlags: 0
@@ -348,7 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -399,7 +435,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5877712516908015038
 RectTransform:
   m_ObjectHideFlags: 0
@@ -441,7 +477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -492,7 +528,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1928601789390591487
 RectTransform:
   m_ObjectHideFlags: 0
@@ -534,7 +570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -811,7 +847,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6983441037651918280
 RectTransform:
   m_ObjectHideFlags: 0
@@ -853,7 +889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -982,106 +1018,19 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2151665407620241285, guid: a96929adab55e5b44b991de8962f94b0, type: 3}
-      propertyPath: _itemThrower
-      value: 
-      objectReference: {fileID: 7555314987237579321}
-    - target: {fileID: 2151665407620241285, guid: a96929adab55e5b44b991de8962f94b0, type: 3}
       propertyPath: _vignetteEffect
       value: 
       objectReference: {fileID: 7059281181552219449}
     - target: {fileID: 2151665407620241285, guid: a96929adab55e5b44b991de8962f94b0, type: 3}
-      propertyPath: OnKerasukan.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2151665407620241285, guid: a96929adab55e5b44b991de8962f94b0, type: 3}
-      propertyPath: OnOptionChoosen.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2151665407620241285, guid: a96929adab55e5b44b991de8962f94b0, type: 3}
-      propertyPath: OnKerasukan.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2151665407620241285, guid: a96929adab55e5b44b991de8962f94b0, type: 3}
-      propertyPath: OnOptionChoosen.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2151665407620241285, guid: a96929adab55e5b44b991de8962f94b0, type: 3}
-      propertyPath: OnKerasukan.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2151665407620241285, guid: a96929adab55e5b44b991de8962f94b0, type: 3}
-      propertyPath: OnKerasukan.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartKerasukan
-      objectReference: {fileID: 0}
-    - target: {fileID: 2151665407620241285, guid: a96929adab55e5b44b991de8962f94b0, type: 3}
       propertyPath: OnOptionChoosen.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2951640873786325277}
-    - target: {fileID: 2151665407620241285, guid: a96929adab55e5b44b991de8962f94b0, type: 3}
-      propertyPath: OnOptionChoosen.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+    - target: {fileID: 7555314987237579321, guid: a96929adab55e5b44b991de8962f94b0, type: 3}
+      propertyPath: _belanjaList
       value: 
-      objectReference: {fileID: 7555314987237579321}
-    - target: {fileID: 2151665407620241285, guid: a96929adab55e5b44b991de8962f94b0, type: 3}
-      propertyPath: OnOptionChoosen.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2151665407620241285, guid: a96929adab55e5b44b991de8962f94b0, type: 3}
-      propertyPath: OnOptionChoosen.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2151665407620241285, guid: a96929adab55e5b44b991de8962f94b0, type: 3}
-      propertyPath: OnOptionChoosen.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AddItemFromOption
-      objectReference: {fileID: 0}
-    - target: {fileID: 2151665407620241285, guid: a96929adab55e5b44b991de8962f94b0, type: 3}
-      propertyPath: OnOptionChoosen.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Buy
-      objectReference: {fileID: 0}
-    - target: {fileID: 2151665407620241285, guid: a96929adab55e5b44b991de8962f94b0, type: 3}
-      propertyPath: OnKerasukan.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PlayerKerasukan, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2151665407620241285, guid: a96929adab55e5b44b991de8962f94b0, type: 3}
-      propertyPath: OnOptionChoosen.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: WorldUI, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2151665407620241285, guid: a96929adab55e5b44b991de8962f94b0, type: 3}
-      propertyPath: OnOptionChoosen.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: ItemThrower, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2151665407620241285, guid: a96929adab55e5b44b991de8962f94b0, type: 3}
-      propertyPath: OnKerasukan.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2151665407620241285, guid: a96929adab55e5b44b991de8962f94b0, type: 3}
-      propertyPath: OnOptionChoosen.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2151665407620241285, guid: a96929adab55e5b44b991de8962f94b0, type: 3}
-      propertyPath: OnOptionChoosen.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1939328242579453134}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a96929adab55e5b44b991de8962f94b0, type: 3}
---- !u!1 &1675075035 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 603829284778857754, guid: a96929adab55e5b44b991de8962f94b0, type: 3}
-  m_PrefabInstance: {fileID: 603829286451759297}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7555314987237579321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1675075035}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4ba92bd0f867e84ca3732dbf6617359, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _itemPrefab: {fileID: 1877541845775526577, guid: 37d6384fb23a1ba47a3e5d785a9deab9, type: 3}
-  _belanjaList: {fileID: 1939328242579453134}
 --- !u!224 &1675075036 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 603829284778857757, guid: a96929adab55e5b44b991de8962f94b0, type: 3}

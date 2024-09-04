@@ -3,6 +3,7 @@ public class InputManager : MonoBehaviour
 {
     static bool _canMouseButtonDown = true;
     static bool _canGetKeyDown = true;
+    public static bool CanGetKeyDown => _canGetKeyDown;
     static bool _canGetAxisRaw = true;
     public static bool GetMouseButtonDown(int button)
     {
@@ -39,6 +40,12 @@ public class InputManager : MonoBehaviour
         _canMouseButtonDown = active;
         _canGetKeyDown = active;
         _canGetAxisRaw = active;
+    }
+
+    public static void SetActiveAxisRawAndMouseButtonDown(bool active)
+    {
+        _canGetAxisRaw = active;
+        _canMouseButtonDown = active;
     }
     
     void OnDisable()

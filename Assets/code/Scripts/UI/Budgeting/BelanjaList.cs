@@ -85,6 +85,17 @@ public class BelanjaList : MonoBehaviour
         OnListChange?.Invoke(_listToBuy);
     }
 
+    public List<ItemData> GetNotInCartItems()
+    {
+        List<ItemData> items = new List<ItemData>();
+        foreach(ItemCount item in _listToBuy)
+        {
+            int amountInCart = _listCart.Find(x => x.Item.Name == item.Item.Name)?.Count ?? 0;
+            if(amountInCart == 0) items.Add(item.Item);
+        }
+        return items;
+    }
+
     public void SetList(List<ItemCount> list)
     {
         _listToBuy = list;

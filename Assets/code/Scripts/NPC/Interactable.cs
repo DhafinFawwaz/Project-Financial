@@ -10,6 +10,7 @@ public class Interactable : MonoBehaviour
 
     string _playerTag = "Player";
     bool _isShowingPrompt = false;
+    public bool IsShowingPrompt => _isShowingPrompt;
     protected PlayerCore _playerInstance = null;
 
     void Update()

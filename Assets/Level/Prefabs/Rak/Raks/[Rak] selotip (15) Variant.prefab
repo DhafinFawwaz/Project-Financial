@@ -7,21 +7,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2875105683812580470, guid: 5c100974281cde942ab96f14d283140d, type: 3}
-      propertyPath: _optionData
-      value: 
-      objectReference: {fileID: 11400000, guid: 1e279354350615647a6f90d0fa85e3c0, type: 2}
-    - target: {fileID: 3914189445726561639, guid: 5c100974281cde942ab96f14d283140d, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8981c79283d9ab24283be36be282074d, type: 2}
     - target: {fileID: 3914189446115555672, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3914189446115555672, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.3239999
+      value: 0.9879998
       objectReference: {fileID: 0}
     - target: {fileID: 3914189446115555672, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -29,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3914189446115555672, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.25
+      value: -1.558
       objectReference: {fileID: 0}
     - target: {fileID: 3914189446115555672, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -62,10 +54,6 @@ PrefabInstance:
     - target: {fileID: 3914189446115555673, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_Name
       value: '[Rak] selotip (15) Variant'
-      objectReference: {fileID: 0}
-    - target: {fileID: 3914189446115555673, guid: 5c100974281cde942ab96f14d283140d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c100974281cde942ab96f14d283140d, type: 3}

@@ -52,6 +52,7 @@ public class PopUpSeller : MonoBehaviour
         _popUpConfirm.Hide();
         _worldUI.RefreshKTP();
         _seller.Refresh();
+        _seller.ThrowItem();
     }  
 
 }

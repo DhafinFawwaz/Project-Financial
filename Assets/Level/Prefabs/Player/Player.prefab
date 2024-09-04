@@ -95,7 +95,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9948695, y: 1.9974333, z: 0.85597056}
+  m_Size: {x: 1.35, y: 1.9974333, z: 0.85597056}
   m_Center: {x: 0.0025652845, y: 0.0000029557198, z: 0.4279845}
 --- !u!1 &630845121
 GameObject:
@@ -143,16 +143,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51b9870022f60df4cab1aed8c1d3cc35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _energy: 0
+  _rechargeDuration: 3
   _flashLight: {fileID: 609771645}
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 64
+  _rakLayer:
+    serializedVersion: 2
+    m_Bits: 128
   _flashLightDuration: 1
   _material: {fileID: 2100000, guid: c25962e6b04b48f48b7d295fa7c3449e, type: 2}
   initColor: {r: 2.670157, g: 1.0396996, b: 0, a: 1}
   _hitRequest:
     Damage: 0
-    Knockback: 120
+    Knockback: 320
     Direction: {x: 0, y: 0, z: 0}
     StunDuration: 3
     Element: 0
@@ -380,6 +385,9 @@ MonoBehaviour:
   _camTarget: {fileID: 1863264067196928533}
   _zoomedLensVerticalFOV: 6
   _vCam: {fileID: 0}
+  _collectDuration: 0.6
+  _collectOffset: {x: 0, y: 0.25, z: 0}
+  _collectHeight: 0.8
 --- !u!114 &4399975957085244850
 MonoBehaviour:
   m_ObjectHideFlags: 0

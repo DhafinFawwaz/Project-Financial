@@ -16,6 +16,7 @@ public class Option : MonoBehaviour
     [SerializeField] TextMeshProUGUI _priceText;
     [SerializeField] TextMeshProUGUI _healthText;
     [SerializeField] TextMeshProUGUI _happinessText;
+    [SerializeField] TextMeshProUGUI _qualityText;
     [SerializeField] Image _itemImage;
     [SerializeField] GameObject _multipleBuy;
     OptionContent _optionContent;
@@ -54,11 +55,12 @@ public class Option : MonoBehaviour
     {
         _diskonGO.SetActive(_optionContent.Diskon);
         _inflasiGO.SetActive(_optionContent.Inflasi);
-        _buy1get1GO.SetActive(_optionContent.Buy1get1);
+        // _buy1get1GO.SetActive(_optionContent.Buy1get1);
         _buyCountText.text = "x"+_buyCount.ToString();
         _priceText.text = _optionContent.Price.ToStringRupiahFormat();
-        _healthText.text = _optionContent.Health.ToString();
-        _happinessText.text = _optionContent.Happiness.ToString();
+        // _healthText.text = _optionContent.Health.ToString();
+        // _happinessText.text = _optionContent.Happiness.ToString();
+        _qualityText.text = _optionContent.Quality.ToString() + "%";
         // if(_optionContent.IsUp)
         // {
         //     _up.SetActive(true);

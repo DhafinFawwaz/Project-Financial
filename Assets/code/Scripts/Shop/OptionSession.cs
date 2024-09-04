@@ -10,7 +10,7 @@ public class OptionSession : MonoBehaviour
     [SerializeField] Option _optionPrefab;
     [SerializeField] Transform _optionContainer;
     [SerializeField] Transform _eToSelesai;
-    [SerializeField] UnityEvent<OptionSession> OnOptionChoosen;
+    public UnityEvent<OptionSession> OnOptionChoosen;
     [SerializeField] Timer _timeLimit;
     List<Option> _activeOptions = new List<Option>();
     Rak _currentRak;
@@ -21,7 +21,11 @@ public class OptionSession : MonoBehaviour
     {
         _onOptionStart?.Invoke();
         _openTime = Time.time;
+        _isOpen = true;
         _currentRak = rak;
+        _currentRak.ReGacha();
+        this.Invoke(_vignetteEffect.ResetLevel, 0.1f);
+
         // Populate
         OptionData optionData = rak.OptionData;
         for (int i = 0; i < optionData.Content.Length; i++)
@@ -54,7 +58,7 @@ public class OptionSession : MonoBehaviour
 
         // Check if shadow kena senter, if yes, set the below to 16
         _vignetteEffect.gameObject.SetActive(true);
-        StartCoroutine(TimerCountdown(10));
+        StartCoroutine(TimerCountdown(_currentRak.SessionTime));
     }
 
 
@@ -70,29 +74,67 @@ public class OptionSession : MonoBehaviour
         byte requirement = ++_timerCountdownKey;
 
 
-        yield return new WaitForSeconds(time-_darkenTime);
-        for(int i = 0; i < _darkenTime; i++)
-        {
-            if(_timerCountdownKey != requirement) break;
-            _vignetteEffect.IncreaseLevel();
-            yield return new WaitForSeconds(1);
-        }
+        // yield return new WaitForSeconds(time-_darkenTime);
+        // for(int i = 0; i < _darkenTime; i++)
+        // {
+        //     if(_timerCountdownKey != requirement) break;
+        //     _vignetteEffect.IncreaseLevel();
+        //     yield return new WaitForSeconds(1);
+        // }
 
+        // if(_timerCountdownKey == requirement)
+        // {
+        //     // kerasukan
+        //     OnKerasukan?.Invoke();
+        //     _currentRak.SetDarken(true);
+        //     Close();
+            
+        //     if(PlayerCore.Instance != null)
+        //         PlayerCore.Instance.MoveCameraBack();
+        // }
+
+        while(_timeLimit.ElapsedTime > 0 && _timerCountdownKey == requirement)
+        {
+            yield return null;
+
+            if(_timeLimit.ElapsedTime > 3 && _timeLimit.ElapsedTime <= 4)
+            {
+                _vignetteEffect.SetLevel(0);
+            }
+            else if(_timeLimit.ElapsedTime > 2 && _timeLimit.ElapsedTime <= 3)
+            {
+                _vignetteEffect.SetLevel(1);
+            }
+            else if(_timeLimit.ElapsedTime > 1 && _timeLimit.ElapsedTime <= 2)
+            {
+                _vignetteEffect.SetLevel(2);
+            }
+            else if(_timeLimit.ElapsedTime > 0 && _timeLimit.ElapsedTime <= 1)
+            {
+                _vignetteEffect.SetLevel(3);
+            }
+        }
         if(_timerCountdownKey == requirement)
         {
             // kerasukan
             OnKerasukan?.Invoke();
+            _currentRak.SetDarken(true);
             Close();
             
             if(PlayerCore.Instance != null)
                 PlayerCore.Instance.MoveCameraBack();
         }
+
+        // 0 4
+        // 1 3
+        // 2 2
+        // 3 1
     }
     void CancelTimerCountdown()
     {
         _timerCountdownKey++;
         _vignetteEffect.ResetLevel();
-        _vignetteEffect.gameObject.SetActive(false);
+        this.Invoke(_vignetteEffect.ResetLevel, 0.1f);
     }
 
     IEnumerator ScalingAnimation()
@@ -109,6 +151,7 @@ public class OptionSession : MonoBehaviour
 
     public void Close()
     {
+        _currentRak.SessionTime = _timeLimit.ElapsedTime;
         _onOptionEnd?.Invoke();
         for (int i = 0; i < _activeOptions.Count; i++)
             _activeOptions[i].Hide();
@@ -119,6 +162,7 @@ public class OptionSession : MonoBehaviour
         rta.SetEnd(Vector2.zero).TweenLocalScale();
         StartCoroutine(TweenLocalScaleAnimation(_eToSelesai as RectTransform, _eToSelesai.localScale, Vector3.zero, 0.2f, Ease.OutQuart));
         CancelTimerCountdown();
+        _isOpen = false;
     }
     
 
@@ -136,11 +180,20 @@ public class OptionSession : MonoBehaviour
 
     float _openTime;
 
+
+    bool _isOpen = false;
     public void ChooseOption()
     {
+        if(!_isOpen) return;
         if(!(Time.time - _openTime > 0.5f)) return;
 
-        if(GetChoosenOption() == null) return; // case not buying anything
+        if(GetChoosenOption() == null) {
+            Close();
+            if(PlayerCore.Instance != null)
+                PlayerCore.Instance.MoveCameraBack();
+            StartCoroutine(DisableCollected(_currentRak));
+            return; // case not buying anything
+        }
 
         OnOptionChoosen?.Invoke(this);
         Close();

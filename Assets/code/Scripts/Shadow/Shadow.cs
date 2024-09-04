@@ -73,7 +73,7 @@ public class Shadow : MonoBehaviour
 
     public void Freeze()
     {
-        _shadowNearAttack.CancelTimer();
+        _shadowNearAttack.PauseTimer();
         _shadowNearAttack.enabled = false;
         _agent.enabled = false;
         enabled = false;
@@ -81,6 +81,7 @@ public class Shadow : MonoBehaviour
 
     public void UnFreeze()
     {
+        _shadowNearAttack.ResumeTimer();
         _shadowNearAttack.enabled = true;
         _agent.enabled = true;
         enabled = true;
