@@ -51386,6 +51386,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 217071116}
     m_Modifications:
     - target: {fileID: 145731129219653592, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: _commentListAfterKuliah
+      value: 
+      objectReference: {fileID: 11400000, guid: b0fb923a7c4b4704aaaef4822e18e87b, type: 2}
+    - target: {fileID: 145731129219653592, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: _commentListJustGotOutside
+      value: 
+      objectReference: {fileID: 11400000, guid: 611b4eb81a4abb64fa5dff65aa5e12b9, type: 2}
+    - target: {fileID: 145731129219653592, guid: f469ff65e93eed841801f13acadda952, type: 3}
       propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 936185077}
@@ -51397,6 +51405,14 @@ PrefabInstance:
       propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 936185077}
+    - target: {fileID: 145731130255032543, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: _commentListAfterKuliah
+      value: 
+      objectReference: {fileID: 11400000, guid: b0fb923a7c4b4704aaaef4822e18e87b, type: 2}
+    - target: {fileID: 145731130255032543, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: _commentListJustGotOutside
+      value: 
+      objectReference: {fileID: 11400000, guid: 611b4eb81a4abb64fa5dff65aa5e12b9, type: 2}
     - target: {fileID: 3301378736975770876, guid: f469ff65e93eed841801f13acadda952, type: 3}
       propertyPath: m_Name
       value: NPC Day (7)
