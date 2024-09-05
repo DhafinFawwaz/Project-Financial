@@ -8524,6 +8524,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: f92bad9fb605e3f42884a7bcba5d837d, type: 2}
     - target: {fileID: 4166035346522496334, guid: 03713cc1554ee11489537a3c017e9035, type: 3}
+      propertyPath: _dialogAfterKuliah.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 85bd9cbde9fad364ab9cd2d3d2548209, type: 2}
+    - target: {fileID: 4166035346522496334, guid: 03713cc1554ee11489537a3c017e9035, type: 3}
       propertyPath: _dialogJustGotHome.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 9fb55b3dbb7b6374490a0d7e5c22b9dc, type: 2}
@@ -8539,6 +8543,10 @@ PrefabInstance:
       propertyPath: _dialogAfterBelanja.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: bfaf2c801bcc7904cb3ee576d149d741, type: 2}
+    - target: {fileID: 4166035346522496334, guid: 03713cc1554ee11489537a3c017e9035, type: 3}
+      propertyPath: _dialogAfterBelanja.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: af3c4174e24a8a047a2fdab548f19cb1, type: 2}
     - target: {fileID: 4166035346522496335, guid: 03713cc1554ee11489537a3c017e9035, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -15644,6 +15652,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 217071116}
     m_Modifications:
     - target: {fileID: 145731129219653592, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: _commentListAfterKuliah
+      value: 
+      objectReference: {fileID: 11400000, guid: e1947080802860d40863b67e85351fa0, type: 2}
+    - target: {fileID: 145731129219653592, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: _commentListJustGotOutside
+      value: 
+      objectReference: {fileID: 11400000, guid: ef88d6172969dbd409d53d4d7c8ecbbf, type: 2}
+    - target: {fileID: 145731129219653592, guid: f469ff65e93eed841801f13acadda952, type: 3}
       propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 936185077}
@@ -15655,6 +15671,10 @@ PrefabInstance:
       propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 936185077}
+    - target: {fileID: 145731130255032543, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: _commentListJustGotOutside
+      value: 
+      objectReference: {fileID: 11400000, guid: ef88d6172969dbd409d53d4d7c8ecbbf, type: 2}
     - target: {fileID: 3301378736975770876, guid: f469ff65e93eed841801f13acadda952, type: 3}
       propertyPath: m_Name
       value: NPC Day (5)
@@ -18342,6 +18362,22 @@ PrefabInstance:
     m_TransformParent: {fileID: 217071116}
     m_Modifications:
     - target: {fileID: 145731129219653592, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: _commentListAfterKuliah
+      value: 
+      objectReference: {fileID: 11400000, guid: 71a4d3fa61291ce4d80c03bdb65cd6c0, type: 2}
+    - target: {fileID: 145731129219653592, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: _commentListAfterSleeping
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 145731129219653592, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: _commentListAfterBudgeting
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 145731129219653592, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: _commentListJustGotOutside
+      value: 
+      objectReference: {fileID: 11400000, guid: 7b02ebea5c2954846b1c5e24ac54f1ee, type: 2}
+    - target: {fileID: 145731129219653592, guid: f469ff65e93eed841801f13acadda952, type: 3}
       propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 936185077}
@@ -18353,6 +18389,18 @@ PrefabInstance:
       propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 936185077}
+    - target: {fileID: 145731130255032543, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: _commentListAfterKuliah
+      value: 
+      objectReference: {fileID: 11400000, guid: 71a4d3fa61291ce4d80c03bdb65cd6c0, type: 2}
+    - target: {fileID: 145731130255032543, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: _commentListAfterBudgeting
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 145731130255032543, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: _commentListJustGotOutside
+      value: 
+      objectReference: {fileID: 11400000, guid: 7b02ebea5c2954846b1c5e24ac54f1ee, type: 2}
     - target: {fileID: 3301378736975770876, guid: f469ff65e93eed841801f13acadda952, type: 3}
       propertyPath: m_Name
       value: NPC Day (3)
@@ -34446,6 +34494,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 217071116}
     m_Modifications:
     - target: {fileID: 145731129219653592, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: _commentListJustGotOutside
+      value: 
+      objectReference: {fileID: 11400000, guid: ba5a780dc1e0d164d94cc60f43eac8ca, type: 2}
+    - target: {fileID: 145731129219653592, guid: f469ff65e93eed841801f13acadda952, type: 3}
       propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 936185077}
@@ -34457,6 +34509,10 @@ PrefabInstance:
       propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 936185077}
+    - target: {fileID: 145731130255032543, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: _commentListJustGotOutside
+      value: 
+      objectReference: {fileID: 11400000, guid: ba5a780dc1e0d164d94cc60f43eac8ca, type: 2}
     - target: {fileID: 3301378736975770876, guid: f469ff65e93eed841801f13acadda952, type: 3}
       propertyPath: m_Name
       value: NPC Day (6)
@@ -47840,6 +47896,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 217071116}
     m_Modifications:
     - target: {fileID: 145731129219653592, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: _commentListAfterKuliah
+      value: 
+      objectReference: {fileID: 11400000, guid: dcdd616c96c230b48a679ed9dc470c10, type: 2}
+    - target: {fileID: 145731129219653592, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: _commentListJustGotOutside
+      value: 
+      objectReference: {fileID: 11400000, guid: 9298cb0fb5220f543945589271a8d863, type: 2}
+    - target: {fileID: 145731129219653592, guid: f469ff65e93eed841801f13acadda952, type: 3}
       propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 936185077}
@@ -47851,6 +47915,14 @@ PrefabInstance:
       propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 936185077}
+    - target: {fileID: 145731130255032543, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: _commentListAfterKuliah
+      value: 
+      objectReference: {fileID: 11400000, guid: dcdd616c96c230b48a679ed9dc470c10, type: 2}
+    - target: {fileID: 145731130255032543, guid: f469ff65e93eed841801f13acadda952, type: 3}
+      propertyPath: _commentListJustGotOutside
+      value: 
+      objectReference: {fileID: 11400000, guid: 9298cb0fb5220f543945589271a8d863, type: 2}
     - target: {fileID: 3301378736975770876, guid: f469ff65e93eed841801f13acadda952, type: 3}
       propertyPath: m_Name
       value: NPC Day (4)
