@@ -14,6 +14,7 @@ public class ShadowNearAttack : MonoBehaviour
     [SerializeField] float _radius = 5;
     [SerializeField] bool _showGizmos = true;
 
+#if UNITY_EDITOR
     void OnDrawGizmos()
     {
         if (!_showGizmos) return;
@@ -27,7 +28,7 @@ public class ShadowNearAttack : MonoBehaviour
     {
         _circleTrans.localScale = Vector3.one * _radius * 2;
     }
-
+#endif
 
     void SetMatTransparency(float alpha)
     {
