@@ -105,14 +105,17 @@ public class PlayerKerasukan : MonoBehaviour
 
 
     [SerializeField] GameObject _itemPrefab;
+    [SerializeField] WorldUI _worldUI;
     void Buy(ItemKerasukan itemKerasukan)
     {
-        _belanjaList.AddToCart(itemKerasukan.ItemData);
+        // _belanjaList.AddToCart(itemKerasukan.ItemData);
         if(PlayerCore.Instance != null) 
         {
             GameObject item = Instantiate(_itemPrefab, _agent.transform.position, Quaternion.identity);
             item.GetComponent<MeshRenderer>().material.SetTexture("_MainTex", itemKerasukan.ItemData.Sprite.texture);
             PlayerCore.Instance.Collect(item.transform);
+            // _worldUI.AddItemFromOption(itemKerasukan.ItemData);
+            _worldUI.AddItemFromAny(itemKerasukan.ItemData);
         }
     }
 

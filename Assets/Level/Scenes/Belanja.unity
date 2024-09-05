@@ -5995,6 +5995,7 @@ MonoBehaviour:
   _belanjaList: {fileID: 1044426780}
   _spacebarSpam: {fileID: 24282043}
   _itemPrefab: {fileID: 1877541845775526577, guid: 37d6384fb23a1ba47a3e5d785a9deab9, type: 3}
+  _worldUI: {fileID: 7555314987237579322}
 --- !u!1001 &1353424475
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17520,6 +17521,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7555314985728541784, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
   m_PrefabInstance: {fileID: 7555314987237579318}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7555314987237579322 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2951640873786325277, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+  m_PrefabInstance: {fileID: 7555314987237579318}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3003a160de1d89046bf4d6f25b875045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7940895818057406807
 PrefabInstance:
   m_ObjectHideFlags: 0

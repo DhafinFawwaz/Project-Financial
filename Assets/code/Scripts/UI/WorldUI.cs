@@ -125,10 +125,10 @@ public class WorldUI : MonoBehaviour
     {
         ItemData itemData = Instantiate(option.OptionData.ItemData);
         Option choosenOption = option.GetChoosenOption();
-        for(int i = 0; i < choosenOption.BuyCount; i++)
-        {
-            _belanjaList.AddToCart(itemData);        
-        }
+        // for(int i = 0; i < choosenOption.BuyCount; i++)
+        // {
+        //     _belanjaList.AddToCart(itemData);        
+        // }
 
         // _currentBelanjaMoney -= itemData.Price * choosenOption.BuyCount;
         // _addedHappiness += itemData.Happiness * choosenOption.BuyCount;
@@ -160,5 +160,37 @@ public class WorldUI : MonoBehaviour
             .SetMoneyBottom(Save.Data.NeedsMoney)
             .SetGreenBarFill((float)Save.Data.NeedsMoney/Save.Data.CurrentNeedsMoney);
 
+    }
+
+
+    public void AddItemFromAny(ItemData itemData)
+    {
+        // Option choosenOption = option.GetChoosenOption();
+        int randomQuality = UnityEngine.Random.Range(50, 100);
+        int buyCount = 1;
+
+        // Save.Data.NeedsMoney -= itemData.Price * choosenOption.BuyCount;
+        Save.Data.NeedsMoney -= itemData.Price * buyCount;
+
+        // _totalPercentage += choosenOption.Content.Quality * choosenOption.BuyCount;
+        // _totalItems += choosenOption.BuyCount;
+        _totalPercentage += randomQuality * buyCount;
+        _totalItems += buyCount;
+
+
+        float finalQuality = (float)_totalPercentage / _totalItems/100;
+        Debug.Log(finalQuality);
+        int health = (int)(Save.Data.CurrentPredictedHealth * finalQuality);
+        int happiness = (int)(Save.Data.CurrentPredictedHappiness * finalQuality);
+        _qualityBar.SetAndAnimate(finalQuality, health, happiness, _qualityHealth, _qualityHappiness);
+        _qualityHealth = health;
+        _qualityHappiness = happiness;
+        Save.Data.CurrentQuality = _totalPercentage;
+        Save.Data.CurrentTotalItems = _totalItems;
+
+        
+        _ktpBelanja.SetMoneyTop(Save.Data.NeedsMoney)
+            .SetMoneyBottom(Save.Data.NeedsMoney)
+            .SetGreenBarFill((float)Save.Data.NeedsMoney/Save.Data.CurrentNeedsMoney);
     }
 }
