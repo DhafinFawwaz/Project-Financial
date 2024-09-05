@@ -1,50 +1,58 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AfterStreaming : MonoBehaviour
 {
-    [SerializeField] UIGraph _graph;
+    [Header("Graph")]
+    [SerializeField] UIGraph _viewsGraph;
+    [SerializeField] UIGraph _subscriberGraph;
+    [SerializeField] UIGraph _moneyGraph;
+    
+    [Header("Current Video")]
     [SerializeField] TextAnimation _penontonText;
     [SerializeField] TextAnimation _newSubscriberText;
     [SerializeField] MoneyAnimation _penghasilanText;
+
+    [Header("Accumulated")]
     [SerializeField] TextAnimation _totalSubscriberText;
+    [SerializeField] TextAnimation _totalViewsText;
+    [SerializeField] TextAnimation _totalMoneyText;
+
+    [Header("Animation")]
     [SerializeField] ImageFillAnimation _fillAnimation;
     [SerializeField] SceneTransition _sceneTransition;
 
-    public static long Penonton = 1000;
-    public static long NewSubscriber = 100;
-    public static long Penghasilan = 10;
-    public static long TotalSubscriber = 50100;
-    const int TARGET_SUBSCRIBER = 1000000;
+    const int DIAMOND_PLAY_BUTTON_MINIMUM_SUBSCRIBER = 1000000;
     public static List<long> GainedSubscriberEachDay = new List<long>();
+
 
     void Start()
     {
-        List<long> list = new List<long>();
-        for(int i = 0; i < GainedSubscriberEachDay.Count; i++)
-        {
-            if(GainedSubscriberEachDay[i] != 0)
-            {
-                list.Add(GainedSubscriberEachDay[i]);
-            }
-        }
-        list.Add(0);
-        _graph.SetData(list);
-        _penontonText.SetAndAnimate(0, Penonton, 0.5f);
-        _newSubscriberText.SetAndAnimate(0, NewSubscriber, 0.5f);
-        _penghasilanText.SetAndAnimate(0, Penghasilan, 0.5f);
-        _totalSubscriberText.SetAndAnimate(0, TotalSubscriber, 0.5f);
-        _fillAnimation.SetEndFill((float)TotalSubscriber / TARGET_SUBSCRIBER).Play();
+        _viewsGraph.SetData(Save.Data.ViewsEachDay);
+        _subscriberGraph.SetData(Save.Data.SubscriberEachDay);
+        _moneyGraph.SetData(Save.Data.MoneyEachDay);
+
+
+        _penontonText.SetAndAnimate(0, Save.Data.CurrentDayData.GainedViews, 0.5f);
+        _newSubscriberText.SetAndAnimate(0, Save.Data.CurrentDayData.GainedSubscriber, 0.5f);
+        _penghasilanText.SetAndAnimate(0, Save.Data.CurrentDayData.GainedMoney, 0.5f);
+
+
+        Save.Data.GetChannelInfo(out long totalSubscriber, out long totalViews, out long totalMoney, out long last3DaysMoney);
+
+        _totalSubscriberText.SetAndAnimate(0, totalSubscriber, 0.5f);
+        _totalViewsText.SetAndAnimate(0, totalViews, 0.5f);
+        _totalMoneyText.SetAndAnimate(0, totalMoney, 0.5f);
+
+
+        _fillAnimation.SetEndFill((float)totalSubscriber / DIAMOND_PLAY_BUTTON_MINIMUM_SUBSCRIBER).Play();
     }
 
 
     public void ToBedroom()
     {
-        Penonton = 0;
-        NewSubscriber = 0;
-        Penghasilan = 0;
-        TotalSubscriber = 0;
         _sceneTransition.StartSceneTransition("Bedroom");
     }
 }
