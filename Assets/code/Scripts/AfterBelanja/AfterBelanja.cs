@@ -13,7 +13,9 @@ public class AfterBelanja : MonoBehaviour
     [SerializeField] TextMeshProUGUI _sisaText;
     [SerializeField] TextMeshProUGUI _addedHealthText;
     [SerializeField] TextMeshProUGUI _addedHapinesssisaText;
-    [SerializeField] ImageFillAnimation _qualityBar;
+    [SerializeField] QualityBar _qualityBar;
+    [SerializeField] GameObject _kebutuhanDialog;
+    [SerializeField] GameObject _kreditDialog;
 
     [SerializeField] KTPWorld _ktpWorld;
 
@@ -30,15 +32,15 @@ public class AfterBelanja : MonoBehaviour
     
     void Awake()
     {
-        if(_totalItems == 0) // this means we're debugging
-        {
-            _totalPercentage = 500;
-            _totalItems = 6;
-        }
-        float val = _totalPercentage/_totalItems;
-        _addedHealthText.text = (_budgetingData.PredictHealth(Save.Data.NeedsMoney, Save.Data.CurrentDay) * val).ToString();
-        _addedHapinesssisaText.text = (_budgetingData.PredictHappiness(Save.Data.NeedsMoney, Save.Data.CurrentDay) * val).ToString();
-        _qualityBar.SetEndFill((float)val/100).Play();
+        if(Save.Data.CurrentTotalItems == 0) return;
+        float val = Save.Data.CurrentQuality/Save.Data.CurrentTotalItems;
+
+        int health = (int)_budgetingData.PredictHealth(Save.Data.NeedsMoney, Save.Data.CurrentDay);
+        int happiness = (int)_budgetingData.PredictHappiness(Save.Data.NeedsMoney, Save.Data.CurrentDay);
+        _addedHealthText.text = (health * val).ToString();
+        _addedHapinesssisaText.text = (happiness * val).ToString();
+        // _qualityBar.SetEndFill((float)val/100).Play();
+        _qualityBar.SetAndAnimate(val, health, happiness);
 
 
         _barangText.text = "";
@@ -53,21 +55,20 @@ public class AfterBelanja : MonoBehaviour
             _hargaText.text += $"{item.Item.Price*item.Count}\n";
         }
 
-        float totalHarga = 0;
+        long totalHarga = 0;
         foreach(var item in _listCart)
         {
             totalHarga += item.Item.Price * item.Count;
         }
 
         _totalhargaText.text = totalHarga.ToString();
-        _sisaText.text = (Save.Data.NeedsMoney - totalHarga).ToString();
+        _sisaText.text = (Save.Data.NeedsMoney).ToString();
         // _addedHealthText.text = _addedHealth.ToString();
         // _addedHapinesssisaText.text = _addedhappiness.ToString();
 
 
 
 
-        Save.Data.NeedsMoney -= (long)totalHarga;
         // Save.Data.Health += _addedHealth;
         // Save.Data.Happiness += _addedhappiness;
         
@@ -82,9 +83,13 @@ public class AfterBelanja : MonoBehaviour
         Save.Data.CurrentTotalItems = 0;
 
         if(Save.Data.NeedsMoney < 0) {
-            // use credit
-            // restore
             Save.Data.NeedsMoney = Save.Data.TempNeedsMoney;
+            Save.Data.CurrentDayData.CreditMoney = totalHarga;
+            _kreditDialog.SetActive(true);
+            _kebutuhanDialog.SetActive(false);
+        } else {
+            _kreditDialog.SetActive(false);
+            _kebutuhanDialog.SetActive(true);
         }
 
         Save.Data.TempNeedsMoney = Save.Data.NeedsMoney;
