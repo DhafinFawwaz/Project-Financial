@@ -23,6 +23,8 @@ public class AfterStreaming : MonoBehaviour
         var viewsEachDay = Save.Data.ViewsEachDay; viewsEachDay.Insert(0, 0);
         var subscriberEachDay = Save.Data.SubscriberEachDay; subscriberEachDay.Insert(0, 0);
         var moneyEachDay = Save.Data.MoneyEachDay; moneyEachDay.Insert(0, 0);
+        
+        Debug.Log(viewsEachDay.Count);
 
         if(_viewsGraph.gameObject.activeInHierarchy) _viewsGraph.SetData(viewsEachDay);
         else _viewsGraph.SetDataNoAnimation(viewsEachDay);

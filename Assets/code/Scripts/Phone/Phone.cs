@@ -29,7 +29,7 @@ public class Phone : MonoBehaviour
     }
 
 
-    void Awake()
+    void OnEnable()
     {
         _subscriberText.text = Save.Data.SubscriberAmount.ToString("N0");
     }

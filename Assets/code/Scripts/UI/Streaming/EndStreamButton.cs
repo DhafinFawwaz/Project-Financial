@@ -18,11 +18,16 @@ public class EndStreamButton : MonoBehaviour
         else _button.SetActive(true);
     }
 
+    public void SetButtonActive(bool active)
+    {
+        _button.SetActive(active);
+    }
+
     [SerializeField] UnityEvent _onEDown;
     void Update()
     {
         if(Save.Data.CurrentDayData.StreamingCounter == 0) return;
-        if(InputManager.GetKeyDown(KeyCode.E)) {
+        if(InputManager.GetKeyDown(KeyCode.E) && _button.activeInHierarchy) {
             _onEDown?.Invoke();
             enabled = false;
         }

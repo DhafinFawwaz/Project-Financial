@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_SubtractiveShadowColor: {r: 0.41960785, g: 0.47843137, b: 0.627451, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 68f9a22d7d7c29e47874e9c30d76c4f1, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -1427,6 +1427,42 @@ PrefabInstance:
     - target: {fileID: 4314467448905294440, guid: 7a53993d627a386468bade91e6694a17, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4314467449050936041, guid: 7a53993d627a386468bade91e6694a17, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cc44b791f1e54b44aaf796fa2048bd2f, type: 3}
+    - target: {fileID: 4314467449050936043, guid: 7a53993d627a386468bade91e6694a17, type: 3}
+      propertyPath: _gosokCursor
+      value: 
+      objectReference: {fileID: 21300000, guid: cc44b791f1e54b44aaf796fa2048bd2f, type: 3}
+    - target: {fileID: 4314467449050936043, guid: 7a53993d627a386468bade91e6694a17, type: 3}
+      propertyPath: _clickedCursor
+      value: 
+      objectReference: {fileID: 21300000, guid: cc44b791f1e54b44aaf796fa2048bd2f, type: 3}
+    - target: {fileID: 4314467449050936043, guid: 7a53993d627a386468bade91e6694a17, type: 3}
+      propertyPath: _unclickedCursor
+      value: 
+      objectReference: {fileID: 21300000, guid: cc44b791f1e54b44aaf796fa2048bd2f, type: 3}
+    - target: {fileID: 4314467449050936046, guid: 7a53993d627a386468bade91e6694a17, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.33618146
+      objectReference: {fileID: 0}
+    - target: {fileID: 4314467449050936046, guid: 7a53993d627a386468bade91e6694a17, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4314467449050936046, guid: 7a53993d627a386468bade91e6694a17, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 165
+      objectReference: {fileID: 0}
+    - target: {fileID: 4314467449050936046, guid: 7a53993d627a386468bade91e6694a17, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -109.53021
+      objectReference: {fileID: 0}
+    - target: {fileID: 4314467449050936046, guid: 7a53993d627a386468bade91e6694a17, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 4.2852783
       objectReference: {fileID: 0}
     - target: {fileID: 6179814058378683055, guid: 7a53993d627a386468bade91e6694a17, type: 3}
       propertyPath: m_IsActive

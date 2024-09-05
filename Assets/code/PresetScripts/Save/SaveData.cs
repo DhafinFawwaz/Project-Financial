@@ -17,6 +17,7 @@ public class SaveData
     // Increment this when you change the structure of SaveData
     public const int Version = 1;
     public int CurrentVersion = -1;
+    public const long INITIAL_SUBSCRIBER = 50000;
 
     public const int INCREASE_STOCK_EVERY = 3;
     public const int KREDIT_DEADLINE = 3;
@@ -40,7 +41,7 @@ public class SaveData
     public int CurrentDay = 0;
     public long SubscriberAmount { 
         get {
-            long total = 0;
+            long total = INITIAL_SUBSCRIBER;
             for(int i = 0; i < CurrentDay; i++)
             {
                 total += DayDatas[i].GainedSubscriber;
@@ -126,18 +127,18 @@ public class SaveData
         public DayData()
         {
             StreamingCounter = 0;
-            CreditMoney = 50000;
+            CreditMoney = 0;
 
-            GainedSubscriber = UnityEngine.Random.Range(100, 10000);
-            GainedViews = UnityEngine.Random.Range(1000, 2000);
+            GainedSubscriber = 0;
+            GainedViews = 0;
             // GainedMoney = UnityEngine.Random.Range(10000, 100000);
-            GainedMoney = 500000;
+            GainedMoney = 0;
         }
     }
 
     public void GetChannelInfo(out long TotalSubscriber, out long TotalViews, out long TotalMoney, out long Last3DaysMoney)
     {
-        TotalSubscriber = 0;
+        TotalSubscriber = INITIAL_SUBSCRIBER;
         TotalViews = 0;
         TotalMoney = 0;
         for(int i = 0; i < CurrentDay; i++)
@@ -158,7 +159,7 @@ public class SaveData
 
     public List<long> SubscriberEachDay {get {
         List<long> subs = new List<long>();
-        for(int i = 0; i < CurrentDay; i++)
+        for(int i = 0; i <= CurrentDay; i++)
         {
             subs.Add(DayDatas[i].GainedSubscriber);
         }
@@ -166,7 +167,7 @@ public class SaveData
     }}
     public List<long> ViewsEachDay {get {
         List<long> views = new List<long>();
-        for(int i = 0; i < CurrentDay; i++)
+        for(int i = 0; i <= CurrentDay; i++)
         {
             views.Add(DayDatas[i].GainedViews);
         }
@@ -174,7 +175,7 @@ public class SaveData
     }}
     public List<long> MoneyEachDay {get {
         List<long> money = new List<long>();
-        for(int i = 0; i < CurrentDay; i++)
+        for(int i = 0; i <= CurrentDay; i++)
         {
             money.Add(DayDatas[i].GainedMoney);
         }
@@ -193,8 +194,6 @@ public class SaveData
         }
         return total;
     }
-
-    public List<long> GainedSubscriberEachDay => DayDatas.ConvertAll(x => x.GainedSubscriber);
 
     public List<DayData> DayDatas = new List<DayData>();
 

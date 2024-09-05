@@ -81,6 +81,8 @@ public class StreamingManager : MonoBehaviour
         game.OnDecreaseViews += OnDecreaseViews;
         game.SetViewCounter(_viewsCounter);
         game.OnGameEnd += OnGameEnd;
+
+        _endStreamButton.SetButtonActive(false);
     }
 
     [SerializeField] AnimationUI _backToHomeAnimation;
