@@ -30,7 +30,7 @@ public class StoryBedroom : MonoBehaviour
         if(Save.Data.CurrentDayData.StreamingCounter >= 1 && Save.Data.DayState == DayState.AfterStreaming)
         {
             _missionText.text = "Waktunya tidur !";
-            _streamingInteractable.SetActive(true);
+            _streamingInteractable.SetActive(false);
             _kasurInteractable.SetActive(true);
             _keluarBlocker.SetActive(true);
         } 

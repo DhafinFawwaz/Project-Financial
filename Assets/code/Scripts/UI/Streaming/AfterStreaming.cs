@@ -16,6 +16,8 @@ public class AfterStreaming : MonoBehaviour
     [SerializeField] TextAnimation _newSubscriberText;
     [SerializeField] MoneyAnimation _penghasilanText;
 
+    [Header("Text")]
+    [SerializeField] MoneyAnimation _willBeSalaryMoneyText;
 
 
     void OnEnable()
@@ -39,6 +41,8 @@ public class AfterStreaming : MonoBehaviour
         _newSubscriberText.SetAndAnimate(0, Save.Data.CurrentDayData.GainedSubscriber, 0.5f);
         _penghasilanText.SetAndAnimate(0, Save.Data.CurrentDayData.GainedMoney, 0.5f);
 
+
+        _willBeSalaryMoneyText.SetAndAnimate(0, Save.Data.GetSalaryFromToday(), 0.5f);
     }
 
 

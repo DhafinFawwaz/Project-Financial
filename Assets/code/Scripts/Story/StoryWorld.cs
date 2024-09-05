@@ -21,11 +21,11 @@ public class StoryWorld : MonoBehaviour
     {
         if(Save.Data.CurrentDay == 1 && !Save.Data.HasTalkedToNaoRikiInDay2)
         {
-            _missionText.text = "Ngomong ke Nao dan Riki di depan ITB dulu yuk!.";
+            _missionText.text = "Ngomong ke Nao dan Riki";
             _shopInteractable.SetActive(false);
             _itbInteractable.SetActive(false);
             _miauInteractable.SetActive(false);
-            _houseInteractable.SetActive(true);
+            _houseInteractable.SetActive(false);
         }   
         else if(Save.Data.DayState == DayState.JustGotOutside)
         {
@@ -33,7 +33,7 @@ public class StoryWorld : MonoBehaviour
             _shopInteractable.SetActive(false);
             _itbInteractable.SetActive(true);
             _miauInteractable.SetActive(false);
-            _houseInteractable.SetActive(true);
+            _houseInteractable.SetActive(false);
         }
 
 

@@ -42,7 +42,7 @@ public class SaveData
     public long SubscriberAmount { 
         get {
             long total = INITIAL_SUBSCRIBER;
-            for(int i = 0; i < CurrentDay; i++)
+            for(int i = 0; i <= CurrentDay; i++)
             {
                 total += DayDatas[i].GainedSubscriber;
             }
@@ -141,7 +141,7 @@ public class SaveData
         TotalSubscriber = INITIAL_SUBSCRIBER;
         TotalViews = 0;
         TotalMoney = 0;
-        for(int i = 0; i < CurrentDay; i++)
+        for(int i = 0; i <= CurrentDay; i++)
         {
             TotalSubscriber += DayDatas[i].GainedSubscriber;
             TotalViews += DayDatas[i].GainedViews;
@@ -183,16 +183,16 @@ public class SaveData
     }}
 
 
-    const int GET_MONEY_EVERY = 3;
     public long GetSalaryFromToday(){
         int day = CurrentDay;
-        long total = 0;
-        int startDay = day - GET_MONEY_EVERY + 1;
-        if(startDay < 0) startDay = 0;
-        for(int i = startDay; i <= day; i++){
-            total += DayDatas[i].GainedMoney;
+
+        if((day+1) % 3 == 1) {
+            return DayDatas[day].GainedMoney;
+        } else if((day+1) % 3 == 2) {
+            return DayDatas[day-1].GainedMoney + DayDatas[day].GainedMoney;
+        } else {
+            return DayDatas[day-2].GainedMoney + DayDatas[day-1].GainedMoney + DayDatas[day].GainedMoney;
         }
-        return total;
     }
 
     public List<DayData> DayDatas = new List<DayData>();
