@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5212367764852524931}
   - component: {fileID: 5212367764852524928}
   - component: {fileID: 5212367764852524941}
+  - component: {fileID: 2518307924195097084}
   m_Layer: 0
   m_Name: '[DialogTrigger]'
   m_TagString: EditorOnly
@@ -46,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e2104587f2655f4e854c8019517455f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogData: {fileID: 11400000, guid: e80b7b5341af6824db7146209ce46113, type: 2}
+  _dialogData: {fileID: 11400000, guid: 4b099ea2df50a5845b1be5e2a321cbe5, type: 2}
 --- !u!114 &5212367764852524928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,6 +76,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5212367764852524929}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onTriggerExit:
     m_PersistentCalls:
       m_Calls: []
@@ -89,5 +102,24 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 3, y: 2, z: 2.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2518307924195097084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5212367764852524929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a584dda42b3864984ebfc0f9c2591f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _justGotHome: 0
+  _afterStreaming: 0
+  _afterSleeping: 0
+  _justGotOutside: 0
+  _afterKuliah: 1
+  _afterBudgeting: 0
+  _afterBelanja: 0
