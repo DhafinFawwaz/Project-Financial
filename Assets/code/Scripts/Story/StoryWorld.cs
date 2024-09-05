@@ -37,7 +37,7 @@ public class StoryWorld : MonoBehaviour
         }
 
 
-        if(Save.Data.DayState == DayState.AfterBudgeting)
+        if(Save.Data.DayState == DayState.AfterBudgeting || Save.Data.DayState == DayState.AfterStreaming)
         {
             _missionText.text = "Belanja di Bunga Mart Yuk!.";
             _shopInteractable.SetActive(true);
@@ -54,7 +54,7 @@ public class StoryWorld : MonoBehaviour
             _miauInteractable.SetActive(false);
             _houseInteractable.SetActive(true);
             
-            if(Save.Data.CurrentDay == 2 && !Save.Data.IsMiauCutsceneDone)
+            if(Save.Data.CurrentDay == 1 && !Save.Data.IsMiauCutsceneDone)
             {
                 _shopInteractable.SetActive(false);
                 _itbInteractable.SetActive(false);

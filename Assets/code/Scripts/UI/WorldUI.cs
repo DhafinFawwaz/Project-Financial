@@ -103,6 +103,7 @@ public class WorldUI : MonoBehaviour
         _inflasiTimer.Begin();
         _diskonTimer.SetTime(10);
         _diskonTimer.Begin();
+        _qualityBar.SetNoAnimation(0, 0, 0);
     }
 
 
@@ -114,6 +115,12 @@ public class WorldUI : MonoBehaviour
     public static double AddedHappiness { get => _addedHappiness; set => _addedHappiness = value; }
     public static double AddedHealth { get => _addedHealth; set => _addedHealth = value; }
     public static double CurrentBelanjaMoney { get => _currentBelanjaMoney; set => _currentBelanjaMoney = value; }
+
+    [SerializeField] QualityBar _qualityBar;
+    int _totalPercentage = 0;
+    int _totalItems = 0;
+    int _qualityHealth = 0;
+    int _qualityHappiness = 0;
     public void AddItemFromOption(OptionSession option)
     {
         ItemData itemData = Instantiate(option.OptionData.ItemData);
@@ -134,6 +141,19 @@ public class WorldUI : MonoBehaviour
         //     .SetHealth(Save.Data.Health, _addedHealth);
 
         Save.Data.CurrentNeedsMoney -= itemData.Price * choosenOption.BuyCount;
+        
+
+        _totalPercentage += choosenOption.Content.Quality * choosenOption.BuyCount;
+        _totalItems += choosenOption.BuyCount;
+        float finalQuality = (float)_totalPercentage / _totalItems/100;
+        Debug.Log(finalQuality);
+        int health = (int)(Save.Data.CurrentPredictedHealth * finalQuality);
+        int happiness = (int)(Save.Data.CurrentPredictedHappiness * finalQuality);
+        _qualityBar.SetAndAnimate(finalQuality, health, happiness, _qualityHealth, _qualityHappiness);
+        _qualityHealth = health;
+        _qualityHappiness = happiness;
+        Save.Data.CurrentQuality = _totalPercentage;
+        Save.Data.CurrentTotalItems = _totalItems;
 
         
         _ktpBelanja.SetMoneyTop(Save.Data.NeedsMoney)

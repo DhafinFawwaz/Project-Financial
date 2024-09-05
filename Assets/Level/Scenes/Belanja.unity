@@ -2272,6 +2272,7 @@ MonoBehaviour:
   _timerDiscountStartInvisible: {fileID: 2013130431}
   _timerDiscount: {fileID: 1971505454}
   _discountDuration: 8
+  _qualityBar: {fileID: 1894261138}
   _maxRakToGetDiscount: 3
 --- !u!1001 &831069229
 PrefabInstance:
@@ -2996,7 +2997,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1005824329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11504,6 +11505,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23eb7a7a30864c14a877830bdf191dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1894261138 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3632133134771387467, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+  m_PrefabInstance: {fileID: 7555314987237579318}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6af6e655de482a24c8bf9bdb4808117c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1902608369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13871,6 +13883,10 @@ PrefabInstance:
       propertyPath: _vCam
       value: 
       objectReference: {fileID: 832826733}
+    - target: {fileID: 4483848465342954627, guid: b05fc11413872df4fa6e1ffe19c00e4b, type: 3}
+      propertyPath: _rechargeDuration
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b05fc11413872df4fa6e1ffe19c00e4b, type: 3}
 --- !u!4 &4399975957055410611 stripped

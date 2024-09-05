@@ -8,10 +8,6 @@ public class AfterBelanjaSetter : MonoBehaviour
 
     public void Set()
     {
-        AfterBelanja.SetData(
-            _worldUI.BelanjaList.ListCart,
-            WorldUI.AddedHealth,
-            WorldUI.AddedHappiness
-        );
+        
     }
 }

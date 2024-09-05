@@ -20,6 +20,7 @@ public class BelanjaManager : MonoBehaviour
     [SerializeField] Timer _timerDiscountStartInvisible;
     [SerializeField] Timer _timerDiscount;
     [SerializeField] float _discountDuration = 10;
+    [SerializeField] QualityBar _qualityBar;
     void Start()
     {
         _timer.SetTime(_inflasiEvery);
@@ -29,6 +30,8 @@ public class BelanjaManager : MonoBehaviour
         float diskonTime = Random.Range(_diskonBesarMin, _diskonBesarMax);
         _timerDiscountStartInvisible.SetTime(diskonTime);
         _timerDiscountStartInvisible.Begin();
+
+        _qualityBar.SetNoAnimation(100, Save.Data.CurrentPredictedHealth, Save.Data.CurrentPredictedHappiness);
     }
 
 
