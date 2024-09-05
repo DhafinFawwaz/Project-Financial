@@ -187,7 +187,7 @@ MonoBehaviour:
   _healthText: {fileID: 0}
   _happinessText: {fileID: 0}
   _moneyText: {fileID: 0}
-  _belanjaList: {fileID: 0}
+  _belanjaList: {fileID: 1709164793}
   _pieChart: {fileID: 0}
   _itemData:
   - {fileID: 11400000, guid: 2af2ecbfdd694f24183b0069623457b6, type: 2}
@@ -5415,6 +5415,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+--- !u!114 &1709164793 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1939328242579453134, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+  m_PrefabInstance: {fileID: 1709164792}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2159488a74b4b394293d13bff1ee54b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1730403210
 PrefabInstance:
   m_ObjectHideFlags: 0

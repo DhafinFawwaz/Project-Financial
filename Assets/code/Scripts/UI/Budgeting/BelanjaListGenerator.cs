@@ -140,7 +140,7 @@ public class BelanjaListGenerator : MonoBehaviour
     }
 
 
-
+    [ContextMenu("Generate")]
     public void GenerateBelanjaList()
     {
         long needsMoney = (long)(Save.Data.NeedsMoney * _currentValue);

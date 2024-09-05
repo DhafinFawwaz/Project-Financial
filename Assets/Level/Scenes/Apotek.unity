@@ -3474,3 +3474,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
+--- !u!1 &7584350719940192933 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7584350720312742672, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
+  m_PrefabInstance: {fileID: 7584350719940192932}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7584350719940192934 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7584350720312742684, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
+  m_PrefabInstance: {fileID: 7584350719940192932}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7584350719940192933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a930b283cdc67a48a88b065f1c88abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7584350719940192935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7584350719940192933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c49af7e17d9f324cbcad38b0dd6ca27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _keyCode: 101
+  _onKeyDown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7584350719940192934}
+        m_TargetAssemblyTypeName: SceneTransitionStarter, Assembly-CSharp
+        m_MethodName: StartTransition
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: World
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onKeyUp:
+    m_PersistentCalls:
+      m_Calls: []

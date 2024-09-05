@@ -9,8 +9,12 @@ public class Kasir : MonoBehaviour
     [SerializeField] PopUp _notCompletedPopUp;
     [SerializeField] SceneTransition _sceneTransition;
     [SerializeField] Interactable _interactable;
+
+    float _lastInteractTime = 0;
+    float _minInteractTime = 0.5f;
     public void Interact()
     {
+        _lastInteractTime = Time.time;
         List<ItemData> items = _belanjaList.GetNotInCartItems();
         if(items.Count > 0)
         {
@@ -31,6 +35,8 @@ public class Kasir : MonoBehaviour
 
     void Update()
     {
+        if(Time.time - _lastInteractTime < _minInteractTime) return;
+
         if(_interactable.IsShowingPrompt && Input.GetKeyDown(KeyCode.E) && !InputManager.CanGetKeyDown)
         {
             EventSystem.current.SetSelectedGameObject(null);
