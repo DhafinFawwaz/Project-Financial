@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2875105683812580470, guid: 5c100974281cde942ab96f14d283140d, type: 3}
+      propertyPath: _item
+      value: 
+      objectReference: {fileID: 3012029686004654139, guid: 431d0cb2a8950c74cbd68d1cb2c4911c, type: 3}
+    - target: {fileID: 2875105683812580470, guid: 5c100974281cde942ab96f14d283140d, type: 3}
+      propertyPath: _optionData
+      value: 
+      objectReference: {fileID: 11400000, guid: a2e69c50fa6f76546b4d55d99d94ea1c, type: 2}
     - target: {fileID: 3914189445726561639, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -57,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3914189446115555673, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_Name
-      value: '[Rak] apel (1)'
+      value: '[Rak] apel (1) Variant'
       objectReference: {fileID: 0}
     - target: {fileID: 3914189446115555673, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_IsActive
