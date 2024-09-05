@@ -97,9 +97,9 @@ public class SaveData
             StreamingCounter = 0;
             CreditMoney = 50000;
 
-            GainedSubscriber = 100;
-            GainedViews = 2000;
-            GainedMoney = 100000;
+            GainedSubscriber = UnityEngine.Random.Range(100, 10000);
+            GainedViews = UnityEngine.Random.Range(1000, 2000);
+            GainedMoney = UnityEngine.Random.Range(10000, 100000);
         }
     }
 
@@ -124,9 +124,30 @@ public class SaveData
         }
     }
 
-    public List<long> SubscriberEachDay => DayDatas.ConvertAll(x => x.GainedSubscriber);
-    public List<long> ViewsEachDay => DayDatas.ConvertAll(x => x.GainedViews);
-    public List<long> MoneyEachDay => DayDatas.ConvertAll(x => x.GainedMoney);
+    public List<long> SubscriberEachDay {get {
+        List<long> subs = new List<long>();
+        for(int i = 0; i < CurrentDay; i++)
+        {
+            subs.Add(DayDatas[i].GainedSubscriber);
+        }
+        return subs;
+    }}
+    public List<long> ViewsEachDay {get {
+        List<long> views = new List<long>();
+        for(int i = 0; i < CurrentDay; i++)
+        {
+            views.Add(DayDatas[i].GainedViews);
+        }
+        return views;
+    }}
+    public List<long> MoneyEachDay {get {
+        List<long> money = new List<long>();
+        for(int i = 0; i < CurrentDay; i++)
+        {
+            money.Add(DayDatas[i].GainedMoney);
+        }
+        return money;
+    }}
 
 
     const int GET_MONEY_EVERY = 3;

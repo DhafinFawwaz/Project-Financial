@@ -3,9 +3,9 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ImageFillAnimation : UIAnimation
+public class SlicedFilledImageFillAnimation : UIAnimation
 {
-    [SerializeField] Image _target;
+    [SerializeField] SlicedFilledImage _target;
     [SerializeField] float _fill = 1;
     [SerializeField] float _duration = 0.3f;
     public void SetDuration(float duration)
@@ -26,25 +26,31 @@ public class ImageFillAnimation : UIAnimation
         _fillKey++;
     }
 
-    public ImageFillAnimation SetFill(float fill)
+    public SlicedFilledImageFillAnimation SetFill(float fill)
     {
         _target.fillAmount = fill;
         return this;
     }
 
-    public ImageFillAnimation SetEndFill(float fill)
+    public SlicedFilledImageFillAnimation SetEndFill(float fill)
     {
         _fill = fill;
         return this;
     }
-    public ImageFillAnimation SetOnceEnd(Action onEnd)
+    public SlicedFilledImageFillAnimation SetOnceEnd(Action onEnd)
     {
         _onEnd = onEnd;
         return this;
     }
+
+    public SlicedFilledImageFillAnimation SetEaseFunction(Ease.Function easeFunction)
+    {
+        _easeFunction = easeFunction;
+        return this;
+    }
     
     byte _fillKey = 0;
-    IEnumerator TweenFillAnimation(Image img, float start, float end, float duration, Ease.Function easeFunction)
+    IEnumerator TweenFillAnimation(SlicedFilledImage img, float start, float end, float duration, Ease.Function easeFunction)
     {
         byte requirement = ++_fillKey;
         float startTime = Time.time;
@@ -53,6 +59,7 @@ public class ImageFillAnimation : UIAnimation
         {
             t = Mathf.Clamp((Time.time-startTime)/duration, 0, 2);
             img.fillAmount = Mathf.LerpUnclamped(start, end, easeFunction(t));
+            
             yield return null;
         }
         if(_fillKey == requirement)

@@ -39,15 +39,83 @@ public class UIGraph : MonoBehaviour
             line.anchoredPosition = new Vector2(i * width / (data.Count - 1), 0);
             line.sizeDelta = new Vector2(dx, line.sizeDelta.y);
             line.localEulerAngles = new Vector3(0, 0, 0);
+            _objects.Add(line);
 
 
-            // line.anchoredPosition = new Vector2(i * width / (data.Count - 1), data[i] * height / max);
-            // line.sizeDelta = new Vector2(c, line.sizeDelta.y);
-            // line.localEulerAngles = new Vector3(0, 0, angle);
+            // StartCoroutine(TweenAnchoredPositionAnimation(line, line.anchoredPosition, new Vector2(i * width / (data.Count - 1), data[i] * height / max), 1, Ease.OutQuart));
+            // StartCoroutine(TweenSizeDelteAnimation(line, line.sizeDelta, new Vector2(c, line.sizeDelta.y), 1, Ease.OutQuart));
+            // StartCoroutine(TweenEulerAnglesAnimation(line, line.localEulerAngles, new Vector3(0, 0, angle), 1, Ease.OutQuart));
+        }
+        
+
+        // Create dot
+        List<RectTransform> _dots = new List<RectTransform>();
+        for (int i = 0; i < data.Count; i++)
+        {
+            var dot = Instantiate(_dotPrefab, _area);
+            dot.anchoredPosition = new Vector2(i * width / (data.Count - 1), 0);
+
+            // dot.anchoredPosition = new Vector2(i * width / (data.Count - 1), data[i] * height / max);
+            StartCoroutine(TweenAnchoredPositionAnimation(dot, dot.anchoredPosition, new Vector2(i * width / (data.Count - 1), data[i] * height / max), 1, Ease.OutQuart));
+            _objects.Add(dot);
+            _dots.Add(dot);
+        }
+
+        
+        for (int i = 0; i < _dots.Count-1; i++)
+        {
+            var line = _objects[i];
+            float dx = width / (data.Count - 1);
+            float dy = (data[i + 1] - data[i]) * height / max;
+            float c = Mathf.Sqrt(dx * dx + dy * dy);
+            float angle = Mathf.Asin(dy / c) * Mathf.Rad2Deg;
 
             StartCoroutine(TweenAnchoredPositionAnimation(line, line.anchoredPosition, new Vector2(i * width / (data.Count - 1), data[i] * height / max), 1, Ease.OutQuart));
-            StartCoroutine(TweenSizeDelteAnimation(line, line.sizeDelta, new Vector2(c, line.sizeDelta.y), 1, Ease.OutQuart));
-            StartCoroutine(TweenEulerAnglesAnimation(line, line.localEulerAngles, new Vector3(0, 0, angle), 1, Ease.OutQuart));
+            
+            var nextDot = _dots[i+1];
+            StartCoroutine(TweenSizeDeltaRightAnimation(line, line.sizeDelta, nextDot, 1, Ease.OutQuart));
+            StartCoroutine(TweenRightAnimation(line, line.right, nextDot, 1, Ease.OutQuart));
+        }
+    }
+
+    public void SetDataNoAnimation(List<long> data)
+    {
+        // Clear old data
+        foreach (var obj in _objects)
+        {
+            if(obj != null)
+            Destroy(obj.gameObject);
+        }
+        _objects.Clear();
+
+        float width = _area.rect.width;
+        float height = _area.rect.height;
+
+        // Find max value
+        long max = 0;
+        foreach (var d in data)
+            if (d > max) max = d;
+
+        // Create line
+        for (int i = 0; i < data.Count-1; i++)
+        {
+            float dx = width / (data.Count - 1);
+            float dy = (data[i + 1] - data[i]) * height / max;
+            float c = Mathf.Sqrt(dx * dx + dy * dy);
+            float angle = Mathf.Asin(dy / c) * Mathf.Rad2Deg;
+
+
+            var line = Instantiate(_linePrefab, _area);
+            line.anchoredPosition = new Vector2(i * width / (data.Count - 1), 0);
+            line.sizeDelta = new Vector2(dx, line.sizeDelta.y);
+            line.localEulerAngles = new Vector3(0, 0, 0);
+
+            // StartCoroutine(TweenAnchoredPositionAnimation(line, line.anchoredPosition, new Vector2(i * width / (data.Count - 1), data[i] * height / max), 1, Ease.OutQuart));
+            // StartCoroutine(TweenSizeDelteAnimation(line, line.sizeDelta, new Vector2(c, line.sizeDelta.y), 1, Ease.OutQuart));
+            // StartCoroutine(TweenEulerAnglesAnimation(line, line.localEulerAngles, new Vector3(0, 0, angle), 1, Ease.OutQuart));
+            line.anchoredPosition = new Vector2(i * width / (data.Count - 1), data[i] * height / max);
+            line.sizeDelta = new Vector2(c, line.sizeDelta.y);
+            line.localEulerAngles = new Vector3(0, 0, angle);
             _objects.Add(line);
         }
         
@@ -59,7 +127,8 @@ public class UIGraph : MonoBehaviour
             dot.anchoredPosition = new Vector2(i * width / (data.Count - 1), 0);
 
             // dot.anchoredPosition = new Vector2(i * width / (data.Count - 1), data[i] * height / max);
-            StartCoroutine(TweenAnchoredPositionAnimation(dot, dot.anchoredPosition, new Vector2(i * width / (data.Count - 1), data[i] * height / max), 1, Ease.OutQuart));
+            // StartCoroutine(TweenAnchoredPositionAnimation(dot, dot.anchoredPosition, new Vector2(i * width / (data.Count - 1), data[i] * height / max), 1, Ease.OutQuart));
+            dot.anchoredPosition = new Vector2(i * width / (data.Count - 1), data[i] * height / max);
             _objects.Add(dot);
         }
     }
@@ -106,5 +175,33 @@ public class UIGraph : MonoBehaviour
             yield return null;
         }
         rt.sizeDelta = end;
+    }
+
+    IEnumerator TweenRightAnimation(RectTransform rt, Vector3 start, Transform end, float duration, Ease.Function easeFunction)
+    {
+        float startTime = Time.time;
+        float t = (Time.time-startTime)/duration;
+        while (t <= 1)
+        {
+            t = Mathf.Clamp((Time.time-startTime)/duration, 0, 2);
+            // rt.sizeDelta = Vector3.LerpUnclamped(start, end, easeFunction(t));
+            rt.right = end.position - rt.position;
+            yield return null;
+        }
+        // rt.sizeDelta = end;
+        rt.right = end.position - rt.position;
+    }
+
+    IEnumerator TweenSizeDeltaRightAnimation(RectTransform rt, Vector3 start, Transform end, float duration, Ease.Function easeFunction)
+    {
+        float startTime = Time.time;
+        float t = (Time.time-startTime)/duration;
+        while (t <= 1)
+        {
+            t = Mathf.Clamp((Time.time-startTime)/duration, 0, 2);
+            rt.sizeDelta = new Vector2((end.position - rt.position).magnitude, start.y);
+            yield return null;
+        }
+        rt.sizeDelta = new Vector2((end.position - rt.position).magnitude, start.y);
     }
 }
