@@ -143,10 +143,22 @@ public class BelanjaListGenerator : MonoBehaviour
 
     public void GenerateBelanjaList()
     {
-        int maxHealth = Save.Data.CurrentPredictedHealth;
-        int maxHappiness = Save.Data.CurrentPredictedHappiness;
+        long needsMoney = (long)(Save.Data.NeedsMoney * _currentValue);
+        long needsMoneyDiv3 = needsMoney / 3;
+    
+        int maxLoop = 200;
+        int loop = 0;
 
-        
-    }
+        long maxMoney = (long) (needsMoneyDiv3 * (float)_budgetingData.BudgetingDayData[Save.Data.CurrentDay].PercentageFromNeedsMoneyDiv3/100f);
+
+        while(loop++ < maxLoop){
+            ItemData item = _itemData[UnityEngine.Random.Range(0, _itemData.Length)];
+            if(_belanjaList.CalculateTotalPrive() + item.Price > maxMoney) break;
+
+            _belanjaList.AddItem(item);
+        }
+
+        Save.Data.CurrentListBelanja = _belanjaList.ListToBuy;
+    }   
     
 }

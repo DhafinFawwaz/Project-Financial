@@ -35,6 +35,8 @@ public class BelanjaManager : MonoBehaviour
         _shadow.gameObject.SetActive(true);
         _timer.Begin();
         _timerDiscountStartInvisible.Begin();
+
+        _belanjaList.ListToBuy = Save.Data.CurrentListBelanja;
     }
 
 

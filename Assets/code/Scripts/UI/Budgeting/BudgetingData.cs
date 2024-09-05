@@ -38,4 +38,5 @@ public class BudgetingDayData
     public long MaxHealth;
     public long MinHappiness;
     public long MaxHappiness;
+    public long PercentageFromNeedsMoneyDiv3 = 100;
 }
