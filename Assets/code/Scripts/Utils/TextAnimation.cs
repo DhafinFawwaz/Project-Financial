@@ -6,11 +6,17 @@ using System;
 public class TextAnimation : MonoBehaviour
 {
     [SerializeField] protected TextMeshProUGUI _text;
+    public TextMeshProUGUI Text => _text;
     protected string _prefix = "";
 
     public void SetAndAnimate(float initialValue, float finalValue, float duration)
     {
         StartCoroutine(Animate(initialValue, finalValue, duration));
+    }
+
+    public void SetNoAnimation(float value)
+    {
+        _text.text = getFormattedValue(value);
     }
 
     IEnumerator Animate(float initialValue, float finalValue, float duration)
@@ -27,7 +33,7 @@ public class TextAnimation : MonoBehaviour
 
     protected virtual string getFormattedValue(float value)
     {
-        return _prefix + Mathf.RoundToInt(value).ToString();
+        return _prefix + Mathf.RoundToInt(value).ToString("N0");
     }
 
     public virtual void SetPrefix(string prefix)

@@ -12,7 +12,6 @@ public class Navigation : MonoBehaviour
         for(int i = 0; i < _buttons.Length; i++) {
             int idx = i;
             _buttons[i].OnClick.AddListener(() => {
-                Debug.Log("idx: " + idx);
                 for(int j = 0; j < _menus.Length; j++) {
                     _menus[j].SetActive(j == idx);
                     _buttons[j].SetInteractable(j != idx);

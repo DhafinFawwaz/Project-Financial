@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class AfterStreaming : MonoBehaviour
 {
+    [SerializeField] SceneTransition _sceneTransition;
     [Header("Graph")]
     [SerializeField] UIGraph _viewsGraph;
     [SerializeField] UIGraph _subscriberGraph;
@@ -15,39 +16,27 @@ public class AfterStreaming : MonoBehaviour
     [SerializeField] TextAnimation _newSubscriberText;
     [SerializeField] MoneyAnimation _penghasilanText;
 
-    [Header("Accumulated")]
-    [SerializeField] TextAnimation _totalSubscriberText;
-    [SerializeField] TextAnimation _totalViewsText;
-    [SerializeField] TextAnimation _totalMoneyText;
-
-    [Header("Animation")]
-    [SerializeField] ImageFillAnimation _fillAnimation;
-    [SerializeField] SceneTransition _sceneTransition;
-
-    const int DIAMOND_PLAY_BUTTON_MINIMUM_SUBSCRIBER = 1000000;
-    public static List<long> GainedSubscriberEachDay = new List<long>();
 
 
-    void Start()
+    void OnEnable()
     {
-        _viewsGraph.SetData(Save.Data.ViewsEachDay);
-        _subscriberGraph.SetData(Save.Data.SubscriberEachDay);
-        _moneyGraph.SetData(Save.Data.MoneyEachDay);
+        var viewsEachDay = Save.Data.ViewsEachDay; viewsEachDay.Insert(0, 0);
+        var subscriberEachDay = Save.Data.SubscriberEachDay; subscriberEachDay.Insert(0, 0);
+        var moneyEachDay = Save.Data.MoneyEachDay; moneyEachDay.Insert(0, 0);
 
+        if(_viewsGraph.gameObject.activeInHierarchy) _viewsGraph.SetData(viewsEachDay);
+        else _viewsGraph.SetDataNoAnimation(viewsEachDay);
+        
+        if(_subscriberGraph.gameObject.activeInHierarchy) _subscriberGraph.SetData(subscriberEachDay);
+        else _subscriberGraph.SetDataNoAnimation(subscriberEachDay);
+
+        if(_moneyGraph.gameObject.activeInHierarchy) _moneyGraph.SetData(moneyEachDay);
+        else _moneyGraph.SetDataNoAnimation(moneyEachDay);
 
         _penontonText.SetAndAnimate(0, Save.Data.CurrentDayData.GainedViews, 0.5f);
         _newSubscriberText.SetAndAnimate(0, Save.Data.CurrentDayData.GainedSubscriber, 0.5f);
         _penghasilanText.SetAndAnimate(0, Save.Data.CurrentDayData.GainedMoney, 0.5f);
 
-
-        Save.Data.GetChannelInfo(out long totalSubscriber, out long totalViews, out long totalMoney, out long last3DaysMoney);
-
-        _totalSubscriberText.SetAndAnimate(0, totalSubscriber, 0.5f);
-        _totalViewsText.SetAndAnimate(0, totalViews, 0.5f);
-        _totalMoneyText.SetAndAnimate(0, totalMoney, 0.5f);
-
-
-        _fillAnimation.SetEndFill((float)totalSubscriber / DIAMOND_PLAY_BUTTON_MINIMUM_SUBSCRIBER).Play();
     }
 
 

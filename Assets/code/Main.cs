@@ -8,7 +8,6 @@ public class Main
         Singleton.Initialize();
         ResolutionManager.Initialize();
         ResolutionManager.SetResolution(PlayerPrefs.GetInt("Resolution", 3));
-        Audio.SetSoundMixerVolume(0);
         Save.Initialize();
     }
 }
