@@ -493,6 +493,7 @@ public class BudgetingController : MonoBehaviour
 
     [SerializeField] SceneTransitionStarter _sceneTransitionStarter;
     [SerializeField] BelanjaList _belanjaList;
+    [SerializeField] BelanjaListGenerator _belanjaListGenerator;
     public void Exit()
     {
         // if(_belanjaList.ListToBuy.Count <= 0) {
@@ -502,6 +503,7 @@ public class BudgetingController : MonoBehaviour
         //     return;
         // }
         
+        _belanjaListGenerator.GenerateBelanjaList();
         _sceneTransitionStarter.StartTransition("World");
     }
 
