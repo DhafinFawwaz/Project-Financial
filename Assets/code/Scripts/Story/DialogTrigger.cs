@@ -8,6 +8,8 @@ public class DialogTrigger : MonoBehaviour
 
     public void Play()
     {
-        NPC.s_OnNPCInteract?.Invoke(_dialogData);
+        this.Invoke(() => {
+            NPC.s_OnNPCInteract?.Invoke(_dialogData);
+        }, 0.05f);
     }
 }
