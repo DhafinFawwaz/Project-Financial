@@ -25,7 +25,7 @@ public class SaveData
     const int MAX_DAY = 15;
     public long NeedsMoney = 100000;
     public long CurrentNeedsMoney = 100000;
-    public long DesireMoney = 30000;
+    public long DesireMoney = 60000;
     public long DebitMoney = 40000;
     public long DebitTabunganMoney = 150000;
     public long TotalMoney => NeedsMoney + DesireMoney + DebitMoney;
@@ -72,6 +72,8 @@ public class SaveData
     public int CurrentTotalItems;
 
 
+    // Streaming
+    public int MaxStreamingAmountPerDay = 3;
     
     public SaveData()
     {
@@ -83,9 +85,9 @@ public class SaveData
         CurrentBelanjaMoney = 0;
         SkillPoin = 100;
 
-        NeedsMoney = 100000;
-        DesireMoney = 30000;
-        DebitMoney = 40000;
+        NeedsMoney = 200000;
+        DesireMoney = 60000;
+        DebitMoney = 80000;
         DebitTabunganMoney = 150000;
 
         for(int i = 0; i < MAX_DAY; i++)
@@ -104,6 +106,8 @@ public class SaveData
 
         CurrentPredictedHappiness = UnityEngine.Random.Range(10, 100);
         CurrentPredictedHealth = UnityEngine.Random.Range(10, 100);
+
+        MaxStreamingAmountPerDay = 3;
     }
     
 
@@ -126,7 +130,8 @@ public class SaveData
 
             GainedSubscriber = UnityEngine.Random.Range(100, 10000);
             GainedViews = UnityEngine.Random.Range(1000, 2000);
-            GainedMoney = UnityEngine.Random.Range(10000, 100000);
+            // GainedMoney = UnityEngine.Random.Range(10000, 100000);
+            GainedMoney = 500000;
         }
     }
 

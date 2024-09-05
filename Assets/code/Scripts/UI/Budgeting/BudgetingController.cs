@@ -120,6 +120,13 @@ public class BudgetingController : MonoBehaviour
         Save.Data.DesireMoney = (long)(values[1] * total);
         Save.Data.NeedsMoney = (long)(values[2] * total);
         Save.Data.CurrentNeedsMoney = Save.Data.NeedsMoney;
+
+        
+        // Debug.Log(
+        //     "DebitMoney: " + Save.Data.DebitMoney + "\n" +
+        //     "DesireMoney: " + Save.Data.DesireMoney + "\n" +
+        //     "NeedsMoney: " + Save.Data.NeedsMoney
+        // );
     }
 
 
@@ -506,6 +513,10 @@ public class BudgetingController : MonoBehaviour
         SetMoney();
         _belanjaListGenerator.GenerateBelanjaList();
         _sceneTransitionStarter.StartTransition("World");
+
+        foreach(var item in Save.Data.CurrentListBelanja) {
+            Debug.Log(item.Item.Name);
+        }
     }
 
 
