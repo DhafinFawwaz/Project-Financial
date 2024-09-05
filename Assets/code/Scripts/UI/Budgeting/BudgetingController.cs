@@ -495,12 +495,13 @@ public class BudgetingController : MonoBehaviour
     [SerializeField] BelanjaList _belanjaList;
     public void Exit()
     {
-        if(_belanjaList.ListToBuy.Count <= 0) {
-            _popUpText.text = "Tolong atur agar belanjaan tidak kosong!";
-            _popUp.Show();
-            EventSystem.current.SetSelectedGameObject(_okButton);
-            return;
-        }
+        // if(_belanjaList.ListToBuy.Count <= 0) {
+        //     _popUpText.text = "Tolong atur agar belanjaan tidak kosong!";
+        //     _popUp.Show();
+        //     EventSystem.current.SetSelectedGameObject(_okButton);
+        //     return;
+        // }
+        
         _sceneTransitionStarter.StartTransition("World");
     }
 

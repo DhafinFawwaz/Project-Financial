@@ -138,5 +138,12 @@ public class BelanjaListGenerator : MonoBehaviour
             break;
         }
     }
+
+
+
+    public void GenerateBelanjaList()
+    {
+        
+    }
     
 }

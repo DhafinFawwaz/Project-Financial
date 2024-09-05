@@ -13,11 +13,15 @@ public class BudgetingData : ScriptableObject
     public BudgetingDayData[] BudgetingDayData => _budgetingDayData;
 
     public float PredictHappiness(long needsMoney, int day) {
-        return Remap(needsMoney, _budgetingDayData[day].MinNeedsMoney, _budgetingDayData[day].MaxNeedsMoney, _budgetingDayData[day].MinHappiness, _budgetingDayData[day].MaxHappiness);   
+        int idx = day;
+        if(idx >= _budgetingDayData.Length) idx = _budgetingDayData.Length - 1;
+        return Remap(needsMoney, _budgetingDayData[idx].MinNeedsMoney, _budgetingDayData[idx].MaxNeedsMoney, _budgetingDayData[idx].MinHappiness, _budgetingDayData[idx].MaxHappiness);   
     }
 
     public float PredictHealth(long needsMoney, int day) {
-        return Remap(needsMoney, _budgetingDayData[day].MinNeedsMoney, _budgetingDayData[day].MaxNeedsMoney, _budgetingDayData[day].MinHealth, _budgetingDayData[day].MaxHealth);   
+        int idx = day;
+        if(idx >= _budgetingDayData.Length) idx = _budgetingDayData.Length - 1;
+        return Remap(needsMoney, _budgetingDayData[idx].MinNeedsMoney, _budgetingDayData[idx].MaxNeedsMoney, _budgetingDayData[idx].MinHealth, _budgetingDayData[idx].MaxHealth);   
     }
 
     float Remap(float value, float from1, float to1, float from2, float to2) {
