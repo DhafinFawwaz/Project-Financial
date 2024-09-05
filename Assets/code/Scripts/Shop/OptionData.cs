@@ -18,7 +18,7 @@ public class OptionData : ScriptableObject
 [System.Serializable]
 public class OptionContent
 {
-    [SerializeField] bool _diskon;
+    [SerializeField] bool _diskon = false;
     [SerializeField] bool _inflasi;
     [SerializeField] bool _buy1get1;
     [SerializeField] int _price;

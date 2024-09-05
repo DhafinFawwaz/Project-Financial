@@ -24,5 +24,7 @@ public class MissionSetter : MonoBehaviour
         Gizmos.color = UnityEngine.Color.yellow;
         float size = 0.025f;
         Gizmos.DrawCube(_arrowPosition,     new Vector3(size, 100, size));
+        Gizmos.color = UnityEngine.Color.red;
+        Gizmos.DrawSphere(_arrowPosition, size);
     }
 }
