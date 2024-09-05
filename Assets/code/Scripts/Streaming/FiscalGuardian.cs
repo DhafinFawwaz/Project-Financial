@@ -283,7 +283,7 @@ public class FiscalGuardian : StreamingGames
 
         Save.Data.CurrentDayData.StreamingCounter++;
         Save.Data.CurrentDayData.GainedViews += _viewCounter;
-        Save.Data.CurrentDayData.GainedSubscriber += _viewCounter;
+        Save.Data.CurrentDayData.GainedSubscriber += (long)(_viewCounter * UnityEngine.Random.Range(0.5f, 0.75f));
         // Save.Data.CurrentDayData.GainedMoney += profit;
 
 
@@ -315,7 +315,7 @@ public class FiscalGuardian : StreamingGames
 
     float viewsDecreaseDelta()
     {
-        return _viewCounter * UnityEngine.Random.Range(0.03f, 0.07f);
+        return Mathf.Max(_viewCounter, 500) * UnityEngine.Random.Range(0.07f, 0.15f);
     } 
 
 
