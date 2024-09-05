@@ -15,7 +15,7 @@ public class Calculator : MonoBehaviour
     [SerializeField] BudgetingData _budgetingData;
     void GenerateCalculation()
     {
-        long needsMoney = (long)(Save.Data.NeedsMoney * _currentValue);
+        long needsMoney = (long)(Save.Data.TotalMoney * _currentValue);
         _kebutuhanText.text = needsMoney.ToStringRupiahFormat();
         _kebutuhanDiv3Text.text = (needsMoney / 3).ToStringRupiahFormat();
         _happinessText.text = Clamp0to100toInt(_budgetingData.PredictHappiness(needsMoney, Save.Data.CurrentDay)).ToString();

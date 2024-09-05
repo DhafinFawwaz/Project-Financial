@@ -38,7 +38,19 @@ public class SaveData
     public double Health { get => _health; set => _health = Mathf.Clamp((float)value, 0, 100); }
     public int SkillPoin = 0;
     public int CurrentDay = 0;
-    public long SubscriberAmount = 50000;
+    public long SubscriberAmount { 
+        get {
+            long total = 0;
+            for(int i = 0; i < CurrentDay; i++)
+            {
+                total += DayDatas[i].GainedSubscriber;
+            }
+            return total;
+        }
+        set {
+            CurrentDayData.GainedSubscriber = value;
+        }
+    }
 
     public List<ItemCount> CurrentListBelanja = new List<ItemCount>();
     public long CurrentBelanjaMoney = 0;
@@ -49,6 +61,17 @@ public class SaveData
     public List<int> HapinessItemStocks = new List<int>();
 
     public DayState DayState = DayState.JustGotHome;
+
+
+    // Budgeting
+    public int CurrentPredictedHealth;
+    public int CurrentPredictedHappiness;
+
+    // Belanja
+    public int CurrentQuality;
+    public int CurrentTotalItems;
+
+
     
     public SaveData()
     {
@@ -58,8 +81,7 @@ public class SaveData
         CurrentDay = 0;
         CurrentListBelanja = new List<ItemCount>();
         CurrentBelanjaMoney = 0;
-        SkillPoin = 0;
-        SubscriberAmount = 50000;
+        SkillPoin = 100;
 
         NeedsMoney = 100000;
         DesireMoney = 30000;
@@ -78,7 +100,12 @@ public class SaveData
         HapinessItemStocks = new List<int>(){1,2,3};
 
         DayState = DayState.JustGotHome;
+
+
+        CurrentPredictedHappiness = UnityEngine.Random.Range(10, 100);
+        CurrentPredictedHealth = UnityEngine.Random.Range(10, 100);
     }
+    
 
     
 

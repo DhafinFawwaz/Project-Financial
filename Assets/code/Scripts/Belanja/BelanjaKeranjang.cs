@@ -21,9 +21,9 @@ public class BelanjaKeranjang : MonoBehaviour
     void OnOptionChoosen(OptionSession optionSession)
     {
         var option = optionSession.GetChoosenOption();
-        _totalPercentage += option.Content.Quality * option.BuyCount;
-        _totalItems += option.BuyCount;
+        // _totalPercentage += option.Content.Quality * option.BuyCount;
+        // _totalItems += option.BuyCount;
 
-        AfterBelanja.SetData(_totalItems, _totalPercentage);
+        // AfterBelanja.SetData(_totalItems, _totalPercentage);
     }
 }

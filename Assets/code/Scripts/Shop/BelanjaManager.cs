@@ -20,14 +20,20 @@ public class BelanjaManager : MonoBehaviour
     [SerializeField] Timer _timerDiscountStartInvisible;
     [SerializeField] Timer _timerDiscount;
     [SerializeField] float _discountDuration = 10;
+    [SerializeField] QualityBar _qualityBar;
+    [SerializeField] GameObject _shadow;
     void Start()
     {
+        _qualityBar.SetNoAnimation(100, Save.Data.CurrentPredictedHealth, Save.Data.CurrentPredictedHappiness);
+    }
+
+    public void StartGame()
+    {
         _timer.SetTime(_inflasiEvery);
-        _timer.Begin();
-
-
         float diskonTime = Random.Range(_diskonBesarMin, _diskonBesarMax);
         _timerDiscountStartInvisible.SetTime(diskonTime);
+        _shadow.gameObject.SetActive(true);
+        _timer.Begin();
         _timerDiscountStartInvisible.Begin();
     }
 

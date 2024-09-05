@@ -7,10 +7,6 @@ using UnityEngine.UI;
 
 public class AfterBelanja : MonoBehaviour
 {
-    static List<ItemCount> _listCart = new List<ItemCount>();
-    static double _addedHealth;
-    static double _addedhappiness;
-
     [SerializeField] TextMeshProUGUI _barangText;
     [SerializeField] TextMeshProUGUI _hargaText;
     [SerializeField] TextMeshProUGUI _totalhargaText;
@@ -20,17 +16,6 @@ public class AfterBelanja : MonoBehaviour
     [SerializeField] ImageFillAnimation _qualityBar;
 
     [SerializeField] KTPWorld _ktpWorld;
-
-    public static void SetData(
-        List<ItemCount> listCart,
-        double addedHealth,
-        double addedhappiness
-    )
-    {
-        _listCart = listCart;
-        _addedHealth = addedHealth;
-        _addedhappiness = addedhappiness;
-    }
 
 
     static int _totalItems = 0;
@@ -58,6 +43,8 @@ public class AfterBelanja : MonoBehaviour
 
         _barangText.text = "";
         _hargaText.text = "";
+
+        var _listCart = Save.Data.CurrentListBelanja;
         
 
         foreach(var item in _listCart)
@@ -81,14 +68,18 @@ public class AfterBelanja : MonoBehaviour
 
 
         Save.Data.NeedsMoney -= (long)totalHarga;
-        Save.Data.Health += _addedHealth;
-        Save.Data.Happiness += _addedhappiness;
+        // Save.Data.Health += _addedHealth;
+        // Save.Data.Happiness += _addedhappiness;
         
         this.Invoke(() => {
             _ktpWorld.SetMoney(Save.Data.NeedsMoney)
                 .SetHappiness(Save.Data.Happiness)
                 .SetHealth(Save.Data.Health);
         }, 0.1f);
+
+
+        Save.Data.CurrentQuality = 0;
+        Save.Data.CurrentTotalItems = 0;
     }
 
 
