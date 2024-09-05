@@ -91,7 +91,7 @@ public class StreamingManager : MonoBehaviour
         _backToHomeAnimation.Play();
         Destroy(game.gameObject, 0.2f);
 
-        if(Save.Data.CurrentDayData.StreamingCounter == 3)
+        if(Save.Data.CurrentDayData.StreamingCounter == Save.Data.MaxStreamingAmountPerDay)
         {
             _streamingEndAnimation.Play();
         }

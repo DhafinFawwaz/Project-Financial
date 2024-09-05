@@ -15,7 +15,9 @@ public class Calculator : MonoBehaviour
     [SerializeField] BudgetingData _budgetingData;
     void GenerateCalculation(float[] pieValues)
     {
-        long needsMoney = (long)(Save.Data.TotalMoney * pieValues[0]);
+        long needsMoney = (long)(Save.Data.TotalMoney * pieValues[2]);
+        // Debug.Log("needsMoney: " + needsMoney);
+        // Debug.Log(Save.Data.NeedsMoney + " - " + Save.Data.DesireMoney + " - " + Save.Data.DebitMoney);
         _kebutuhanText.text = needsMoney.ToStringRupiahFormat();
         _kebutuhanDiv3Text.text = (needsMoney / 3).ToStringRupiahFormat();
         

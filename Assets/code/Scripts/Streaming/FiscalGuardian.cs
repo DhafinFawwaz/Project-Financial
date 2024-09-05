@@ -24,7 +24,12 @@ public class FiscalGuardian : StreamingGames
     [SerializeField] UnityEvent _onFirstTime;
     void Awake()
     {
-        CurrentFiscalGuardianData = _data[Save.Data.CurrentDayData.StreamingCounter % _data.Length];
+        if(Save.Data.CurrentDay == 0) {
+            CurrentFiscalGuardianData = _data[Save.Data.CurrentDayData.StreamingCounter % _data.Length];
+        } else {
+            int rand = UnityEngine.Random.Range(0, _data.Length);
+            CurrentFiscalGuardianData = _data[rand];
+        }
     }
 
     public override void Play()
@@ -275,11 +280,11 @@ public class FiscalGuardian : StreamingGames
         // Save.Data.NeedsMoney += profit;
         // Save.Data.Health -= 10;
         // Save.Data.Happiness -= (_wrongCount*4) - 7;
-        Save.Data.SubscriberAmount += _viewCounter;
-        Save.Data.CurrentDayData.StreamingCounter++;
 
+        Save.Data.CurrentDayData.StreamingCounter++;
         Save.Data.CurrentDayData.GainedViews += _viewCounter;
         Save.Data.CurrentDayData.GainedSubscriber += _viewCounter;
+        // Save.Data.CurrentDayData.GainedMoney += profit;
 
 
         // AfterStreaming.Penonton += _viewCounter;
@@ -305,7 +310,7 @@ public class FiscalGuardian : StreamingGames
 
     float viewsIncreaseDelta()
     {
-        return _viewCounter * UnityEngine.Random.Range(0.07f, 0.13f);
+        return _viewCounter * UnityEngine.Random.Range(0.2f, 0.4f);
     } 
 
     float viewsDecreaseDelta()

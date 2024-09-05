@@ -87,7 +87,7 @@ public class WorldUI : MonoBehaviour
     public void RefreshKTP()
     {
         _ktpBelanja.SetMoneyTop(Save.Data.NeedsMoney)
-            .SetMoneyBottom(Save.Data.CurrentNeedsMoney)
+            .SetMoneyBottom(Save.Data.NeedsMoney)
             .SetGreenBarFill((float)Save.Data.NeedsMoney/Save.Data.CurrentNeedsMoney);
 
         _ktpWorld.SetMoney(Save.Data.NeedsMoney)
@@ -140,7 +140,7 @@ public class WorldUI : MonoBehaviour
         //     .SetHapiness(Save.Data.Happiness, _addedHappiness)
         //     .SetHealth(Save.Data.Health, _addedHealth);
 
-        Save.Data.CurrentNeedsMoney -= itemData.Price * choosenOption.BuyCount;
+        Save.Data.NeedsMoney -= itemData.Price * choosenOption.BuyCount;
         
 
         _totalPercentage += choosenOption.Content.Quality * choosenOption.BuyCount;
@@ -157,7 +157,7 @@ public class WorldUI : MonoBehaviour
 
         
         _ktpBelanja.SetMoneyTop(Save.Data.NeedsMoney)
-            .SetMoneyBottom(Save.Data.CurrentNeedsMoney)
+            .SetMoneyBottom(Save.Data.NeedsMoney)
             .SetGreenBarFill((float)Save.Data.NeedsMoney/Save.Data.CurrentNeedsMoney);
 
     }

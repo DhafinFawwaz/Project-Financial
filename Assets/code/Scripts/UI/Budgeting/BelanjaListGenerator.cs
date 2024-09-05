@@ -146,7 +146,7 @@ public class BelanjaListGenerator : MonoBehaviour
         long needsMoney = (long)(Save.Data.NeedsMoney * _currentValue);
         long needsMoneyDiv3 = needsMoney / 3;
     
-        int maxLoop = 200;
+        int maxLoop = 1000;
         int loop = 0;
 
         long maxMoney = (long) (needsMoneyDiv3 * (float)_budgetingData.BudgetingDayData[Save.Data.CurrentDay].PercentageFromNeedsMoneyDiv3/100f);
@@ -156,6 +156,17 @@ public class BelanjaListGenerator : MonoBehaviour
             if(_belanjaList.CalculateTotalPrive() + item.Price > maxMoney) break;
 
             _belanjaList.AddItem(item);
+        }
+        Debug.Log(_belanjaList.ListToBuy.Count);
+
+        int count = _belanjaList.ListToBuy.Count;
+        Debug.Log("Adding " + (4 - count) + " more items");
+        if(count < 4) {
+            for(int i = 0; i < 4 - count; i++)
+            {
+                ItemData item = _itemData[UnityEngine.Random.Range(0, _itemData.Length)];
+                _belanjaList.AddItem(item);
+            }
         }
 
         Save.Data.CurrentListBelanja = _belanjaList.ListToBuy;

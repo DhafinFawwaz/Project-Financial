@@ -29,6 +29,7 @@ public class TransferManager : MonoBehaviour
     public void SetToStreaming()
     {
         long total = Save.Data.GetSalaryFromToday();
+        // Debug.Log("total salary: " + total);
         _streaming.SetValues(total, 0);
 
         Save.Data.DesireMoney = total/3;
