@@ -37,7 +37,7 @@ public class StoryWorld : MonoBehaviour
         }
 
 
-        if(Save.Data.DayState == DayState.AfterBudgeting || Save.Data.DayState == DayState.AfterStreaming)
+        if(Save.Data.DayState == DayState.AfterBudgeting || Save.Data.DayState == DayState.AfterKuliah)
         {
             _missionText.text = "Belanja di Bunga Mart Yuk!.";
             _shopInteractable.SetActive(true);
