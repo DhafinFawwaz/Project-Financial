@@ -80,6 +80,14 @@ public class AfterBelanja : MonoBehaviour
 
         Save.Data.CurrentQuality = 0;
         Save.Data.CurrentTotalItems = 0;
+
+        if(Save.Data.NeedsMoney < 0) {
+            // use credit
+            // restore
+            Save.Data.NeedsMoney = Save.Data.TempNeedsMoney;
+        }
+
+        Save.Data.TempNeedsMoney = Save.Data.NeedsMoney;
     }
 
 

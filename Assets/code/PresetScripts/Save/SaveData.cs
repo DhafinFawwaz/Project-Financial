@@ -25,7 +25,19 @@ public class SaveData
 
     const int MAX_DAY = 15;
     public long NeedsMoney = 100000;
-    public long CurrentNeedsMoney = 100000;
+    public long CurrentNeedsMoney {
+        get => _currentNeedsMoney;
+        set {
+            _currentNeedsMoney = value;
+            TempNeedsMoney = value;
+        }
+    }
+    public long _currentNeedsMoney = 100000;
+
+    // used in belanja
+    public long TempNeedsMoney;
+
+
     public long DesireMoney = 60000;
     public long DebitMoney = 40000;
     public long DebitTabunganMoney = 150000;

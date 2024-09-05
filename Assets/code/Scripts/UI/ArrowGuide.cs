@@ -50,6 +50,11 @@ public class ArrowGuide : MonoBehaviour
 
     public void Refresh()
     {
+        Invoke(nameof(DelayedRefresh), 0.05f);
+    }
+
+    void DelayedRefresh()
+    {
         if(Save.Data.CurrentDay == 1 && !Save.Data.HasTalkedToNaoRikiInDay2 && Save.Data.DayState == DayState.JustGotOutside)
         {
             _targetPosition = _naoRikiPosition;
