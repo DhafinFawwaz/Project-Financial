@@ -143,6 +143,9 @@ public class BelanjaListGenerator : MonoBehaviour
 
     public void GenerateBelanjaList()
     {
+        int maxHealth = Save.Data.CurrentPredictedHealth;
+        int maxHappiness = Save.Data.CurrentPredictedHappiness;
+
         
     }
     

@@ -13,13 +13,20 @@ public class Calculator : MonoBehaviour
 
     [SerializeField] PieChartDraggable _pieChart;
     [SerializeField] BudgetingData _budgetingData;
-    void GenerateCalculation()
+    void GenerateCalculation(float[] pieValues)
     {
-        long needsMoney = (long)(Save.Data.TotalMoney * _currentValue);
+        long needsMoney = (long)(Save.Data.TotalMoney * pieValues[0]);
         _kebutuhanText.text = needsMoney.ToStringRupiahFormat();
         _kebutuhanDiv3Text.text = (needsMoney / 3).ToStringRupiahFormat();
-        _happinessText.text = Clamp0to100toInt(_budgetingData.PredictHappiness(needsMoney, Save.Data.CurrentDay)).ToString();
-        _healthText.text = Clamp0to100toInt(_budgetingData.PredictHealth(needsMoney, Save.Data.CurrentDay)).ToString();
+        
+        int happiness = Clamp0to100toInt(_budgetingData.PredictHappiness(needsMoney, Save.Data.CurrentDay));
+        _happinessText.text = happiness.ToString();
+
+        int health = Clamp0to100toInt(_budgetingData.PredictHealth(needsMoney, Save.Data.CurrentDay));
+        _healthText.text = health.ToString();
+
+        Save.Data.CurrentPredictedHappiness = happiness;
+        Save.Data.CurrentPredictedHealth = health;
     }
     int Clamp0to100toInt(float value)
     {
@@ -40,16 +47,14 @@ public class Calculator : MonoBehaviour
     }
 
 
-    float _currentValue = 1;
     void OnPieValuesChanged(float[] values)
     {
-        if(_currentValue == values[2]) return;
-        _currentValue = values[2];
-        GenerateCalculation();
+        GenerateCalculation(values);
     }
 
     void Awake()
     {   
-        GenerateCalculation();
+        float[] values = new float[3] {1f/3f, 1f/3f, 1f/3f};
+        GenerateCalculation(values);
     }
 }
