@@ -19,6 +19,7 @@ public class Kuliah : MonoBehaviour
     void Start()
     {
         _counterText.text = "x2";
+        _worldUI.RefreshStates();
     }
 
     int _counter = 0;
@@ -76,7 +77,7 @@ public class Kuliah : MonoBehaviour
         StartCoroutine(DelayDone(6));
     }
 
-
+    [SerializeField] WorldUI _worldUI;
     void UpdateKTP(int index)
     {
         switch(index){

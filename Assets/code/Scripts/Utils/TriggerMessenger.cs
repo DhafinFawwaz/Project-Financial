@@ -7,7 +7,7 @@ public class TriggerMessenger : MonoBehaviour
 {
     [SerializeField] string _tag = "Player";
     [SerializeField] UnityEvent _onTriggerEnter;
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag(_tag))
         {
@@ -16,7 +16,7 @@ public class TriggerMessenger : MonoBehaviour
     }
 
     [SerializeField] UnityEvent _onTriggerExit;
-    void OnTriggerExit2D(Collider2D other)
+    void OnTriggerExit(Collider other)
     {
         if(other.CompareTag(_tag))
         {
