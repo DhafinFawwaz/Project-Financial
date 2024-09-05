@@ -45,6 +45,12 @@ public class ButtonUI : Selectable, IPointerClickHandler, ISubmitHandler
     {
         transition = Transition.None;
     }
+
+    [ContextMenu("Set UnInteractable")]
+    public void SetUnInteractable()
+    {
+        SetInteractable(false);
+    }
     
     public void OnSubmit(BaseEventData eventData)
     {
