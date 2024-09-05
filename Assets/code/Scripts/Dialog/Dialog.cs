@@ -256,7 +256,9 @@ public class Dialog : MonoBehaviour
     {
         s_OnDialogStart?.Invoke(_data);
         _isPlaying = true;
-        _animationUI.Play();
+        this.Invoke(() => {
+            _animationUI.Play();
+        }, 0.05f);
     }   
 
     public void Stop()
