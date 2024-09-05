@@ -9,7 +9,7 @@ public class FirstTimeBelanja : MonoBehaviour
     [SerializeField] BelanjaManager _belanjaManager;
     void Start()
     {
-        if(Save.Data.CurrentDay == 1) {
+        if(Save.Data.CurrentDay <= 1) {
             _popUp.Show();
         } else if(Save.Data.CurrentDay >= 2) {
             _popUpRil.Show();
