@@ -15,7 +15,7 @@ public class BelanjaList : MonoBehaviour
     
     List<ItemCount> _listToBuy = new List<ItemCount>();
     List<ItemCount> _listCart = new List<ItemCount>();
-    public List<ItemCount> ListToBuy => _listToBuy;
+    public List<ItemCount> ListToBuy { get => _listToBuy; set => _listToBuy = value; }
     public List<ItemCount> ListCart => _listCart;
     public UnityEvent<List<ItemCount>> OnListChange;
 

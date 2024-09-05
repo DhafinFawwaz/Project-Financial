@@ -60,9 +60,9 @@ public class BudgetingController : MonoBehaviour
         _textFields[2].text = Save.Data.NeedsMoney.ToStringRupiahFormat();
 
         long total = Save.Data.TotalMoney;
-        _textPercentFields[0].text = (Save.Data.DebitMoney / (float)total * 100).ToString("0.00") + "%";
-        _textPercentFields[1].text = (Save.Data.DesireMoney / (float)total * 100).ToString("0.00") + "%";
-        _textPercentFields[2].text = (Save.Data.NeedsMoney / (float)total * 100).ToString("0.00") + "%";
+        _textPercentFields[0].text = (Save.Data.DebitMoney / (float)total * 100).ToString("0.0") + "%";
+        _textPercentFields[1].text = (Save.Data.DesireMoney / (float)total * 100).ToString("0.0") + "%";
+        _textPercentFields[2].text = (Save.Data.NeedsMoney / (float)total * 100).ToString("0.0") + "%";
 
         _kreditText.text = CurrentCreditMoney.ToStringRupiahFormat();
 
@@ -119,6 +119,7 @@ public class BudgetingController : MonoBehaviour
         Save.Data.DebitMoney = (long)(values[0] * total);
         Save.Data.DesireMoney = (long)(values[1] * total);
         Save.Data.NeedsMoney = (long)(values[2] * total);
+        Save.Data.CurrentNeedsMoney = Save.Data.NeedsMoney;
     }
 
 
@@ -142,7 +143,7 @@ public class BudgetingController : MonoBehaviour
         for (int i = 0; i < values.Length; i++)
         {
             _textFields[i].text = (values[i] * _totalMoney).ToStringRupiahFormat();
-            _textPercentFields[i].text = (values[i] * 100).ToString("0.00") + "%";
+            _textPercentFields[i].text = (values[i] * 100).ToString("0.0") + "%";
         }
 
         _textFields[0].text = "<color=#00000066>" + Save.Data.DebitTabunganMoney.ToStringRupiahFormat() + " + <color=#000>" + (values[0] * _totalMoney).ToStringRupiahFormat();
@@ -502,7 +503,7 @@ public class BudgetingController : MonoBehaviour
         //     EventSystem.current.SetSelectedGameObject(_okButton);
         //     return;
         // }
-        
+        SetMoney();
         _belanjaListGenerator.GenerateBelanjaList();
         _sceneTransitionStarter.StartTransition("World");
     }

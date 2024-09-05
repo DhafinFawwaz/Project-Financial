@@ -67,7 +67,7 @@ public class WorldUI : MonoBehaviour
         // _currentBelanjaMoney = Save.Data.CurrentBelanjaMoney;
 
         _ktpBelanja.SetMoneyTop(Save.Data.NeedsMoney)
-            .SetMoneyBottom(Save.Data.CurrentNeedsMoney)
+            .SetMoneyBottom(Save.Data.NeedsMoney)
             .SetGreenBarFill((float)Save.Data.NeedsMoney/Save.Data.CurrentNeedsMoney);
     }
 
