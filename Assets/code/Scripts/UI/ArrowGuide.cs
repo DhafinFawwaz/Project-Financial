@@ -5,9 +5,19 @@ using UnityEngine;
 
 public class ArrowGuide : MonoBehaviour
 {
+    public static ArrowGuide Instance { get; private set; }
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     [SerializeField] float _jumpingSpeed = 1;
     [SerializeField] float _jumpingHeight = 1;
     Vector3 _targetPosition;
+    public void Set(Vector3 pos)
+    {
+        _targetPosition = pos;
+    }
     
     [SerializeField] Vector3 _naoRikiPosition;
     [SerializeField] Vector3 _itbPosition;

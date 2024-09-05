@@ -272,20 +272,21 @@ public class FiscalGuardian : StreamingGames
     {
         long profit = (long) ((10.0f-_wrongCount)/10.0f * (UnityEngine.Random.Range(30000, 40000)));
         profit = (long)Mathf.RoundToInt(profit/1000) * 1000;
-        Save.Data.NeedsMoney += profit;
-        Save.Data.Health -= 10;
-        Save.Data.Happiness -= (_wrongCount*4) - 7;
+        // Save.Data.NeedsMoney += profit;
+        // Save.Data.Health -= 10;
+        // Save.Data.Happiness -= (_wrongCount*4) - 7;
         Save.Data.SubscriberAmount += _viewCounter;
         Save.Data.CurrentDayData.StreamingCounter++;
 
-        AfterStreaming.Penonton += _viewCounter;
-        AfterStreaming.NewSubscriber += _correctCount;
-        AfterStreaming.Penghasilan += profit;
-        AfterStreaming.TotalSubscriber += Save.Data.SubscriberAmount;
-        Debug.Log("Save.Data.CurrentDayData.GainedSubscriber: " + Save.Data.CurrentDayData.GainedSubscriber);
+        Save.Data.CurrentDayData.GainedViews += _viewCounter;
         Save.Data.CurrentDayData.GainedSubscriber += _viewCounter;
-        Debug.Log("Save.Data.CurrentDayData.GainedSubscriber: " + Save.Data.CurrentDayData.GainedSubscriber);
-        AfterStreaming.GainedSubscriberEachDay = Save.Data.GainedSubscriberEachDay;
+
+
+        // AfterStreaming.Penonton += _viewCounter;
+        // AfterStreaming.NewSubscriber += _correctCount;
+        // AfterStreaming.Penghasilan += profit;
+        // AfterStreaming.TotalSubscriber += Save.Data.SubscriberAmount;
+        // AfterStreaming.GainedSubscriberEachDay = Save.Data.GainedSubscriberEachDay;
 
         _correntText.text = (CurrentFiscalGuardianData.People.Length - _wrongCount).ToString();
         _wrongText.text = _wrongCount.ToString();

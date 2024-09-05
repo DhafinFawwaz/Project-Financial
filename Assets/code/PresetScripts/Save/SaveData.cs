@@ -86,18 +86,47 @@ public class SaveData
     public class DayData
     {
         public long StreamingCounter = 0;
-        public long GainedSubscriber = 0;
         public long CreditMoney = 50000;
+
+        public long GainedSubscriber = 0;
+        public long GainedViews = 0;
         public long GainedMoney = 100000;
 
         public DayData()
         {
             StreamingCounter = 0;
-            GainedSubscriber = 0;
             CreditMoney = 50000;
+
+            GainedSubscriber = 100;
+            GainedViews = 2000;
             GainedMoney = 100000;
         }
     }
+
+    public void GetChannelInfo(out long TotalSubscriber, out long TotalViews, out long TotalMoney, out long Last3DaysMoney)
+    {
+        TotalSubscriber = 0;
+        TotalViews = 0;
+        TotalMoney = 0;
+        for(int i = 0; i < CurrentDay; i++)
+        {
+            TotalSubscriber += DayDatas[i].GainedSubscriber;
+            TotalViews += DayDatas[i].GainedViews;
+            TotalMoney += DayDatas[i].GainedMoney;
+        }
+
+        Last3DaysMoney = 0;
+        int startDay = CurrentDay - 3;
+        if(startDay < 0) startDay = 0;
+        for(int i = startDay; i <= CurrentDay; i++)
+        {
+            Last3DaysMoney += DayDatas[i].GainedMoney;
+        }
+    }
+
+    public List<long> SubscriberEachDay => DayDatas.ConvertAll(x => x.GainedSubscriber);
+    public List<long> ViewsEachDay => DayDatas.ConvertAll(x => x.GainedViews);
+    public List<long> MoneyEachDay => DayDatas.ConvertAll(x => x.GainedMoney);
 
 
     const int GET_MONEY_EVERY = 3;
@@ -154,4 +183,6 @@ public class SaveData
         }
     }
 
+
+    // TODO: youtube play button
 }
