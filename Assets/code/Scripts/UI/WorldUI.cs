@@ -22,6 +22,11 @@ public class WorldUI : MonoBehaviour
     [Header("For Apotek")]    
     [SerializeField] bool _ktpOnly = false;
 
+    [Header("For World")]
+    [SerializeField] bool _isDesireMoney = false;
+    [SerializeField] bool _isNeedsMoney = true;
+    [SerializeField] bool _isDebitMoney = false;
+
 
     void Awake()
     {
@@ -88,13 +93,17 @@ public class WorldUI : MonoBehaviour
     {
         _ktpBelanja.SetMoneyTop(Save.Data.NeedsMoney)
             .SetMoneyBottom(Save.Data.NeedsMoney)
-            .SetGreenBarFill((float)Save.Data.NeedsMoney/Save.Data.CurrentNeedsMoney);
-
-        _ktpWorld.SetMoney(Save.Data.NeedsMoney)
-            .SetHappiness(Save.Data.Happiness)
+            .SetGreenBarFill((float)Save.Data.NeedsMoney/Save.Data.CurrentNeedsMoney)
+            .SetHapiness(Save.Data.Happiness, 0)
+            .SetHealth(Save.Data.Health, 0);
+        
+        _ktpWorld.SetHappiness(Save.Data.Happiness)
             .SetHealth(Save.Data.Health)
             .SetSkillPoint(Save.Data.SkillPoin);
 
+        if(_isDesireMoney) _ktpWorld.SetMoney(Save.Data.DesireMoney);
+        else if(_isNeedsMoney) _ktpWorld.SetMoney(Save.Data.NeedsMoney);
+        else if(_isDebitMoney) _ktpWorld.SetMoney(Save.Data.DebitMoney);
     }
 
 

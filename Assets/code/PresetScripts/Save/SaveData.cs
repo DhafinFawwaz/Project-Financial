@@ -91,7 +91,7 @@ public class SaveData
     public SaveData()
     {
         CurrentVersion = Version;
-        Happiness = 100;
+        Happiness = 90;
         Health = 100;
         CurrentDay = 0;
         CurrentListBelanja = new List<ItemCount>();
@@ -144,7 +144,7 @@ public class SaveData
             GainedSubscriber = 0;
             GainedViews = 0;
             // GainedMoney = UnityEngine.Random.Range(10000, 100000);
-            GainedMoney = 0;
+            GainedMoney = 1000000;
         }
     }
 

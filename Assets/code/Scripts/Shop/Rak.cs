@@ -18,9 +18,12 @@ public class Rak : Interactable
     public float SessionTime = INITIAL_SESSION_TIME; // will be set by OptionSession
 
 
+    int _inflateCount = 0;
+
     const float INFLATE_PERCENTAGE = 1.2f;
     public void Inflate()
     {
+        _inflateCount++;
         _optionDataCopy.Content[0].Price = (int)(_optionDataCopy.Content[0].Price * INFLATE_PERCENTAGE);
         _optionDataCopy.Content[1].Price = (int)(_optionDataCopy.Content[1].Price * INFLATE_PERCENTAGE);
         if(_optionDataCopy.Content[2] != null)
@@ -129,6 +132,17 @@ public class Rak : Interactable
         _optionData.Content[1].Price = (int)(_optionData.Content[1].Price * UnityEngine.Random.Range(0.5f, 1.5f));
         if(_optionData.Content[2] != null)
             _optionData.Content[2].Price = (int)(_optionData.Content[2].Price * UnityEngine.Random.Range(0.5f, 1.5f));
+
+        _optionData.Content[0].Price = ApplyInflate(_optionData.Content[0].Price);
+        _optionData.Content[1].Price = ApplyInflate(_optionData.Content[1].Price);
+        if(_optionData.Content[2] != null)
+            _optionData.Content[2].Price = ApplyInflate(_optionData.Content[2].Price);
+
+    }
+
+    int ApplyInflate(int price)
+    {
+        return (int)(price * Mathf.Pow(INFLATE_PERCENTAGE, _inflateCount));
     }
 
 
