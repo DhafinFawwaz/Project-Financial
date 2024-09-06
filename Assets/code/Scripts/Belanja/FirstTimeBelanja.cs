@@ -24,11 +24,21 @@ public class FirstTimeBelanja : MonoBehaviour
         _popUp.Hide();
         _belanjaManager.gameObject.SetActive(true);
         _belanjaManager.StartGame();
+        InputManager.SetActiveMouseAndKey(true);
     }
     public void ClosePopUpRil()
     {
         _popUpRil.Hide();
         _belanjaManager.gameObject.SetActive(true);
         _belanjaManager.StartGame();
+        InputManager.SetActiveMouseAndKey(true);
+    }
+
+    void Update()
+    {
+        if(InputManager.GetKeyDown(KeyCode.M))
+        {
+            InputManager.SetActiveMouseAndKey(true);
+        }
     }
 }

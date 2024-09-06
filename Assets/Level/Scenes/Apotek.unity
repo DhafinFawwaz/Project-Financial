@@ -1535,6 +1535,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1149649305015072236, guid: b1a971313e8d5204d8a1e9d8198497bf, type: 3}
+      propertyPath: m_text
+      value: Maaf stok habis, silahkan kembali di lain hari!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149649305015072236, guid: b1a971313e8d5204d8a1e9d8198497bf, type: 3}
+      propertyPath: m_fontSize
+      value: 23.4
+      objectReference: {fileID: 0}
     - target: {fileID: 2817673404654022576, guid: b1a971313e8d5204d8a1e9d8198497bf, type: 3}
       propertyPath: m_Name
       value: '[Group] PopUp'
@@ -2971,7 +2979,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8bafbff338b66874484015c0069912ee, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b646652e8b06b3f488cce68c6e834dbb, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -47,13 +47,13 @@ public class KTPBelanja : MonoBehaviour
 
     public KTPBelanja SetHapiness(double hapiness, double added)
     {
-        _happinessText.text = hapiness.ToString() + GRAY_TAG + "+" + added.ToString();
+        _happinessText.text = hapiness.ToString();// + GRAY_TAG + "+" + added.ToString();
         return this;
     }
 
     public KTPBelanja SetHealth(double health, double added)
     {
-        _healthText.text = health.ToString() + GRAY_TAG + "+" + added.ToString();
+        _healthText.text = health.ToString();// + GRAY_TAG + "+" + added.ToString();
         return this;
     }
 }

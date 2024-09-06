@@ -37,7 +37,7 @@ public class PopUpSeller : MonoBehaviour
             return;
         }
         _priceText.text = _snack.Price.ToString();
-        _messageText.text = $"Yakin ingin membeli {_snack.Name}?\n(+{_snack.Happiness} Health)";
+        _messageText.text = $"Yakin ingin membeli {_snack.Name}?\n(+{_snack.Happiness} Happiness)";
         if(Save.Data.NeedsMoney < _snack.Price) _popUpInsufficient.Show();
         else _popUpConfirm.Show();
     }
@@ -45,7 +45,6 @@ public class PopUpSeller : MonoBehaviour
     public void Confirm()
     {
         Save.Data.NeedsMoney -= _snack.Price;
-        Save.Data.Health += _snack.Happiness;
         Save.Data.Happiness += _snack.Happiness;
         _snack.Stock--;
         Save.Data.HapinessItemStocks[_snack.Index]--;

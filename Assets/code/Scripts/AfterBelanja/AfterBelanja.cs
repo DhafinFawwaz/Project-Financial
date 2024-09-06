@@ -33,16 +33,21 @@ public class AfterBelanja : MonoBehaviour
     void Awake()
     {
         if(Save.Data.CurrentTotalItems == 0) return;
+        
         float val = (float)Save.Data.CurrentQuality/Save.Data.CurrentTotalItems/100f;
-        Debug.Log("Quality: " + Save.Data.CurrentQuality);
-        Debug.Log("TotalItems: " + Save.Data.CurrentTotalItems);
+        int health = (int)(Save.Data.CurrentPredictedHealth * val);
+        int happiness = (int)(Save.Data.CurrentPredictedHappiness * val);
+        _qualityBar.SetAndAnimate(val, health, happiness, 0, 0);
 
-        int health = (int)_budgetingData.PredictHealth(Save.Data.CurrentNeedsMoney, Save.Data.CurrentDay);
-        int happiness = (int)_budgetingData.PredictHappiness(Save.Data.CurrentNeedsMoney, Save.Data.CurrentDay);
+        // Debug.Log("Quality: " + Save.Data.CurrentQuality);
+        // Debug.Log("TotalItems: " + Save.Data.CurrentTotalItems);
+
+        // int health = (int)_budgetingData.PredictHealth(Save.Data.CurrentNeedsMoney, Save.Data.CurrentDay);
+        // int happiness = (int)_budgetingData.PredictHappiness(Save.Data.CurrentNeedsMoney, Save.Data.CurrentDay);
         _addedHealthText.text = (health * val).ToString();
         _addedHapinesssisaText.text = (happiness * val).ToString();
         // _qualityBar.SetEndFill((float)val/100).Play();
-        _qualityBar.SetAndAnimate(val, (int)(health*val), (int)(happiness*val));
+        // _qualityBar.SetAndAnimate(val, (int)(health*val), (int)(happiness*val));
 
 
         _barangText.text = "";
@@ -87,6 +92,7 @@ public class AfterBelanja : MonoBehaviour
         if(Save.Data.NeedsMoney < 0) {
             Save.Data.NeedsMoney = Save.Data.TempNeedsMoney;
             Save.Data.CurrentDayData.CreditMoney = totalHarga;
+            _sisaText.text = Save.Data.NeedsMoney.ToString();
             _kreditDialog.SetActive(true);
             _kebutuhanDialog.SetActive(false);
         } else {

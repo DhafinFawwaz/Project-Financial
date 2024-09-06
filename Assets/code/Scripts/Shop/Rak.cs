@@ -91,24 +91,44 @@ public class Rak : Interactable
 
         
 
-        _optionDataCopy.Content[0].Quality = UnityEngine.Random.Range(10, 101);
-        _optionDataCopy.Content[1].Quality = UnityEngine.Random.Range(40, 101);
-        if(_optionDataCopy.Content[2] != null)
-            _optionDataCopy.Content[2].Quality = UnityEngine.Random.Range(70, 101);
+        int small = UnityEngine.Random.Range(30, 101);
+        int medium = UnityEngine.Random.Range(55, 101);
+        int large = UnityEngine.Random.Range(80, 101);
+        float random = UnityEngine.Random.value;
+        if(random < 0.33f) {
+            _optionDataCopy.Content[0].Quality = small;
+            _optionDataCopy.Content[1].Quality = medium;
+            if(_optionDataCopy.Content[2] != null)
+                _optionDataCopy.Content[2].Quality = large;
+        } else if(random < 0.66f) {
+            _optionDataCopy.Content[0].Quality = medium;
+            _optionDataCopy.Content[1].Quality = large;
+            if(_optionDataCopy.Content[2] != null)
+                _optionDataCopy.Content[2].Quality = small;
+        } else {
+            _optionDataCopy.Content[0].Quality = large;
+            _optionDataCopy.Content[1].Quality = small;
+            if(_optionDataCopy.Content[2] != null)
+                _optionDataCopy.Content[2].Quality = medium;
+        }
 
 
 
-        _optionDataCopy.Content[1].Price += 2000;
-        if(_optionDataCopy.Content[2] != null) _optionDataCopy.Content[2].Price -= 2000;
+        // _optionDataCopy.Content[1].Price += 2000;
+        // if(_optionDataCopy.Content[2] != null) _optionDataCopy.Content[2].Price -= 2000;
 
         // Diskon
         // 0
-        if(UnityEngine.Random.value < 0.1f) _optionDataCopy.Content[0].Price = (int)(_optionDataCopy.Content[0].Price * UnityEngine.Random.Range(0.7f, 0.9f));
-        if(UnityEngine.Random.value < 0.4f) _optionDataCopy.Content[1].Price = (int)(_optionDataCopy.Content[1].Price * UnityEngine.Random.Range(0.7f, 0.9f));
-        if(_optionDataCopy.Content[2] != null)
-            if(UnityEngine.Random.value < 0.4f)
-                _optionDataCopy.Content[2].Price = (int)(_optionDataCopy.Content[2].Price * UnityEngine.Random.Range(0.7f, 0.9f));
+        // if(UnityEngine.Random.value < 0.1f) _optionDataCopy.Content[0].Price = (int)(_optionDataCopy.Content[0].Price * UnityEngine.Random.Range(0.7f, 0.9f));
+        // if(UnityEngine.Random.value < 0.4f) _optionDataCopy.Content[1].Price = (int)(_optionDataCopy.Content[1].Price * UnityEngine.Random.Range(0.7f, 0.9f));
+        // if(_optionDataCopy.Content[2] != null)
+        //     if(UnityEngine.Random.value < 0.4f)
+        //         _optionDataCopy.Content[2].Price = (int)(_optionDataCopy.Content[2].Price * UnityEngine.Random.Range(0.7f, 0.9f));
 
+        _optionData.Content[0].Price = (int)(_optionData.Content[0].Price * UnityEngine.Random.Range(0.5f, 1.5f));
+        _optionData.Content[1].Price = (int)(_optionData.Content[1].Price * UnityEngine.Random.Range(0.5f, 1.5f));
+        if(_optionData.Content[2] != null)
+            _optionData.Content[2].Price = (int)(_optionData.Content[2].Price * UnityEngine.Random.Range(0.5f, 1.5f));
     }
 
 

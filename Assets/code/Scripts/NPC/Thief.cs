@@ -31,7 +31,7 @@ public class Thief : MonoBehaviour
         _vignette.Play();
 
         // Do Stuff
-        Save.Data.NeedsMoney = 0;
+        Save.Data.DesireMoney = 0;
         _worldUI.RefreshKTP();
     }
 

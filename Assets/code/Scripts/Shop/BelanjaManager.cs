@@ -37,6 +37,10 @@ public class BelanjaManager : MonoBehaviour
         _timerDiscountStartInvisible.Begin();
 
         _belanjaList.ListToBuy = Save.Data.CurrentListBelanja;
+
+        this.Invoke(() => {
+            InputManager.SetActiveMouseAndKey(true);
+        }, 0.5f);
     }
 
 
