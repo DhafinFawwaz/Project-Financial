@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Cutscene3Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 100
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 98607be4515c6794b9dafdbbd0d0c75f, type: 3}
+    - {fileID: 2800000, guid: cfc8f732af5ecec479b18ddff701465b, type: 3}
+    - {fileID: 2800000, guid: f8ffcc53fc8166947bc3c9e860c1c3cd, type: 3}
+    - {fileID: 2800000, guid: 8ea0c17044fae4144aa07c7ca193a549, type: 3}
+    - {fileID: 2800000, guid: 6f748db7961c612468c5e84fbbc046fe, type: 3}
+    - {fileID: 2800000, guid: 7119249373a3bc14da5202f760924930, type: 3}
+    - {fileID: 2800000, guid: a92346c84822b4946a239127cab12c93, type: 3}
+    - {fileID: 2800000, guid: 79b81a94ec344af4fa1d50aa01f158c7, type: 3}
+    - {fileID: 2800000, guid: 70ceafa481e345d4893e9b2266689335, type: 3}
+    - {fileID: 2800000, guid: b3e186db030798640bd0b6ff7ad068f1, type: 3}
+    - {fileID: 2800000, guid: 5005343a78f2e8947a0e6dac6fe7655d, type: 3}
+    - {fileID: 2800000, guid: c90ee6223dc60f145b965eedc64d22dc, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 8ea0c17044fae4144aa07c7ca193a549, type: 3}
+  - {fileID: 21300000, guid: c90ee6223dc60f145b965eedc64d22dc, type: 3}
+  - {fileID: 21300000, guid: cfc8f732af5ecec479b18ddff701465b, type: 3}
+  - {fileID: 21300000, guid: f8ffcc53fc8166947bc3c9e860c1c3cd, type: 3}
+  - {fileID: 21300000, guid: 7119249373a3bc14da5202f760924930, type: 3}
+  - {fileID: 21300000, guid: 79b81a94ec344af4fa1d50aa01f158c7, type: 3}
+  - {fileID: 21300000, guid: 70ceafa481e345d4893e9b2266689335, type: 3}
+  - {fileID: 21300000, guid: 98607be4515c6794b9dafdbbd0d0c75f, type: 3}
+  - {fileID: 21300000, guid: 6f748db7961c612468c5e84fbbc046fe, type: 3}
+  - {fileID: 21300000, guid: a92346c84822b4946a239127cab12c93, type: 3}
+  - {fileID: 21300000, guid: 5005343a78f2e8947a0e6dac6fe7655d, type: 3}
+  - {fileID: 21300000, guid: b3e186db030798640bd0b6ff7ad068f1, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - chatt2
+  - victory
+  - bg
+  - chatt
+  - kursi
+  - spike2
+  - tangaan
+  - badaan
+  - chatt3
+  - laptop
+  - tangaan3
+  - tangaan2
+  m_RenderDataMap: {}
+  m_Tag: Cutscene3Atlas
+  m_IsVariant: 0

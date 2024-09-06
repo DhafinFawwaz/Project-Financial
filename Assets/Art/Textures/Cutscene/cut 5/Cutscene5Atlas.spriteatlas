@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Cutscene5Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 100
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 3a43267659d2c6140bff2b5a555897cb, type: 3}
+    - {fileID: 2800000, guid: 7363eaf741503bf4ba4dd7adc0dbb7ab, type: 3}
+    - {fileID: 2800000, guid: 7d4c75e85a8c10e42a1a2b3d269d9d7c, type: 3}
+    - {fileID: 2800000, guid: 3bebc5a0203287443ad237ae184f2f1b, type: 3}
+    - {fileID: 2800000, guid: fad7f974d73b254478f803cf5aab521f, type: 3}
+    - {fileID: 2800000, guid: a1dc0ddbdcce72d4a9b920a460aa160b, type: 3}
+    - {fileID: 2800000, guid: 4cd383cb5c9cdec4da8bb0fcfd4c80de, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 3bebc5a0203287443ad237ae184f2f1b, type: 3}
+  - {fileID: 21300000, guid: fad7f974d73b254478f803cf5aab521f, type: 3}
+  - {fileID: 21300000, guid: 3a43267659d2c6140bff2b5a555897cb, type: 3}
+  - {fileID: 21300000, guid: 7363eaf741503bf4ba4dd7adc0dbb7ab, type: 3}
+  - {fileID: 21300000, guid: 7d4c75e85a8c10e42a1a2b3d269d9d7c, type: 3}
+  - {fileID: 21300000, guid: 4cd383cb5c9cdec4da8bb0fcfd4c80de, type: 3}
+  - {fileID: 21300000, guid: a1dc0ddbdcce72d4a9b920a460aa160b, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - chat2
+  - chat3
+  - bg
+  - bodyy
+  - chat1
+  - tangandua
+  - donate
+  m_RenderDataMap: {}
+  m_Tag: Cutscene5Atlas
+  m_IsVariant: 0

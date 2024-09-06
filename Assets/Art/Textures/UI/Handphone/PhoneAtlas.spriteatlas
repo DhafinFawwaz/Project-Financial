@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PhoneAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 100
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 16cfe44c784bae74fbbbea6ef5afbc5f, type: 3}
+    - {fileID: 2800000, guid: 3b13bc1472e2f1749b2cf5bca6619b5e, type: 3}
+    - {fileID: 2800000, guid: c25f24cf0ce17ce4b8d7f1595a28870f, type: 3}
+    - {fileID: 2800000, guid: 7963bc7fced15a742823a799d2f68488, type: 3}
+    - {fileID: 2800000, guid: 1b0b938c10a81ee459f854c64fa0dbec, type: 3}
+    - {fileID: 2800000, guid: ba2950095f229314fa109e434c4256e3, type: 3}
+    - {fileID: 2800000, guid: 7a792c8909919e54d94c47ce8591320e, type: 3}
+    - {fileID: 2800000, guid: 2283ef37e3a190c498167aaec817f961, type: 3}
+    - {fileID: 2800000, guid: b119f69d73357b941945db9c0cd8dde6, type: 3}
+    - {fileID: 2800000, guid: ebe7e6fecb9b6fa438f04dc209681768, type: 3}
+    - {fileID: 2800000, guid: 30ca635bda9012448b61d177a8463be6, type: 3}
+    - {fileID: 2800000, guid: 4a4bf48e0cde9a94080e866904bfe76c, type: 3}
+    - {fileID: 2800000, guid: 2eb21ebcc75cb184fa8cad38f6792d0f, type: 3}
+    - {fileID: 2800000, guid: 11099aed57ce5e244ab679407c89596f, type: 3}
+    - {fileID: 2800000, guid: b772107469718ec4caaafa3e101244b5, type: 3}
+    - {fileID: 2800000, guid: cb38eafff8b28e1498ffc3e45df0451b, type: 3}
+    - {fileID: 2800000, guid: 004be599272cd7e47b8d0e4927da4ddf, type: 3}
+    - {fileID: 2800000, guid: b6c197de2561a5a4cbcdafcc67d5dd38, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 3b13bc1472e2f1749b2cf5bca6619b5e, type: 3}
+  - {fileID: 21300000, guid: b772107469718ec4caaafa3e101244b5, type: 3}
+  - {fileID: 21300000, guid: 2283ef37e3a190c498167aaec817f961, type: 3}
+  - {fileID: 21300000, guid: ba2950095f229314fa109e434c4256e3, type: 3}
+  - {fileID: 21300000, guid: 7a792c8909919e54d94c47ce8591320e, type: 3}
+  - {fileID: 21300000, guid: 004be599272cd7e47b8d0e4927da4ddf, type: 3}
+  - {fileID: 21300000, guid: 30ca635bda9012448b61d177a8463be6, type: 3}
+  - {fileID: 21300000, guid: 16cfe44c784bae74fbbbea6ef5afbc5f, type: 3}
+  - {fileID: 21300000, guid: 1b0b938c10a81ee459f854c64fa0dbec, type: 3}
+  - {fileID: 21300000, guid: 2eb21ebcc75cb184fa8cad38f6792d0f, type: 3}
+  - {fileID: 21300000, guid: b119f69d73357b941945db9c0cd8dde6, type: 3}
+  - {fileID: 21300000, guid: 11099aed57ce5e244ab679407c89596f, type: 3}
+  - {fileID: 21300000, guid: 4a4bf48e0cde9a94080e866904bfe76c, type: 3}
+  - {fileID: 21300000, guid: b6c197de2561a5a4cbcdafcc67d5dd38, type: 3}
+  - {fileID: 21300000, guid: ebe7e6fecb9b6fa438f04dc209681768, type: 3}
+  - {fileID: 21300000, guid: 7963bc7fced15a742823a799d2f68488, type: 3}
+  - {fileID: 21300000, guid: c25f24cf0ce17ce4b8d7f1595a28870f, type: 3}
+  - {fileID: 21300000, guid: cb38eafff8b28e1498ffc3e45df0451b, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - phone_nyala idle
+  - notes
+  - tombol x setting
+  - notes belanja
+  - setting on phone
+  - telephone
+  - calculator
+  - phone_mati
+  - blue screen
+  - gallery
+  - tombol x yutub n list belanja
+  - map
+  - chat
+  - yutub
+  - yutub
+  - tangan popup hp
+  - phone_nyala idle_w icon
+  - setting
+  m_RenderDataMap: {}
+  m_Tag: PhoneAtlas
+  m_IsVariant: 0

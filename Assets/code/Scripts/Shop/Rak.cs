@@ -15,7 +15,7 @@ public class Rak : Interactable
     public OptionData OptionData => _optionDataCopy;
 
     const float INITIAL_SESSION_TIME = 6;
-    public float SessionTime = INITIAL_SESSION_TIME; // will be set by OptionSession
+    [HideInInspector] public float SessionTime = INITIAL_SESSION_TIME; // will be set by OptionSession
 
 
     int _inflateCount = 0;
@@ -62,6 +62,7 @@ public class Rak : Interactable
     OptionData _optionDataCopy;
     void Awake()
     {
+        SessionTime = INITIAL_SESSION_TIME;
         _optionDataCopy = Instantiate(_optionData);
         ReGacha();
     }
