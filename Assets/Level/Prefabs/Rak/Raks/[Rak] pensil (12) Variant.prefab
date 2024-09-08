@@ -12,16 +12,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 8959d783007689c4183d8054720d9f61, type: 2}
     - target: {fileID: 3914189445726561639, guid: 5c100974281cde942ab96f14d283140d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3914189445726561639, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 838245b950283b642ad4a3f0aa1279b7, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 3914189446115555672, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3914189446115555672, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.903
+      value: 2.549
       objectReference: {fileID: 0}
     - target: {fileID: 3914189446115555672, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -29,7 +33,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3914189446115555672, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.25
+      value: -0.75
       objectReference: {fileID: 0}
     - target: {fileID: 3914189446115555672, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -61,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3914189446115555673, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_Name
-      value: '[Rak] pensil (12) Variant'
+      value: '[Rak] pensil (12)'
       objectReference: {fileID: 0}
     - target: {fileID: 3914189446115555673, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_IsActive

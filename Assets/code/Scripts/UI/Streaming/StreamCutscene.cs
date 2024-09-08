@@ -92,6 +92,7 @@ public class StreamCutscene : MonoBehaviour
 
         // spawn 3 initial toasters
         this.Invoke(() => {
+            int initialToasterCount = 0;
             try {
                 for(int i = 0; i < 3; i++)
                 {
@@ -100,10 +101,11 @@ public class StreamCutscene : MonoBehaviour
                         if(dialog.type == StreamCutsceneData.Dialog.Type.Toaster) SpawnToaster(GetRandomUsername(), dialog.Message);
                         else SpawnToasterDanger(GetRandomUsername(), dialog.Message);
                     }, i * _tweenDuration*0.65f);
+                    initialToasterCount++;
                 }
             } catch {}
-            this.Invoke(() => _isPlaying = true, 3 * _tweenDuration);
-        }, 0.5f);
+            this.Invoke(() => _isPlaying = true, initialToasterCount * _tweenDuration);
+        }, 0.1f);
     }
 
     void Update()

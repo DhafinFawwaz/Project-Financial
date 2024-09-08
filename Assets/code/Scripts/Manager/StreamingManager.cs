@@ -64,9 +64,15 @@ public class StreamingManager : MonoBehaviour
     }
 
 
+    float _lastTime = 0;
     public void OnGameSelected(int page)
     {
         if(_games.Length <= page) return;
+
+        if(Time.time - _lastTime < 0.5f) return;
+        _lastTime = Time.time;
+        Debug.Log("Game selected: " + page);
+
         StartCoroutine(StartGameAnimation(page));
     }
 

@@ -275,343 +275,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4547383087169964027, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
   m_PrefabInstance: {fileID: 4547383087175739468}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &14167994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 14167990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f54930f0f8f7f2478377a55d6c33e4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TotalDuration: 0.5
-  AnimationSequence:
-  - AtTime: At 0s [[Blocker]] [Image]
-    StartTime: 0
-    TriggerStart: 0
-    TriggerEnd: 0
-    PropertyRectHeight: 180
-    PropertyRectY: 133
-    SequenceType: 0
-    EaseType: 1
-    EasePower: 3
-    TargetType: 3
-    TargetComp: {fileID: 14167991}
-    Duration: 0.2
-    EventDynamic:
-      m_PersistentCalls:
-        m_Calls: []
-    IsUnfolded: 1
-    IsDone: 0
-    Target: {fileID: 0}
-    IsActivating: 1
-    PlaySFXBy: 0
-    SFXFile: {fileID: 0}
-    SFXIndex: 0
-    SceneToLoad: 
-    Event:
-      m_PersistentCalls:
-        m_Calls: []
-    TargetRtTask: 1
-    AnchoredPositionState: 0
-    AnchoredPositionStart: {x: 0, y: 0, z: 0}
-    AnchoredPositionEnd: {x: 0, y: 0, z: 0}
-    LocalScaleState: 0
-    LocalScaleStart: {x: 0, y: 0, z: 0}
-    LocalScaleEnd: {x: 0, y: 0, z: 0}
-    LocalEulerAnglesState: 0
-    LocalEulerAnglesStart: {x: 0, y: 0, z: 0}
-    LocalEulerAnglesEnd: {x: 0, y: 0, z: 0}
-    SizeDeltaState: 0
-    SizeDeltaStart: {x: 0, y: 0, z: 0}
-    SizeDeltaEnd: {x: 0, y: 0, z: 0}
-    AnchorMinState: 0
-    AnchorMinStart: {x: 0, y: 0, z: 0}
-    AnchorMinEnd: {x: 0, y: 0, z: 0}
-    AnchorMaxState: 0
-    AnchorMaxStart: {x: 0, y: 0, z: 0}
-    AnchorMaxEnd: {x: 0, y: 0, z: 0}
-    PivotState: 0
-    PivotStart: {x: 0, y: 0, z: 0}
-    PivotEnd: {x: 0, y: 0, z: 0}
-    TransState: 0
-    TargetTransTask: 1
-    LocalPositionState: 0
-    LocalPositionStart: {x: 0, y: 0, z: 0}
-    LocalPositionEnd: {x: 0, y: 0, z: 0}
-    ImgState: 0
-    TargetImgTask: 1
-    ColorState: 1
-    ColorStart: {r: 0, g: 0, b: 0, a: 0}
-    ColorEnd: {r: 0, g: 0, b: 0, a: 1}
-    FillAmountState: 0
-    FillAmountStart: 0
-    FillAmountEnd: 0
-    TargetCgTask: 1
-    AlphaState: 0
-    AlphaStart: 0
-    AlphaEnd: 0
-    TargetCamTask: 1
-    BackgroundColorState: 0
-    BackgroundColorStart: {r: 0, g: 0, b: 0, a: 0}
-    BackgroundColorEnd: {r: 0, g: 0, b: 0, a: 0}
-    OrthographicSizeState: 0
-    OrthographicSizeStart: 0
-    OrthographicSizeEnd: 0
-    TargetTextMeshProTask: 1
-    TextMeshProColorState: 0
-    TextMeshProColorStart: {r: 0, g: 0, b: 0, a: 0}
-    TextMeshProColorEnd: {r: 0, g: 0, b: 0, a: 0}
-    MaxVisibleCharactersState: 0
-    MaxVisibleCharactersStart: 0
-    MaxVisibleCharactersEnd: 0
-    TestInt: 0
-  - AtTime: At 0s [Wait 0.3s]
-    StartTime: 0
-    TriggerStart: 0
-    TriggerEnd: 0
-    PropertyRectHeight: 60
-    PropertyRectY: 316
-    SequenceType: 1
-    EaseType: 1
-    EasePower: 3
-    TargetType: 1
-    TargetComp: {fileID: 14167991}
-    Duration: 0.3
-    EventDynamic:
-      m_PersistentCalls:
-        m_Calls: []
-    IsUnfolded: 1
-    IsDone: 0
-    Target: {fileID: 0}
-    IsActivating: 1
-    PlaySFXBy: 0
-    SFXFile: {fileID: 0}
-    SFXIndex: 0
-    SceneToLoad: 
-    Event:
-      m_PersistentCalls:
-        m_Calls: []
-    TargetRtTask: 1
-    AnchoredPositionState: 0
-    AnchoredPositionStart: {x: 0, y: 0, z: 0}
-    AnchoredPositionEnd: {x: 0, y: 0, z: 0}
-    LocalScaleState: 0
-    LocalScaleStart: {x: 0, y: 0, z: 0}
-    LocalScaleEnd: {x: 0, y: 0, z: 0}
-    LocalEulerAnglesState: 0
-    LocalEulerAnglesStart: {x: 0, y: 0, z: 0}
-    LocalEulerAnglesEnd: {x: 0, y: 0, z: 0}
-    SizeDeltaState: 0
-    SizeDeltaStart: {x: 0, y: 0, z: 0}
-    SizeDeltaEnd: {x: 0, y: 0, z: 0}
-    AnchorMinState: 0
-    AnchorMinStart: {x: 0, y: 0, z: 0}
-    AnchorMinEnd: {x: 0, y: 0, z: 0}
-    AnchorMaxState: 0
-    AnchorMaxStart: {x: 0, y: 0, z: 0}
-    AnchorMaxEnd: {x: 0, y: 0, z: 0}
-    PivotState: 0
-    PivotStart: {x: 0, y: 0, z: 0}
-    PivotEnd: {x: 0, y: 0, z: 0}
-    TransState: 0
-    TargetTransTask: 1
-    LocalPositionState: 0
-    LocalPositionStart: {x: 0, y: 0, z: 0}
-    LocalPositionEnd: {x: 0, y: 0, z: 0}
-    ImgState: 0
-    TargetImgTask: 1
-    ColorState: 0
-    ColorStart: {r: 0, g: 0, b: 0, a: 0}
-    ColorEnd: {r: 0, g: 0, b: 0, a: 0}
-    FillAmountState: 0
-    FillAmountStart: 0
-    FillAmountEnd: 0
-    TargetCgTask: 1
-    AlphaState: 0
-    AlphaStart: 0
-    AlphaEnd: 0
-    TargetCamTask: 1
-    BackgroundColorState: 0
-    BackgroundColorStart: {r: 0, g: 0, b: 0, a: 0}
-    BackgroundColorEnd: {r: 0, g: 0, b: 0, a: 0}
-    OrthographicSizeState: 0
-    OrthographicSizeStart: 0
-    OrthographicSizeEnd: 0
-    TargetTextMeshProTask: 1
-    TextMeshProColorState: 0
-    TextMeshProColorStart: {r: 0, g: 0, b: 0, a: 0}
-    TextMeshProColorEnd: {r: 0, g: 0, b: 0, a: 0}
-    MaxVisibleCharactersState: 0
-    MaxVisibleCharactersStart: 0
-    MaxVisibleCharactersEnd: 0
-    TestInt: 0
-  - AtTime: At 0.3s [[Group] Home] [SetActive to True]
-    StartTime: 0.3
-    TriggerStart: 0
-    TriggerEnd: 0
-    PropertyRectHeight: 80
-    PropertyRectY: 378
-    SequenceType: 3
-    EaseType: 1
-    EasePower: 3
-    TargetType: 3
-    TargetComp: {fileID: 14167991}
-    Duration: 0
-    EventDynamic:
-      m_PersistentCalls:
-        m_Calls: []
-    IsUnfolded: 1
-    IsDone: 0
-    Target: {fileID: 333660628}
-    IsActivating: 1
-    PlaySFXBy: 0
-    SFXFile: {fileID: 0}
-    SFXIndex: 0
-    SceneToLoad: 
-    Event:
-      m_PersistentCalls:
-        m_Calls: []
-    TargetRtTask: 1
-    AnchoredPositionState: 0
-    AnchoredPositionStart: {x: 0, y: 0, z: 0}
-    AnchoredPositionEnd: {x: 0, y: 0, z: 0}
-    LocalScaleState: 0
-    LocalScaleStart: {x: 0, y: 0, z: 0}
-    LocalScaleEnd: {x: 0, y: 0, z: 0}
-    LocalEulerAnglesState: 0
-    LocalEulerAnglesStart: {x: 0, y: 0, z: 0}
-    LocalEulerAnglesEnd: {x: 0, y: 0, z: 0}
-    SizeDeltaState: 0
-    SizeDeltaStart: {x: 0, y: 0, z: 0}
-    SizeDeltaEnd: {x: 0, y: 0, z: 0}
-    AnchorMinState: 0
-    AnchorMinStart: {x: 0, y: 0, z: 0}
-    AnchorMinEnd: {x: 0, y: 0, z: 0}
-    AnchorMaxState: 0
-    AnchorMaxStart: {x: 0, y: 0, z: 0}
-    AnchorMaxEnd: {x: 0, y: 0, z: 0}
-    PivotState: 0
-    PivotStart: {x: 0, y: 0, z: 0}
-    PivotEnd: {x: 0, y: 0, z: 0}
-    TransState: 0
-    TargetTransTask: 1
-    LocalPositionState: 0
-    LocalPositionStart: {x: 0, y: 0, z: 0}
-    LocalPositionEnd: {x: 0, y: 0, z: 0}
-    ImgState: 0
-    TargetImgTask: 1
-    ColorState: 0
-    ColorStart: {r: 0, g: 0, b: 0, a: 1}
-    ColorEnd: {r: 0, g: 0, b: 0, a: 0}
-    FillAmountState: 0
-    FillAmountStart: 0
-    FillAmountEnd: 0
-    TargetCgTask: 1
-    AlphaState: 0
-    AlphaStart: 0
-    AlphaEnd: 0
-    TargetCamTask: 1
-    BackgroundColorState: 0
-    BackgroundColorStart: {r: 0, g: 0, b: 0, a: 0}
-    BackgroundColorEnd: {r: 0, g: 0, b: 0, a: 0}
-    OrthographicSizeState: 0
-    OrthographicSizeStart: 0
-    OrthographicSizeEnd: 0
-    TargetTextMeshProTask: 1
-    TextMeshProColorState: 0
-    TextMeshProColorStart: {r: 0, g: 0, b: 0, a: 0}
-    TextMeshProColorEnd: {r: 0, g: 0, b: 0, a: 0}
-    MaxVisibleCharactersState: 0
-    MaxVisibleCharactersStart: 0
-    MaxVisibleCharactersEnd: 0
-    TestInt: 0
-  - AtTime: At 0.3s [[Blocker]] [Image]
-    StartTime: 0.3
-    TriggerStart: 0
-    TriggerEnd: 0
-    PropertyRectHeight: 180
-    PropertyRectY: 460
-    SequenceType: 0
-    EaseType: 1
-    EasePower: 3
-    TargetType: 3
-    TargetComp: {fileID: 14167991}
-    Duration: 0.2
-    EventDynamic:
-      m_PersistentCalls:
-        m_Calls: []
-    IsUnfolded: 1
-    IsDone: 0
-    Target: {fileID: 0}
-    IsActivating: 1
-    PlaySFXBy: 0
-    SFXFile: {fileID: 0}
-    SFXIndex: 0
-    SceneToLoad: 
-    Event:
-      m_PersistentCalls:
-        m_Calls: []
-    TargetRtTask: 1
-    AnchoredPositionState: 0
-    AnchoredPositionStart: {x: 0, y: 0, z: 0}
-    AnchoredPositionEnd: {x: 0, y: 0, z: 0}
-    LocalScaleState: 0
-    LocalScaleStart: {x: 0, y: 0, z: 0}
-    LocalScaleEnd: {x: 0, y: 0, z: 0}
-    LocalEulerAnglesState: 0
-    LocalEulerAnglesStart: {x: 0, y: 0, z: 0}
-    LocalEulerAnglesEnd: {x: 0, y: 0, z: 0}
-    SizeDeltaState: 0
-    SizeDeltaStart: {x: 0, y: 0, z: 0}
-    SizeDeltaEnd: {x: 0, y: 0, z: 0}
-    AnchorMinState: 0
-    AnchorMinStart: {x: 0, y: 0, z: 0}
-    AnchorMinEnd: {x: 0, y: 0, z: 0}
-    AnchorMaxState: 0
-    AnchorMaxStart: {x: 0, y: 0, z: 0}
-    AnchorMaxEnd: {x: 0, y: 0, z: 0}
-    PivotState: 0
-    PivotStart: {x: 0, y: 0, z: 0}
-    PivotEnd: {x: 0, y: 0, z: 0}
-    TransState: 0
-    TargetTransTask: 1
-    LocalPositionState: 0
-    LocalPositionStart: {x: 0, y: 0, z: 0}
-    LocalPositionEnd: {x: 0, y: 0, z: 0}
-    ImgState: 0
-    TargetImgTask: 1
-    ColorState: 0
-    ColorStart: {r: 0, g: 0, b: 0, a: 1}
-    ColorEnd: {r: 0, g: 0, b: 0, a: 0}
-    FillAmountState: 0
-    FillAmountStart: 0
-    FillAmountEnd: 0
-    TargetCgTask: 1
-    AlphaState: 0
-    AlphaStart: 0
-    AlphaEnd: 0
-    TargetCamTask: 1
-    BackgroundColorState: 0
-    BackgroundColorStart: {r: 0, g: 0, b: 0, a: 0}
-    BackgroundColorEnd: {r: 0, g: 0, b: 0, a: 0}
-    OrthographicSizeState: 0
-    OrthographicSizeStart: 0
-    OrthographicSizeEnd: 0
-    TargetTextMeshProTask: 1
-    TextMeshProColorState: 0
-    TextMeshProColorStart: {r: 0, g: 0, b: 0, a: 0}
-    TextMeshProColorEnd: {r: 0, g: 0, b: 0, a: 0}
-    MaxVisibleCharactersState: 0
-    MaxVisibleCharactersStart: 0
-    MaxVisibleCharactersEnd: 0
-    TestInt: 0
-  PlayOnStart: 0
-  CurrentTime: 0
-  IsPlayingInEditMode: 0
 --- !u!1 &19729668
 GameObject:
   m_ObjectHideFlags: 0
@@ -4313,7 +3976,7 @@ MonoBehaviour:
   - {fileID: 3012828529455663636, guid: f3fba892a227ebc4a9b831582980b5b3, type: 3}
   _home: {fileID: 333660628}
   _blackScreenAnimation: {fileID: 2094122736}
-  _backToHomeAnimation: {fileID: 14167994}
+  _backToHomeAnimation: {fileID: 0}
   _streamingEndAnimation: {fileID: 1037574353}
   _endStreamButton: {fileID: 1734379878}
 --- !u!1001 &1517703982
@@ -4441,6 +4104,11 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5427600190162897140, guid: 23929e94189f5aa479eab17fa6479015, type: 3}
   m_PrefabInstance: {fileID: 1517703982}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1615635623 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4547383088177180327, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+  m_PrefabInstance: {fileID: 4547383087175739468}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1709622396
 PrefabInstance:
@@ -4863,12 +4531,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32
+  m_fontSize: 24
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 6
-  m_fontSizeMax: 32
+  m_fontSizeMax: 24
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -5173,12 +4841,29 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
   m_PrefabInstance: {fileID: 4547383087175739468}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1615635623}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f54930f0f8f7f2478377a55d6c33e4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2094122740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615635623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &2108539021
 GameObject:
   m_ObjectHideFlags: 0
@@ -5405,24 +5090,592 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: TotalDuration
+      value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[0].AtTime
+      value: At 0s [[Blocker]] [SetActive to True]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[0].Target
+      value: 
+      objectReference: {fileID: 14167990}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[1].AtTime
+      value: At 0s [[Blocker]] [Image]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[1].Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[2].AtTime
+      value: At 0s [Wait 0.25s]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
       propertyPath: AnimationSequence.Array.data[2].Target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].AtTime
+      value: At 0.25s [[Group] Home] [SetActive to False]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].Target
+      value: 
       objectReference: {fileID: 333660628}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].AtTime
+      value: At 0.25s [[Blocker]] [Image]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].AtTime
+      value: At 0.25s [Wait 0.3s]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].AtTime
+      value: At 0.55s [[Blocker]] [SetActive to False]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].Target
+      value: 
+      objectReference: {fileID: 14167990}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[7].AtTime
+      value: At 0.65s [[Blocker]] [SetActive to False]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[7].Target
+      value: 
+      objectReference: {fileID: 14167990}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[8].AtTime
+      value: At 0.65s [[Blocker]] [SetActive to False]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[8].Target
+      value: 
+      objectReference: {fileID: 14167990}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[0].Duration
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[1].Duration
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[2].Duration
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].Duration
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].Duration
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].EaseType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].Duration
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].EaseType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].Duration
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].EaseType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[7].Duration
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[7].EaseType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[8].EaseType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[0].StartTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[1].StartTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[2].StartTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].StartTime
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].EasePower
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].StartTime
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].EasePower
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].StartTime
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].EasePower
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].StartTime
+      value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[7].EasePower
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[7].StartTime
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[8].EasePower
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[8].StartTime
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[0].ColorEnd.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[0].ColorState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[0].IsUnfolded
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[1].ColorEnd.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[1].IsUnfolded
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[1].TargetType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[2].ColorEnd.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[2].IsUnfolded
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[2].TargetType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].IsUnfolded
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].TargetType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].IsUnfolded
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].TargetComp
+      value: 
+      objectReference: {fileID: 14167991}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].TargetType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].IsUnfolded
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].TargetComp
+      value: 
+      objectReference: {fileID: 14167991}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].TargetType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].TargetComp
+      value: 
+      objectReference: {fileID: 14167991}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].TargetType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[7].IsUnfolded
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[7].TargetComp
+      value: 
+      objectReference: {fileID: 14167991}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[7].TargetType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[8].IsUnfolded
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[8].TargetComp
+      value: 
+      objectReference: {fileID: 14167991}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[8].TargetType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[0].ColorStart.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[0].SequenceType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[1].ColorStart.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[1].SequenceType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[2].ColorStart.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[2].IsActivating
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[2].SequenceType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].ColorStart.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].IsActivating
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].SequenceType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].ColorStart.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].IsActivating
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].SequenceType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].TargetCgTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].TargetRtTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].ColorStart.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].IsActivating
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].SequenceType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].TargetCgTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].TargetRtTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].ColorStart.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].IsActivating
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].SequenceType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].TargetCgTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].TargetRtTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[7].ColorStart.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[7].IsActivating
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[7].SequenceType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[7].TargetCgTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[7].TargetRtTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[8].ColorStart.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[8].IsActivating
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[8].SequenceType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[8].TargetCgTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[8].TargetRtTask
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
       propertyPath: AnimationSequence.Array.data[0].PropertyRectY
       value: 133
       objectReference: {fileID: 0}
     - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
       propertyPath: AnimationSequence.Array.data[1].PropertyRectY
-      value: 316
+      value: 155
       objectReference: {fileID: 0}
     - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
       propertyPath: AnimationSequence.Array.data[2].PropertyRectY
-      value: 378
+      value: 177
       objectReference: {fileID: 0}
     - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
       propertyPath: AnimationSequence.Array.data[3].PropertyRectY
-      value: 400
+      value: 199
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].PropertyRectY
+      value: 221
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].TargetCamTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].TargetImgTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].PropertyRectY
+      value: 243
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].TargetCamTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].TargetImgTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].PropertyRectY
+      value: 265
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].TargetCamTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].TargetImgTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[7].PropertyRectY
+      value: 179
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[7].TargetCamTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[7].TargetImgTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[8].PropertyRectY
+      value: 261
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[8].TargetCamTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[8].TargetImgTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].TargetTransTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].TargetTransTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].TargetTransTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[7].TargetTransTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[8].TargetTransTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[0].PropertyRectHeight
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[1].PropertyRectHeight
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[2].PropertyRectHeight
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].PropertyRectHeight
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].PropertyRectHeight
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].PropertyRectHeight
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].PropertyRectHeight
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[7].PropertyRectHeight
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[8].PropertyRectHeight
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].TargetTextMeshProTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].TargetTextMeshProTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].TargetTextMeshProTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[7].TargetTextMeshProTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094122736, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: AnimationSequence.Array.data[8].TargetTextMeshProTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547383087169964020, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547383087169964026, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4547383088177180323, guid: d19f6cf05958e9f458a21422b5801a02, type: 3}
       propertyPath: m_Pivot.x

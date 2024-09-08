@@ -12,9 +12,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 16466b30b292c8a499086c4763007ddc, type: 2}
     - target: {fileID: 3914189445726561639, guid: 5c100974281cde942ab96f14d283140d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3914189445726561639, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d6e825417d4d8ce4dbcd91a1c4d142e4, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 3914189446115555672, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -61,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3914189446115555673, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_Name
-      value: '[Rak] jeruk (6) Variant'
+      value: '[Rak] jeruk (6)'
       objectReference: {fileID: 0}
     - target: {fileID: 3914189446115555673, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_IsActive

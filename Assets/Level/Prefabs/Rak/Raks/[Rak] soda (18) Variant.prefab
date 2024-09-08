@@ -20,9 +20,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2800000, guid: 0138ebe6bfee3cf4cb7466dac8313619, type: 3}
     - target: {fileID: 3914189445726561639, guid: 5c100974281cde942ab96f14d283140d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3914189445726561639, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 75a207d60037be24b9b32c36536b2710, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 3914189445726561640, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.28390294
@@ -73,7 +77,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3914189446115555673, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_Name
-      value: '[Rak] soda (18) Variant'
+      value: '[Rak] soda (18)'
       objectReference: {fileID: 0}
     - target: {fileID: 3914189446115555673, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_IsActive

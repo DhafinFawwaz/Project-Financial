@@ -25,6 +25,10 @@ public class AfterStreaming : MonoBehaviour
         var viewsEachDay = Save.Data.ViewsEachDay; viewsEachDay.Insert(0, 0);
         var subscriberEachDay = Save.Data.SubscriberEachDay; subscriberEachDay.Insert(0, 0);
         var moneyEachDay = Save.Data.MoneyEachDay; moneyEachDay.Insert(0, 0);
+
+        if(viewsEachDay.Count == 2) viewsEachDay[0] = viewsEachDay[1];
+        if(subscriberEachDay.Count == 2) subscriberEachDay[0] = subscriberEachDay[1];
+        if(moneyEachDay.Count == 2) moneyEachDay[0] = moneyEachDay[1];
         
         Debug.Log(viewsEachDay.Count);
 

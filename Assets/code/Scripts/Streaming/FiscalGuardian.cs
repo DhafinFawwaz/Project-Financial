@@ -22,6 +22,9 @@ public class FiscalGuardian : StreamingGames
     [Header("Story")]
     [SerializeField] GameObject _firstTimeDialog;
     [SerializeField] UnityEvent _onFirstTime;
+
+    [Header("Event")]
+    public UnityEvent OnGameStart;
     void Awake()
     {
         if(Save.Data.CurrentDay == 0) {
@@ -34,20 +37,23 @@ public class FiscalGuardian : StreamingGames
 
     public override void Play()
     {
-        if(Save.Data.CurrentDay == 0 && Save.Data.CurrentDayData.StreamingCounter == 0) LoadDialog();
-        else StartCoroutine(DelayAwake());
+        if(Save.Data.CurrentDay == 0 && Save.Data.CurrentDayData.StreamingCounter == 0) {
+            this.Invoke(() => {
+                LoadDialog();
+            }, 0.5f);
+        }
+        else {
+            this.Invoke(() => {
+                _dialogCloser.SetActive(false);
+                _textRTA.SetEnd(Vector3.one).TweenLocalScale();
+                _topText.SetText(_message).Show().Play().SetOnceComplete(() => {
+                    _dialogCloser.SetActive(true);
+                    CloseStartDialog();
+                });
+            }, 0.1f);
+        }
     }
 
-    IEnumerator DelayAwake()
-    {
-        yield return new WaitForSeconds(0.1f);
-        _dialogCloser.SetActive(false);
-        _textRTA.SetEnd(Vector3.one).TweenLocalScale();
-        _topText.SetText(_message).Show().Play().SetOnceComplete(() => {
-            _dialogCloser.SetActive(true);
-            CloseStartDialog();
-        });
-    }
 
     public void CloseStartDialog()
     {
@@ -70,7 +76,8 @@ public class FiscalGuardian : StreamingGames
     [SerializeField] People[] _peoples;
     [SerializeField] RectTransformAnimation _topTextRTA;
     [SerializeField] RectTransformAnimation _ktpRTA;
-    [SerializeField] GraphicsAnimation _blackFadeBG;
+    [SerializeField] GraphicsAnimation _blackFadeKTP;
+    [SerializeField] GraphicsAnimation _blackFadeTabungan;
     [SerializeField] RectTransformAnimation _slideRTA;
     [SerializeField] Image _peopleImg;
     [SerializeField] Image _ktpImg;
@@ -118,6 +125,7 @@ public class FiscalGuardian : StreamingGames
 
     public void StartGame()
     {
+        OnGameStart?.Invoke();
         _peopleAppearAnimation.Play();
         // Make copy of CurrentFiscalGuardianData
         CurrentFiscalGuardianData = Instantiate(CurrentFiscalGuardianData);
@@ -180,15 +188,15 @@ public class FiscalGuardian : StreamingGames
     {
         if(isOpen) 
         {
-            _blackFadeBG.gameObject.SetActive(true);
-            _blackFadeBG.SetEndColor(new Color(0, 0, 0, 0.6f)).Play();
+            _blackFadeKTP.gameObject.SetActive(true);
+            _blackFadeKTP.SetEndColor(new Color(0, 0, 0, 0.6f)).Play();
             _ktpRTA.SetEnd(Vector3.one).TweenLocalScale();
             _slideRTA.SetEnd(new Vector2(700, -110)).TweenPosition();
         }
         else 
         {
-            _blackFadeBG.SetEndColor(new Color(0, 0, 0, 0)).SetOnceEnd(() => {
-                _blackFadeBG.gameObject.SetActive(false);
+            _blackFadeKTP.SetEndColor(new Color(0, 0, 0, 0)).SetOnceEnd(() => {
+                _blackFadeKTP.gameObject.SetActive(false);
             }).Play();
             _ktpRTA.SetEnd(Vector3.zero).TweenLocalScale();
             _slideRTA.SetEnd(new Vector2(1040, -110)).TweenPosition();
@@ -340,14 +348,14 @@ public class FiscalGuardian : StreamingGames
     {
         if(isOpen) 
         {
-            _blackFadeBG.gameObject.SetActive(true);
-            _blackFadeBG.SetEndColor(new Color(0, 0, 0, 0.6f)).Play();
+            _blackFadeTabungan.gameObject.SetActive(true);
+            _blackFadeTabungan.SetEndColor(new Color(0, 0, 0, 0.6f)).Play();
             _bukuTabunganRTA.SetEnd(Vector3.one).TweenLocalScale();
         }
         else 
         {
-            _blackFadeBG.SetEndColor(new Color(0, 0, 0, 0)).SetOnceEnd(() => {
-                _blackFadeBG.gameObject.SetActive(false);
+            _blackFadeTabungan.SetEndColor(new Color(0, 0, 0, 0)).SetOnceEnd(() => {
+                _blackFadeTabungan.gameObject.SetActive(false);
             }).Play();
             _bukuTabunganRTA.SetEnd(Vector3.zero).TweenLocalScale();
         }
