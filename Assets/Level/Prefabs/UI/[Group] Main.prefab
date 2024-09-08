@@ -7952,6 +7952,10 @@ MonoBehaviour:
   _popUpCannotBuy: {fileID: 3857127822182247124}
   _popUpInsufficient: {fileID: 0}
   _priceText: {fileID: 3857127821256212245}
+  _prices: 
+  _onBuyConfirmed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8210983546239621998
 GameObject:
   m_ObjectHideFlags: 0
@@ -10402,6 +10406,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5939752559221239390, guid: b1a971313e8d5204d8a1e9d8198497bf, type: 3}
+      propertyPath: m_text
+      value: Yakin ingin membeli item ini ?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5939752559221239390, guid: b1a971313e8d5204d8a1e9d8198497bf, type: 3}
+      propertyPath: m_fontSize
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 7439269738449166276, guid: b1a971313e8d5204d8a1e9d8198497bf, type: 3}
       propertyPath: m_LocalScale.x
       value: 0
@@ -10437,6 +10449,10 @@ PrefabInstance:
     - target: {fileID: 7439269740197213898, guid: b1a971313e8d5204d8a1e9d8198497bf, type: 3}
       propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788244910715009093, guid: b1a971313e8d5204d8a1e9d8198497bf, type: 3}
+      propertyPath: m_text
+      value: Skill Points mu belum cukup untuk membeli benda ini
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1a971313e8d5204d8a1e9d8198497bf, type: 3}

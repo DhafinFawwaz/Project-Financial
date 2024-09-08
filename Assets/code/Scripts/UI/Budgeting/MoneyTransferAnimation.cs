@@ -51,6 +51,7 @@ public class MoneyTransferAnimation : MonoBehaviour
     {
         float t = 0;
         float lastSpawnTime = 0;
+        lastSpawnTime = Time.time;
         while(t < _duration)
         {
             t += Time.deltaTime;

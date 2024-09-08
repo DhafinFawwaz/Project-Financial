@@ -96,7 +96,7 @@ public class SaveData
         CurrentDay = 0;
         CurrentListBelanja = new List<ItemCount>();
         CurrentBelanjaMoney = 0;
-        SkillPoints = 100;
+        SkillPoints = 1;
 
         NeedsMoney = 200000;
         DesireMoney = 60000;

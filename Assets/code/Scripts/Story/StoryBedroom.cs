@@ -88,8 +88,10 @@ public class StoryBedroom : MonoBehaviour
         else if(d == 8) ApplyStocks(8);
         else if(d == 11) ApplyStocks(11);
         else if(d == 14) ApplyStocks(14);
+        else ApplyStocks(14);
 
         Save.Data.HapinessItemStocks = _dayData.State[d].HapinessItemStocks;
+        Save.Data.SkillPoints++;
     }
     void ApplyStocks(int _dayIndex)
     {

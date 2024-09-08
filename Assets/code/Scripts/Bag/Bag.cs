@@ -71,7 +71,14 @@ public class Bag : MonoBehaviour
         MouseCursor.Main.SetToCursor();
         if(IsBuyable(id))
         {
-            _priceText.text = "3";
+            if(Save.Data.SkillPoints < _prices[id])
+            {
+                _popUpInsufficient.Show();
+                return;
+            }
+
+
+            _priceText.text = _prices[id].ToString();
             _popUpBuy.Show();
             _selectedItemID = id;
         }
