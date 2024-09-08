@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MainMenuAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 100
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 5346737dd88021240b211fec1badc50c, type: 3}
+    - {fileID: 2800000, guid: eaabef74cd64b5f46bafabb8c0ef0ff9, type: 3}
+    - {fileID: 2800000, guid: 23946fa08d343fd40a0e3bff6d1026aa, type: 3}
+    - {fileID: 2800000, guid: 8e6187cd1c6733b43adc5acc77211f09, type: 3}
+    - {fileID: 2800000, guid: 1382fb1590f1ede4b8e0ace99ea99434, type: 3}
+    - {fileID: 2800000, guid: 93d218e7e3be84042a7743ac5ec6830e, type: 3}
+    - {fileID: 2800000, guid: 860c3bfbeb94b6140822948f415870f6, type: 3}
+    - {fileID: 2800000, guid: 319fa9b8dfea9bb4598592238723a334, type: 3}
+    - {fileID: 2800000, guid: 3eb91c21a72a98441a8c5d0b7f49ab1b, type: 3}
+    - {fileID: 2800000, guid: 4923fdd5d1926d944859dbc370d78687, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 23946fa08d343fd40a0e3bff6d1026aa, type: 3}
+  - {fileID: 21300000, guid: 3eb91c21a72a98441a8c5d0b7f49ab1b, type: 3}
+  - {fileID: 21300000, guid: eaabef74cd64b5f46bafabb8c0ef0ff9, type: 3}
+  - {fileID: 21300000, guid: 1382fb1590f1ede4b8e0ace99ea99434, type: 3}
+  - {fileID: 21300000, guid: 4923fdd5d1926d944859dbc370d78687, type: 3}
+  - {fileID: 21300000, guid: 93d218e7e3be84042a7743ac5ec6830e, type: 3}
+  - {fileID: 21300000, guid: 319fa9b8dfea9bb4598592238723a334, type: 3}
+  - {fileID: 21300000, guid: 860c3bfbeb94b6140822948f415870f6, type: 3}
+  - {fileID: 21300000, guid: 5346737dd88021240b211fec1badc50c, type: 3}
+  - {fileID: 21300000, guid: 8e6187cd1c6733b43adc5acc77211f09, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - exit button
+  - start popup
+  - credits menu  pop up
+  - setting button
+  - title
+  - settings menu  pop up
+  - start menu background
+  - start button
+  - credits button
+  - exit menu  pop up
+  m_RenderDataMap: {}
+  m_Tag: MainMenuAtlas
+  m_IsVariant: 0

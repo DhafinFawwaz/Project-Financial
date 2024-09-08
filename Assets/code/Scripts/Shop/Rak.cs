@@ -14,7 +14,7 @@ public class Rak : Interactable
     [SerializeField] OptionData _optionData;
     public OptionData OptionData => _optionDataCopy;
 
-    const float INITIAL_SESSION_TIME = 6;
+    const float INITIAL_SESSION_TIME = 8;
     [HideInInspector] public float SessionTime = INITIAL_SESSION_TIME; // will be set by OptionSession
 
 

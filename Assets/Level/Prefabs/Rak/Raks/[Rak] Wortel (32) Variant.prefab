@@ -11,10 +11,18 @@ PrefabInstance:
       propertyPath: _optionData
       value: 
       objectReference: {fileID: 11400000, guid: 689c2db4b0267814da09741be11abe5a, type: 2}
+    - target: {fileID: 3428490933561126042, guid: 5c100974281cde942ab96f14d283140d, type: 3}
+      propertyPath: _texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 34c5bcb861755cb4fa53c912441d6596, type: 3}
     - target: {fileID: 3914189445726561639, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: caaddf9d3fb6be34b80a4398f464d40a, type: 2}
+    - target: {fileID: 3914189445726561640, guid: 5c100974281cde942ab96f14d283140d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.29573205
+      objectReference: {fileID: 0}
     - target: {fileID: 3914189445726561640, guid: 5c100974281cde942ab96f14d283140d, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5914641

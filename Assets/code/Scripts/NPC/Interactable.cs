@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -39,15 +40,18 @@ public class Interactable : MonoBehaviour
     public void SetActiveLabel(bool isActive)
     {
         _isShowingPrompt = isActive;
-        if(_isShowingPrompt)
+        if(_isShowingPrompt){
+            _interactablePromptAnchor.gameObject.SetActive(true);
             StartCoroutine(TweenLocalScale(_interactablePromptAnchor.transform, _interactablePromptAnchor.transform.localScale, Vector3.one, 0.15f, Ease.OutBackQuart));
-        else
-            StartCoroutine(TweenLocalScale(_interactablePromptAnchor.transform, _interactablePromptAnchor.transform.localScale, Vector3.zero, 0.15f, Ease.InCubic));
+        }
+        else {
+            StartCoroutine(TweenLocalScale(_interactablePromptAnchor.transform, _interactablePromptAnchor.transform.localScale, Vector3.zero, 0.15f, Ease.InCubic, () => _interactablePromptAnchor.gameObject.SetActive(false)));
+        }
     }
 
 
     byte _scaleKey = 0;
-    IEnumerator TweenLocalScale(Transform rt, Vector3 start, Vector3 end, float duration, Ease.Function easeFunction)
+    IEnumerator TweenLocalScale(Transform rt, Vector3 start, Vector3 end, float duration, Ease.Function easeFunction, Action onComplete = null)
     {
         byte requirement = ++_scaleKey;
         float startTime = Time.time;
@@ -59,6 +63,9 @@ public class Interactable : MonoBehaviour
             yield return null;
         }
         if(_scaleKey == requirement)
+        {
             rt.localScale = end;
+            onComplete?.Invoke();
+        }
     }
 }

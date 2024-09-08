@@ -193,7 +193,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6423018795159384182
 Transform:
@@ -343,4 +343,7 @@ MonoBehaviour:
   _cameraTarget: {fileID: 4658826339143511276}
   _item: {fileID: 3430299987294528270, guid: 484debaacad5c18439cd40958616cc37, type: 3}
   _optionData: {fileID: 11400000, guid: a2e69c50fa6f76546b4d55d99d94ea1c, type: 2}
+  SessionTime: 6
   Player: {fileID: 0}
+  _lightenGO: {fileID: 0}
+  _darkenGO: {fileID: 0}

@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Skill
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 100
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 4842e7b2270bb81409d56aa1317ee9d2, type: 3}
+    - {fileID: 2800000, guid: 2a0a003b7a6b1664184d9cc10961fd19, type: 3}
+    - {fileID: 2800000, guid: b0843f2fb95fd2d43a980a0a321e59b2, type: 3}
+    - {fileID: 2800000, guid: 25623aa645fb7a6489f4a2337356a77f, type: 3}
+    - {fileID: 2800000, guid: b79eb7714578c204f967943a87969e51, type: 3}
+    - {fileID: 2800000, guid: 74ba1715164e33f4486f9112709e185f, type: 3}
+    - {fileID: 2800000, guid: 862662e9c9b8e2e4eb8bddcb3800d9be, type: 3}
+    - {fileID: 2800000, guid: 23e56da886dd88848a6194c24df9df3b, type: 3}
+    - {fileID: 2800000, guid: ff8b4f4e60d4be6468c7096502a8d122, type: 3}
+    - {fileID: 2800000, guid: 0b69e2c71b9237f4cb8d329832fbb3f3, type: 3}
+    - {fileID: 2800000, guid: ff88fd20baf920e48ac8f4966552025c, type: 3}
+    - {fileID: 2800000, guid: 2ff93ea5dda178d4389a4fbb4db0f137, type: 3}
+    - {fileID: 2800000, guid: 304c243470272c242aa92c70e25e05db, type: 3}
+    - {fileID: 2800000, guid: b7e10b9dd814314489fca81edbaf1e89, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: ff88fd20baf920e48ac8f4966552025c, type: 3}
+  - {fileID: 21300000, guid: b79eb7714578c204f967943a87969e51, type: 3}
+  - {fileID: 21300000, guid: 304c243470272c242aa92c70e25e05db, type: 3}
+  - {fileID: 21300000, guid: 74ba1715164e33f4486f9112709e185f, type: 3}
+  - {fileID: 21300000, guid: 2ff93ea5dda178d4389a4fbb4db0f137, type: 3}
+  - {fileID: 21300000, guid: 25623aa645fb7a6489f4a2337356a77f, type: 3}
+  - {fileID: 21300000, guid: 0b69e2c71b9237f4cb8d329832fbb3f3, type: 3}
+  - {fileID: 21300000, guid: 23e56da886dd88848a6194c24df9df3b, type: 3}
+  - {fileID: 21300000, guid: 862662e9c9b8e2e4eb8bddcb3800d9be, type: 3}
+  - {fileID: 21300000, guid: 2a0a003b7a6b1664184d9cc10961fd19, type: 3}
+  - {fileID: 21300000, guid: b7e10b9dd814314489fca81edbaf1e89, type: 3}
+  - {fileID: 21300000, guid: ff8b4f4e60d4be6468c7096502a8d122, type: 3}
+  - {fileID: 21300000, guid: b0843f2fb95fd2d43a980a0a321e59b2, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - badge_senter
+  - popup skill4
+  - badge_sepatu
+  - skill popup
+  - badge_senter2
+  - popup skill3
+  - badge_object finder2
+  - badge_call2
+  - badge_call
+  - popup skill1
+  - badge_sepatu2
+  - badge_object finder
+  - popup skill2
+  m_RenderDataMap: {}
+  m_Tag: Skill
+  m_IsVariant: 0

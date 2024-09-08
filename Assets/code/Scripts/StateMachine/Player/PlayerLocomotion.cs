@@ -26,12 +26,14 @@ public class PlayerLocomotion : MonoBehaviour
         if(_swapYAndZ) _moveInputDirection = new Vector3(_moveInputDirection.x, _moveInputDirection.z, _moveInputDirection.y);
 		
 		float targetSpeed = _moveInputDirection.magnitude * _core.Stats.MoveSpeed;
+        _moveInputDirection.x *= 0.75f;
 		Vector3 speedDif = _moveInputDirection * _core.Stats.MoveSpeed - _rb.velocity;
 
 		float accelerationRate;
         accelerationRate = (Mathf.Abs(targetSpeed) > 0.01f) ? _core.Stats.Acceleration : _core.Stats.Deceleration;
 
-		_rb.AddForce(accelerationRate * speedDif);
+		
+        _rb.AddForce(accelerationRate * speedDif);
 	}
 
 }
