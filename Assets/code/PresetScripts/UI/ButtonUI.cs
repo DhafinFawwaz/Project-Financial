@@ -73,7 +73,7 @@ public class ButtonUI : Selectable, IPointerClickHandler, ISubmitHandler
         s_onClick?.Invoke();
         _onClick?.Invoke();
         if(!interactable) return;
-        if(targetGraphic != null)
+        if(targetGraphic != null && gameObject.activeInHierarchy)
         {
             StartCoroutine(TweenLocalScale(targetGraphic.transform, Vector3.one*_scales.pressedScale, Vector3.one*_scales.highlightedScale, _scales.fadeDuration, Ease.OutBackQuart));
             StartCoroutine(TweenGraphicColor(targetGraphic, colors.pressedColor, colors.highlightedColor, colors.fadeDuration, Ease.OutQuart));

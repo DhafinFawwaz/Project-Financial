@@ -4027,7 +4027,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1241954867
 Transform:
   m_ObjectHideFlags: 0
@@ -8674,6 +8674,10 @@ PrefabInstance:
       propertyPath: _spawnPoint.z
       value: -2.46
       objectReference: {fileID: 0}
+    - target: {fileID: 8566413966477842585, guid: e2d069011175c8944bb5f5b138947ba7, type: 3}
+      propertyPath: _sceneTransition
+      value: 
+      objectReference: {fileID: 7362877955999011859, guid: 123f78476cf8a9b4d9d26baf3f8572a7, type: 3}
     - target: {fileID: 8566413966477842585, guid: e2d069011175c8944bb5f5b138947ba7, type: 3}
       propertyPath: _movePlayerToSpawnPoint
       value: 1
