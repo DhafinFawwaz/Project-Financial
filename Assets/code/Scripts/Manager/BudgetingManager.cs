@@ -18,7 +18,7 @@ public class BudgetingManager : MonoBehaviour
         _ktpWorld.SetMoney(Save.Data.NeedsMoney)
             .SetHappiness(Save.Data.Happiness)
             .SetHealth(Save.Data.Health)
-            .SetSkillPoint(Save.Data.SkillPoin);
+            .SetSkillPoint(Save.Data.SkillPoints);
     }
 
 

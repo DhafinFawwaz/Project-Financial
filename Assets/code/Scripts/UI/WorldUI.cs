@@ -99,7 +99,7 @@ public class WorldUI : MonoBehaviour
         
         _ktpWorld.SetHappiness(Save.Data.Happiness)
             .SetHealth(Save.Data.Health)
-            .SetSkillPoint(Save.Data.SkillPoin);
+            .SetSkillPoint(Save.Data.SkillPoints);
 
         if(_isDesireMoney) _ktpWorld.SetMoney(Save.Data.DesireMoney);
         else if(_isNeedsMoney) _ktpWorld.SetMoney(Save.Data.NeedsMoney);

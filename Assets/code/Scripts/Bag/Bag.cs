@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Bag : MonoBehaviour
 {
@@ -94,9 +95,15 @@ public class Bag : MonoBehaviour
         return !_gosokableBlokers[id].activeInHierarchy;
     }
 
+
+    [SerializeField] int[] _prices;
+    [SerializeField] UnityEvent _onBuyConfirmed;
     public void BuyConfirmed()
     {
         _popUpBuy.Hide();
         _gosokableBlokers[_selectedItemID].SetActive(false);
+
+        Save.Data.SkillPoints -= _prices[_selectedItemID];
+        _onBuyConfirmed?.Invoke();
     }
 }

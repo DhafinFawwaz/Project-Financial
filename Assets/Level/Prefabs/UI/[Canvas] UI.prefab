@@ -735,6 +735,9 @@ MonoBehaviour:
   _diskonTimer: {fileID: 8225444384833956743}
   _inflasiTimer: {fileID: 4773732852432682780}
   _ktpOnly: 0
+  _isDesireMoney: 0
+  _isNeedsMoney: 1
+  _isDebitMoney: 0
   _qualityBar: {fileID: 3632133134771387467}
 --- !u!1 &8928711151860169014
 GameObject:
@@ -1247,6 +1250,34 @@ PrefabInstance:
     - target: {fileID: 2997262309432213635, guid: 71d18f475c7d39c4c994f286e89fbeba, type: 3}
       propertyPath: _gosokAreas.Array.data[1]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2997262309432213635, guid: 71d18f475c7d39c4c994f286e89fbeba, type: 3}
+      propertyPath: _onBuyConfirmed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2997262309432213635, guid: 71d18f475c7d39c4c994f286e89fbeba, type: 3}
+      propertyPath: _onBuyConfirmed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2997262309432213635, guid: 71d18f475c7d39c4c994f286e89fbeba, type: 3}
+      propertyPath: _onBuyConfirmed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2951640873786325277}
+    - target: {fileID: 2997262309432213635, guid: 71d18f475c7d39c4c994f286e89fbeba, type: 3}
+      propertyPath: _onBuyConfirmed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2997262309432213635, guid: 71d18f475c7d39c4c994f286e89fbeba, type: 3}
+      propertyPath: _onBuyConfirmed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RefreshStates
+      objectReference: {fileID: 0}
+    - target: {fileID: 2997262309432213635, guid: 71d18f475c7d39c4c994f286e89fbeba, type: 3}
+      propertyPath: _onBuyConfirmed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WorldUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2997262309432213635, guid: 71d18f475c7d39c4c994f286e89fbeba, type: 3}
+      propertyPath: _onBuyConfirmed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3034427787041873668, guid: 71d18f475c7d39c4c994f286e89fbeba, type: 3}
       propertyPath: _itemID

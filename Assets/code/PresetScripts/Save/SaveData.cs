@@ -49,7 +49,7 @@ public class SaveData
 
     double _health = 100;
     public double Health { get => _health; set => _health = Mathf.Clamp((float)value, 0, 100); }
-    public int SkillPoin = 0;
+    public int SkillPoints = 0;
     public int CurrentDay = 0;
     public long SubscriberAmount { 
         get {
@@ -96,7 +96,7 @@ public class SaveData
         CurrentDay = 0;
         CurrentListBelanja = new List<ItemCount>();
         CurrentBelanjaMoney = 0;
-        SkillPoin = 100;
+        SkillPoints = 100;
 
         NeedsMoney = 200000;
         DesireMoney = 60000;
