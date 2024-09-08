@@ -33,6 +33,11 @@ public class PlayerCore : Core<PlayerCore, PlayerStates>
         Instance = this;
     }
 
+    public bool IsMoving()
+    {
+        return Locomotion.IsMoving();
+    }
+
     public override void OnHurt(HitRequest hitRequest, ref HitResult hitResult)
     {
 

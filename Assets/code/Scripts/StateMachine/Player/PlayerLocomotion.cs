@@ -36,4 +36,10 @@ public class PlayerLocomotion : MonoBehaviour
         _rb.AddForce(accelerationRate * speedDif);
 	}
 
+
+    public bool IsMoving()
+    {
+        return _rb.velocity.magnitude > 0.1f;
+    }
+
 }
