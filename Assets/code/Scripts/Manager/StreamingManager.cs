@@ -29,6 +29,15 @@ public class StreamingManager : MonoBehaviour
     }
 
 
+    [SerializeField] TextMeshProUGUI _healthText;
+    [SerializeField] TextMeshProUGUI _happinessText;
+    void RefreshStats()
+    {
+        _healthText.text = Save.Data.Health.ToString("0");
+        _happinessText.text = Save.Data.Happiness.ToString("0");
+    }
+
+
     IEnumerator UpdatingFace()
     {
         int lastValue = 0;
@@ -89,6 +98,10 @@ public class StreamingManager : MonoBehaviour
         game.OnGameEnd += OnGameEnd;
 
         _endStreamButton.SetButtonActive(false);
+
+        Save.Data.Health -= game.HealthCost;
+        Save.Data.Health -= game.HappinessCost;
+        RefreshStats();
     }
 
     [SerializeField] AnimationUI _backToHomeAnimation;

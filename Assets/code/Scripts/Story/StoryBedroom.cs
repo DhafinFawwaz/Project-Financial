@@ -75,6 +75,10 @@ public class StoryBedroom : MonoBehaviour
         _endDate.text = (Save.Data.CurrentDay+2).ToString();
         Save.Data.CurrentDay++;
         ApplyDayState();
+
+
+        // TODO: uncomment this
+        // Save.SaveDataToFile();   
     }
 
     [SerializeField] DayData _dayData;

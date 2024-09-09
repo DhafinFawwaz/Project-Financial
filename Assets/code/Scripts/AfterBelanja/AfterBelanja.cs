@@ -29,6 +29,9 @@ public class AfterBelanja : MonoBehaviour
 
     [SerializeField] BudgetingData _budgetingData;
 
+    [SerializeField] AnimationUI _kebutuhanAnimation;
+    [SerializeField] AnimationUI _kreditAnimation;
+
     
     void Awake()
     {
@@ -95,9 +98,11 @@ public class AfterBelanja : MonoBehaviour
             _sisaText.text = Save.Data.NeedsMoney.ToString();
             _kreditDialog.SetActive(true);
             _kebutuhanDialog.SetActive(false);
+            _kreditAnimation.Play();
         } else {
             _kreditDialog.SetActive(false);
             _kebutuhanDialog.SetActive(true);
+            _kebutuhanAnimation.Play();
         }
 
         Save.Data.TempNeedsMoney = Save.Data.NeedsMoney;

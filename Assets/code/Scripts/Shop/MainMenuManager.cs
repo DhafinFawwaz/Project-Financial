@@ -16,5 +16,11 @@ public class MainMenuManager : MonoBehaviour
     public void ExitGame() => Application.Quit();
 
 
+    public void NewGame() {
+        Save.Data = new SaveData();
+        _sceneTransition.StartSceneTransition("Bedroom");
+    }
+
+
     
 }

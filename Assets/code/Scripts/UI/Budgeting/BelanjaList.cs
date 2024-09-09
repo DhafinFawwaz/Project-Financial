@@ -96,6 +96,16 @@ public class BelanjaList : MonoBehaviour
         return items;
     }
 
+    public bool IsAllItemsInListToBuyInCart()
+    {
+        foreach(ItemCount item in _listToBuy)
+        {
+            int amountInCart = _listCart.Find(x => x.Item.Name == item.Item.Name)?.Count ?? 0;
+            if(amountInCart < item.Count) return false;
+        }
+        return true;
+    }
+
     public void SetList(List<ItemCount> list)
     {
         _listToBuy = list;

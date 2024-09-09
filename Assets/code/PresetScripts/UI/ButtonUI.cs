@@ -78,7 +78,7 @@ public class ButtonUI : Selectable, IPointerClickHandler, ISubmitHandler
             StartCoroutine(TweenLocalScale(targetGraphic.transform, Vector3.one*_scales.pressedScale, Vector3.one*_scales.highlightedScale, _scales.fadeDuration, Ease.OutBackQuart));
             StartCoroutine(TweenGraphicColor(targetGraphic, colors.pressedColor, colors.highlightedColor, colors.fadeDuration, Ease.OutQuart));
         }
-        if(_text != null) StartCoroutine(TweenTextMeshProColor(_text, _textColors.pressedColor, _textColors.highlightedColor, _textColors.fadeDuration, Ease.OutQuart));
+        if(_text != null && gameObject.activeInHierarchy) StartCoroutine(TweenTextMeshProColor(_text, _textColors.pressedColor, _textColors.highlightedColor, _textColors.fadeDuration, Ease.OutQuart));
     }
     public override void OnPointerDown(PointerEventData eventData)
     {

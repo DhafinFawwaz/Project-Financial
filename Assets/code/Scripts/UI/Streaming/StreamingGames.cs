@@ -6,6 +6,8 @@ using System;
 
 public abstract class StreamingGames : MonoBehaviour
 {
+    public int HealthCost = 10;
+    public int HappinessCost = 10;
     public abstract void Play();
     public Action<int> OnIncreaseViews;
     public Action<int> OnDecreaseViews;

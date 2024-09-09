@@ -15,8 +15,7 @@ public class Kasir : MonoBehaviour
     public void Interact()
     {
         _lastInteractTime = Time.time;
-        List<ItemData> items = _belanjaList.GetNotInCartItems();
-        if(items.Count > 0)
+        if(!_belanjaList.IsAllItemsInListToBuyInCart())
         {
             InputManager.SetActiveMouseAndKey(false);
             _notCompletedPopUp.Show();

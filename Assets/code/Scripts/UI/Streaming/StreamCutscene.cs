@@ -15,9 +15,37 @@ public class StreamCutscene : MonoBehaviour
 
     StreamCutsceneData _currentCutscene;
     [SerializeField] TopText _topText;
+
+
+    [SerializeField] StreamingGames[] _games;
+    bool IsHappinessLowerThanAllGames()
+    {
+        foreach(var game in _games)
+        {
+            if(Save.Data.Happiness >= game.HappinessCost) return false;
+        }
+        return true;
+    }
+
+    bool IsHealthLowerThanAllGames()
+    {
+        foreach(var game in _games)
+        {
+            if(Save.Data.Health >= game.HealthCost) return false;
+        }
+        return true;
+    }
+
+    [SerializeField] SceneTransition _sceneTransitionLose;
+    void LoadLoseCutscene()
+    {
+        _sceneTransitionLose.StartSceneTransition("QuitYoutube");
+    }
+
     void Start()
     {
-        Play();
+        if(IsHappinessLowerThanAllGames() || IsHealthLowerThanAllGames()) LoadLoseCutscene();
+        else Play();
     }
     [SerializeField] GameObject _blocker;
 
@@ -81,6 +109,7 @@ public class StreamCutscene : MonoBehaviour
 
 
     [SerializeField] StreamCutsceneData[] _cutscenes;
+    [SerializeField] StreamCutsceneData _loseCutscene;
     int _cutsceneIndex = -1;
     
     bool _isPlaying = false;

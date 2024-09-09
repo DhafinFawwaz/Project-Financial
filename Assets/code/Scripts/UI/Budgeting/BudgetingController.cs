@@ -124,6 +124,7 @@ public class BudgetingController : MonoBehaviour
         //     "DesireMoney: " + Save.Data.DesireMoney + "\n" +
         //     "NeedsMoney: " + Save.Data.NeedsMoney
         // );
+        Refresh();
     }
 
 
@@ -219,11 +220,11 @@ public class BudgetingController : MonoBehaviour
 
         if(_page == 0) // kebutuhan
         {
-            if(Save.Data.NeedsMoney < amount) {
-                NotEnoughtMoney("Uang Kebutuhan");
+            if(Save.Data.DebitTabunganMoney < amount) {
+                NotEnoughtMoney("Uang Debit");
                 return;
             }
-            _type = "Uang Kebutuhan";
+            _type = "Uang Debit";
         }
         else if(_page == 1) // keinginan
         {
@@ -235,11 +236,11 @@ public class BudgetingController : MonoBehaviour
         }
         else if(_page == 3) // debit
         {
-            if(Save.Data.DebitMoney < amount) {
-                NotEnoughtMoney("Uang Debit");
+            if(Save.Data.NeedsMoney < amount) {
+                NotEnoughtMoney("Uang Kebutuhan");
                 return;
             }
-            _type = "Uang Debit";
+            _type = "Uang Kebutuhan";
         }
         _confirmText.text = "Apakah anda yakin ingin mentransfer " + amount.ToStringRupiahFormat() + " dari " + _type + " ke Kredit?";
         _confirmPopUp.Show();
@@ -248,12 +249,20 @@ public class BudgetingController : MonoBehaviour
 
     public void Confirm()
     {
-        if(_page == 0) Save.Data.NeedsMoney -= amount;
+        if(_page == 0) {
+            Save.Data.DebitTabunganMoney -= amount;
+            // Only if its not salary day
+            if(Save.Data.DebitTabunganMoney <= 0 && (Save.Data.CurrentDay+1) % 3 != 0) { 
+                Save.Data.DebitTabunganMoney = Save.Data.DebitMoney;
+                Save.Data.DebitMoney = 0;
+            }
+        }
         else if(_page == 1) Save.Data.DesireMoney -= amount;
-        else if(_page == 2) Save.Data.DebitMoney -= amount;
+        else if(_page == 2) Save.Data.NeedsMoney -= amount;
         CurrentCreditMoney -= amount;
         Refresh();
         _confirmPopUp.Hide();
+        EventSystem.current.SetSelectedGameObject(null);
     }
 
 
@@ -419,7 +428,7 @@ public class BudgetingController : MonoBehaviour
             }
             else if(_pageDebit == 2) // debit
             {
-                if(Save.Data.DebitMoney < amountDebit) {
+                if(Save.Data.DebitTabunganMoney < amountDebit) {
                     NotEnoughtMoney("Uang Debit");
                     return;
                 }
@@ -467,6 +476,8 @@ public class BudgetingController : MonoBehaviour
         }
 
         Refresh();
+        EventSystem.current.SetSelectedGameObject(null);
+
     }
 
 
@@ -520,6 +531,8 @@ public class BudgetingController : MonoBehaviour
 
     public void ResetPieChart()
     {
-        _pieChart.SetPieValues(new float[]{1f/3, 1f/3, 1f/3});
+        var values = new float[]{1f/3, 1f/3, 1f/3};
+        _pieChart.SetPieValues(values);
+        OnPieValuesChanged(values);
     }
 }

@@ -16,6 +16,9 @@ public class TransferManager : MonoBehaviour
 
     public void SetToDebit()
     {
+        
+
+
         _jajan.SetValues(Save.Data.DesireMoney, 0);
         _kebutuhan.SetValues(Save.Data.NeedsMoney, 0);
         _tabungan.SetValues(Save.Data.DebitTabunganMoney, Save.Data.DebitTabunganMoney + Save.Data.NeedsMoney + Save.Data.DesireMoney);

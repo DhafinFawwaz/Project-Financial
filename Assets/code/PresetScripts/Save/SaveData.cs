@@ -121,6 +121,11 @@ public class SaveData
         CurrentPredictedHealth = UnityEngine.Random.Range(10, 100);
 
         MaxStreamingAmountPerDay = 3;
+
+        // TODO, DONT FORGET TO REMOVE BELOW
+        DayDatas[1].CreditMoney = 50000;
+        DayDatas[3].CreditMoney = 60000;
+        DayDatas[6].CreditMoney = 70000;
     }
     
 
@@ -222,6 +227,12 @@ public class SaveData
     public bool GameEnd = false;
 
 
+
+    public const float INTEREST_RATE = 0.55f;
+    public void ApplyInterest()
+    {
+        DebitTabunganMoney = (long)(DebitTabunganMoney * (1 + INTEREST_RATE));
+    }
 
     public static int DaysUntilNewStock()
     {
