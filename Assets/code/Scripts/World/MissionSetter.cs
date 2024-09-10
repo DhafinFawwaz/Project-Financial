@@ -6,13 +6,15 @@ using UnityEngine.Events;
 public class MissionSetter : MonoBehaviour
 {
     [SerializeField] Vector3 _arrowPosition;
+    public Vector3 ArrowPosition { get => _arrowPosition; set => _arrowPosition = value; }
     [SerializeField] string _missionText;
     [SerializeField] UnityEvent _onSet;
 
     public void Set()
     {
         ArrowGuide.Instance.Set(_arrowPosition);
-        MissionText.Instance.Set(_missionText);
+        if(MissionText.Instance)
+            MissionText.Instance.Set(_missionText);
         _onSet?.Invoke();
     }
 

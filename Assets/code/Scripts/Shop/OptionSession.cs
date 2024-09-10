@@ -58,8 +58,10 @@ public class OptionSession : MonoBehaviour
 
         // Check if shadow kena senter, if yes, set the below to 16
         _vignetteEffect.gameObject.SetActive(true);
-        StartCoroutine(TimerCountdown(_currentRak.SessionTime));
+        if(_useTimer) StartCoroutine(TimerCountdown(_currentRak.SessionTime));
     }
+
+    [SerializeField] bool _useTimer = true;
 
 
     [SerializeField] VignetteEffect _vignetteEffect;

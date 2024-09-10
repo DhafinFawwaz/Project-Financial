@@ -6205,6 +6205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f1b83c0c6675254cbd92c18b1b3304e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _startPopUpAnimation: {fileID: 7555314987237579323}
   _rakList:
   - {fileID: 8356173812521816052}
   - {fileID: 552724839580131195}
@@ -9410,6 +9411,7 @@ MonoBehaviour:
   _target: {fileID: 200304909}
   _color: {r: 0, g: 0, b: 0, a: 0.2}
   _duration: 0.3
+  _playOnStart: 0
 --- !u!114 &1158452828 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7555314986927157172, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
@@ -10824,6 +10826,7 @@ MonoBehaviour:
   _target: {fileID: 264514120}
   _color: {r: 0, g: 0, b: 0, a: 0.2}
   _duration: 0.3
+  _playOnStart: 0
 --- !u!1 &1441565987
 GameObject:
   m_ObjectHideFlags: 0
@@ -21032,6 +21035,7 @@ MonoBehaviour:
   _target: {fileID: 933052080}
   _color: {r: 0, g: 0, b: 0, a: 0.2}
   _duration: 0.3
+  _playOnStart: 0
 --- !u!4 &2064353453 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1903275230868289151, guid: da20a3ed8ac662948b80d0db973a42f2, type: 3}
@@ -23089,10 +23093,6 @@ PrefabInstance:
       propertyPath: _vCam
       value: 
       objectReference: {fileID: 832826733}
-    - target: {fileID: 4483848465342954627, guid: b05fc11413872df4fa6e1ffe19c00e4b, type: 3}
-      propertyPath: _rechargeDuration
-      value: 15
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b05fc11413872df4fa6e1ffe19c00e4b, type: 3}
 --- !u!4 &4399975957055410611 stripped
@@ -23978,6 +23978,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1381332256470399025, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 1566544312699461444, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
       propertyPath: OnKerasukan.m_PersistentCalls.m_Calls.Array.size
       value: 4
@@ -24482,6 +24486,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[Canvas] UI'
       objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[0].PropertyRectY
+      value: 133
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[1].PropertyRectY
+      value: 155
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[2].PropertyRectY
+      value: 177
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].PropertyRectY
+      value: 199
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].PropertyRectY
+      value: 221
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].PropertyRectY
+      value: 243
+      objectReference: {fileID: 0}
     - target: {fileID: 7946286172821636990, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -24526,6 +24554,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3003a160de1d89046bf4d6f25b875045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7555314987237579323 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+  m_PrefabInstance: {fileID: 7555314987237579318}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f54930f0f8f7f2478377a55d6c33e4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &7940895818057406807

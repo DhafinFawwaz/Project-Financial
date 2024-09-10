@@ -98,10 +98,13 @@ public class SaveData
         CurrentBelanjaMoney = 0;
         SkillPoints = 1;
 
+
         NeedsMoney = 200000;
         DesireMoney = 60000;
         DebitMoney = 80000;
         DebitTabunganMoney = 150000;
+
+        CurrentNeedsMoney = NeedsMoney;
 
         for(int i = 0; i < MAX_DAY; i++)
         {
@@ -122,10 +125,13 @@ public class SaveData
 
         MaxStreamingAmountPerDay = 3;
 
+        IsPinjol = false;
+        IsLose = false;
+
         // TODO, DONT FORGET TO REMOVE BELOW
         DayDatas[1].CreditMoney = 50000;
-        DayDatas[3].CreditMoney = 60000;
-        DayDatas[6].CreditMoney = 70000;
+        DayDatas[2].CreditMoney = 60000;
+        DayDatas[3].CreditMoney = 70000;
     }
     
 
@@ -258,6 +264,7 @@ public class SaveData
         }
     }
 
-
-    // TODO: youtube play button
+    // Lose
+    public bool IsPinjol = false;
+    public bool IsLose = false;
 }

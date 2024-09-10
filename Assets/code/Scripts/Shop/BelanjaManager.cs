@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BelanjaManager : MonoBehaviour
 {
+    [SerializeField] AnimationUI _startPopUpAnimation;
     [SerializeField] Rak[] _rakList;
 
     [SerializeField] float _inflasiEvery = 30;
@@ -29,6 +30,7 @@ public class BelanjaManager : MonoBehaviour
 
     public void StartGame()
     {
+        _startPopUpAnimation.Play();
         _timer.SetTime(_inflasiEvery);
         float diskonTime = Random.Range(_diskonBesarMin, _diskonBesarMax);
         _timerDiscountStartInvisible.SetTime(diskonTime);

@@ -12,11 +12,41 @@ public class FlashLightUI : MonoBehaviour
     void OnEnable()
     {
         Flashlight.s_OnRecharging += OnRecharging;
+        Flashlight.s_OnNotEnoughEnergy += s_OnNotEnoughEnergy;
+        initPos = _animation.transform.parent.position;
     }
+    Vector3 initPos;
 
     void OnDisable()
     {
         Flashlight.s_OnRecharging -= OnRecharging;
+        Flashlight.s_OnNotEnoughEnergy -= s_OnNotEnoughEnergy;
+    }
+
+    void s_OnNotEnoughEnergy()
+    {
+        StartCoroutine(Shake());
+    }
+
+    [Header("Shake")]
+    [SerializeField] float _shakeAmplitude = 100;
+    [SerializeField] float _shakeDuration = 0.5f;
+    [SerializeField] float _shakeFrequency = 50f;
+
+    byte _shakeKey;
+    IEnumerator Shake()
+    {
+        byte requirement = ++_shakeKey;
+        float t = 0;
+        while(t <= 1 && requirement == _shakeKey)
+        {
+            t += Time.deltaTime / _shakeDuration;
+            float x = t * _shakeFrequency;
+            float y = (1-t) * _shakeAmplitude * Mathf.Sin(x*_shakeFrequency);
+            _animation.transform.parent.position = initPos + new Vector3(y, 0, 0);
+            yield return null;
+        }
+        if(requirement == _shakeKey) _animation.transform.parent.position = initPos;
     }
 
 

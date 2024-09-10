@@ -112,7 +112,7 @@ public class WorldUI : MonoBehaviour
         _inflasiTimer.Begin();
         _diskonTimer.SetTime(10);
         _diskonTimer.Begin();
-        _qualityBar.SetNoAnimation(0, 0, 0);
+        // _qualityBar.SetNoAnimation(0, 0, 0);
     }
 
 

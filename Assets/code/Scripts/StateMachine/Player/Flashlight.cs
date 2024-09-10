@@ -5,6 +5,7 @@ using UnityEngine;
 public class Flashlight : MonoBehaviour
 {
     public static Action<float> s_OnRecharging;
+    public static Action s_OnNotEnoughEnergy;
     [SerializeField] float _energy = 0;
     [SerializeField] float _rechargeDuration = 10;
 
@@ -31,7 +32,9 @@ public class Flashlight : MonoBehaviour
     void Start()
     {
         transparentColor = initColor; transparentColor.a = 0;
-        _isInSceneBelanja = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Belanja";
+
+        var sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+        _isInSceneBelanja = sceneName == "Belanja" || sceneName == "BelanjaTutorial" || sceneName == "BelanjaTutorial2";
     }
 
     void Update()
@@ -41,12 +44,15 @@ public class Flashlight : MonoBehaviour
         AdjustFlashRotationBasedOnMouse();
 
         _energy += Time.deltaTime / _rechargeDuration;
+        _energy = Mathf.Clamp01(_energy);
         s_OnRecharging?.Invoke(_energy);
     }
     void ToggleFlash()
     {
-        if(_energy < 1) return;
-        _energy = 0;
+        if(_energy < 0.33f) {
+            s_OnNotEnoughEnergy?.Invoke();
+            return;
+        }
         StartCoroutine(StartFlashlight());
     }
     void AdjustFlashRotationBasedOnMouse()
@@ -80,6 +86,7 @@ public class Flashlight : MonoBehaviour
     IEnumerator StartFlashlight()
     {
         if(_flashLight.activeSelf) {} else {
+            _energy -= 0.33f;
             _flashLight.SetActive(true);
             float t = 0;
             while(t < 1)

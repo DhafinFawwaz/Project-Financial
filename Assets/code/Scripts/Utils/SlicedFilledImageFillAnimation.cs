@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class SlicedFilledImageFillAnimation : UIAnimation
 {
     [SerializeField] SlicedFilledImage _target;
+    public SlicedFilledImage Target => _target;
     [SerializeField] float _fill = 1;
     [SerializeField] float _duration = 0.3f;
     public void SetDuration(float duration)

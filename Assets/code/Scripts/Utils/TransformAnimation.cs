@@ -9,6 +9,12 @@ public class TransformAnimation : UIAnimation
     [SerializeField] Vector3 _end;
     [SerializeField] float _duration;
     [SerializeField] Ease.Function _easeFunction = Ease.OutQuart;
+    [SerializeField] bool _playOnStart = false;
+
+    void Start()
+    {
+        if(_playOnStart) TweenLocalScale();
+    }
 
     public void SetEnd(Vector3 end)
     {

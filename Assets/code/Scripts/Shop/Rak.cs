@@ -6,6 +6,11 @@ using System;
 using UnityEngine.Events;
 public class Rak : Interactable
 {
+    public void DisableDetection()
+    {
+        GetComponent<SphereCollider>().enabled = false;
+        enabled = false;
+    }
     public static Action<Rak> s_OnRakInteract;
     [SerializeField] Transform _cameraTarget;
     
@@ -67,6 +72,15 @@ public class Rak : Interactable
         ReGacha();
     }
 
+
+    void SetQuality(int a, int b, int c)
+    {
+        _optionDataCopy.Content[0].Quality = a;
+        _optionDataCopy.Content[1].Quality = b;
+        if(_optionDataCopy.Content[2] != null)
+            _optionDataCopy.Content[2].Quality = c;
+    }
+
     public void ReGacha()
     {
         _optionDataCopy.Content[0].Inflasi = false;
@@ -99,22 +113,21 @@ public class Rak : Interactable
         int medium = UnityEngine.Random.Range(55, 101);
         int large = UnityEngine.Random.Range(80, 101);
         float random = UnityEngine.Random.value;
-        if(random < 0.33f) {
-            _optionDataCopy.Content[0].Quality = small;
-            _optionDataCopy.Content[1].Quality = medium;
-            if(_optionDataCopy.Content[2] != null)
-                _optionDataCopy.Content[2].Quality = large;
-        } else if(random < 0.66f) {
-            _optionDataCopy.Content[0].Quality = medium;
-            _optionDataCopy.Content[1].Quality = large;
-            if(_optionDataCopy.Content[2] != null)
-                _optionDataCopy.Content[2].Quality = small;
-        } else {
-            _optionDataCopy.Content[0].Quality = large;
-            _optionDataCopy.Content[1].Quality = small;
-            if(_optionDataCopy.Content[2] != null)
-                _optionDataCopy.Content[2].Quality = medium;
+        // sml, slm, msl, lsm, lms, mls
+        if(random < 1f/6f) {
+            SetQuality(small, medium, large);
+        } else if(random < 2f/6f) {
+            SetQuality(small, large, medium);
+        } else if(random < 3f/6f) {
+            SetQuality(medium, small, large);
+        } else if(random < 4f/6f) {
+            SetQuality(large, small, medium);
+        } else if(random < 5f/6f) {
+            SetQuality(large, medium, small);
+        } else /* if(random < 0.66f) */ {
+            SetQuality(medium, large, small);
         }
+        // Debug.Log(_optionDataCopy.Content[0].Price);
 
 
 
@@ -129,15 +142,15 @@ public class Rak : Interactable
         //     if(UnityEngine.Random.value < 0.4f)
         //         _optionDataCopy.Content[2].Price = (int)(_optionDataCopy.Content[2].Price * UnityEngine.Random.Range(0.7f, 0.9f));
 
-        _optionData.Content[0].Price = (int)(_optionData.Content[0].Price * UnityEngine.Random.Range(0.5f, 1.5f));
-        _optionData.Content[1].Price = (int)(_optionData.Content[1].Price * UnityEngine.Random.Range(0.5f, 1.5f));
-        if(_optionData.Content[2] != null)
-            _optionData.Content[2].Price = (int)(_optionData.Content[2].Price * UnityEngine.Random.Range(0.5f, 1.5f));
+        _optionDataCopy.Content[0].Price = (int)(_optionDataCopy.Content[0].Price * UnityEngine.Random.Range(0.5f, 1.5f));
+        _optionDataCopy.Content[1].Price = (int)(_optionDataCopy.Content[1].Price * UnityEngine.Random.Range(0.5f, 1.5f));
+        if(_optionDataCopy.Content[2] != null)
+            _optionDataCopy.Content[2].Price = (int)(_optionDataCopy.Content[2].Price * UnityEngine.Random.Range(0.5f, 1.5f));
 
-        _optionData.Content[0].Price = ApplyInflate(_optionData.Content[0].Price);
-        _optionData.Content[1].Price = ApplyInflate(_optionData.Content[1].Price);
-        if(_optionData.Content[2] != null)
-            _optionData.Content[2].Price = ApplyInflate(_optionData.Content[2].Price);
+        _optionDataCopy.Content[0].Price = ApplyInflate(_optionDataCopy.Content[0].Price);
+        _optionDataCopy.Content[1].Price = ApplyInflate(_optionDataCopy.Content[1].Price);
+        if(_optionDataCopy.Content[2] != null)
+            _optionDataCopy.Content[2].Price = ApplyInflate(_optionDataCopy.Content[2].Price);
 
     }
 
@@ -193,6 +206,8 @@ public class Rak : Interactable
     // Locked
     [SerializeField] GameObject _darkenGO;
     bool _isLocked = false;
+
+    public bool IsLocked => _isLocked;
     public void SetDarken(bool darken)
     {
         _darkenGO.SetActive(darken);

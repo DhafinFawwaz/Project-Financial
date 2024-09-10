@@ -13,12 +13,23 @@ public class GraphicsAnimation : UIAnimation
     Action _onceEnd;
     public Action OnceEnd { get => _onceEnd; set => _onceEnd = value; }
 
+    [SerializeField] bool _playOnStart = false;
+    void Start()
+    {
+        if(_playOnStart) Play();
+    }
+
     public void Play()
     {
         StopAllOtherGraphics();
         if(!gameObject.activeInHierarchy) return;
         
         StartCoroutine(TweenColorAnimation(_target, _target.color, _color, _duration, _easeFunction));
+    }
+
+    void Reset()
+    {
+        _target = GetComponent<Graphic>();
     }
 
     public override void Stop()

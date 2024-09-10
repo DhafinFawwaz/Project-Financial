@@ -3246,7 +3246,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!224 &5556835127842155195
 RectTransform:
@@ -3322,6 +3322,7 @@ MonoBehaviour:
   _target: {fileID: 5556835127842155195}
   _end: {x: 1, y: 1, z: 1}
   _duration: 0.3
+  _playOnStart: 0
 --- !u!1 &3156147467306535784
 GameObject:
   m_ObjectHideFlags: 0
@@ -9722,7 +9723,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!224 &6540249522524120998
 RectTransform:
@@ -9803,6 +9804,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a9d7f671e735a5647ab9d773ca1b39f0, type: 3}
   - {fileID: 21300000, guid: d662db0a847c4e4448a8a3054997ff31, type: 3}
   - {fileID: 21300000, guid: 1c9dde60a4ac3694eb18b9d7da6d56a6, type: 3}
+  _shakeAmplitude: 40
+  _shakeDuration: 0.5
+  _shakeFrequency: 100
 --- !u!1 &8990609519174188277
 GameObject:
   m_ObjectHideFlags: 0
@@ -9896,6 +9900,7 @@ MonoBehaviour:
   _target: {fileID: 5064288777770737053}
   _color: {r: 1, g: 1, b: 1, a: 1}
   _duration: 0.3
+  _playOnStart: 0
 --- !u!1001 &758094606976012476
 PrefabInstance:
   m_ObjectHideFlags: 0

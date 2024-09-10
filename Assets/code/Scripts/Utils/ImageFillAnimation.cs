@@ -15,6 +15,11 @@ public class ImageFillAnimation : UIAnimation
     [SerializeField] Ease.Function _easeFunction = Ease.OutQuart;
     Action _onEnd;
 
+    void Reset()
+    {
+        _target = GetComponent<Image>();
+    }
+
     public void Play()
     {
         StopAllOtherGraphics();

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ArrowGuide : MonoBehaviour
 {
@@ -16,7 +17,12 @@ public class ArrowGuide : MonoBehaviour
     Vector3 _targetPosition;
     public void Set(Vector3 pos)
     {
+        GetComponent<Image>().enabled = true;
         _targetPosition = pos;
+    }
+    public void Hide()
+    {
+        GetComponent<Image>().enabled = false;
     }
     
     [SerializeField] Vector3 _naoRikiPosition;
