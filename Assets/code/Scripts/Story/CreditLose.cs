@@ -32,7 +32,7 @@ public class CreditLose : MonoBehaviour
         Save.Data.IsLose = true;
     }
 
-    void ChoosePinjol()
+    public void ChoosePinjol()
     {
         Save.Data.NeedsMoney += 1000000000;
         Save.Data.DesireMoney += 1000000000;

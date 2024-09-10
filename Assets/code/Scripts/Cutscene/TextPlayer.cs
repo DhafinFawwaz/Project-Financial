@@ -38,14 +38,22 @@ public class TextPlayer : MonoBehaviour
     IEnumerator TextAnimation()
     {
         byte requirement = ++_key;
-        for(int i = 0; i < _dialogText.text.Length; i++)
+        // for(int i = 0; i < _dialogText.text.Length; i++)
+        // {
+        //     _dialogText.maxVisibleCharacters = i+1;
+        //     yield return new WaitForSeconds(_delayEachCharacter);
+        //     if(_key != requirement) break;
+        // }
+        // if(requirement == _key)
+        //     _dialogText.maxVisibleCharacters = _dialogText.text.Length;
+
+        
+        float initialTime = Time.time;  
+        while(_dialogText.maxVisibleCharacters <= _dialogText.text.Length && _key == requirement)
         {
-            _dialogText.maxVisibleCharacters = i+1;
-            yield return new WaitForSeconds(_delayEachCharacter);
-            if(_key != requirement) break;
+            _dialogText.maxVisibleCharacters = (int)((Time.time-initialTime)/_delayEachCharacter);
+            yield return null;
         }
-        if(requirement == _key)
-            _dialogText.maxVisibleCharacters = _dialogText.text.Length;
     }
 
 }

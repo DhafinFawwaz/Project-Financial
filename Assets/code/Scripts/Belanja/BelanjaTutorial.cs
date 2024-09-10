@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class BelanjaTutorial : MonoBehaviour
 {
+    [SerializeField] GameObject _shadow;
     [SerializeField] AnimationUI _startPopUpAnimation;
     [SerializeField] MissionSetter _missionSetter;
     [SerializeField] Flashlight _flashLight;
@@ -23,6 +24,7 @@ public class BelanjaTutorial : MonoBehaviour
 
     void StartTutorial()
     {
+        _shadow.SetActive(false);
         _startPopUpAnimation.Play();
         _missionSetter.Set();
         belanjaList.AddItem(_saosTomat);
@@ -86,6 +88,7 @@ public class BelanjaTutorial : MonoBehaviour
     
     void StartTutorial2()
     {
+        _shadow.SetActive(true);
         _startPopUpAnimation.Play();
         foreach(var rak in _rakToDarken)
         {

@@ -64,6 +64,7 @@ public class StreamingManager : MonoBehaviour
 
     void OnEnable()
     {
+        RefreshStats();
         _gameChoose.OnGameSelected += OnGameSelected;
     }
 
@@ -100,7 +101,7 @@ public class StreamingManager : MonoBehaviour
         _endStreamButton.SetButtonActive(false);
 
         Save.Data.Health -= game.HealthCost;
-        Save.Data.Health -= game.HappinessCost;
+        Save.Data.Happiness -= game.HappinessCost;
         RefreshStats();
     }
 
