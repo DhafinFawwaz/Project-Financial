@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class CreditLose : MonoBehaviour
 {
+    [SerializeField] BudgetingController _budgetingController;
     void Awake()
     {
-        if(Save.Data.IsPinjol) LoadPinjol();
+        // if(Save.Data.IsPinjol) LoadPinjol();
     }
     void LoadPinjol()
     {
@@ -39,6 +40,7 @@ public class CreditLose : MonoBehaviour
         Save.Data.DebitMoney += 1000000000;
         Save.Data.DebitTabunganMoney += 1000000000;
         Save.Data.IsPinjol = true;
+        _budgetingController.Refresh();
     }
 
     bool WillDefinitelyLose()

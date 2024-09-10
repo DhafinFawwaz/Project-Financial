@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -15,6 +17,11 @@ public class BudgetingController : MonoBehaviour
 
     [SerializeField] GameObject _clickableCreditButton;
     [SerializeField] GameObject _unclickableCreditButton;
+
+    [Header("Deadline")] 
+    [SerializeField] GameObject _deadlineText;
+    [SerializeField] GameObject _kreditBackButton;
+    [SerializeField] GameObject _kreditBackButtonToPopUp;
 
     void Awake()
     {
@@ -106,7 +113,55 @@ public class BudgetingController : MonoBehaviour
         _moneyDebitObjsText[1].GetComponent<TextMeshProUGUI>().text = Save.Data.NeedsMoney.ToStringRupiahFormat();
 
         _debitText.text = Save.Data.DebitTabunganMoney.ToStringRupiahFormat() + "<color=#00000066> + " + Save.Data.DebitMoney.ToStringRupiahFormat();
+    
+    
+        // Deadline
+        if(HasCreditDeadlineToday()) {
+            _kreditBackButton.SetActive(false);
+            _kreditBackButtonToPopUp.SetActive(true);
+        } else {
+            _kreditBackButton.SetActive(true);
+            _kreditBackButtonToPopUp.SetActive(false);
+        }
+
+
+        // Lose if all money is 0 and credit in deadline not paid
+        if(_choosenKreditDay+3 <= Save.Data.CurrentDay) {
+            _deadlineText.SetActive(true);
+        } else {
+            _deadlineText.SetActive(false);
+        }
+
+        if(IsLoseCredit()) {
+            _onLose?.Invoke();
+        }
     }
+
+    bool HasCreditDeadlineToday()
+    {
+        for(int i = 0; i < Save.Data.DayDatas.Count; i++)
+        {
+            if(i+3 <= Save.Data.CurrentDay && Save.Data.DayDatas[i].CreditMoney > 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    bool IsLoseCredit()
+    {
+        for(int i = 0; i < Save.Data.DayDatas.Count; i++)
+        {
+            if(i+3 <= Save.Data.CurrentDay) {
+                return Save.Data.DebitTabunganMoney == 0
+                    && Save.Data.DebitMoney == 0
+                    && Save.Data.DesireMoney == 0
+                    && Save.Data.NeedsMoney == 0;
+            }
+        }
+        return false;
+    }
+    [SerializeField] UnityEvent _onLose;
 
 
     public void SetMoney()
