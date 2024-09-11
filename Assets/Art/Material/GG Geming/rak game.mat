@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player
+  m_Name: rak game
   m_Shader: {fileID: 4800000, guid: cc3275375fe01324ba4e55d3bcbbc9fa, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords:
@@ -42,8 +42,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 2345cc30213c6184da2f064c2d3b61ec, type: 3}
-        m_Scale: {x: -1, y: 1}
+        m_Texture: {fileID: 2800000, guid: e4a6a2e74b54c2644803565522bb8770, type: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -57,10 +57,14 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _TextureMap:
+        m_Texture: {fileID: 2800000, guid: 873631384f5e5ec48922f02e8fa17297, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _BumpScale: 1
-    - _Cutoff: 0.5
+    - _Cutoff: 0.1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
@@ -70,9 +74,11 @@ Material:
     - _Mode: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _ShadowBrightness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _TileAmount: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
