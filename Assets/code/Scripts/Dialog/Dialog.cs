@@ -281,6 +281,7 @@ public class Dialog : MonoBehaviour
         // if(_key == requirement)
         //     _dialogText.maxVisibleCharacters = _dialogText.text.Length;
         float initialTime = Time.time;  
+        _dialogText.maxVisibleCharacters = 0;
         while(_dialogText.maxVisibleCharacters <= _dialogText.text.Length && _key == requirement)
         {
             _dialogText.maxVisibleCharacters = (int)((Time.time-initialTime)/_delayEachCharacter);
