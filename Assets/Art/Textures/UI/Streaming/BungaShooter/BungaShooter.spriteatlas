@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BungaShooter
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 100
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 9802e2def91119641b2b919d964029b7, type: 3}
+    - {fileID: 2800000, guid: b10a269a788d79d44b7ea56c8b15b59d, type: 3}
+    - {fileID: 2800000, guid: 243aba5395ded3e469c8571d6a614d58, type: 3}
+    - {fileID: 2800000, guid: f0b569fa89ab5dc4a83c782dddee5ff8, type: 3}
+    - {fileID: 2800000, guid: 2109f64cddb31574eb29a1fb6710734f, type: 3}
+    - {fileID: 2800000, guid: 62159484a3015294e90d4dd469e7862c, type: 3}
+    - {fileID: 2800000, guid: e3b8c8d8bbd46b149a4ccf27fa4ef451, type: 3}
+    - {fileID: 2800000, guid: 60f428e65e1d06e4fad64201ea2ba812, type: 3}
+    - {fileID: 2800000, guid: 76fe4ec3c854a9e499769e299135a83e, type: 3}
+    - {fileID: 2800000, guid: 8324f10af889b454bb830e6e3a348544, type: 3}
+    - {fileID: 2800000, guid: 9560b8b08c8152c4689a33e6d1b0eb33, type: 3}
+    - {fileID: 2800000, guid: 8a10e1ccc9bac4143b1f83dcaf660dd4, type: 3}
+    - {fileID: 2800000, guid: a6ef04b0cd802f544a8a8c1c24709d38, type: 3}
+    - {fileID: 2800000, guid: 0a5d8113c23eb5a4b8f35893acd407d4, type: 3}
+    - {fileID: 2800000, guid: 3be9912351eae724191f162731b651de, type: 3}
+    - {fileID: 2800000, guid: 09df7ff90a723c54a9e647dac1804fb0, type: 3}
+    - {fileID: 2800000, guid: ceb891bb3c0b490489388daa2b9c8dac, type: 3}
+    - {fileID: 2800000, guid: 588a5cce541127147a804596253f4961, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: a6ef04b0cd802f544a8a8c1c24709d38, type: 3}
+  - {fileID: 21300000, guid: 9560b8b08c8152c4689a33e6d1b0eb33, type: 3}
+  - {fileID: 21300000, guid: 0a5d8113c23eb5a4b8f35893acd407d4, type: 3}
+  - {fileID: 21300000, guid: 3be9912351eae724191f162731b651de, type: 3}
+  - {fileID: 21300000, guid: 243aba5395ded3e469c8571d6a614d58, type: 3}
+  - {fileID: 21300000, guid: 76fe4ec3c854a9e499769e299135a83e, type: 3}
+  - {fileID: 21300000, guid: 62159484a3015294e90d4dd469e7862c, type: 3}
+  - {fileID: 21300000, guid: 60f428e65e1d06e4fad64201ea2ba812, type: 3}
+  - {fileID: 21300000, guid: e3b8c8d8bbd46b149a4ccf27fa4ef451, type: 3}
+  - {fileID: 21300000, guid: 09df7ff90a723c54a9e647dac1804fb0, type: 3}
+  - {fileID: 21300000, guid: 8324f10af889b454bb830e6e3a348544, type: 3}
+  - {fileID: 21300000, guid: b10a269a788d79d44b7ea56c8b15b59d, type: 3}
+  - {fileID: 21300000, guid: f0b569fa89ab5dc4a83c782dddee5ff8, type: 3}
+  - {fileID: 21300000, guid: ceb891bb3c0b490489388daa2b9c8dac, type: 3}
+  - {fileID: 21300000, guid: 2109f64cddb31574eb29a1fb6710734f, type: 3}
+  - {fileID: 21300000, guid: 8a10e1ccc9bac4143b1f83dcaf660dd4, type: 3}
+  - {fileID: 21300000, guid: 588a5cce541127147a804596253f4961, type: 3}
+  - {fileID: 21300000, guid: 9802e2def91119641b2b919d964029b7, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Gun Bunga Shooter
+  - frame state
+  - Head
+  - icon money limit belanja
+  - bg malam
+  - ending buruk
+  - black fill total pot yang ditembak
+  - ending baik
+  - yellow fill sisa uang
+  - icon target
+  - frame sisa uang
+  - BG Bunga Shooter
+  - bg pagi
+  - Pot
+  - black fill sisa uang
+  - green fill total pot yg ditembak
+  - shadow fancy
+  - layout streaming
+  m_RenderDataMap: {}
+  m_Tag: BungaShooter
+  m_IsVariant: 0

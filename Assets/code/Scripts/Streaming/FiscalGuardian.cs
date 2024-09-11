@@ -293,8 +293,8 @@ public class FiscalGuardian : StreamingGames
         Save.Data.CurrentDayData.GainedViews += _viewCounter;
         Save.Data.CurrentDayData.GainedSubscriber += (long)(_viewCounter * UnityEngine.Random.Range(0.5f, 0.75f));
         Save.Data.CurrentDayData.GainedMoney = (long)(_viewCounter * UnityEngine.Random.Range(100f, 150f));
-        Save.Data.Health -= 10;
-        Save.Data.Happiness -= 10;
+        // Save.Data.Health -= HealthCost;
+        // Save.Data.Happiness -= HappinessCost;
         // Save.Data.CurrentDayData.GainedMoney += profit;
 
 

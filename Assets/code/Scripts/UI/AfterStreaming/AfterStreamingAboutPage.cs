@@ -17,6 +17,15 @@ public class AfterStreamingAboutPage : MonoBehaviour
     [SerializeField] long[] _targetSubscriber;
     [SerializeField] TransformAnimation[] _playButtonAnimations;
 
+    void Awake()
+    {
+        _targetSubscriber = new long[]{
+            SaveData.SILVER_PLAY_BUTTON,
+            SaveData.GOLD_PLAY_BUTTON,
+            SaveData.DIAMOND_PLAY_BUTTON
+        };
+    }
+
     void OnEnable()
     {
         Save.Data.GetChannelInfo(out long totalSubscriber, out long totalViews, out long totalMoney, out long last3DaysMoney);

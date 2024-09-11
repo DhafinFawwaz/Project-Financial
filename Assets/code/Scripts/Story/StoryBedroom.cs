@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class StoryBedroom : MonoBehaviour
 {
+    [SerializeField] SceneTransition _sceneTransition;
     [SerializeField] GameObject _streamingInteractable;
     [SerializeField] GameObject _keluarBlocker;
     [SerializeField] GameObject _kasurInteractable;
@@ -20,6 +21,11 @@ public class StoryBedroom : MonoBehaviour
 
     public void RefreshStates()
     {
+        if(Save.Data.IsPinjol) {
+            _sceneTransition.StartSceneTransition("PinjolLose");
+            return;
+        }
+
         // Special case
         if(Save.Data.DayState == DayState.AfterBelanja)
         {
