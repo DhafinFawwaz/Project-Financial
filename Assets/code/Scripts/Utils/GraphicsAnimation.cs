@@ -14,9 +14,15 @@ public class GraphicsAnimation : UIAnimation
     public Action OnceEnd { get => _onceEnd; set => _onceEnd = value; }
 
     [SerializeField] bool _playOnStart = false;
+    [SerializeField] bool _playOnEnable = false;
     void Start()
     {
         if(_playOnStart) Play();
+    }
+
+    void OnEnable()
+    {
+        if(_playOnEnable) Play();
     }
 
     public void Play()

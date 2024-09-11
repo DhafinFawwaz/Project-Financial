@@ -21,6 +21,9 @@ public class MovementGuide : MonoBehaviour
             if(_isShowing)
             {
                 _graphicsAnimation.SetEndColor(new Color(1, 1, 1, 0)).Play();
+                _graphicsAnimation.SetOnceEnd(() => {
+                    _graphicsAnimation.Target.gameObject.SetActive(false);
+                });
                 _isShowing = false;
             }
             return;
@@ -30,6 +33,7 @@ public class MovementGuide : MonoBehaviour
 
         if(Time.time - _lastTimeMoved > _noMovemetTime && !_isShowing)
         {
+            _graphicsAnimation.Target.gameObject.SetActive(true);
             _graphicsAnimation.SetEndColor(Color.white).Play();
             _isShowing = true;
         }
