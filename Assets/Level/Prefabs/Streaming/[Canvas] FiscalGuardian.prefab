@@ -14255,6 +14255,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 8588346830077387494}
+        m_TargetAssemblyTypeName: FiscalGuardianGuide, Assembly-CSharp
+        m_MethodName: SetIspLaying
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1904589765908057087
 GameObject:
   m_ObjectHideFlags: 0
@@ -17638,6 +17650,7 @@ MonoBehaviour:
   _color: {r: 0, g: 0, b: 0, a: 0.6}
   _duration: 0.3
   _playOnStart: 0
+  _playOnEnable: 0
 --- !u!114 &3012828529569165167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18437,6 +18450,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 8588346830077387494}
+        m_TargetAssemblyTypeName: FiscalGuardianGuide, Assembly-CSharp
+        m_MethodName: SetIspLaying
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &3012828530163284629
 GameObject:
@@ -20789,6 +20814,7 @@ MonoBehaviour:
   _color: {r: 0, g: 0, b: 0, a: 0.6}
   _duration: 0.3
   _playOnStart: 0
+  _playOnEnable: 0
 --- !u!114 &5961796146602163997
 MonoBehaviour:
   m_ObjectHideFlags: 0
