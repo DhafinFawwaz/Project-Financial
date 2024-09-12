@@ -19,17 +19,31 @@ public class Bunga : MonoBehaviour
 
     [SerializeField] MonoBehaviour[] _toDisableOnDeath;
 
-    
-
-
-
-    public void GotShot()
+    [SerializeField] ShakeAnimation _shakeAnimation;
+    public void Shake()
+    {
+        _shakeAnimation.Play();
+    }
+    public void Throw()
     {
         foreach(var obj in _toDisableOnDeath)
         {
             obj.enabled = false;
         }
         _throwAnimation.Throw();
+    }
+
+    public void DisableAll()
+    {
+        foreach(var obj in _toDisableOnDeath)
+        {
+            obj.enabled = false;
+        }
+    }
+
+
+    public void GotShot()
+    {
         OnShoot?.Invoke(this);
     }
 

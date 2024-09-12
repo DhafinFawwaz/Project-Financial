@@ -128,7 +128,11 @@ public class SaveData
         IsPinjol = false;
         IsLose = false;
 
-        IsBungaShooterBought = true;
+        KursiLevel = 0;
+        MonitorLevel = 0;
+        OtherLevel = 0;
+
+        IsBungaShooterBought = false;
 
         // TODO, DONT FORGET TO REMOVE BELOW
         DayDatas[1].CreditMoney = 50000;
@@ -278,4 +282,9 @@ public class SaveData
 
     // Streamer Games
     public bool IsBungaShooterBought = false;
+
+    // GG Geming
+    public int KursiLevel = 0;
+    public int MonitorLevel = 0;
+    public int OtherLevel = 0;
 }

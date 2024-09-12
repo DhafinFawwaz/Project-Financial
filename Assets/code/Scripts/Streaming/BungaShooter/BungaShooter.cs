@@ -129,50 +129,61 @@ public class BungaShooter : StreamingGames
 
     void OnBungaShot(Bunga bunga, int index)
     {
-        _isBungaShot[index] = true;
-        for(int i = 0; i < _isBungaShot.Count; i++)
-        {
-            if(!_isBungaShot[i])
+        if(_currentMoney < _bungas[index].FinalPrice) {
+            _bungas[index].Shake();
+            _bungas[index].DisableAll();
+            LoseCheck();
+            
+        } else {
+            _isBungaShot[index] = true;
+            _bungas[index].Throw();
+            for(int i = 0; i < _isBungaShot.Count; i++)
             {
-                // _bungas[i].SetData(_bungas[i].Percentage+Random.Range(_minIncrement, _maxIncrement+1), _bungas[i].Price);
-                // _bungas[i].SetData(_bungas[i].Percentage+_maxIncrement, _bungas[i].Price);
-                _bungas[i].Increment();
+                if(!_isBungaShot[i])
+                {
+                    // _bungas[i].SetData(_bungas[i].Percentage+Random.Range(_minIncrement, _maxIncrement+1), _bungas[i].Price);
+                    // _bungas[i].SetData(_bungas[i].Percentage+_maxIncrement, _bungas[i].Price);
+                    _bungas[i].Increment();
+                }
             }
+
+            // UIs
+            SetCurrentMoney(_currentMoney - bunga.FinalPrice);
+            SetShotCount(_currentShotCount+1);
+            WinCheck();
         }
-
-        // UIs
-        SetCurrentMoney(_currentMoney - bunga.FinalPrice);
-        SetShotCount(_currentShotCount+1);
-
-        FinishCheck();
     }
 
 
     [SerializeField] PopUp _finishPopUp;
-    void FinishCheck()
+    void WinCheck()
     {
-        // either definitely lose or win
         if(_currentShotCount == _maxShotCount) {
             _finishPopUp.transform.parent.gameObject.SetActive(true);
             _finishPopUp.Show();
             _popUpImg.sprite = _winPopUpSprite;
             HandleEnd();
-        } else {
-            // if current money less than all
-            for(int i  = 0; i < _isBungaShot.Count; i++) {
-                if(!_isBungaShot[i]) {
-                    if(_currentMoney > _bungas[i].FinalPrice) {
-                        return;
-                    }
+        }
+    }
+
+    void LoseCheck()
+    {
+        // if current money less than all
+        for(int i  = 0; i < _isBungaShot.Count; i++) {
+            if(!_isBungaShot[i]) {
+                if(_currentMoney > _bungas[i].FinalPrice) {
+                    return;
                 }
             }
-            
+        }
+
+
+        this.Invoke(() => {
             _finishPopUp.transform.parent.gameObject.SetActive(true);
             _finishPopUp.Show();
             _popUpImg.sprite = _losePopUpSprite;
             HandleEnd();
-
-        }
+        }, 1f);
     }
 
 

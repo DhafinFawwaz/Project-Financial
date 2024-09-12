@@ -18,7 +18,7 @@ public class GameSeller : Interactable
 
     void Awake()
     {
-        _priceText.text = _price.ToStringRupiahFormat();
+        _priceText.text = _price.ToStringCurrencyFormat();
         if(Save.Data.IsBungaShooterBought) {
             foreach(var item in _toDisableWhenBought) {
                 item.enabled = false;
@@ -28,6 +28,7 @@ public class GameSeller : Interactable
 
     public void BuyBungaShooter()
     {
+        InputManager.SetActiveMouseAndKey(false);
         if(Save.Data.IsBungaShooterBought) {
             _alreadyBoughtPopUp.Show();
             return;

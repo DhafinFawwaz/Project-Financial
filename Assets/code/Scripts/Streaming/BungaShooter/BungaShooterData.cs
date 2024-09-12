@@ -5,7 +5,6 @@ using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
-
 [CreateAssetMenu(fileName = "BungaShooterData", menuName = "BungaShooterData")]
 public class BungaShooterData : ScriptableObject
 {
@@ -26,6 +25,7 @@ public class BungaData
 
 // inspector randomize button
 #if UNITY_EDITOR
+[CanEditMultipleObjects]
 [CustomEditor(typeof(BungaShooterData))]
 public class BungaShooterDataEditor : Editor
 {
@@ -37,7 +37,7 @@ public class BungaShooterDataEditor : Editor
         {
             for(int i = 0; i < bungaShooterData.InitialBungaDatas.Count; i++)
             {
-                bungaShooterData.InitialBungaDatas[i] = new BungaData(Random.Range(0, 50), Random.Range(10, 50) * 10000);
+                bungaShooterData.InitialBungaDatas[i] = new BungaData(Random.Range(1, 6)*10, Random.Range(10, 50) * 10000);
             }
             EditorUtility.SetDirty(bungaShooterData);
         }

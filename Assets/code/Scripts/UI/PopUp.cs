@@ -22,6 +22,7 @@ public class PopUp : MonoBehaviour
         onDone += () => _blocker.SetActive(false);
         StartCoroutine(TweenLocalScaleAnimation(_rt, Vector3.one, Vector3.zero, 0.2f, Ease.InCubic));
         StartCoroutine(TweenCanvasGroupAlphaAnimation(_canvasGroup, 1, 0, 0.2f, Ease.InCubic));
+        InputManager.SetActiveMouseAndKey(true);
     }
     byte _key = 0;
     IEnumerator TweenLocalScaleAnimation(RectTransform rt, Vector3 start, Vector3 end, float duration, Ease.Function easeFunction)
