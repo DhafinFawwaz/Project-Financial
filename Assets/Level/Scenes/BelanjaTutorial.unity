@@ -9666,6 +9666,7 @@ MonoBehaviour:
   _color: {r: 0, g: 0, b: 0, a: 0.2}
   _duration: 0.3
   _playOnStart: 0
+  _playOnEnable: 0
 --- !u!114 &1158452828 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7555314986927157172, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
@@ -11108,6 +11109,7 @@ MonoBehaviour:
   _color: {r: 0, g: 0, b: 0, a: 0.2}
   _duration: 0.3
   _playOnStart: 0
+  _playOnEnable: 0
 --- !u!1 &1441565987
 GameObject:
   m_ObjectHideFlags: 0
@@ -21535,6 +21537,7 @@ MonoBehaviour:
   _color: {r: 0, g: 0, b: 0, a: 0.2}
   _duration: 0.3
   _playOnStart: 0
+  _playOnEnable: 0
 --- !u!4 &2064353453 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1903275230868289151, guid: da20a3ed8ac662948b80d0db973a42f2, type: 3}
@@ -25238,6 +25241,22 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 4286839409171203013, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4286839409171203013, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4286839409171203013, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4286839409171203013, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4421184030863086182, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -25457,6 +25476,10 @@ PrefabInstance:
     - target: {fileID: 8548840070542057861, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8769917757681313403, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 9082639713232172799, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
       propertyPath: m_IsActive

@@ -418,6 +418,7 @@ MonoBehaviour:
   _color: {r: 1, g: 1, b: 1, a: 1}
   _duration: 0.3
   _playOnStart: 0
+  _playOnEnable: 0
 --- !u!1 &3978071046332137913
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,6 +513,7 @@ MonoBehaviour:
   _color: {r: 1, g: 1, b: 1, a: 1}
   _duration: 0.3
   _playOnStart: 0
+  _playOnEnable: 0
 --- !u!1 &4337049908128537670
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,6 +608,7 @@ MonoBehaviour:
   _color: {r: 1, g: 1, b: 1, a: 1}
   _duration: 0.3
   _playOnStart: 0
+  _playOnEnable: 0
 --- !u!1 &7555314985728541788
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,7 +1356,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1c9dde60a4ac3694eb18b9d7da6d56a6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45148ab9cc2861d459a2eec2fe279e3e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1551,6 +1554,7 @@ MonoBehaviour:
   _color: {r: 1, g: 1, b: 1, a: 1}
   _duration: 0.3
   _playOnStart: 0
+  _playOnEnable: 0
 --- !u!1001 &603829286451759297
 PrefabInstance:
   m_ObjectHideFlags: 0

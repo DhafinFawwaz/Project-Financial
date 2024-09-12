@@ -2117,6 +2117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f1b83c0c6675254cbd92c18b1b3304e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _startPopUpAnimation: {fileID: 0}
   _rakList:
   - {fileID: 8356173812521816052}
   - {fileID: 552724839580131195}
@@ -2170,9 +2171,19 @@ MonoBehaviour:
   - {fileID: 655817358}
   - {fileID: 2033140893}
   - {fileID: 780680736}
-  INFLASI_EVERY: 30
+  _inflasiEvery: 30
   _inflasiAnimation: {fileID: 658316137}
   _timer: {fileID: 983666438}
+  _diskonBesarMin: 35
+  _diskonBesarMax: 55
+  _belanjaList: {fileID: 0}
+  _diskonBesarAnimation: {fileID: 0}
+  _timerDiscountStartInvisible: {fileID: 0}
+  _timerDiscount: {fileID: 0}
+  _discountDuration: 10
+  _qualityBar: {fileID: 0}
+  _shadow: {fileID: 0}
+  _maxRakToGetDiscount: 3
 --- !u!1001 &831069229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2731,6 +2742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _timerText: {fileID: 983666436}
   _prefix: 
+  _useUnscaledTime: 1
   _onTimeEnd:
     m_PersistentCalls:
       m_Calls:
@@ -3674,9 +3686,12 @@ MonoBehaviour:
   _itemKerasukanCopy: []
   _playerShadow: {fileID: 988796140}
   _shadow: {fileID: 1585874513}
+  _playerSkin: {fileID: 0}
+  _flashLight: {fileID: 0}
   _belanjaList: {fileID: 1044426780}
   _spacebarSpam: {fileID: 24282043}
   _itemPrefab: {fileID: 1877541845775526577, guid: 37d6384fb23a1ba47a3e5d785a9deab9, type: 3}
+  _worldUI: {fileID: 0}
 --- !u!1001 &1353424475
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3805,6 +3820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _timerText: {fileID: 1829144360}
   _prefix: 
+  _useUnscaledTime: 1
   _onTimeEnd:
     m_PersistentCalls:
       m_Calls: []

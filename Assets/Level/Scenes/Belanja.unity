@@ -9412,6 +9412,7 @@ MonoBehaviour:
   _color: {r: 0, g: 0, b: 0, a: 0.2}
   _duration: 0.3
   _playOnStart: 0
+  _playOnEnable: 0
 --- !u!114 &1158452828 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7555314986927157172, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
@@ -10827,6 +10828,7 @@ MonoBehaviour:
   _color: {r: 0, g: 0, b: 0, a: 0.2}
   _duration: 0.3
   _playOnStart: 0
+  _playOnEnable: 0
 --- !u!1 &1441565987
 GameObject:
   m_ObjectHideFlags: 0
@@ -21036,6 +21038,7 @@ MonoBehaviour:
   _color: {r: 0, g: 0, b: 0, a: 0.2}
   _duration: 0.3
   _playOnStart: 0
+  _playOnEnable: 0
 --- !u!4 &2064353453 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1903275230868289151, guid: da20a3ed8ac662948b80d0db973a42f2, type: 3}
@@ -24377,6 +24380,26 @@ PrefabInstance:
     - target: {fileID: 2005916499913521753, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
       propertyPath: _onComplete.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221974584854204755, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: de78b316783632e468091f5ab1deea91, type: 3}
+    - target: {fileID: 4286839409171203013, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4286839409171203013, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4286839409171203013, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4286839409171203013, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4565556882420553362, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
       propertyPath: m_IsActive
