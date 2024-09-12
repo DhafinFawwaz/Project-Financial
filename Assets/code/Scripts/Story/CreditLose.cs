@@ -35,10 +35,10 @@ public class CreditLose : MonoBehaviour
 
     public void ChoosePinjol()
     {
-        Save.Data.NeedsMoney += 1000000000;
-        Save.Data.DesireMoney += 1000000000;
-        Save.Data.DebitMoney += 1000000000;
-        Save.Data.DebitTabunganMoney += 1000000000;
+        Save.Data.NeedsMoney += 100000000;
+        Save.Data.DesireMoney += 100000000;
+        Save.Data.DebitMoney += 100000000;
+        Save.Data.DebitTabunganMoney += 100000000;
         Save.Data.IsPinjol = true;
         _budgetingController.Refresh();
     }
