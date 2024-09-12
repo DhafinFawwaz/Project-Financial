@@ -9792,6 +9792,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7815994901119611462, guid: b05fc11413872df4fa6e1ffe19c00e4b, type: 3}
+      propertyPath: _flipVelocityThreshold
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b05fc11413872df4fa6e1ffe19c00e4b, type: 3}
 --- !u!1001 &5328980726317038028
