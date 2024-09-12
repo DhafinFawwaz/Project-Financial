@@ -267,4 +267,9 @@ public class SaveData
     // Lose
     public bool IsPinjol = false;
     public bool IsLose = false;
+
+    // PlayButton
+    public const long SILVER_PLAY_BUTTON = 60000;
+    public const long GOLD_PLAY_BUTTON = 100000;
+    public const long DIAMOND_PLAY_BUTTON = 200000;
 }

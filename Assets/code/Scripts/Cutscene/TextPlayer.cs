@@ -24,7 +24,7 @@ public class TextPlayer : MonoBehaviour
     }
 
     public void SetTextAndPlay(string text)
-    {Debug.Log(text);
+    {
         SetText(text);
         Play();
     }

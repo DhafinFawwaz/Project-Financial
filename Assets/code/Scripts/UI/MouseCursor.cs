@@ -16,6 +16,17 @@ public class MouseCursor : MonoBehaviour
     [SerializeField] Image _cursorImg;
     [SerializeField] Sprite _unclickedCursor;
     [SerializeField] Sprite _clickedCursor;
+    [SerializeField] GameObject _targetObj;
+    public Sprite ClickedCursor { get => _clickedCursor; set {
+        _clickedCursor = value;
+        if(_cursorImg.sprite == _clickedCursor)
+            _cursorImg.sprite = value;
+    } }
+    public Sprite UnclickedCursor { get => _unclickedCursor; set {
+        _unclickedCursor = value;
+        if(_cursorImg.sprite == _unclickedCursor)
+            _cursorImg.sprite = value;
+    } }
     [SerializeField] Sprite _gosokCursor;
     public Vector2 MousePosition { 
         get { 
@@ -71,10 +82,20 @@ public class MouseCursor : MonoBehaviour
     {
         if(_cursorImg.sprite == _gosokCursor) return;
         _cursorImg.sprite = _gosokCursor;
+        _cursorImg.enabled = true;
+        _targetObj.SetActive(false);
     }
     public void SetToCursor()
     {
-        if(_cursorImg.sprite == _unclickedCursor || _cursorImg.sprite == _clickedCursor) return;
+        // if(_cursorImg.sprite == _unclickedCursor || _cursorImg.sprite == _clickedCursor) return;
         _cursorImg.sprite = _unclickedCursor;
+        _cursorImg.enabled = true;
+        _targetObj.SetActive(false);
+    }
+
+    public void SetToTarget()
+    {
+        _cursorImg.enabled = false;
+        _targetObj.SetActive(true);
     }
 }
