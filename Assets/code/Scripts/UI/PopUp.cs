@@ -10,17 +10,25 @@ public class PopUp : MonoBehaviour
     [SerializeField] CanvasGroup _canvasGroup;
     Action onDone;
     public bool IsVisible => _blocker.activeSelf;
+    [SerializeField] bool _isShowing = false;
     public void Show()
     {
+        if(_isShowing) return;
+        _isShowing = true;
+
         _blocker.SetActive(true);
-        StartCoroutine(TweenLocalScaleAnimation(_rt, Vector3.zero, Vector3.one, 0.3f, Ease.OutQuart));
+        StartCoroutine(TweenLocalScaleAnimation(_rt, _rt.localScale, Vector3.one, 0.3f, Ease.OutQuart));
         StartCoroutine(TweenCanvasGroupAlphaAnimation(_canvasGroup, 0, 1, 0.3f, Ease.OutQuart));
     }
 
     public void Hide()
     {
+        if(!_isShowing) return;
+        _isShowing = false;
+        Debug.Log("hide");
+
         onDone += () => _blocker.SetActive(false);
-        StartCoroutine(TweenLocalScaleAnimation(_rt, Vector3.one, Vector3.zero, 0.2f, Ease.InCubic));
+        StartCoroutine(TweenLocalScaleAnimation(_rt, _rt.localScale, Vector3.zero, 0.2f, Ease.InCubic));
         StartCoroutine(TweenCanvasGroupAlphaAnimation(_canvasGroup, 1, 0, 0.2f, Ease.InCubic));
         InputManager.SetActiveMouseAndKey(true);
     }
