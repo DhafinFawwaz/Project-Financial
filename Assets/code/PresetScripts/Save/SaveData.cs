@@ -134,6 +134,10 @@ public class SaveData
 
         IsBungaShooterBought = false;
 
+        KursiLevel = 0;
+        MonitorLevel = 0;
+        OtherLevel = 0;
+
         // TODO, DONT FORGET TO REMOVE BELOW
         DayDatas[1].CreditMoney = 50000;
         DayDatas[2].CreditMoney = 60000;
