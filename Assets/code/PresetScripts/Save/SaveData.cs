@@ -128,6 +128,8 @@ public class SaveData
         IsPinjol = false;
         IsLose = false;
 
+        IsBungaShooterBought = true;
+
         // TODO, DONT FORGET TO REMOVE BELOW
         DayDatas[1].CreditMoney = 50000;
         DayDatas[2].CreditMoney = 60000;
@@ -272,4 +274,7 @@ public class SaveData
     public const long SILVER_PLAY_BUTTON = 60000;
     public const long GOLD_PLAY_BUTTON = 100000;
     public const long DIAMOND_PLAY_BUTTON = 200000;
+
+    // Streamer Games
+    public bool IsBungaShooterBought = false;
 }

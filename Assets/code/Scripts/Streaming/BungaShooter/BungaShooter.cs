@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -181,10 +180,10 @@ public class BungaShooter : StreamingGames
     {
         Save.Data.CurrentDayData.StreamingCounter++;
         Save.Data.CurrentDayData.GainedViews += _viewCounter*_currentShotCount;
-        Save.Data.CurrentDayData.GainedSubscriber += (long)(_viewCounter*_currentShotCount * UnityEngine.Random.Range(0.5f, 0.75f));
-        Save.Data.CurrentDayData.GainedMoney = (long)(_viewCounter*_currentShotCount * UnityEngine.Random.Range(100f, 150f));
+        Save.Data.CurrentDayData.GainedSubscriber += (long)(_viewCounter*_currentShotCount * UnityEngine.Random.Range(1f, 1.5f));
+        Save.Data.CurrentDayData.GainedMoney = (long)(_viewCounter*_currentShotCount * UnityEngine.Random.Range(150f, 200f));
+        OnIncreaseViews(_viewCounter*_currentShotCount);
         MouseCursor.Main.SetToCursor();
-        Debug.Log("Done");
     }
 
 }
