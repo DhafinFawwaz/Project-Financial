@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class Interactable : MonoBehaviour
 {
-    [SerializeField] Transform _interactablePromptAnchor;
+    [SerializeField] protected Transform _interactablePromptAnchor;
     [SerializeField] UnityEvent _onInteract;
 
     string _playerTag = "Player";
@@ -51,7 +51,7 @@ public class Interactable : MonoBehaviour
 
 
     byte _scaleKey = 0;
-    IEnumerator TweenLocalScale(Transform rt, Vector3 start, Vector3 end, float duration, Ease.Function easeFunction, Action onComplete = null)
+    protected IEnumerator TweenLocalScale(Transform rt, Vector3 start, Vector3 end, float duration, Ease.Function easeFunction, Action onComplete = null)
     {
         byte requirement = ++_scaleKey;
         float startTime = Time.time;

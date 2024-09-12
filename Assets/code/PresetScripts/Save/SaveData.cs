@@ -128,12 +128,13 @@ public class SaveData
         IsPinjol = false;
         IsLose = false;
 
-        IsBungaShooterBought = true;
+        IsBungaShooterBought = false;
 
         // TODO, DONT FORGET TO REMOVE BELOW
         DayDatas[1].CreditMoney = 50000;
         DayDatas[2].CreditMoney = 60000;
         DayDatas[3].CreditMoney = 70000;
+        DesireMoney = 900000;
     }
     
 
