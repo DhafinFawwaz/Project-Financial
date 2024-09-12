@@ -606,66 +606,9 @@ public class AnimationUI : MonoBehaviour
 
 #endregion
 
-
-
-#if UNITY_EDITOR
-    void OnEnable() => UnityEditor.EditorApplication.update += EditorUpdate;
-    void OnDisable() => UnityEditor.EditorApplication.update -= EditorUpdate;
-    
-    void ForceRepaint()
-    {
-        if (!Application.isPlaying)
-        {
-            UnityEditor.EditorApplication.QueuePlayerLoopUpdate();
-            UnityEditor.SceneView.RepaintAll();
-            UnityEditorInternal.InternalEditorUtility.RepaintAllViews();
-        }
-    }
-    void OnDrawGizmos()
-    {
-        ForceRepaint();
-    }
-    void EditorUpdate()
-    {
-        if(Application.isPlaying)return;
-        ForceRepaint();
-
-        if(IsPlayingInEditMode && CurrentTime < TotalDuration)
-        {
-            CurrentTime = Mathf.Clamp(Time.time - _startTime, 0, TotalDuration);
-            UpdateSequence(CurrentTime);
-        } 
-        else
-        {
-            if(UpdateSequence != null && IsPlayingInEditMode)UpdateSequence(TotalDuration); //Make sure the latest frame is called
-            IsPlayingInEditMode = false;
-        }
-    }
-    public void UpdateBySlider()
-    {
-        if(Application.isPlaying)return;
-        if(IsPlayingInEditMode)return;
-        InitFunction();
-        if(UpdateSequence != null)UpdateSequence(CurrentTime);
-    }
-    [HideInInspector] public float CurrentTime = 0; // Don't forget this variable might be in build
-    [HideInInspector] public bool IsPlayingInEditMode = false;
-    float _startTime = 0;
-    public void PreviewAnimation()
-    {
-        InitFunction();
-        if(UpdateSequence == null)
-        {
-            Debug.Log("No animation exist");
-            return;
-        }
-        _startTime = Time.time;
-        CurrentTime = 0;
-        IsPlayingInEditMode = true;
-        UpdateSequence(0);// Make sure the first frame is called
-    }
     public void PreviewStart()
     {
+#if UNITY_EDITOR
         InitFunction();
         if(UpdateSequence == null)
         {
@@ -675,6 +618,7 @@ public class AnimationUI : MonoBehaviour
         CurrentTime = 0;
         IsPlayingInEditMode = false;
         UpdateSequence(0);
+#endif
 
         Array.Reverse(AnimationSequence);
         foreach(Sequence sequence in AnimationSequence)
@@ -773,6 +717,64 @@ public class AnimationUI : MonoBehaviour
 
         Array.Reverse(AnimationSequence);
     }
+
+#if UNITY_EDITOR
+    void OnEnable() => UnityEditor.EditorApplication.update += EditorUpdate;
+    void OnDisable() => UnityEditor.EditorApplication.update -= EditorUpdate;
+    
+    void ForceRepaint()
+    {
+        if (!Application.isPlaying)
+        {
+            UnityEditor.EditorApplication.QueuePlayerLoopUpdate();
+            UnityEditor.SceneView.RepaintAll();
+            UnityEditorInternal.InternalEditorUtility.RepaintAllViews();
+        }
+    }
+    void OnDrawGizmos()
+    {
+        ForceRepaint();
+    }
+    void EditorUpdate()
+    {
+        if(Application.isPlaying)return;
+        ForceRepaint();
+
+        if(IsPlayingInEditMode && CurrentTime < TotalDuration)
+        {
+            CurrentTime = Mathf.Clamp(Time.time - _startTime, 0, TotalDuration);
+            UpdateSequence(CurrentTime);
+        } 
+        else
+        {
+            if(UpdateSequence != null && IsPlayingInEditMode)UpdateSequence(TotalDuration); //Make sure the latest frame is called
+            IsPlayingInEditMode = false;
+        }
+    }
+    public void UpdateBySlider()
+    {
+        if(Application.isPlaying)return;
+        if(IsPlayingInEditMode)return;
+        InitFunction();
+        if(UpdateSequence != null)UpdateSequence(CurrentTime);
+    }
+    [HideInInspector] public float CurrentTime = 0; // Don't forget this variable might be in build
+    [HideInInspector] public bool IsPlayingInEditMode = false;
+    float _startTime = 0;
+    public void PreviewAnimation()
+    {
+        InitFunction();
+        if(UpdateSequence == null)
+        {
+            Debug.Log("No animation exist");
+            return;
+        }
+        _startTime = Time.time;
+        CurrentTime = 0;
+        IsPlayingInEditMode = true;
+        UpdateSequence(0);// Make sure the first frame is called
+    }
+    
     public void PreviewEnd()
     {
         CurrentTime = TotalDuration;
@@ -785,7 +787,6 @@ public class AnimationUI : MonoBehaviour
         IsPlayingInEditMode = false;
         CurrentTime = TotalDuration;
         UpdateSequence(Mathf.Clamp01(TotalDuration));
-
 
         foreach(Sequence sequence in AnimationSequence)
         {

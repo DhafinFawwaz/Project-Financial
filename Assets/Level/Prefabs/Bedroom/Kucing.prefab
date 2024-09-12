@@ -59,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 2871923760115437826}
   m_LocalRotation: {x: 0.13052616, y: -0, z: -0, w: 0.9914449}
   m_LocalPosition: {x: 0, y: 0.0674, z: 0}
-  m_LocalScale: {x: -0.13, y: 0.0999505, z: 0.13}
+  m_LocalScale: {x: -0.199901, y: 0.0999505, z: 0.13}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2871923760489434724}
@@ -140,7 +140,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2871923760489434725}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.40199998, y: -0.022, z: 0.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -179,13 +179,13 @@ MonoBehaviour:
   _onInteract:
     m_PersistentCalls:
       m_Calls: []
-  _commentListJustGotHome: {fileID: 0}
-  _commentListAfterStreaming: {fileID: 0}
-  _commentListAfterSleeping: {fileID: 0}
-  _commentListJustGotOutside: {fileID: 0}
-  _commentListAfterKuliah: {fileID: 0}
-  _commentListAfterBudgeting: {fileID: 0}
-  _commentListAfterBelanja: {fileID: 0}
+  _commentListJustGotHome: {fileID: 11400000, guid: 01786d0cd3e2fc24c8cc183ae8cf625c, type: 2}
+  _commentListAfterStreaming: {fileID: 11400000, guid: 01786d0cd3e2fc24c8cc183ae8cf625c, type: 2}
+  _commentListAfterSleeping: {fileID: 11400000, guid: 01786d0cd3e2fc24c8cc183ae8cf625c, type: 2}
+  _commentListJustGotOutside: {fileID: 11400000, guid: 01786d0cd3e2fc24c8cc183ae8cf625c, type: 2}
+  _commentListAfterKuliah: {fileID: 11400000, guid: 01786d0cd3e2fc24c8cc183ae8cf625c, type: 2}
+  _commentListAfterBudgeting: {fileID: 11400000, guid: 01786d0cd3e2fc24c8cc183ae8cf625c, type: 2}
+  _commentListAfterBelanja: {fileID: 11400000, guid: 01786d0cd3e2fc24c8cc183ae8cf625c, type: 2}
 --- !u!1 &2871923760492732432
 GameObject:
   m_ObjectHideFlags: 0

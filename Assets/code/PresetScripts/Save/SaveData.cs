@@ -128,7 +128,7 @@ public class SaveData
         IsPinjol = false;
         IsLose = false;
 
-        IsBungaShooterBought = false;
+        IsBungaShooterBought = true;
 
         // TODO, DONT FORGET TO REMOVE BELOW
         DayDatas[1].CreditMoney = 50000;
