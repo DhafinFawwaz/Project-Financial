@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class BungaShooter : StreamingGames
@@ -151,6 +152,7 @@ public class BungaShooter : StreamingGames
             SetCurrentMoney(_currentMoney - bunga.FinalPrice);
             SetShotCount(_currentShotCount+1);
             WinCheck();
+            _onBungaShotCorrect?.Invoke();
         }
     }
 
@@ -196,5 +198,8 @@ public class BungaShooter : StreamingGames
         OnIncreaseViews(_viewCounter*_currentShotCount);
         MouseCursor.Main.SetToCursor();
     }
+
+
+    [SerializeField] UnityEvent _onBungaShotCorrect;
 
 }
