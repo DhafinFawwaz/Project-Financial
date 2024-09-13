@@ -7,6 +7,7 @@ public class ShadowSkin : MonoBehaviour
     Vector3 _velocity;
     Vector3 _initLocalScale;
     Vector3 _lastPos;
+    [SerializeField] float _flipXThreshold = 0.1f;
 
     [SerializeField] Transform _skin;
 
@@ -19,12 +20,12 @@ public class ShadowSkin : MonoBehaviour
     int _facing = 1;
     void RefreshFacing()
     {
-        if (_velocity.x > 0 && _facing == -1)
+        if (_velocity.x > _flipXThreshold && _facing == -1)
         {
             _facing = 1;
             _skin.localScale = new Vector3(-_initLocalScale.x, _initLocalScale.y, _initLocalScale.z);
         }
-        else if (_velocity.x < 0 && _facing == 1)
+        else if (_velocity.x < -_flipXThreshold && _facing == 1)
         {
             _facing = -1;
             _skin.localScale = new Vector3(_initLocalScale.x, _initLocalScale.y, _initLocalScale.z);
