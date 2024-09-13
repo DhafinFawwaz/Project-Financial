@@ -24908,7 +24908,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2121054858}
   - component: {fileID: 2121054857}
-  - component: {fileID: 2121054859}
   m_Layer: 0
   m_Name: '[BelanjaStory]'
   m_TagString: Untagged
@@ -24947,20 +24946,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2121054859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2121054856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a4c37b3ad8c44a47be8d6a53a17c98c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _day: 2
-  _dayState: 0
 --- !u!1 &2122103960 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4215991286193646673, guid: c65deda6cb643fe4b9eae5df8d3f1702, type: 3}

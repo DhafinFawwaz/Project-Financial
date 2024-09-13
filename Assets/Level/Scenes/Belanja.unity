@@ -7621,6 +7621,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 852dba28aadf7c545809a1f72b3b3082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _velocity: {x: 0, y: 0, z: 0}
+  _flipXThreshold: 0.1
   _skin: {fileID: 988796141}
 --- !u!114 &988796145
 MonoBehaviour:
@@ -23806,6 +23808,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1585874522, guid: 506467f4b552a1041b81b2b58220526f, type: 3}
+      propertyPath: _flipXThreshold
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3044132359405774355, guid: 506467f4b552a1041b81b2b58220526f, type: 3}
       propertyPath: m_Name
       value: Shadow

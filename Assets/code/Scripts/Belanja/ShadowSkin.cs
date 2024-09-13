@@ -18,15 +18,20 @@ public class ShadowSkin : MonoBehaviour
 
 
     int _facing = 1;
+    float _lastFlipTime = 0;
+    [SerializeField] float _flipCooldown = 0.3f;
     void RefreshFacing()
     {
+        if(Time.time - _lastFlipTime < _flipCooldown) return;
         if (_velocity.x > _flipXThreshold && _facing == -1)
         {
+            _lastFlipTime = Time.time;
             _facing = 1;
             _skin.localScale = new Vector3(-_initLocalScale.x, _initLocalScale.y, _initLocalScale.z);
         }
         else if (_velocity.x < -_flipXThreshold && _facing == 1)
         {
+            _lastFlipTime = Time.time;
             _facing = -1;
             _skin.localScale = new Vector3(_initLocalScale.x, _initLocalScale.y, _initLocalScale.z);
         }
