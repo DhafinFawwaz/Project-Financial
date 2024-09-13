@@ -7621,9 +7621,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 852dba28aadf7c545809a1f72b3b3082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _velocity: {x: 0, y: 0, z: 0}
   _flipXThreshold: 0.1
   _skin: {fileID: 988796141}
+  _flipCooldown: 0.3
 --- !u!114 &988796145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23810,7 +23810,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1585874522, guid: 506467f4b552a1041b81b2b58220526f, type: 3}
       propertyPath: _flipXThreshold
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3044132359405774355, guid: 506467f4b552a1041b81b2b58220526f, type: 3}
       propertyPath: m_Name
@@ -24543,6 +24543,10 @@ PrefabInstance:
     - target: {fileID: 2277595365851024428, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -109.99988
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372359532278811677, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1711
       objectReference: {fileID: 0}
     - target: {fileID: 4221974584854204755, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
       propertyPath: m_Sprite

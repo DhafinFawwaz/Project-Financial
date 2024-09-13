@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 public class OptionSession : MonoBehaviour
 {
+    [SerializeField] GraphicsAnimation _blackAnimation;
     [SerializeField] ItemThrower _itemThrower;
     [SerializeField] Option _optionPrefab;
     [SerializeField] Transform _optionContainer;
@@ -20,6 +21,7 @@ public class OptionSession : MonoBehaviour
     public void SetDataAndPlay(Rak rak)
     {
         _onOptionStart?.Invoke();
+        _blackAnimation.SetEndColor(new Color(0,0,0,0.5f)).Play();
         _openTime = Time.time;
         _isOpen = true;
         _currentRak = rak;
@@ -165,6 +167,7 @@ public class OptionSession : MonoBehaviour
         StartCoroutine(TweenLocalScaleAnimation(_eToSelesai as RectTransform, _eToSelesai.localScale, Vector3.zero, 0.2f, Ease.OutQuart));
         CancelTimerCountdown();
         _isOpen = false;
+        _blackAnimation.SetEndColor(new Color(0,0,0,0)).Play();
     }
     
 
