@@ -18,10 +18,11 @@ public class OptionSession : MonoBehaviour
     public OptionData OptionData => _currentRak.OptionData;
     [SerializeField] UnityEvent _onOptionStart;
     [SerializeField] UnityEvent _onOptionEnd;
+    
     public void SetDataAndPlay(Rak rak)
     {
         _onOptionStart?.Invoke();
-        _blackAnimation.SetEndColor(new Color(0,0,0,0.5f)).Play();
+        _blackAnimation.SetEndColor(_activeBackgroundColor).Play();
         _openTime = Time.time;
         _isOpen = true;
         _currentRak = rak;
@@ -167,7 +168,7 @@ public class OptionSession : MonoBehaviour
         StartCoroutine(TweenLocalScaleAnimation(_eToSelesai as RectTransform, _eToSelesai.localScale, Vector3.zero, 0.2f, Ease.OutQuart));
         CancelTimerCountdown();
         _isOpen = false;
-        _blackAnimation.SetEndColor(new Color(0,0,0,0)).Play();
+        _blackAnimation.SetEndColor(_inactiveBackgroundColor).Play();
     }
     
 
@@ -231,4 +232,10 @@ public class OptionSession : MonoBehaviour
         if(_scaleKey == requirement)
             rt.localScale = end;
     }
+
+
+    
+    [Header("Background")]
+    [SerializeField] Color _activeBackgroundColor = new Color(0,0,0,0.7f);
+    [SerializeField] Color _inactiveBackgroundColor = Color.clear;
 }

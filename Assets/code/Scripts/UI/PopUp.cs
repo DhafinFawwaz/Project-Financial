@@ -25,7 +25,6 @@ public class PopUp : MonoBehaviour
     {
         if(!_isShowing) return;
         _isShowing = false;
-        Debug.Log("hide");
 
         onDone += () => _blocker.SetActive(false);
         StartCoroutine(TweenLocalScaleAnimation(_rt, _rt.localScale, Vector3.zero, 0.2f, Ease.InCubic));

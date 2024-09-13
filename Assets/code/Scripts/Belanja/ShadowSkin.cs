@@ -19,7 +19,7 @@ public class ShadowSkin : MonoBehaviour
 
     int _facing = 1;
     float _lastFlipTime = 0;
-    [SerializeField] float _flipCooldown = 0.3f;
+    [SerializeField] float _flipCooldown = 0.8f;
     void RefreshFacing()
     {
         if(Time.time - _lastFlipTime < _flipCooldown) return;
