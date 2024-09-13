@@ -139,10 +139,10 @@ public class SaveData
         OtherLevel = 0;
 
         // TODO, DONT FORGET TO REMOVE BELOW
-        DayDatas[1].CreditMoney = 50000;
-        DayDatas[2].CreditMoney = 60000;
-        DayDatas[3].CreditMoney = 70000;
-        DesireMoney = 900000;
+        // DayDatas[1].CreditMoney = 50000;
+        // DayDatas[2].CreditMoney = 60000;
+        // DayDatas[3].CreditMoney = 70000;
+        // DesireMoney = 900000;
     }
     
 
@@ -165,8 +165,12 @@ public class SaveData
 
             GainedSubscriber = 0;
             GainedViews = 0;
+            GainedMoney = 0;
+
+            // DONT FORGET TO REMOVE BELOW
             // GainedMoney = UnityEngine.Random.Range(10000, 100000);
-            GainedMoney = 1000000;
+            // GainedMoney = 1000000;
+            
         }
     }
 
