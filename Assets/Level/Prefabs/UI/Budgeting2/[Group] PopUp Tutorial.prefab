@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1331957381542772461}
   - component: {fileID: 6334441783975997865}
   - component: {fileID: 6026461165629049754}
+  - component: {fileID: 7859121579352723996}
   m_Layer: 5
   m_Name: '[Group] PopUp Tutorial'
   m_TagString: Untagged
@@ -91,6 +92,29 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &7859121579352723996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4215991286193646673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ScreenMatchMode: 1
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!1 &5771649120895678028
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,6 +505,8 @@ MonoBehaviour:
   _target: {fileID: 8837697294417736660}
   _color: {r: 0, g: 0, b: 0, a: 0.2}
   _duration: 0.3
+  _playOnStart: 0
+  _playOnEnable: 0
 --- !u!114 &8837697292741598833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -668,6 +694,7 @@ MonoBehaviour:
   _blocker: {fileID: 8837697293575877929}
   _rt: {fileID: 8837697292909829157}
   _canvasGroup: {fileID: 1331957381542772461}
+  _isShowing: 0
 --- !u!1 &8837697293539133508
 GameObject:
   m_ObjectHideFlags: 0
