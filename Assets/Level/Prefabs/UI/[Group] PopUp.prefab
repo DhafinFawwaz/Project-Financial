@@ -94,6 +94,7 @@ MonoBehaviour:
   _blocker: {fileID: 7439269740197213896}
   _rt: {fileID: 6678045284576652628}
   _canvasGroup: {fileID: 1145117836022250764}
+  _isShowing: 0
 --- !u!1 &1755930410492474689
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,6 +321,7 @@ GameObject:
   - component: {fileID: 1145117836022250764}
   - component: {fileID: 5363826229202317896}
   - component: {fileID: 5636848895465130107}
+  - component: {fileID: 3771610389368730005}
   m_Layer: 5
   m_Name: '[Group] PopUp'
   m_TagString: Untagged
@@ -372,7 +374,7 @@ Canvas:
   m_GameObject: {fileID: 2817673404654022576}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 2
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -401,6 +403,29 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &3771610389368730005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2817673404654022576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ScreenMatchMode: 1
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!1 &3213542501163037196
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,6 +618,8 @@ MonoBehaviour:
   _target: {fileID: 6271824152332327857}
   _color: {r: 0, g: 0, b: 0, a: 0.2}
   _duration: 0.3
+  _playOnStart: 0
+  _playOnEnable: 0
 --- !u!114 &8064705257466233164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -989,6 +1016,7 @@ MonoBehaviour:
   _blocker: {fileID: 7439269740197213896}
   _rt: {fileID: 7439269738449166276}
   _canvasGroup: {fileID: 1145117836022250764}
+  _isShowing: 0
 --- !u!1 &7439269738560959023
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,6 +1074,8 @@ MonoBehaviour:
   _target: {fileID: 7439269738835192330}
   _color: {r: 0, g: 0, b: 0, a: 0.2}
   _duration: 0.3
+  _playOnStart: 0
+  _playOnEnable: 0
 --- !u!114 &7439269738560959017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1510,6 +1540,7 @@ MonoBehaviour:
   _blocker: {fileID: 7439269740197213896}
   _rt: {fileID: 7439269739171287874}
   _canvasGroup: {fileID: 1145117836022250764}
+  _isShowing: 0
 --- !u!1 &7439269739220327830
 GameObject:
   m_ObjectHideFlags: 0
@@ -1567,6 +1598,8 @@ MonoBehaviour:
   _target: {fileID: 7439269739965329461}
   _color: {r: 0, g: 0, b: 0, a: 0.2}
   _duration: 0.3
+  _playOnStart: 0
+  _playOnEnable: 0
 --- !u!114 &7439269739220327824
 MonoBehaviour:
   m_ObjectHideFlags: 0
