@@ -172,6 +172,7 @@ public class BudgetingController : MonoBehaviour
         Save.Data.DesireMoney = (long)(values[1] * total);
         Save.Data.NeedsMoney = (long)(values[2] * total);
         Save.Data.CurrentNeedsMoney = Save.Data.NeedsMoney;
+        Save.Data.CurrentNeedsMoneyDiv3 = Save.Data.NeedsMoney / 3;
 
         
         // Debug.Log(

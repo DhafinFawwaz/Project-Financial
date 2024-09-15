@@ -33,8 +33,8 @@ public class AfterStreaming : MonoBehaviour
     }
     long CalculateProfit(long views)
     {
-        float p = 0.4f;
-        float q = 2400f;
+        float p = 0.3f;
+        float q = 6400f;
         long profit = (long)(Mathf.Pow(views, p) * q * UnityEngine.Random.Range(0.9f, 1.5f));
 
         float mul = 1 + Save.Data.OtherLevel * 0.05f;
@@ -43,7 +43,7 @@ public class AfterStreaming : MonoBehaviour
         return profit;
     }
 
-    void OnEnable()
+    void Awake()
     {
         if(Save.Data.CurrentDay == 10) {
             Save.Data.CurrentDayData.GainedMoney = 0;
@@ -52,6 +52,11 @@ public class AfterStreaming : MonoBehaviour
         long views = Save.Data.CurrentDayData.GainedViews;
         Save.Data.CurrentDayData.GainedSubscriber = CalculateSubscriber(views);
         Save.Data.CurrentDayData.GainedMoney = CalculateProfit(views);
+    }
+
+    void OnEnable()
+    {
+        
         
 
         var viewsEachDay = Save.Data.ViewsEachDay; viewsEachDay.Insert(0, 0);

@@ -29,4 +29,9 @@ public class KuliahController : MonoBehaviour
         Save.Data.Health -= _kesialan[_randomInt].Health;
         Save.Data.Happiness -= _kesialan[_randomInt].Happiness;
     }
+
+    public void LoadNextScene()
+    {
+        
+    }
 }

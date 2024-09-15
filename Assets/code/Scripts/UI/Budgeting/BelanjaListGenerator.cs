@@ -143,8 +143,7 @@ public class BelanjaListGenerator : MonoBehaviour
     [ContextMenu("Generate")]
     public void GenerateBelanjaList()
     {
-        long needsMoney = (long)(Save.Data.NeedsMoney * _currentValue);
-        long needsMoneyDiv3 = needsMoney / 3;
+        long needsMoneyDiv3 = Save.Data.CurrentNeedsMoneyDiv3;
     
         int maxLoop = 1000;
         int loop = 0;

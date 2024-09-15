@@ -84,7 +84,8 @@ public class StoryBedroom : MonoBehaviour
 
 
         // TODO: uncomment this
-        // Save.SaveDataToFile();   
+        Save.Data.DayState = DayState.AfterSleeping;
+        Save.SaveDataToFile();   
     }
 
     [SerializeField] DayData _dayData;

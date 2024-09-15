@@ -25,6 +25,8 @@ public class SaveData
 
     const int MAX_DAY = 15;
     public long NeedsMoney = 100000;
+    public long CurrentNeedsMoneyDiv3;
+
     public long CurrentNeedsMoney {
         get => _currentNeedsMoney;
         set {
@@ -37,17 +39,26 @@ public class SaveData
     // used in belanja
     public long TempNeedsMoney;
 
+    public bool HaveAnyCredit()
+    {
+        for(int i = 0; i <= CurrentDay; i++)
+        {
+            if(DayDatas[i].CreditMoney > 0) return true;
+        }
+        return false;
+    }
+
 
     public long DesireMoney = 60000;
     public long DebitMoney = 40000;
     public long DebitTabunganMoney = 150000;
     public long TotalMoney => NeedsMoney + DesireMoney + DebitMoney;
     
-
-    double _happiness = 100;
+    
+    [SerializeField] double _happiness = 100;
     public double Happiness { get => _happiness; set => _happiness = Mathf.Clamp((float)value, 0, 100); }
 
-    double _health = 100;
+    [SerializeField] double _health = 100;
     public double Health { get => _health; set => _health = Mathf.Clamp((float)value, 0, 100); }
     public int SkillPoints = 0;
     public int CurrentDay = 0;
@@ -91,7 +102,7 @@ public class SaveData
     public SaveData()
     {
         CurrentVersion = Version;
-        Happiness = 90;
+        Happiness = 100;
         Health = 100;
         CurrentDay = 0;
         CurrentListBelanja = new List<ItemCount>();
@@ -105,6 +116,8 @@ public class SaveData
         DebitTabunganMoney = 10000;
 
         CurrentNeedsMoney = NeedsMoney;
+
+        CurrentNeedsMoneyDiv3 = 20000;
 
         for(int i = 0; i < MAX_DAY; i++)
         {
