@@ -63,7 +63,7 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 41438e0488791b148b478e37bf49c108, type: 3}
     - {fileID: 2800000, guid: ba9510175dda9a847b161004d9e8f64a, type: 3}
     - {fileID: 2800000, guid: 40464ba216afa7742b817b422d03774c, type: 3}
-    - {fileID: 2800000, guid: 8d58c08d3b807d04f9330ba09e56f04d, type: 3}
+    - {fileID: 2800000, guid: db6b5360b33a94a479c15865a8fcd7a9, type: 3}
     - {fileID: 2800000, guid: 6bc9190c253904b4989f92cf0eb510e9, type: 3}
     - {fileID: 2800000, guid: 0f7d415bb34c228408d66cd30478f7c3, type: 3}
     - {fileID: 2800000, guid: 9a41a4365dd9de94f9a4701b35893731, type: 3}
@@ -73,7 +73,7 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 2bb91c9fedf27e44d8b69cf45f9570dc, type: 3}
     - {fileID: 2800000, guid: 578f97bcf8bad014482c23c5cd4ca7f7, type: 3}
     - {fileID: 2800000, guid: 43cc68923bbafd441ac5bee8c5555d82, type: 3}
-    - {fileID: 2800000, guid: f6c2873fe0a96444c96288b7d88e0a63, type: 3}
+    - {fileID: 2800000, guid: 4ffa8273d6c955c4098c836b359c2317, type: 3}
     - {fileID: 2800000, guid: 6466507f5c873b14db5d3f44c908f863, type: 3}
     - {fileID: 2800000, guid: d3d3fde30ff8bde45ac5097433cddf72, type: 3}
     - {fileID: 2800000, guid: 94aaa37375025614cbc2319ebd29a91d, type: 3}
@@ -82,11 +82,13 @@ SpriteAtlas:
     - {fileID: 2800000, guid: da0ba9c9f4989fd45acd1fa75cfad629, type: 3}
     - {fileID: 2800000, guid: c82e353c03cd90b42896d6bd070dbce1, type: 3}
     - {fileID: 2800000, guid: ce004aa84ca3282479687e24a7bd07e3, type: 3}
+    - {fileID: 2800000, guid: fe743714a0f3a4046ad248465566197e, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: db6b5360b33a94a479c15865a8fcd7a9, type: 3}
   - {fileID: 21300000, guid: 46a743b059bd71d479a04064fbbae31c, type: 3}
   - {fileID: 21300000, guid: db6fe0d0e11763c4bb3e0a510109a1f3, type: 3}
   - {fileID: 21300000, guid: 99cb5bd034077b146a17d381c5411907, type: 3}
@@ -96,10 +98,12 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 40464ba216afa7742b817b422d03774c, type: 3}
   - {fileID: 21300000, guid: 568f1f03fc95e9c4e875a93435cc6c35, type: 3}
   - {fileID: 21300000, guid: 0e37cc5395b630341a7cf435c1ad9a8c, type: 3}
+  - {fileID: 21300000, guid: 4ffa8273d6c955c4098c836b359c2317, type: 3}
   - {fileID: 21300000, guid: 94aaa37375025614cbc2319ebd29a91d, type: 3}
   - {fileID: 21300000, guid: d3d3fde30ff8bde45ac5097433cddf72, type: 3}
   - {fileID: 21300000, guid: 41438e0488791b148b478e37bf49c108, type: 3}
   - {fileID: 21300000, guid: 1de3bf04c11d8b94b99f932ef81b9986, type: 3}
+  - {fileID: 21300000, guid: fe743714a0f3a4046ad248465566197e, type: 3}
   - {fileID: 21300000, guid: e8cd0135cb31f084ba9aa748a67b15bf, type: 3}
   - {fileID: 21300000, guid: 9a41a4365dd9de94f9a4701b35893731, type: 3}
   - {fileID: 21300000, guid: fc2af9c6f0af0dc449b590124938a498, type: 3}
@@ -119,13 +123,12 @@ SpriteAtlas:
   - {fileID: 21300000, guid: c82e353c03cd90b42896d6bd070dbce1, type: 3}
   - {fileID: 21300000, guid: 578f97bcf8bad014482c23c5cd4ca7f7, type: 3}
   - {fileID: 21300000, guid: bbb8cf5d326d8074da420b894192fe74, type: 3}
-  - {fileID: 21300000, guid: 8d58c08d3b807d04f9330ba09e56f04d, type: 3}
   - {fileID: 21300000, guid: 0536f10e5ea755f49ad076058eaec54b, type: 3}
   - {fileID: 21300000, guid: a8f7363e31472c14d9155d114535ed94, type: 3}
-  - {fileID: 21300000, guid: f6c2873fe0a96444c96288b7d88e0a63, type: 3}
   - {fileID: 21300000, guid: 6466507f5c873b14db5d3f44c908f863, type: 3}
   - {fileID: 21300000, guid: 2bb91c9fedf27e44d8b69cf45f9570dc, type: 3}
   m_PackedSpriteNamesToIndex:
+  - meja bg fix
   - Dompet kebutuhan
   - kartu kredit
   - kartu debit
@@ -135,10 +138,12 @@ SpriteAtlas:
   - arrow skor kredit
   - Popup stok apotek
   - light bulb
+  - phone calculator fix
   - transfer ke kiri
   - transfer ke kanan
   - yello chart
   - yutub icon
+  - bg kalender
   - gajian pop up
   - bunga kredit
   - blue arrow
@@ -158,10 +163,8 @@ SpriteAtlas:
   - tombol cairkan pinjol
   - nominal kebutuhan keinginan
   - meja doang
-  - background page 1
   - tukar
   - atm button
-  - phone budgeting
   - pop up kredit
   - nominal debit
   m_RenderDataMap: {}

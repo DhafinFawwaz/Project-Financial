@@ -41,6 +41,11 @@ public class AudioObserver : MonoBehaviour
         StreamingManager.s_OnIncreaseViews += SFXWin;
         StreamingManager.s_OnDecreaseViews += SFXLose;
         Bunga.s_OnBungaShot += SFXOnBungaShot;
+        Thief.s_OnStolen += SFXOnStolen;
+        Dialog.s_OnDialogStart += SFXOnDialogStart;
+        Dialog.s_OnDialogNext += SFXOnDialogNext;
+        Dialog.s_OnDialogFinished += SFXOnDialogFinished;
+        TextRupiahAnimation.s_OnRupiahAnimationStart += SFXRupiahAnimationStart;
     }
     void OnDisable()
     {
@@ -77,8 +82,22 @@ public class AudioObserver : MonoBehaviour
         StreamingManager.s_OnIncreaseViews -= SFXWin;
         StreamingManager.s_OnDecreaseViews -= SFXLose;
         Bunga.s_OnBungaShot -= SFXOnBungaShot;
+        Thief.s_OnStolen -= SFXOnStolen;
+        Dialog.s_OnDialogStart -= SFXOnDialogStart;
+        Dialog.s_OnDialogNext -= SFXOnDialogNext;
+        Dialog.s_OnDialogFinished -= SFXOnDialogFinished;
+        TextRupiahAnimation.s_OnRupiahAnimationStart -= SFXRupiahAnimationStart;
     }
 
+    void SFXRupiahAnimationStart() {
+        // _audio.PlaySound(18);
+    }
+
+    void SFXOnDialogFinished(DialogData _) => _audio.PlaySound(23);
+    void SFXOnDialogStart(DialogData _) => _audio.PlaySound(19);
+    void SFXOnDialogNext() => _audio.PlaySound(30);
+
+    void SFXOnStolen() => _audio.PlaySound(16);
     void SFXOnBungaShot() => _audio.PlaySound(32);
 
     void SFXOnItemPieThrown() => _audio.PlaySound(22);

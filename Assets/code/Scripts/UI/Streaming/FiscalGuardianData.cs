@@ -12,6 +12,17 @@ public class FiscalGuardianData : ScriptableObject
 {
     [SerializeField] FiscalGuardianPeople[] _people;
     public FiscalGuardianPeople[] People => _people;
+    public int GetShadowCount() {
+        int shadowCount = 0;
+        foreach (var people in _people)
+        {
+            if(people.IsShadow)
+            {
+                shadowCount++;
+            }
+        }
+        return shadowCount;
+    }
 }
 
 [System.Serializable]
@@ -27,7 +38,7 @@ public class FiscalGuardianPeople
 
     public int Id {get => _id; set => _id = value;}
     public long CicilanKredit {get => _cicilanKredit; set => _cicilanKredit = value;}
-    public string WrongMessage => _wrongMessage;
+    public string WrongMessage {get => _wrongMessage; set => _wrongMessage = value;}
     
     public long TotalPemasukan {get {
         long total = 0;
@@ -114,12 +125,17 @@ public class FiscalGuardianDataEditor : Editor
         foreach (var people in ((FiscalGuardianData)target).People)
         {
             EditorGUILayout.LabelField($"Total Pemasukan {people.TotalPemasukan}");
-            EditorGUILayout.LabelField($"Total Pengeluaran {people.TotalPengeluaran}");
+            EditorGUILayout.LabelField($"Total Pengeluaran {people.TotalPengeluaran + people.PajakBulanan + people.CicilanKredit}");
+            
+            EditorGUILayout.LabelField($"Pengeluaran {people.TotalPengeluaran}");
             EditorGUILayout.LabelField($"Pajak Bulanan {people.PajakBulanan}");
             EditorGUILayout.LabelField($"Cicilan {people.CicilanKredit}");
             EditorGUILayout.LabelField($"Is Shadow {people.IsShadow}");
             EditorGUILayout.Space();
         }
+
+        EditorGUILayout.LabelField($"Shadow: {((FiscalGuardianData)target).GetShadowCount()}");
+
 
         if (GUILayout.Button("Randomize Date"))
         {
@@ -209,6 +225,22 @@ public class FiscalGuardianDataEditor : Editor
                 people.Id = UnityEngine.Random.Range(0, 16);
             }
         }
+        if(GUILayout.Button("Randomize Message"))
+        {
+            string[] messageList = new string[]{
+                "APA??? Ini tidak adil!",
+                "hei apa-apaan ini???! Keuanganku jelas-jelas bagus",
+                "pegawai baru ini tidak bisa dipercaya!!! Awas saja kau!",
+                "sial banget hari ini, ketemu pegawai tidak becus seperti kamu!!",
+                "APA SALAHKUUUUU??",
+                "Pemerintah memang tidak bisa dipercaya!",
+            };
+            foreach (var people in ((FiscalGuardianData)target).People)
+            {
+                people.WrongMessage = messageList[UnityEngine.Random.Range(0, messageList.Length)];
+            }
+        }
+
     }
     private System.Random gen = new System.Random();
     DateTime RandomDay2024()

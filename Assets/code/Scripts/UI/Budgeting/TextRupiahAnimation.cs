@@ -8,8 +8,11 @@ public class TextRupiahAnimation : TextAnimation
     [SerializeField] float _finalValue = 0;
     [SerializeField] float _duration = 1;
 
+    public static System.Action s_OnRupiahAnimationStart;
+
     public void Play()
     {
+        s_OnRupiahAnimationStart?.Invoke();
         SetAndAnimate(_initialValue, _finalValue, _duration);
     }
 

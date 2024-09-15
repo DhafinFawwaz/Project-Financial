@@ -1,0 +1,179 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd393a6a6074c244fb63b57122b40738, type: 3}
+  m_Name: FiscalGuardianData 7
+  m_EditorClassIdentifier: 
+  _people:
+  - _id: 10
+    _cicilanKredit: 20000
+    _wrongMessage: sial banget hari ini, ketemu pegawai tidak becus seperti kamu!!
+    _catatan:
+    - _tanggal: 24-04-2024
+      _pemasukan: 44000
+      _pengeluaran: 98000
+    - _tanggal: 17-04-2024
+      _pemasukan: 93000
+      _pengeluaran: 34000
+    - _tanggal: 12-04-2024
+      _pemasukan: 29000
+      _pengeluaran: 13000
+    - _tanggal: 27-04-2024
+      _pemasukan: 56000
+      _pengeluaran: 35000
+    - _tanggal: 18-04-2024
+      _pemasukan: 46000
+      _pengeluaran: 84000
+    - _tanggal: 05-04-2024
+      _pemasukan: 145000
+      _pengeluaran: 56000
+    - _tanggal: 23-04-2024
+      _pemasukan: 100000
+      _pengeluaran: 36000
+    - _tanggal: 15-04-2024
+      _pemasukan: 20000
+      _pengeluaran: 79000
+    - _tanggal: 16-04-2024
+      _pemasukan: 168000
+      _pengeluaran: 118000
+    - _tanggal: 09-04-2024
+      _pemasukan: 16000
+      _pengeluaran: 18000
+  - _id: 11
+    _cicilanKredit: 68000
+    _wrongMessage: APA SALAHKUUUUU??
+    _catatan:
+    - _tanggal: 24-04-2024
+      _pemasukan: 133000
+      _pengeluaran: 28000
+    - _tanggal: 17-04-2024
+      _pemasukan: 167000
+      _pengeluaran: 63000
+    - _tanggal: 12-04-2024
+      _pemasukan: 36000
+      _pengeluaran: 24000
+    - _tanggal: 27-04-2024
+      _pemasukan: 122000
+      _pengeluaran: 28000
+    - _tanggal: 18-04-2024
+      _pemasukan: 39000
+      _pengeluaran: 31000
+    - _tanggal: 05-04-2024
+      _pemasukan: 36000
+      _pengeluaran: 74000
+    - _tanggal: 23-04-2024
+      _pemasukan: 190000
+      _pengeluaran: 59000
+    - _tanggal: 15-04-2024
+      _pemasukan: 108000
+      _pengeluaran: 34000
+    - _tanggal: 16-04-2024
+      _pemasukan: 1000
+      _pengeluaran: 98000
+  - _id: 12
+    _cicilanKredit: 263000
+    _wrongMessage: sial banget hari ini, ketemu pegawai tidak becus seperti kamu!!
+    _catatan:
+    - _tanggal: 24-04-2024
+      _pemasukan: 97000
+      _pengeluaran: 30000
+    - _tanggal: 17-04-2024
+      _pemasukan: 13000
+      _pengeluaran: 103000
+    - _tanggal: 12-04-2024
+      _pemasukan: 33000
+      _pengeluaran: 112000
+    - _tanggal: 27-04-2024
+      _pemasukan: 102000
+      _pengeluaran: 50000
+    - _tanggal: 18-04-2024
+      _pemasukan: 104000
+      _pengeluaran: 83000
+    - _tanggal: 05-04-2024
+      _pemasukan: 55000
+      _pengeluaran: 27000
+    - _tanggal: 23-04-2024
+      _pemasukan: 33000
+      _pengeluaran: 50000
+    - _tanggal: 15-04-2024
+      _pemasukan: 105000
+      _pengeluaran: 27000
+    - _tanggal: 16-04-2024
+      _pemasukan: 13000
+      _pengeluaran: 64000
+  - _id: 13
+    _cicilanKredit: 59000
+    _wrongMessage: Pemerintah memang tidak bisa dipercaya!
+    _catatan:
+    - _tanggal: 24-04-2024
+      _pemasukan: 188000
+      _pengeluaran: 106000
+    - _tanggal: 17-04-2024
+      _pemasukan: 154000
+      _pengeluaran: 20000
+    - _tanggal: 12-04-2024
+      _pemasukan: 17000
+      _pengeluaran: 17000
+    - _tanggal: 27-04-2024
+      _pemasukan: 25000
+      _pengeluaran: 9000
+    - _tanggal: 18-04-2024
+      _pemasukan: 97000
+      _pengeluaran: 64000
+    - _tanggal: 05-04-2024
+      _pemasukan: 178000
+      _pengeluaran: 8000
+    - _tanggal: 23-04-2024
+      _pemasukan: 67000
+      _pengeluaran: 69000
+    - _tanggal: 15-04-2024
+      _pemasukan: 27000
+      _pengeluaran: 106000
+    - _tanggal: 16-04-2024
+      _pemasukan: 122000
+      _pengeluaran: 25000
+    - _tanggal: 09-04-2024
+      _pemasukan: 62000
+      _pengeluaran: 62000
+  - _id: 14
+    _cicilanKredit: 132000
+    _wrongMessage: Pemerintah memang tidak bisa dipercaya!
+    _catatan:
+    - _tanggal: 24-04-2024
+      _pemasukan: 199000
+      _pengeluaran: 85000
+    - _tanggal: 17-04-2024
+      _pemasukan: 10000
+      _pengeluaran: 72000
+    - _tanggal: 12-04-2024
+      _pemasukan: 15000
+      _pengeluaran: 7000
+    - _tanggal: 27-04-2024
+      _pemasukan: 155000
+      _pengeluaran: 44000
+    - _tanggal: 18-04-2024
+      _pemasukan: 15000
+      _pengeluaran: 90000
+    - _tanggal: 05-04-2024
+      _pemasukan: 118000
+      _pengeluaran: 53000
+    - _tanggal: 23-04-2024
+      _pemasukan: 23000
+      _pengeluaran: 82000
+    - _tanggal: 15-04-2024
+      _pemasukan: 100000
+      _pengeluaran: 85000
+    - _tanggal: 16-04-2024
+      _pemasukan: 160000
+      _pengeluaran: 97000
+    - _tanggal: 09-04-2024
+      _pemasukan: 161000
+      _pengeluaran: 32000

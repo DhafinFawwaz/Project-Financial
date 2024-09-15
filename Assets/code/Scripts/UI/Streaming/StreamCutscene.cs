@@ -149,6 +149,7 @@ public class StreamCutscene : MonoBehaviour
 
     void Next()
     {
+        Dialog.s_OnDialogNext?.Invoke();
         _cutsceneIndex++;
         if(_cutsceneIndex >= _currentCutscene.Dialogs.Length)
         {

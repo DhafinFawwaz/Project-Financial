@@ -182,6 +182,8 @@ GameObject:
   - component: {fileID: 85502670}
   - component: {fileID: 85502669}
   - component: {fileID: 85502668}
+  - component: {fileID: 85502673}
+  - component: {fileID: 85502672}
   m_Layer: 5
   m_Name: Page (12) (7)
   m_TagString: Untagged
@@ -333,6 +335,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 85502666}
   m_CullTransparentMesh: 1
+--- !u!114 &85502672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85502666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18f021aedda7fe4d8e5127aabb1d8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxIndex: 30
+--- !u!114 &85502673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85502666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102cfea3e2c474446983276d0127c780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onEnable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 85502672}
+        m_TargetAssemblyTypeName: SFXOnSceneTrigger, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &110336789
 GameObject:
   m_ObjectHideFlags: 0
@@ -2151,6 +2193,8 @@ GameObject:
   - component: {fileID: 362135926}
   - component: {fileID: 362135928}
   - component: {fileID: 362135929}
+  - component: {fileID: 362135931}
+  - component: {fileID: 362135930}
   m_Layer: 5
   m_Name: Page (3)
   m_TagString: Untagged
@@ -2307,6 +2351,46 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &362135930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362135924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18f021aedda7fe4d8e5127aabb1d8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxIndex: 30
+--- !u!114 &362135931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362135924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102cfea3e2c474446983276d0127c780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onEnable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 85502672}
+        m_TargetAssemblyTypeName: SFXOnSceneTrigger, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &371315345
 GameObject:
   m_ObjectHideFlags: 0
@@ -2955,6 +3039,8 @@ GameObject:
   - component: {fileID: 381551108}
   - component: {fileID: 381551107}
   - component: {fileID: 381551106}
+  - component: {fileID: 381551111}
+  - component: {fileID: 381551110}
   m_Layer: 5
   m_Name: Page (13)
   m_TagString: Untagged
@@ -3079,6 +3165,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 381551104}
   m_CullTransparentMesh: 1
+--- !u!114 &381551110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381551104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18f021aedda7fe4d8e5127aabb1d8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxIndex: 30
+--- !u!114 &381551111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381551104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102cfea3e2c474446983276d0127c780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onEnable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 85502672}
+        m_TargetAssemblyTypeName: SFXOnSceneTrigger, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &382577755
 GameObject:
   m_ObjectHideFlags: 0
@@ -3608,6 +3734,8 @@ GameObject:
   - component: {fileID: 432409060}
   - component: {fileID: 432409059}
   - component: {fileID: 432409058}
+  - component: {fileID: 432409063}
+  - component: {fileID: 432409062}
   m_Layer: 5
   m_Name: Page (11)
   m_TagString: Untagged
@@ -3783,6 +3911,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 432409056}
   m_CullTransparentMesh: 1
+--- !u!114 &432409062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432409056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18f021aedda7fe4d8e5127aabb1d8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxIndex: 30
+--- !u!114 &432409063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432409056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102cfea3e2c474446983276d0127c780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onEnable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 85502672}
+        m_TargetAssemblyTypeName: SFXOnSceneTrigger, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &436708931
 GameObject:
   m_ObjectHideFlags: 0
@@ -7985,6 +8153,8 @@ GameObject:
   - component: {fileID: 967085425}
   - component: {fileID: 967085424}
   - component: {fileID: 967085423}
+  - component: {fileID: 967085428}
+  - component: {fileID: 967085427}
   m_Layer: 5
   m_Name: Page (10)
   m_TagString: Untagged
@@ -8138,6 +8308,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967085421}
   m_CullTransparentMesh: 1
+--- !u!114 &967085427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967085421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18f021aedda7fe4d8e5127aabb1d8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxIndex: 30
+--- !u!114 &967085428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967085421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102cfea3e2c474446983276d0127c780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onEnable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 85502672}
+        m_TargetAssemblyTypeName: SFXOnSceneTrigger, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &984858733
 GameObject:
   m_ObjectHideFlags: 0
@@ -8151,6 +8361,8 @@ GameObject:
   - component: {fileID: 984858737}
   - component: {fileID: 984858736}
   - component: {fileID: 984858735}
+  - component: {fileID: 984858740}
+  - component: {fileID: 984858739}
   m_Layer: 5
   m_Name: Page (12) (4)
   m_TagString: Untagged
@@ -8312,6 +8524,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 984858733}
   m_CullTransparentMesh: 1
+--- !u!114 &984858739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984858733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18f021aedda7fe4d8e5127aabb1d8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxIndex: 30
+--- !u!114 &984858740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984858733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102cfea3e2c474446983276d0127c780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onEnable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 85502672}
+        m_TargetAssemblyTypeName: SFXOnSceneTrigger, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &993511327
 GameObject:
   m_ObjectHideFlags: 0
@@ -9235,6 +9487,8 @@ GameObject:
   - component: {fileID: 1121635242}
   - component: {fileID: 1121635241}
   - component: {fileID: 1121635240}
+  - component: {fileID: 1121635245}
+  - component: {fileID: 1121635244}
   m_Layer: 5
   m_Name: Page (12) (5)
   m_TagString: Untagged
@@ -9397,6 +9651,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1121635238}
   m_CullTransparentMesh: 1
+--- !u!114 &1121635244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121635238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18f021aedda7fe4d8e5127aabb1d8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxIndex: 30
+--- !u!114 &1121635245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121635238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102cfea3e2c474446983276d0127c780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onEnable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 85502672}
+        m_TargetAssemblyTypeName: SFXOnSceneTrigger, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1127632341
 GameObject:
   m_ObjectHideFlags: 0
@@ -10875,6 +11169,8 @@ GameObject:
   - component: {fileID: 1322840082}
   - component: {fileID: 1322840081}
   - component: {fileID: 1322840080}
+  - component: {fileID: 1322840085}
+  - component: {fileID: 1322840084}
   m_Layer: 5
   m_Name: Page (12)
   m_TagString: Untagged
@@ -11024,6 +11320,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1322840078}
   m_CullTransparentMesh: 1
+--- !u!114 &1322840084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322840078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18f021aedda7fe4d8e5127aabb1d8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxIndex: 30
+--- !u!114 &1322840085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322840078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102cfea3e2c474446983276d0127c780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onEnable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 85502672}
+        m_TargetAssemblyTypeName: SFXOnSceneTrigger, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1324205552
 GameObject:
   m_ObjectHideFlags: 0
@@ -11037,6 +11373,8 @@ GameObject:
   - component: {fileID: 1324205556}
   - component: {fileID: 1324205555}
   - component: {fileID: 1324205554}
+  - component: {fileID: 1324205559}
+  - component: {fileID: 1324205558}
   m_Layer: 5
   m_Name: Page (14)
   m_TagString: Untagged
@@ -11161,6 +11499,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1324205552}
   m_CullTransparentMesh: 1
+--- !u!114 &1324205558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324205552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18f021aedda7fe4d8e5127aabb1d8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxIndex: 30
+--- !u!114 &1324205559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324205552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102cfea3e2c474446983276d0127c780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onEnable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 85502672}
+        m_TargetAssemblyTypeName: SFXOnSceneTrigger, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1327921456
 GameObject:
   m_ObjectHideFlags: 0
@@ -12541,6 +12919,8 @@ GameObject:
   - component: {fileID: 1363638461}
   - component: {fileID: 1363638463}
   - component: {fileID: 1363638464}
+  - component: {fileID: 1363638466}
+  - component: {fileID: 1363638465}
   m_Layer: 5
   m_Name: Page (2)
   m_TagString: Untagged
@@ -12710,6 +13090,46 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1363638465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363638459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18f021aedda7fe4d8e5127aabb1d8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxIndex: 30
+--- !u!114 &1363638466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363638459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102cfea3e2c474446983276d0127c780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onEnable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 85502672}
+        m_TargetAssemblyTypeName: SFXOnSceneTrigger, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1365000113
 GameObject:
   m_ObjectHideFlags: 0
@@ -12914,6 +13334,8 @@ GameObject:
   - component: {fileID: 1371598975}
   - component: {fileID: 1371598974}
   - component: {fileID: 1371598973}
+  - component: {fileID: 1371598978}
+  - component: {fileID: 1371598977}
   m_Layer: 5
   m_Name: Page (7) (2)
   m_TagString: Untagged
@@ -13062,6 +13484,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371598971}
   m_CullTransparentMesh: 1
+--- !u!114 &1371598977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371598971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18f021aedda7fe4d8e5127aabb1d8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxIndex: 30
+--- !u!114 &1371598978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371598971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102cfea3e2c474446983276d0127c780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onEnable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 85502672}
+        m_TargetAssemblyTypeName: SFXOnSceneTrigger, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1398786887
 GameObject:
   m_ObjectHideFlags: 0
@@ -13171,6 +13633,8 @@ GameObject:
   - component: {fileID: 1418039958}
   - component: {fileID: 1418039957}
   - component: {fileID: 1418039956}
+  - component: {fileID: 1418039961}
+  - component: {fileID: 1418039960}
   m_Layer: 5
   m_Name: Page (12) (8)
   m_TagString: Untagged
@@ -13332,6 +13796,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1418039954}
   m_CullTransparentMesh: 1
+--- !u!114 &1418039960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418039954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18f021aedda7fe4d8e5127aabb1d8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxIndex: 30
+--- !u!114 &1418039961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418039954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102cfea3e2c474446983276d0127c780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onEnable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 85502672}
+        m_TargetAssemblyTypeName: SFXOnSceneTrigger, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1449192235
 GameObject:
   m_ObjectHideFlags: 0
@@ -13536,6 +14040,8 @@ GameObject:
   - component: {fileID: 1455289660}
   - component: {fileID: 1455289659}
   - component: {fileID: 1455289658}
+  - component: {fileID: 1455289663}
+  - component: {fileID: 1455289662}
   m_Layer: 5
   m_Name: Page (8)
   m_TagString: Untagged
@@ -13708,6 +14214,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1455289656}
   m_CullTransparentMesh: 1
+--- !u!114 &1455289662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455289656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18f021aedda7fe4d8e5127aabb1d8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxIndex: 30
+--- !u!114 &1455289663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455289656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102cfea3e2c474446983276d0127c780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onEnable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 85502672}
+        m_TargetAssemblyTypeName: SFXOnSceneTrigger, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1479464904
 GameObject:
   m_ObjectHideFlags: 0
@@ -14246,6 +14792,8 @@ GameObject:
   - component: {fileID: 1546614421}
   - component: {fileID: 1546614420}
   - component: {fileID: 1546614419}
+  - component: {fileID: 1546614424}
+  - component: {fileID: 1546614423}
   m_Layer: 5
   m_Name: Page (5)
   m_TagString: Untagged
@@ -14403,6 +14951,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1546614417}
   m_CullTransparentMesh: 1
+--- !u!114 &1546614423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546614417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18f021aedda7fe4d8e5127aabb1d8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxIndex: 30
+--- !u!114 &1546614424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546614417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102cfea3e2c474446983276d0127c780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onEnable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 85502672}
+        m_TargetAssemblyTypeName: SFXOnSceneTrigger, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1550853481
 GameObject:
   m_ObjectHideFlags: 0
@@ -14782,6 +15370,8 @@ GameObject:
   - component: {fileID: 1600927327}
   - component: {fileID: 1600927326}
   - component: {fileID: 1600927325}
+  - component: {fileID: 1600927330}
+  - component: {fileID: 1600927329}
   m_Layer: 5
   m_Name: Page (9)
   m_TagString: Untagged
@@ -14955,6 +15545,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1600927323}
   m_CullTransparentMesh: 1
+--- !u!114 &1600927329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600927323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18f021aedda7fe4d8e5127aabb1d8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxIndex: 30
+--- !u!114 &1600927330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600927323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102cfea3e2c474446983276d0127c780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onEnable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 85502672}
+        m_TargetAssemblyTypeName: SFXOnSceneTrigger, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1630390226
 GameObject:
   m_ObjectHideFlags: 0
@@ -14968,6 +15598,8 @@ GameObject:
   - component: {fileID: 1630390230}
   - component: {fileID: 1630390229}
   - component: {fileID: 1630390228}
+  - component: {fileID: 1630390233}
+  - component: {fileID: 1630390232}
   m_Layer: 5
   m_Name: Page (4)
   m_TagString: Untagged
@@ -15118,6 +15750,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630390226}
   m_CullTransparentMesh: 1
+--- !u!114 &1630390232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630390226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18f021aedda7fe4d8e5127aabb1d8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxIndex: 30
+--- !u!114 &1630390233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630390226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102cfea3e2c474446983276d0127c780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onEnable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 85502672}
+        m_TargetAssemblyTypeName: SFXOnSceneTrigger, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1639752113
 GameObject:
   m_ObjectHideFlags: 0
@@ -15199,6 +15871,8 @@ GameObject:
   - component: {fileID: 1649367665}
   - component: {fileID: 1649367664}
   - component: {fileID: 1649367663}
+  - component: {fileID: 1649367668}
+  - component: {fileID: 1649367667}
   m_Layer: 5
   m_Name: Page (6)
   m_TagString: Untagged
@@ -15348,6 +16022,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1649367661}
   m_CullTransparentMesh: 1
+--- !u!114 &1649367667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649367661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18f021aedda7fe4d8e5127aabb1d8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxIndex: 30
+--- !u!114 &1649367668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649367661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102cfea3e2c474446983276d0127c780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onEnable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 85502672}
+        m_TargetAssemblyTypeName: SFXOnSceneTrigger, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1683307489
 GameObject:
   m_ObjectHideFlags: 0
@@ -16592,6 +17306,8 @@ GameObject:
   - component: {fileID: 1870405027}
   - component: {fileID: 1870405026}
   - component: {fileID: 1870405025}
+  - component: {fileID: 1870405030}
+  - component: {fileID: 1870405029}
   m_Layer: 5
   m_Name: Page (12) (6)
   m_TagString: Untagged
@@ -16741,6 +17457,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1870405023}
   m_CullTransparentMesh: 1
+--- !u!114 &1870405029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870405023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18f021aedda7fe4d8e5127aabb1d8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxIndex: 30
+--- !u!114 &1870405030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870405023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102cfea3e2c474446983276d0127c780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onEnable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 85502672}
+        m_TargetAssemblyTypeName: SFXOnSceneTrigger, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1876702194
 GameObject:
   m_ObjectHideFlags: 0
@@ -16925,6 +17681,8 @@ GameObject:
   - component: {fileID: 1913380874}
   - component: {fileID: 1913380873}
   - component: {fileID: 1913380872}
+  - component: {fileID: 1913380877}
+  - component: {fileID: 1913380876}
   m_Layer: 5
   m_Name: Page (12) (9)
   m_TagString: Untagged
@@ -17061,6 +17819,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1913380870}
   m_CullTransparentMesh: 1
+--- !u!114 &1913380876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913380870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18f021aedda7fe4d8e5127aabb1d8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxIndex: 30
+--- !u!114 &1913380877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913380870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102cfea3e2c474446983276d0127c780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onEnable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 85502672}
+        m_TargetAssemblyTypeName: SFXOnSceneTrigger, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1933595060
 GameObject:
   m_ObjectHideFlags: 0
@@ -17822,6 +18620,8 @@ GameObject:
   - component: {fileID: 1965168954}
   - component: {fileID: 1965168953}
   - component: {fileID: 1965168952}
+  - component: {fileID: 1965168957}
+  - component: {fileID: 1965168956}
   m_Layer: 5
   m_Name: Page (12) (2)
   m_TagString: Untagged
@@ -17985,6 +18785,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1965168950}
   m_CullTransparentMesh: 1
+--- !u!114 &1965168956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965168950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18f021aedda7fe4d8e5127aabb1d8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxIndex: 30
+--- !u!114 &1965168957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965168950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102cfea3e2c474446983276d0127c780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onEnable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 85502672}
+        m_TargetAssemblyTypeName: SFXOnSceneTrigger, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2002956088
 GameObject:
   m_ObjectHideFlags: 0
@@ -18272,6 +19112,8 @@ GameObject:
   - component: {fileID: 2038815120}
   - component: {fileID: 2038815119}
   - component: {fileID: 2038815118}
+  - component: {fileID: 2038815123}
+  - component: {fileID: 2038815122}
   m_Layer: 5
   m_Name: Page (15)
   m_TagString: Untagged
@@ -18384,6 +19226,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2038815116}
   m_CullTransparentMesh: 1
+--- !u!114 &2038815122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038815116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18f021aedda7fe4d8e5127aabb1d8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxIndex: 30
+--- !u!114 &2038815123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038815116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102cfea3e2c474446983276d0127c780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onEnable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 85502672}
+        m_TargetAssemblyTypeName: SFXOnSceneTrigger, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2050843403
 GameObject:
   m_ObjectHideFlags: 0
@@ -18397,6 +19279,8 @@ GameObject:
   - component: {fileID: 2050843407}
   - component: {fileID: 2050843406}
   - component: {fileID: 2050843405}
+  - component: {fileID: 2050843410}
+  - component: {fileID: 2050843409}
   m_Layer: 5
   m_Name: Page (12) (3)
   m_TagString: Untagged
@@ -18570,6 +19454,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2050843403}
   m_CullTransparentMesh: 1
+--- !u!114 &2050843409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050843403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18f021aedda7fe4d8e5127aabb1d8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxIndex: 30
+--- !u!114 &2050843410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050843403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102cfea3e2c474446983276d0127c780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onEnable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 85502672}
+        m_TargetAssemblyTypeName: SFXOnSceneTrigger, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2055475117
 GameObject:
   m_ObjectHideFlags: 0
@@ -19267,6 +20191,8 @@ GameObject:
   - component: {fileID: 2132639498}
   - component: {fileID: 2132639497}
   - component: {fileID: 2132639496}
+  - component: {fileID: 2132639501}
+  - component: {fileID: 2132639500}
   m_Layer: 5
   m_Name: Page (7)
   m_TagString: Untagged
@@ -19403,3 +20329,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2132639494}
   m_CullTransparentMesh: 1
+--- !u!114 &2132639500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132639494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18f021aedda7fe4d8e5127aabb1d8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxIndex: 30
+--- !u!114 &2132639501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132639494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102cfea3e2c474446983276d0127c780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onEnable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 85502672}
+        m_TargetAssemblyTypeName: SFXOnSceneTrigger, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

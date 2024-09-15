@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,8 +24,10 @@ public class Thief : MonoBehaviour
         return true;
     }
 
+    public static Action s_OnStolen;
     void OnStolen()
     {
+        s_OnStolen?.Invoke();
         ApplyAnimation();
         _agent.speed = _runAwaySpeed;
         StartCoroutine(CollectAnimation(Instantiate(_walletPrefab, _playerTrans.position, Quaternion.identity), _playerTrans.position, _agent.transform, _walletJumpDuration, Vector3.zero, _walletJumpHeight));

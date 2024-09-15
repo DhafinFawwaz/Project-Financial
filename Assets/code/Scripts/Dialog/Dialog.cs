@@ -213,8 +213,11 @@ public class Dialog : MonoBehaviour
         }
     }
 
+
+    public static Action s_OnDialogNext;
     public void Next()
     {
+        s_OnDialogNext?.Invoke();
         if(_currentContentIndex < _data.Content.Length)
         {
             _actorName.text = _data.Content[_currentContentIndex].ActorRight;
