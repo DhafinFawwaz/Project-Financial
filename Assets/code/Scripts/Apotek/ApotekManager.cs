@@ -20,7 +20,7 @@ public class ApotekManager : MonoBehaviour
         public string Name;
         public int Price = 5000;
         public int Health = 5;
-        public int Happiness = 5;
+        // public int Happiness = 5;
 
         public int Stock = 10;
     }
@@ -46,7 +46,7 @@ public class ApotekManager : MonoBehaviour
     {
         Save.Data.NeedsMoney -= _medicines[_currentItemIdx].Price;
         Save.Data.Health += _medicines[_currentItemIdx].Health;
-        Save.Data.Happiness += _medicines[_currentItemIdx].Happiness;
+        // Save.Data.Happiness += _medicines[_currentItemIdx].Happiness;
         _medicines[_currentItemIdx].Stock--;
         Save.Data.HealthItemStocks[_currentItemIdx]--;
         _popUpConfirm.Hide();
