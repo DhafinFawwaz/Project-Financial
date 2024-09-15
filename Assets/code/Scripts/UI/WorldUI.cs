@@ -134,9 +134,12 @@ public class WorldUI : MonoBehaviour
     {
         // ItemData itemData = Instantiate(option.OptionData.ItemData);
         Option choosenOption = option.GetChoosenOption();
+        Save.Data.CurrentCartBelanja = _belanjaList.ListCart;
         // for(int i = 0; i < choosenOption.BuyCount; i++)
         // {
-        //     _belanjaList.AddToCart(itemData);        
+        //     itemData.Price = choosenOption.Content.Price;
+        //     int count = choosenOption.BuyCount;
+        //     Save.Data.CurrentCartBelanja.Add(new ItemCount(itemData, count));
         // }
 
         // _currentBelanjaMoney -= itemData.Price * choosenOption.BuyCount;
@@ -178,6 +181,10 @@ public class WorldUI : MonoBehaviour
     {
         // int randomQuality = UnityEngine.Random.Range(50, 100);
         int buyCount = 1;
+        // Save.Data.CurrentCartBelanja.Add(new ItemCount(itemData, buyCount));
+        // _belanjaList.AddToCart(itemData);
+        Save.Data.CurrentCartBelanja = _belanjaList.ListCart;
+        
 
         Save.Data.NeedsMoney -= itemData.Price * buyCount;
 

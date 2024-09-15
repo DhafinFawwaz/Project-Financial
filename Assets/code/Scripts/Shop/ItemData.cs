@@ -11,9 +11,9 @@ public class ItemData : ScriptableObject
     [SerializeField] double _health;
     [SerializeField] double _happiness;
     [SerializeField] Sprite _sprite;
-    public string Name => _name;
+    public string Name { get => _name; set => _name = value; }
     public Sprite Sprite => _sprite;
-    public long Price => _price;
+    public long Price { get => _price; set => _price = value; }
     public double Health => _health;
     public double Happiness => _happiness;
     

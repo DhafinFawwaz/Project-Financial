@@ -76,6 +76,8 @@ public class SaveData
     }
 
     public List<ItemCount> CurrentListBelanja = new List<ItemCount>();
+    public List<ItemCount> CurrentCartBelanja = new List<ItemCount>();
+
     public long CurrentBelanjaMoney = 0;
     public Vector3 Position = Vector3.zero;
 
@@ -105,6 +107,7 @@ public class SaveData
         Health = 100;
         CurrentDay = 0;
         CurrentListBelanja = new List<ItemCount>();
+        CurrentCartBelanja = new List<ItemCount>();
         CurrentBelanjaMoney = 0;
         SkillPoints = 1;
 

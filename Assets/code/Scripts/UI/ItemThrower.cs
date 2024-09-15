@@ -18,7 +18,10 @@ public class ItemThrower : MonoBehaviour
         {
             for(int i = 0; i < option.BuyCount; i++)
             {
-                _belanjaList.AddToCart(optionSession.OptionData.ItemData);
+                var changedPrice = Instantiate(optionSession.OptionData.ItemData);
+                changedPrice.Price = option.Content.Price;
+                _belanjaList.AddToCart(changedPrice);
+                
                 if(PlayerCore.Instance != null) 
                 {
                     GameObject item = Instantiate(_itemPrefab,PlayerCore.Instance.transform.position, Quaternion.identity);

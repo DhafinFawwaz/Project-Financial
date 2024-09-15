@@ -221,6 +221,8 @@ MonoBehaviour:
   _target: {fileID: 44316936}
   _color: {r: 1, g: 1, b: 1, a: 1}
   _duration: 0.5
+  _playOnStart: 0
+  _playOnEnable: 0
 --- !u!114 &44316936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a930b283cdc67a48a88b065f1c88abd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneTransition: {fileID: 5644601496464344134, guid: 3401eac2280b27243b5b1c5da04b2024, type: 3}
+  _sceneTransition: {fileID: 869617255850372820, guid: be416e7a38a25b1438bd0ad9baaf74f0, type: 3}
   _delay: 0
 --- !u!1 &338916695
 GameObject:
@@ -473,6 +475,8 @@ MonoBehaviour:
   _target: {fileID: 362135926}
   _color: {r: 1, g: 1, b: 1, a: 1}
   _duration: 0.5
+  _playOnStart: 0
+  _playOnEnable: 0
 --- !u!114 &362135929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1143,6 +1147,8 @@ MonoBehaviour:
   _target: {fileID: 1363638461}
   _color: {r: 1, g: 1, b: 1, a: 1}
   _duration: 0.5
+  _playOnStart: 0
+  _playOnEnable: 0
 --- !u!114 &1363638464
 MonoBehaviour:
   m_ObjectHideFlags: 0

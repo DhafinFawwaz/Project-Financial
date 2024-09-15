@@ -46,7 +46,7 @@ public class FiscalGuardian : StreamingGames
             this.Invoke(() => {
                 _dialogCloser.SetActive(false);
                 _textRTA.SetEnd(Vector3.one).TweenLocalScale();
-                _topText.SetText(_message).Show().Play().SetOnceComplete(() => {
+                _topTextFiscalGuardian.SetText(_message).Show().Play().SetOnceComplete(() => {
                     _dialogCloser.SetActive(true);
                     CloseStartDialog();
                 });
@@ -74,6 +74,7 @@ public class FiscalGuardian : StreamingGames
     // Game
     [Header("People")]
     [SerializeField] People[] _peoples;
+    [SerializeField] TopText _topTextFiscalGuardian;
     [SerializeField] RectTransformAnimation _topTextRTA;
     [SerializeField] RectTransformAnimation _ktpRTA;
     [SerializeField] GraphicsAnimation _blackFadeKTP;

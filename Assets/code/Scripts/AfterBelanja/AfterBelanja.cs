@@ -56,7 +56,7 @@ public class AfterBelanja : MonoBehaviour
         _barangText.text = "";
         _hargaText.text = "";
 
-        var _listCart = Save.Data.CurrentListBelanja;
+        var _listCart = Save.Data.CurrentCartBelanja;
         
 
         foreach(var item in _listCart)
@@ -79,8 +79,8 @@ public class AfterBelanja : MonoBehaviour
 
 
 
-        // Save.Data.Health += _addedHealth;
-        // Save.Data.Happiness += _addedhappiness;
+        Save.Data.Health += health;
+        Save.Data.Happiness += happiness;
         
         this.Invoke(() => {
             _ktpWorld.SetMoney(Save.Data.NeedsMoney)
