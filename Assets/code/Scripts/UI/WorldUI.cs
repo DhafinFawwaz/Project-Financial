@@ -71,7 +71,7 @@ public class WorldUI : MonoBehaviour
         // _addedHealth = 0;
         // _currentBelanjaMoney = Save.Data.CurrentBelanjaMoney;
 
-        _ktpBelanja.SetMoneyTop(Save.Data.NeedsMoney)
+        _ktpBelanja.SetMoneyTop(Save.Data.CurrentNeedsMoneyDiv3)
             .SetMoneyBottom(Save.Data.NeedsMoney)
             .SetGreenBarFill((float)Save.Data.NeedsMoney/Save.Data.CurrentNeedsMoney);
     }
@@ -91,7 +91,7 @@ public class WorldUI : MonoBehaviour
 
     public void RefreshKTP()
     {
-        _ktpBelanja.SetMoneyTop(Save.Data.NeedsMoney)
+        _ktpBelanja.SetMoneyTop(Save.Data.CurrentNeedsMoneyDiv3)
             .SetMoneyBottom(Save.Data.NeedsMoney)
             .SetGreenBarFill((float)Save.Data.NeedsMoney/Save.Data.CurrentNeedsMoney)
             .SetHapiness(Save.Data.Happiness, 0)
@@ -165,7 +165,7 @@ public class WorldUI : MonoBehaviour
         Save.Data.CurrentTotalItems = _totalItems;
 
         
-        _ktpBelanja.SetMoneyTop(Save.Data.NeedsMoney)
+        _ktpBelanja.SetMoneyTop(Save.Data.CurrentNeedsMoneyDiv3)
             .SetMoneyBottom(Save.Data.NeedsMoney)
             .SetGreenBarFill((float)Save.Data.NeedsMoney/Save.Data.CurrentNeedsMoney);
 
@@ -194,7 +194,7 @@ public class WorldUI : MonoBehaviour
         Save.Data.CurrentTotalItems = _totalItems;
 
         
-        _ktpBelanja.SetMoneyTop(Save.Data.NeedsMoney)
+        _ktpBelanja.SetMoneyTop(Save.Data.CurrentNeedsMoneyDiv3)
             .SetMoneyBottom(Save.Data.NeedsMoney)
             .SetGreenBarFill((float)Save.Data.NeedsMoney/Save.Data.CurrentNeedsMoney);
     }

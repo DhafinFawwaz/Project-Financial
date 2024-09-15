@@ -27,9 +27,13 @@ public class BelanjaManager : MonoBehaviour
     {
         _qualityBar.SetNoAnimation(100, Save.Data.CurrentPredictedHealth, Save.Data.CurrentPredictedHappiness);
     }
-
+    [SerializeField] BelanjaListGenerator _belanjaListGenerator;    
+    [SerializeField] WorldUI _worldUI;
     public void StartGame()
     {
+        _belanjaListGenerator.GenerateBelanjaList();
+        _worldUI.RefreshStates();
+
         _startPopUpAnimation.Play();
         _timer.SetTime(_inflasiEvery);
         float diskonTime = Random.Range(_diskonBesarMin, _diskonBesarMax);

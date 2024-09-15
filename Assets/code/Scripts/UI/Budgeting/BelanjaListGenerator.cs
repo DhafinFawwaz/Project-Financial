@@ -156,18 +156,20 @@ public class BelanjaListGenerator : MonoBehaviour
 
             _belanjaList.AddItem(item);
         }
-        Debug.Log(_belanjaList.ListToBuy.Count);
-
-        int count = _belanjaList.ListToBuy.Count;
-        Debug.Log("Adding " + (4 - count) + " more items");
-        if(count < 4) {
-            for(int i = 0; i < 4 - count; i++)
-            {
-                ItemData item = _itemData[UnityEngine.Random.Range(0, _itemData.Length)];
-                _belanjaList.AddItem(item);
-            }
+        if(_belanjaList.ListToBuy.Count == 0) {
+            ItemData item = _itemData[UnityEngine.Random.Range(0, _itemData.Length)];
+            _belanjaList.AddItem(item);
+            ItemData item2 = _itemData[UnityEngine.Random.Range(0, _itemData.Length)];
+            _belanjaList.AddItem(item2);
+        }
+        else if(_belanjaList.ListToBuy.Count == 1) {
+            ItemData item = _itemData[UnityEngine.Random.Range(0, _itemData.Length)];
+            _belanjaList.AddItem(item);
         }
 
+        else if(_belanjaList.ListToBuy.Count > 2) {
+            _belanjaList.ListToBuy.RemoveAt(_belanjaList.ListToBuy.Count - 1);
+        }
         Save.Data.CurrentListBelanja = _belanjaList.ListToBuy;
     }   
     

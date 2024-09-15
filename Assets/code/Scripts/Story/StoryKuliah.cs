@@ -15,7 +15,7 @@ public class StoryKuliah : MonoBehaviour
             if(Save.Data.HaveAnyCredit()) {
                 _sceneTransitionStarter.StartTransition("Budgeting");
             } else {
-                _belanjaListGenerator.GenerateBelanjaList();
+                // _belanjaListGenerator.GenerateBelanjaList();
                 _sceneTransitionStarter.StartTransition("World");
             }
         }

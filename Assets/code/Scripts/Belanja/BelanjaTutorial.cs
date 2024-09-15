@@ -79,6 +79,7 @@ public class BelanjaTutorial : MonoBehaviour
     [SerializeField] SceneTransition _sceneTransition;
     public void DoneTutorial()
     {
+        belanjaList.Clear();
         Save.Data.NeedsMoney = Save.Data.TempNeedsMoney;
         _sceneTransition.StartSceneTransition("Belanja");
     }
@@ -106,6 +107,7 @@ public class BelanjaTutorial : MonoBehaviour
     }
     public void DoneTutorial2()
     {
+        belanjaList.Clear();
         SetTextAndPlay("Mantap! Sekarang kamu bisa mengakses rak tersebut kembali!");
         this.Invoke(() => {
             Save.Data.NeedsMoney = Save.Data.TempNeedsMoney;
