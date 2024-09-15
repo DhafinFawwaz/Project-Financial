@@ -99,10 +99,10 @@ public class SaveData
         SkillPoints = 1;
 
 
-        NeedsMoney = 200000;
-        DesireMoney = 60000;
-        DebitMoney = 80000;
-        DebitTabunganMoney = 150000;
+        NeedsMoney = 50000;
+        DesireMoney = 30000;
+        DebitMoney = 10000;
+        DebitTabunganMoney = 10000;
 
         CurrentNeedsMoney = NeedsMoney;
 

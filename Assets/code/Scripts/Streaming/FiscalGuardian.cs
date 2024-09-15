@@ -293,8 +293,8 @@ public class FiscalGuardian : StreamingGames
 
         Save.Data.CurrentDayData.StreamingCounter++;
         Save.Data.CurrentDayData.GainedViews += _viewCounter;
-        Save.Data.CurrentDayData.GainedSubscriber += (long)(_viewCounter * UnityEngine.Random.Range(0.5f, 0.75f));
-        Save.Data.CurrentDayData.GainedMoney = (long)(_viewCounter * UnityEngine.Random.Range(100f, 150f));
+        // Save.Data.CurrentDayData.GainedSubscriber += (long)(_viewCounter * UnityEngine.Random.Range(0.5f, 0.75f));
+        // Save.Data.CurrentDayData.GainedMoney = (long)(_viewCounter * UnityEngine.Random.Range(100f, 150f));
         // Save.Data.Health -= HealthCost;
         // Save.Data.Happiness -= HappinessCost;
         // Save.Data.CurrentDayData.GainedMoney += profit;
@@ -332,12 +332,22 @@ public class FiscalGuardian : StreamingGames
 
     float viewsIncreaseDelta()
     {
-        return _viewCounter * UnityEngine.Random.Range(0.2f, 0.4f);
+        float mul = 1 + Save.Data.KursiLevel * 0.05f;
+        return _viewCounter * 0.3f * mul;
     } 
 
     float viewsDecreaseDelta()
     {
-        return Mathf.Max(_viewCounter, 500) * UnityEngine.Random.Range(0.07f, 0.15f);
+        float mul = 1.0f;
+        if(Save.Data.KursiLevel == 1) {
+            mul = 0.9f;
+        } else if(Save.Data.KursiLevel == 2) {
+            mul = 0.8f;
+        } else if(Save.Data.KursiLevel == 3) {
+            mul = 0.7f;
+        }
+
+        return Mathf.Max(_viewCounter, 500) * UnityEngine.Random.Range(0.07f, 0.15f) * mul;
     } 
 
 

@@ -22,8 +22,14 @@ public class BelanjaTutorial : MonoBehaviour
             this.Invoke(StartTutorial2, 0.1f);
     }
 
+    [SerializeField] SphereCollider[] _colliders;
     void StartTutorial()
     {
+        foreach(var col in _colliders)
+        {
+            col.enabled = false;
+        }
+
         _shadow.SetActive(false);
         _startPopUpAnimation.Play();
         _missionSetter.Set();

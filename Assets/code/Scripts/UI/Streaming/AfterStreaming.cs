@@ -20,11 +20,38 @@ public class AfterStreaming : MonoBehaviour
     [SerializeField] MoneyAnimation _willBeSalaryMoneyText;
 
 
+    long CalculateSubscriber(long views)
+    {
+        float p = 0.63f;
+        float q = 15;
+        long subscriber = (long)(Mathf.Pow(views, p) * q * UnityEngine.Random.Range(0.9f, 1.2f));
+
+        float mul = 1 + Save.Data.MonitorLevel * 0.05f;
+        subscriber = (long)(subscriber * mul);
+
+        return subscriber;
+    }
+    long CalculateProfit(long views)
+    {
+        float p = 0.4f;
+        float q = 2400f;
+        long profit = (long)(Mathf.Pow(views, p) * q * UnityEngine.Random.Range(0.9f, 1.5f));
+
+        float mul = 1 + Save.Data.OtherLevel * 0.05f;
+        profit = (long)(profit * mul);
+
+        return profit;
+    }
+
     void OnEnable()
     {
         if(Save.Data.CurrentDay == 10) {
             Save.Data.CurrentDayData.GainedMoney = 0;
         }
+
+        long views = Save.Data.CurrentDayData.GainedViews;
+        Save.Data.CurrentDayData.GainedSubscriber = CalculateSubscriber(views);
+        Save.Data.CurrentDayData.GainedMoney = CalculateProfit(views);
         
 
         var viewsEachDay = Save.Data.ViewsEachDay; viewsEachDay.Insert(0, 0);
