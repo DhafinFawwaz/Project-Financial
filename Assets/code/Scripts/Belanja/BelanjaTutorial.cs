@@ -13,6 +13,7 @@ public class BelanjaTutorial : MonoBehaviour
     [SerializeField] ItemData _saosTomat;
     [SerializeField] ItemData _eskrim;
     [SerializeField] Rak _rak;
+    [SerializeField] GameObject _arrow;
 
     void Awake()
     {
@@ -95,6 +96,7 @@ public class BelanjaTutorial : MonoBehaviour
     
     void StartTutorial2()
     {
+        _arrow.SetActive(false);
         _shadow.SetActive(true);
         _startPopUpAnimation.Play();
         foreach(var rak in _rakToDarken)

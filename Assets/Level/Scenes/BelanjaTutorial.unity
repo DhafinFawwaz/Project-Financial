@@ -2502,6 +2502,7 @@ MonoBehaviour:
   _saosTomat: {fileID: 11400000, guid: 18c15b2d1a3f16f4695145e5f33d73ca, type: 2}
   _eskrim: {fileID: 11400000, guid: 58eda16ea4fe752458bb881008d1e753, type: 2}
   _rak: {fileID: 6648744262473991602}
+  _arrow: {fileID: 645347842}
   _colliders:
   - {fileID: 2348152701724978586}
   - {fileID: 3652767065628225199}
@@ -4677,6 +4678,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a53993d627a386468bade91e6694a17, type: 3}
+--- !u!1 &645347842 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6179814058378683055, guid: 7a53993d627a386468bade91e6694a17, type: 3}
+  m_PrefabInstance: {fileID: 645347841}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &655817357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11970,7 +11976,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5934320026167599153, guid: 7a53993d627a386468bade91e6694a17, type: 3}
   m_PrefabInstance: {fileID: 645347841}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 645347842}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0907c649a3bef7b469885319647e2758, type: 3}

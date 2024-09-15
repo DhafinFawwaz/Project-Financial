@@ -38,18 +38,36 @@ public class KTPWorld : MonoBehaviour
         _happinessIcon.anchoredPosition = Vector2.Lerp(_happinessPositionLeft, _happinessPositionRight, _yellowBar.fillAmount);
     }
 
+    bool _firstTimeHealth = true;
     public KTPWorld SetHealth(double health) 
     {
         _healthText.text = health.ToString();
-        _redBar.fillAmount = (float)health/100;
+     
+        if(_firstTimeHealth)
+            _redBar.fillAmount = (float)health/100;
+        else if(gameObject.activeInHierarchy)
+            StartCoroutine(TweenFillAmount(_redBar, _redBar.fillAmount, (float)health/100, 0.15f));
+        else
+            _redBar.fillAmount = (float)health/100;
+        _firstTimeHealth = false;
+
         _healthIcon.anchoredPosition = Vector2.Lerp(_healthPositionLeft, _healthPositionRight, _redBar.fillAmount);
         return this;
     }
 
+    bool _firstTimeHappiness = true;
     public KTPWorld SetHappiness(double happiness)
     {
         _happinessText.text = happiness.ToString();
-        _yellowBar.fillAmount = (float)happiness/100;
+        
+        if(_firstTimeHappiness)
+            _yellowBar.fillAmount = (float)happiness/100;
+        else if(gameObject.activeInHierarchy)
+            StartCoroutine(TweenFillAmount(_yellowBar, _yellowBar.fillAmount, (float)happiness/100, 0.15f));
+        else 
+            _yellowBar.fillAmount = (float)happiness/100;
+        _firstTimeHappiness = false;
+
         _happinessIcon.anchoredPosition = Vector2.Lerp(_happinessPositionLeft, _happinessPositionRight, _yellowBar.fillAmount);
         return this;
     }
@@ -64,5 +82,18 @@ public class KTPWorld : MonoBehaviour
     {
         _skillPointText.text = point.ToString();
         return this;
+    }
+
+    IEnumerator TweenFillAmount(Image img, float from, float to, float duration)
+    {
+        float t = 0;
+        while(t < 1)
+        {
+            t += Time.deltaTime/duration;
+            img.fillAmount = Mathf.Lerp(from, to, Ease.OutQuart(t));
+            _healthIcon.anchoredPosition = Vector2.Lerp(_healthPositionLeft, _healthPositionRight, _redBar.fillAmount);
+            _happinessIcon.anchoredPosition = Vector2.Lerp(_happinessPositionLeft, _happinessPositionRight, _yellowBar.fillAmount);
+            yield return null;
+        }
     }
 }
