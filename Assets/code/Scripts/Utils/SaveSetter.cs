@@ -8,11 +8,13 @@ public class SaveSetter : MonoBehaviour
 
 // if we build with including this script, this will give error
     [SerializeField] DayState _dayState = DayState.JustGotHome;
+    [SerializeField] bool _isBungaShooterUnlocked = false;
 
     void Awake()
     {
         Save.Data.CurrentDay = _day;
         Save.Data.DayState = _dayState;
+        Save.Data.IsBungaShooterBought = _isBungaShooterUnlocked;
         Debug.Log("Day and state set to " + _day + " and " + _dayState);
     }
 }
