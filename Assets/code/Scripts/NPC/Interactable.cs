@@ -8,6 +8,7 @@ public class Interactable : MonoBehaviour
 {
     [SerializeField] protected Transform _interactablePromptAnchor;
     [SerializeField] UnityEvent _onInteract;
+    public static Action s_OnLabelShown;
 
     string _playerTag = "Player";
     bool _isShowingPrompt = false;
@@ -41,6 +42,7 @@ public class Interactable : MonoBehaviour
     {
         _isShowingPrompt = isActive;
         if(_isShowingPrompt){
+            s_OnLabelShown?.Invoke();
             _interactablePromptAnchor.gameObject.SetActive(true);
             StartCoroutine(TweenLocalScale(_interactablePromptAnchor.transform, _interactablePromptAnchor.transform.localScale, Vector3.one, 0.15f, Ease.OutBackQuart));
         }

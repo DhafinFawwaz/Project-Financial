@@ -281,6 +281,8 @@ public class FiscalGuardian : StreamingGames
         _peopleAppearAnimation.Play();
     }
 
+    public static Action s_OnLose;
+    public static Action s_OnWin;
     void HandleGameEnd()
     {
         long profit = (long) ((10.0f-_wrongCount)/10.0f * (UnityEngine.Random.Range(30000, 40000)));
@@ -307,9 +309,18 @@ public class FiscalGuardian : StreamingGames
         _correntText.text = (CurrentFiscalGuardianData.People.Length - _wrongCount).ToString();
         _wrongText.text = _wrongCount.ToString();
 
-        if(_wrongCount == 0) _starGameOvers[2].SetActive(true);
-        else if(CurrentFiscalGuardianData.People.Length == _wrongCount) _starGameOvers[0].SetActive(true);
-        else _starGameOvers[1].SetActive(true);
+        if(_wrongCount == 0) {
+            s_OnWin?.Invoke();
+            _starGameOvers[2].SetActive(true);
+        }
+        else if(CurrentFiscalGuardianData.People.Length == _wrongCount) {
+            s_OnLose?.Invoke();
+            _starGameOvers[0].SetActive(true);
+        }
+        else {
+            s_OnLose?.Invoke();
+            _starGameOvers[1].SetActive(true);
+        }
 
         Debug.Log(_wrongCount);
         Debug.Log(CurrentFiscalGuardianData.People.Length);

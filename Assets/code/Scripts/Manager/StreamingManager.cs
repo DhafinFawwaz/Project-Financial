@@ -119,8 +119,12 @@ public class StreamingManager : MonoBehaviour
         }
     }
 
+
+    public static System.Action s_OnIncreaseViews;
+    public static System.Action s_OnDecreaseViews;
     void OnIncreaseViews(int newAmount)
     {
+        s_OnIncreaseViews?.Invoke();
         _views.SetAndAnimate(_viewsCounter, newAmount, 0.5f);
         _viewsCounter = newAmount;
         _upViews.SetActive(true);
@@ -130,6 +134,7 @@ public class StreamingManager : MonoBehaviour
 
     void OnDecreaseViews(int newAmount)
     {
+        s_OnDecreaseViews?.Invoke();
         _views.SetAndAnimate(_viewsCounter, newAmount, 0.5f);
         _viewsCounter = newAmount;
         _upViews.SetActive(false);

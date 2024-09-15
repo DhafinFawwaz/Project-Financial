@@ -52,8 +52,11 @@ public class PieChartItemSpawner : MonoBehaviour
         }
     }
 
+    public static System.Action s_OnItemPieThrown;
+
     void ItemPieToTarget(int pieIdx, int targetIdx)
     {
+        s_OnItemPieThrown?.Invoke();
         var item = Instantiate(_itemPrefab, transform.position, Quaternion.identity, transform);
         StartCoroutine(TweenPosition(item.transform, _pieChart.GetPieBaseCenterDirection(pieIdx), _targetTransforms[targetIdx].position, 0.3f));
         this.Invoke(() => {
@@ -80,6 +83,7 @@ public class PieChartItemSpawner : MonoBehaviour
 
     void ItemTargetToPie(int idx)
     {
+        s_OnItemPieThrown?.Invoke();
         var item = Instantiate(_itemPrefab, transform.position, Quaternion.identity, transform);
         StartCoroutine(TweenTargetToPie(item.transform, idx, 0.3f));
         this.Invoke(() => {

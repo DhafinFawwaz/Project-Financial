@@ -47,12 +47,15 @@ public class Flashlight : MonoBehaviour
         _energy = Mathf.Clamp01(_energy);
         s_OnRecharging?.Invoke(_energy);
     }
+
+    public static Action s_OnFlashlightOn;
     void ToggleFlash()
     {
         if(_energy < 0.33f) {
             s_OnNotEnoughEnergy?.Invoke();
             return;
         }
+        s_OnFlashlightOn?.Invoke();
         StartCoroutine(StartFlashlight());
     }
     void AdjustFlashRotationBasedOnMouse()

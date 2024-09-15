@@ -11,6 +11,9 @@ public class PopUp : MonoBehaviour
     Action onDone;
     public bool IsVisible => _blocker.activeSelf;
     [SerializeField] bool _isShowing = false;
+
+    public static Action s_OnPopUpShow;
+    public static Action s_OnPopUpHide;
     public void Show()
     {
         if(_isShowing) return;
@@ -19,6 +22,7 @@ public class PopUp : MonoBehaviour
         _blocker.SetActive(true);
         StartCoroutine(TweenLocalScaleAnimation(_rt, _rt.localScale, Vector3.one, 0.3f, Ease.OutQuart));
         StartCoroutine(TweenCanvasGroupAlphaAnimation(_canvasGroup, 0, 1, 0.3f, Ease.OutQuart));
+        s_OnPopUpShow?.Invoke();
     }
 
     public void Hide()
@@ -30,6 +34,7 @@ public class PopUp : MonoBehaviour
         StartCoroutine(TweenLocalScaleAnimation(_rt, _rt.localScale, Vector3.zero, 0.2f, Ease.InCubic));
         StartCoroutine(TweenCanvasGroupAlphaAnimation(_canvasGroup, 1, 0, 0.2f, Ease.InCubic));
         InputManager.SetActiveMouseAndKey(true);
+        s_OnPopUpHide?.Invoke();
     }
     byte _key = 0;
     IEnumerator TweenLocalScaleAnimation(RectTransform rt, Vector3 start, Vector3 end, float duration, Ease.Function easeFunction)

@@ -51,6 +51,7 @@ public class FlashLightUI : MonoBehaviour
 
 
     Sprite _currentSprite;
+    public static System.Action<float> s_OnRechargingUI;
     void OnRecharging(float energy)
     {
         if(_currentSprite == null) _currentSprite = _batterySprite[0];
@@ -61,24 +62,35 @@ public class FlashLightUI : MonoBehaviour
             _rechargeBar.sprite = _batterySprite[0];
             _animation.transform.localScale = _scale;
             _animation.TweenLocalScale();
+            // s_OnRechargingUI?.Invoke(energy);
         } else if(energy < 0.66f) {
             if(_currentSprite == _batterySprite[1]) return;
+            if(_currentSprite == _batterySprite[0])
+                s_OnRechargingUI?.Invoke(energy);
+
             _currentSprite = _batterySprite[1];
             _rechargeBar.sprite = _batterySprite[1];
             _animation.transform.localScale = _scale;
             _animation.TweenLocalScale();
         } else if(energy < 0.99f) {
             if(_currentSprite == _batterySprite[2]) return;
+            if(_currentSprite == _batterySprite[1])
+                s_OnRechargingUI?.Invoke(energy);
+
             _currentSprite = _batterySprite[2];
             _rechargeBar.sprite = _batterySprite[2];
             _animation.transform.localScale = _scale;
             _animation.TweenLocalScale();
         } else {
             if(_currentSprite == _batterySprite[3]) return;
+            if(_currentSprite == _batterySprite[2])
+                s_OnRechargingUI?.Invoke(energy);
+
             _currentSprite = _batterySprite[3];
             _rechargeBar.sprite = _batterySprite[3];
             _animation.transform.localScale = _scale;
             _animation.TweenLocalScale();
+            s_OnRechargingUI?.Invoke(energy);
         }
     }
 }

@@ -68,7 +68,9 @@ public class PlayerCore : Core<PlayerCore, PlayerStates>
     [SerializeField] float _collectDuration = 0.6f;
     [SerializeField] Vector3 _collectOffset = new Vector3(0,0.25f,0);
     [SerializeField] float _collectHeight = 0.8f;
+    public static Action s_OnCollect;
     public void Collect(Transform item){
+        s_OnCollect?.Invoke();
         StartCoroutine(CollectAnimation(item, item.position, transform, _collectDuration, _collectOffset, _collectHeight));
     }
 

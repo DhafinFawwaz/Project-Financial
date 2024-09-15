@@ -183,6 +183,31 @@ public class AudioManager : MonoBehaviour
         }
         PlaySound(SFX[index].Clip, SFX[index].Volume);
     }
+    public void PlaySoundRandomPitch(int index, float minPitch, float maxPitch)
+    {
+        if(index > SFX.Length-1)
+        {
+            Debug.LogWarning("Please assign the clip at index " + index.ToString());
+            return;
+        }
+        float initialPitch = _soundSource.pitch;
+        _soundSource.pitch = Random.Range(minPitch, maxPitch);
+        PlaySound(SFX[index].Clip, SFX[index].Volume);
+        _soundSource.pitch = initialPitch;
+    }
+
+    public void PlaySoundPitch(int index, float pitch)
+    {
+        if(index > SFX.Length-1)
+        {
+            Debug.LogWarning("Please assign the clip at index " + index.ToString());
+            return;
+        }
+        float initialPitch = _soundSource.pitch;
+        _soundSource.pitch = pitch;
+        PlaySound(SFX[index].Clip, SFX[index].Volume);
+        _soundSource.pitch = initialPitch;
+    }
 }
 
 

@@ -1,10 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class PlayerKerasukan : MonoBehaviour
 {
+    public static System.Action s_OnKerasukanStart;
     [SerializeField] ItemKerasukan[] _itemKerasukans;
     [SerializeField] NavMeshAgent _agent;
     [SerializeField] Rigidbody _rb;
@@ -22,6 +22,7 @@ public class PlayerKerasukan : MonoBehaviour
 
     public void StartKerasukan()
     {
+        s_OnKerasukanStart?.Invoke();
         _playerSkin.SetActive(false);
         _rb.velocity = Vector3.zero;
         _rb.angularVelocity = Vector3.zero;
@@ -49,8 +50,10 @@ public class PlayerKerasukan : MonoBehaviour
         }
     }
 
+    public static System.Action s_OnKerasukanEnd;
     public void StopKerasukan()
     {
+        s_OnKerasukanEnd?.Invoke();
         _playerSkin.SetActive(true);
         _agent.enabled = false;
         _rb.useGravity = true;

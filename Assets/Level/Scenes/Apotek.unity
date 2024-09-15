@@ -1019,6 +1019,8 @@ MonoBehaviour:
   _target: {fileID: 316243426}
   _color: {r: 0, g: 0, b: 0, a: 0.2}
   _duration: 0.3
+  _playOnStart: 0
+  _playOnEnable: 0
 --- !u!224 &519715463 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 620104275563758179, guid: 7fc451fbf57a6ec4a905f1e7ea0a7d29, type: 3}
@@ -1103,6 +1105,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &843003300
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4978948923478222102, guid: 96de4155da2ebf9478907e6e2e061c6d, type: 3}
+      propertyPath: _musicClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 146499f2da2ef0549a11af27f695eafb, type: 3}
+    - target: {fileID: 4978948923478222103, guid: 96de4155da2ebf9478907e6e2e061c6d, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4978948923478222103, guid: 96de4155da2ebf9478907e6e2e061c6d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -960
+      objectReference: {fileID: 0}
+    - target: {fileID: 4978948923478222103, guid: 96de4155da2ebf9478907e6e2e061c6d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -540
+      objectReference: {fileID: 0}
+    - target: {fileID: 4978948923478222103, guid: 96de4155da2ebf9478907e6e2e061c6d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4978948923478222103, guid: 96de4155da2ebf9478907e6e2e061c6d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4978948923478222103, guid: 96de4155da2ebf9478907e6e2e061c6d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4978948923478222103, guid: 96de4155da2ebf9478907e6e2e061c6d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4978948923478222103, guid: 96de4155da2ebf9478907e6e2e061c6d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4978948923478222103, guid: 96de4155da2ebf9478907e6e2e061c6d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4978948923478222103, guid: 96de4155da2ebf9478907e6e2e061c6d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4978948923478222103, guid: 96de4155da2ebf9478907e6e2e061c6d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4978948923478222104, guid: 96de4155da2ebf9478907e6e2e061c6d, type: 3}
+      propertyPath: m_Name
+      value: MusicLoader
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 96de4155da2ebf9478907e6e2e061c6d, type: 3}
 --- !u!1 &854606229
 GameObject:
   m_ObjectHideFlags: 0
@@ -2148,6 +2211,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2913226295307861196, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1760.0774
+      objectReference: {fileID: 0}
+    - target: {fileID: 2913226295307861196, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 133
+      objectReference: {fileID: 0}
     - target: {fileID: 2951640873786325277, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
       propertyPath: _ktpOnly
       value: 1
@@ -2159,6 +2230,14 @@ PrefabInstance:
     - target: {fileID: 3830230339173340436, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4224371059767585416, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1751
+      objectReference: {fileID: 0}
+    - target: {fileID: 4224371059767585416, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 123.92001
       objectReference: {fileID: 0}
     - target: {fileID: 4622939939890071684, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
       propertyPath: m_IsActive
@@ -2613,6 +2692,7 @@ MonoBehaviour:
   _blocker: {fileID: 1625109736}
   _rt: {fileID: 1880305472}
   _canvasGroup: {fileID: 1090298791}
+  _isShowing: 0
 --- !u!114 &1880305474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3464,7 +3544,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7584350720312742674, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
       propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584350720312742674, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
+      propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7584350719940192936}
+    - target: {fileID: 7584350720312742674, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
+      propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584350720312742674, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
+      propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SFXOnSceneTrigger, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584350720312742674, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
+      propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7584350720312742684, guid: 83d3009e7c8b74543bc17042d5dbc877, type: 3}
       propertyPath: _sceneTransition
@@ -3516,6 +3612,31 @@ MonoBehaviour:
           m_StringArgument: World
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7584350719940192936}
+        m_TargetAssemblyTypeName: SFXOnSceneTrigger, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onKeyUp:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7584350719940192936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7584350719940192933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18f021aedda7fe4d8e5127aabb1d8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxIndex: 4

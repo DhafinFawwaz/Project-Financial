@@ -208,14 +208,24 @@ public class Rak : Interactable
     bool _isLocked = false;
 
     public bool IsLocked => _isLocked;
+    public static Action s_OnRakLocked;
+    public static Action s_OnRakUnlocked;
+    bool _isDarken = false;
     public void SetDarken(bool darken)
     {
+        if(_isDarken == darken) return;
+        _isDarken = darken;
+        
         _darkenGO.SetActive(darken);
 
         if(!darken) {
+            s_OnRakUnlocked?.Invoke();
+            Debug.Log("Unlocked");
             _isCollected = false;
 
             if(_isLocked) SessionTime = INITIAL_SESSION_TIME;
+        } else {
+            // s_OnRakLocked?.Invoke();
         }
 
         _isLocked = darken;

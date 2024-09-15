@@ -36,10 +36,11 @@ public class Shadow : MonoBehaviour
         _agent.transform.position = new Vector3(_agent.transform.position.x, 0, _agent.transform.position.z);
     }
 
-
+    public static Action s_OnShadowHurt;
     public void OnHurt(HitRequest hitRequest, ref HitResult hitResult)
     {
         if(!_agent.enabled) return;
+        s_OnShadowHurt?.Invoke();
         hitResult.Type = HitType.Entity;
         _skin.PlayHurtAnimation();
         StartCoroutine(ApplyKnockback(_rb.position + hitRequest.Direction * hitRequest.Knockback, hitRequest.StunDuration));

@@ -24,6 +24,21 @@ public class InterestManager : MonoBehaviour
 
     public void PlayCreditInterest()
     {
+        List<long> credits = new();
+        List<int> days = new();
+        List<int> deadlines = new();
+        for (int i = 0; i < Save.Data.DayDatas.Count; i++) {
+            if(Save.Data.DayDatas[i].CreditMoney > 0 && i + 3 == Save.Data.CurrentDay) { // Todo, check if its already 3 days
+                credits.Add(Save.Data.DayDatas[i].CreditMoney);
+                days.Add(i);
+                deadlines.Add(i + SaveData.KREDIT_DEADLINE);
+            }
+        }
+        if(credits.Count == 0) {
+            _onAnimationEnd?.Invoke();
+            return;
+        }
+        
         StartCoroutine(PlayAnimation());
     }
 

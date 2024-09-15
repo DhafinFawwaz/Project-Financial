@@ -26,8 +26,11 @@ public class MoneyTransferAnimation : MonoBehaviour
         return _targetPos.position + Random.insideUnitSphere * _targetRadiusRange;
     }
 
+
+    public static System.Action s_OnMoneySpawn;
     void SpawnMoney()
     {
+        s_OnMoneySpawn?.Invoke();
         var money = Instantiate(_moneyPrefab, _startPos.position, Quaternion.identity, transform.parent);
         
         _startScaleAnimation.transform.localScale = Vector3.one * 1.2f;

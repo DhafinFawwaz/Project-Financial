@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,10 +22,13 @@ public class SpacebarSpam : MonoBehaviour
         _bar.fillAmount = 0;
         _onComplete?.Invoke();
     }
+
+    public static Action s_OnSpacebarSpamDown;
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
+            s_OnSpacebarSpamDown?.Invoke();
             _clickCount++;
             _bar.fillAmount = (float)_clickCount / _clickAmount;
         }

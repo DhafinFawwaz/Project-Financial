@@ -158,6 +158,9 @@ public class BungaShooter : StreamingGames
 
 
     [SerializeField] PopUp _finishPopUp;
+
+    public static System.Action s_OnWin;
+    public static System.Action s_OnLose;
     void WinCheck()
     {
         if(_currentShotCount == _maxShotCount) {
@@ -165,6 +168,7 @@ public class BungaShooter : StreamingGames
             _finishPopUp.Show();
             _popUpImg.sprite = _winPopUpSprite;
             HandleEnd();
+            s_OnWin?.Invoke();
         }
     }
 
@@ -185,6 +189,7 @@ public class BungaShooter : StreamingGames
             _finishPopUp.Show();
             _popUpImg.sprite = _losePopUpSprite;
             HandleEnd();
+            s_OnLose?.Invoke();
         }, 1f);
     }
 

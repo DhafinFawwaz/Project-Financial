@@ -5615,7 +5615,7 @@ PrefabInstance:
     - target: {fileID: 4978948923478222102, guid: 96de4155da2ebf9478907e6e2e061c6d, type: 3}
       propertyPath: _musicClip
       value: 
-      objectReference: {fileID: 8300000, guid: 63dcd69dcf8d69545ae7fde9137da804, type: 3}
+      objectReference: {fileID: 8300000, guid: 2b6542834f6f7534db2b286f23004163, type: 3}
     - target: {fileID: 4978948923478222103, guid: 96de4155da2ebf9478907e6e2e061c6d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -11478,6 +11478,11 @@ MeshFilter:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1903275230868289151, guid: da20a3ed8ac662948b80d0db973a42f2, type: 3}
   m_PrefabInstance: {fileID: 3186354105485731390}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1498471012 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8769917757681313403, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+  m_PrefabInstance: {fileID: 7555314987237579318}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1528004368
 PrefabInstance:
@@ -24681,6 +24686,234 @@ PrefabInstance:
       value: -109.99988
       objectReference: {fileID: 0}
     - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].AtTime
+      value: At 0.25s [28] [SFX]
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].AtTime
+      value: At 0.25s [Wait 0.85s]
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].AtTime
+      value: At 1.1s [[Image] StartPopUp] [RectTransform]
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].AtTime
+      value: At 1.1s [[Image] StartPopUp] [Image]
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].Duration
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].EaseType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].SFXIndex
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].Duration
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].EaseType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].Duration
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].EasePower
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].PlaySFXBy
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].StartTime
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].EasePower
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].StartTime
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].EasePower
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].PlaySFXBy
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].StartTime
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].ColorEnd.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].ColorEnd.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].ColorEnd.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].IsUnfolded
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].TargetComp
+      value: 
+      objectReference: {fileID: 1498471012}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].TargetType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].TargetComp
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].TargetType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].ColorEnd.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].ColorEnd.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].ColorEnd.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].TargetType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].ColorEnd.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].ColorEnd.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].ColorEnd.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].IsUnfolded
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].TargetComp
+      value: 
+      objectReference: {fileID: 1498471012}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].TargetType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].ColorStart.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].ColorStart.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].ColorStart.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].ColorStart.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].SequenceType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].SequenceType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].TargetRtTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].ColorStart.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].ColorStart.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].ColorStart.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].ColorStart.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].TargetRtTask
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].ColorStart.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].ColorStart.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].ColorStart.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].ColorStart.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].IsActivating
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].SequenceType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].TargetCgTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].TargetRtTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
       propertyPath: AnimationSequence.Array.data[0].PropertyRectY
       value: 133
       objectReference: {fileID: 0}
@@ -24703,6 +24936,58 @@ PrefabInstance:
     - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
       propertyPath: AnimationSequence.Array.data[5].PropertyRectY
       value: 243
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].PropertyRectY
+      value: 265
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].TargetCamTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].TargetImgTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].TargetTransTask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].LocalScaleStart.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].LocalScaleStart.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[4].LocalScaleStart.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].LocalScaleStart.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].LocalScaleStart.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[5].LocalScaleStart.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[3].PropertyRectHeight
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].PropertyRectHeight
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686065282339980964, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
+      propertyPath: AnimationSequence.Array.data[6].TargetTextMeshProTask
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7946286172821636990, guid: 71dc6a895fc30074da7ae7e7468b2053, type: 3}
       propertyPath: m_IsActive
