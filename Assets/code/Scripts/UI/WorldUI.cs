@@ -71,7 +71,7 @@ public class WorldUI : MonoBehaviour
         // _addedHealth = 0;
         // _currentBelanjaMoney = Save.Data.CurrentBelanjaMoney;
 
-        _ktpBelanja.SetMoneyTop(Save.Data.CurrentNeedsMoneyDiv3)
+        _ktpBelanja.SetMoneyTop(Save.Data.CurrentNeedsMoney)
             .SetMoneyBottom(Save.Data.NeedsMoney)
             .SetGreenBarFill((float)Save.Data.NeedsMoney/Save.Data.CurrentNeedsMoney);
     }
@@ -91,7 +91,7 @@ public class WorldUI : MonoBehaviour
 
     public void RefreshKTP()
     {
-        _ktpBelanja.SetMoneyTop(Save.Data.CurrentNeedsMoneyDiv3)
+        _ktpBelanja.SetMoneyTop(Save.Data.CurrentNeedsMoney)
             .SetMoneyBottom(Save.Data.NeedsMoney)
             .SetGreenBarFill((float)Save.Data.NeedsMoney/Save.Data.CurrentNeedsMoney)
             .SetHapiness(Save.Data.Happiness, 0)
@@ -132,7 +132,7 @@ public class WorldUI : MonoBehaviour
     int _qualityHappiness = 0;
     public void AddItemFromOption(OptionSession option)
     {
-        ItemData itemData = Instantiate(option.OptionData.ItemData);
+        // ItemData itemData = Instantiate(option.OptionData.ItemData);
         Option choosenOption = option.GetChoosenOption();
         // for(int i = 0; i < choosenOption.BuyCount; i++)
         // {
@@ -149,7 +149,9 @@ public class WorldUI : MonoBehaviour
         //     .SetHapiness(Save.Data.Happiness, _addedHappiness)
         //     .SetHealth(Save.Data.Health, _addedHealth);
 
-        Save.Data.NeedsMoney -= itemData.Price * choosenOption.BuyCount;
+        // Debug.Log(itemData.Price);
+
+        Save.Data.NeedsMoney -= choosenOption.Content.Price * choosenOption.BuyCount;
         
 
         _totalPercentage += choosenOption.Content.Quality * choosenOption.BuyCount;
@@ -165,7 +167,7 @@ public class WorldUI : MonoBehaviour
         Save.Data.CurrentTotalItems = _totalItems;
 
         
-        _ktpBelanja.SetMoneyTop(Save.Data.CurrentNeedsMoneyDiv3)
+        _ktpBelanja.SetMoneyTop(Save.Data.CurrentNeedsMoney)
             .SetMoneyBottom(Save.Data.NeedsMoney)
             .SetGreenBarFill((float)Save.Data.NeedsMoney/Save.Data.CurrentNeedsMoney);
 
@@ -194,7 +196,7 @@ public class WorldUI : MonoBehaviour
         Save.Data.CurrentTotalItems = _totalItems;
 
         
-        _ktpBelanja.SetMoneyTop(Save.Data.CurrentNeedsMoneyDiv3)
+        _ktpBelanja.SetMoneyTop(Save.Data.CurrentNeedsMoney)
             .SetMoneyBottom(Save.Data.NeedsMoney)
             .SetGreenBarFill((float)Save.Data.NeedsMoney/Save.Data.CurrentNeedsMoney);
     }

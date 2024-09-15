@@ -62,7 +62,7 @@ public class AfterBelanja : MonoBehaviour
         foreach(var item in _listCart)
         {
             _barangText.text += $"{item.Item.Name} x{item.Count}\n";
-            _hargaText.text += $"{item.Item.Price*item.Count}\n";
+            _hargaText.text += $"{(item.Item.Price*item.Count).ToStringRupiahFormat()}\n";
         }
 
         long totalHarga = 0;
@@ -71,8 +71,8 @@ public class AfterBelanja : MonoBehaviour
             totalHarga += item.Item.Price * item.Count;
         }
 
-        _totalhargaText.text = totalHarga.ToString();
-        _sisaText.text = (Save.Data.NeedsMoney).ToString();
+        _totalhargaText.text = totalHarga.ToStringRupiahFormat();
+        _sisaText.text = (Save.Data.NeedsMoney).ToStringRupiahFormat();
         // _addedHealthText.text = _addedHealth.ToString();
         // _addedHapinesssisaText.text = _addedhappiness.ToString();
 
@@ -95,7 +95,7 @@ public class AfterBelanja : MonoBehaviour
         if(Save.Data.NeedsMoney < 0) {
             Save.Data.NeedsMoney = Save.Data.TempNeedsMoney;
             Save.Data.CurrentDayData.CreditMoney = totalHarga;
-            _sisaText.text = Save.Data.NeedsMoney.ToString();
+            _sisaText.text = Save.Data.NeedsMoney.ToStringRupiahFormat();
             _kreditDialog.SetActive(true);
             _kebutuhanDialog.SetActive(false);
             _kreditAnimation.Play();

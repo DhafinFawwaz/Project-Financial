@@ -25,7 +25,6 @@ public class SaveData
 
     const int MAX_DAY = 15;
     public long NeedsMoney = 100000;
-    public long CurrentNeedsMoneyDiv3;
 
     public long CurrentNeedsMoney {
         get => _currentNeedsMoney;
@@ -117,7 +116,7 @@ public class SaveData
 
         CurrentNeedsMoney = NeedsMoney;
 
-        CurrentNeedsMoneyDiv3 = 20000;
+        // CurrentNeedsMoneyDiv3 = 50000;
 
         for(int i = 0; i < MAX_DAY; i++)
         {

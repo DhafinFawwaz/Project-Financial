@@ -1882,6 +1882,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 1024
       objectReference: {fileID: 0}
+    - target: {fileID: 6334441783975997865, guid: c65deda6cb643fe4b9eae5df8d3f1702, type: 3}
+      propertyPath: m_SortingOrder
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 7523051517483132630, guid: c65deda6cb643fe4b9eae5df8d3f1702, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -12563,6 +12567,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 75972332441318287, guid: 1513c588c4289d44094e42f31e29f991, type: 3}
+      propertyPath: m_SortingOrder
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 3188640413479115863, guid: 1513c588c4289d44094e42f31e29f991, type: 3}
       propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -19817,6 +19825,10 @@ PrefabInstance:
     - target: {fileID: 5771649121745641347, guid: c65deda6cb643fe4b9eae5df8d3f1702, type: 3}
       propertyPath: m_SizeDelta.y
       value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 6334441783975997865, guid: c65deda6cb643fe4b9eae5df8d3f1702, type: 3}
+      propertyPath: m_SortingOrder
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 7523051517483132630, guid: c65deda6cb643fe4b9eae5df8d3f1702, type: 3}
       propertyPath: m_IsActive
