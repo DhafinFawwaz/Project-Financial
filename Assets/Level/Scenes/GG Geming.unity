@@ -2129,6 +2129,11 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2736054999206101926, guid: 3e093ab7d15ba72479a2c565e8c87ff8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3e093ab7d15ba72479a2c565e8c87ff8, type: 3}
+--- !u!23 &647586263 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1650567161494264819, guid: 3e093ab7d15ba72479a2c565e8c87ff8, type: 3}
+  m_PrefabInstance: {fileID: 647586262}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &658316135
 GameObject:
   m_ObjectHideFlags: 0
@@ -5557,6 +5562,8 @@ MonoBehaviour:
   - {fileID: 1369668590}
   - {fileID: 1724311330}
   - {fileID: 1272672530}
+  - {fileID: 1272672530}
+  - {fileID: 647586263}
 --- !u!1 &1238559076
 GameObject:
   m_ObjectHideFlags: 0
