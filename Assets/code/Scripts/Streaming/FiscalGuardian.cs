@@ -25,15 +25,7 @@ public class FiscalGuardian : StreamingGames
 
     [Header("Event")]
     public UnityEvent OnGameStart;
-    void Awake()
-    {
-        if(Save.Data.CurrentDay == 0) {
-            CurrentFiscalGuardianData = _data[Save.Data.CurrentDayData.StreamingCounter % _data.Length];
-        } else {
-            int rand = UnityEngine.Random.Range(0, _data.Length);
-            CurrentFiscalGuardianData = _data[rand];
-        }
-    }
+
 
     public override void Play()
     {
@@ -120,12 +112,20 @@ public class FiscalGuardian : StreamingGames
     int _wrongCount = 0;
 
 
-    public static FiscalGuardianData CurrentFiscalGuardianData;
+    public FiscalGuardianData CurrentFiscalGuardianData;
     int _currentPeopleIndex = 0;
 
 
     public void StartGame()
     {
+        if(Save.Data.CurrentDay == 0) {
+            CurrentFiscalGuardianData = _data[Save.Data.CurrentDayData.StreamingCounter % _data.Length];
+        } else {
+            int rand = UnityEngine.Random.Range(0, _data.Length);
+            Debug.Log(rand);
+            CurrentFiscalGuardianData = _data[rand];
+        }
+
         OnGameStart?.Invoke();
         _peopleAppearAnimation.Play();
         // Make copy of CurrentFiscalGuardianData
