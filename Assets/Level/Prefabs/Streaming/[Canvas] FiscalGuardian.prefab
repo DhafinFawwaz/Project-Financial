@@ -14154,13 +14154,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Pemasukan:
+  m_text: '<color=#006600>Pemasukan:
 
     Rp 931.000<line-height=50%>
 
     <line-height=100%>
 
-    Pengeluaran:
+    <color=#660000>Pengeluaran:
 
     Rp
     616.000 + Rp79.000 + Rp 27.929
@@ -14169,10 +14169,10 @@ MonoBehaviour:
 
     <line-height=100%>
 
-    Pemasukan
-    > Pengeluaran:
+    <color=#006600>Pemasukan
+    <color=#000>> <color=#660000>Pengeluaran:
 
-    <b><u>Bukan Shadow!'
+    <b><u><color=#000>Diterima!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b7b8ae663803cf54890abd5f0edd3080, type: 2}
   m_sharedMaterial: {fileID: 5163053530988034611, guid: b7b8ae663803cf54890abd5f0edd3080, type: 2}
