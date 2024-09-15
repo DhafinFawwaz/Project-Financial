@@ -31,7 +31,10 @@ public class BelanjaManager : MonoBehaviour
     [SerializeField] WorldUI _worldUI;
     public void StartGame()
     {
+        Save.Data.CurrentListBelanja.Clear();
         Save.Data.CurrentCartBelanja.Clear();
+        _belanjaList.ListToBuy.Clear();
+        _belanjaList.ListCart.Clear();
         _belanjaListGenerator.GenerateBelanjaList();
         _worldUI.RefreshStates();
 
