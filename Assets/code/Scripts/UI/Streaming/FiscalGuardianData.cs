@@ -23,6 +23,14 @@ public class FiscalGuardianData : ScriptableObject
         }
         return shadowCount;
     }
+
+    public void RandomizeId()
+    {
+        foreach (var people in _people)
+        {
+            people.Id = UnityEngine.Random.Range(0, 16);
+        }
+    }
 }
 
 [System.Serializable]
@@ -131,6 +139,7 @@ public class FiscalGuardianDataEditor : Editor
             EditorGUILayout.LabelField($"Pajak Bulanan {people.PajakBulanan}");
             EditorGUILayout.LabelField($"Cicilan {people.CicilanKredit}");
             EditorGUILayout.LabelField($"Is Shadow {people.IsShadow}");
+            EditorGUILayout.LabelField($"Id {people.Id}");
             EditorGUILayout.Space();
         }
 
@@ -184,6 +193,9 @@ public class FiscalGuardianDataEditor : Editor
                     people.Catatan[i].Tanggal = dts[i].ToString("dd-MM-yyyy");
                 }
             }
+            AssetDatabase.Refresh();
+            EditorUtility.SetDirty(target);
+            AssetDatabase.SaveAssets();
         }
 
         if(GUILayout.Button("Randomize Pemasukan"))
@@ -196,6 +208,9 @@ public class FiscalGuardianDataEditor : Editor
                     catatan.Pemasukan = val * 1000;
                 }
             }
+            AssetDatabase.Refresh();
+            EditorUtility.SetDirty(target);
+            AssetDatabase.SaveAssets();
         }
 
         if(GUILayout.Button("Randomize Pengeluaran"))
@@ -208,6 +223,9 @@ public class FiscalGuardianDataEditor : Editor
                     catatan.Pengeluaran = val * 1000;
                 }
             }
+            AssetDatabase.Refresh();
+            EditorUtility.SetDirty(target);
+            AssetDatabase.SaveAssets();
         }
 
         if(GUILayout.Button("Randomize Cicilan Kredit"))
@@ -216,14 +234,17 @@ public class FiscalGuardianDataEditor : Editor
             {
                 people.CicilanKredit = UnityEngine.Random.Range(0, 700) * 1000;
             }
+            AssetDatabase.Refresh();
+            EditorUtility.SetDirty(target);
+            AssetDatabase.SaveAssets();
         }
 
         if(GUILayout.Button("Randomize Id"))
         {
-            foreach (var people in ((FiscalGuardianData)target).People)
-            {
-                people.Id = UnityEngine.Random.Range(0, 16);
-            }
+            ((FiscalGuardianData)target).RandomizeId();
+            AssetDatabase.Refresh();
+            EditorUtility.SetDirty(target);
+            AssetDatabase.SaveAssets();
         }
         if(GUILayout.Button("Randomize Message"))
         {
@@ -239,6 +260,10 @@ public class FiscalGuardianDataEditor : Editor
             {
                 people.WrongMessage = messageList[UnityEngine.Random.Range(0, messageList.Length)];
             }
+
+            AssetDatabase.Refresh();
+            EditorUtility.SetDirty(target);
+            AssetDatabase.SaveAssets();
         }
 
     }
