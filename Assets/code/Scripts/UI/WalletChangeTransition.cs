@@ -12,18 +12,43 @@ public class WalletChangeTransition : SceneTransition
     [SerializeField] float _walletAnimationDuration = 0.5f;
     [SerializeField] GameObject _needsWallet;
     [SerializeField] GameObject _desireWallet;
+    [SerializeField] GameObject _debitWallet;
     [SerializeField] bool _toDesire = true;
+    [SerializeField] bool _desireToDebit = false;
+    [SerializeField] bool _debitToDesire = false;
 
     public void SwitchWallet()
     {
         _needsWallet.SetActive(!_toDesire);
         _desireWallet.SetActive(_toDesire);
+        if(_desireToDebit)
+        {
+            _needsWallet.SetActive(false);
+            _desireWallet.SetActive(false);
+            _debitWallet.SetActive(true);
+        } else if(_debitToDesire)
+        {
+            _needsWallet.SetActive(false);
+            _desireWallet.SetActive(true);
+            _debitWallet.SetActive(false);
+        }
     }
 
     void InitWallet()
     {
         _needsWallet.SetActive(_toDesire);
         _desireWallet.SetActive(!_toDesire);
+        if(_desireToDebit)
+        {
+            _needsWallet.SetActive(false);
+            _desireWallet.SetActive(true);
+            _debitWallet.SetActive(false);
+        } else if(_debitToDesire)
+        {
+            _needsWallet.SetActive(false);
+            _desireWallet.SetActive(false);
+            _debitWallet.SetActive(true);
+        }
     }
 
     public static Action s_onWalletSceneTransition;

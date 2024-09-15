@@ -32,7 +32,7 @@ public class ItemSeller : Interactable
 
     public void Buy()
     {
-        if(Save.Data.DesireMoney > _price) {
+        if(Save.Data.DebitMoney > _price) {
             _popUpDescriptionText.text = _descriptionPopUp;
             _buyButton.OnClick.RemoveAllListeners();
             _buyButton.OnClick.AddListener(ConfirmBuy);
@@ -47,7 +47,7 @@ public class ItemSeller : Interactable
 
     public void ConfirmBuy()
     {
-        Save.Data.DesireMoney -= _price;
+        Save.Data.DebitMoney -= _price;
         _onConfirmBuy?.Invoke();
         _confirmPopUp.Hide();
         InputManager.SetActiveMouseAndKey(true);

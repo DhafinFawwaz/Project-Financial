@@ -34,7 +34,7 @@ public class GameSeller : Interactable
             return;
         }
 
-        if(Save.Data.DesireMoney > _price) {
+        if(Save.Data.DebitMoney > _price) {
             _popUpDescriptionText.text = DESCRIPTION_POPUP;
             _confirmPopUp.Show();
         }
@@ -45,7 +45,7 @@ public class GameSeller : Interactable
 
     public void ConfirmBuyBungaShooter()
     {
-        Save.Data.DesireMoney -= _price;
+        Save.Data.DebitMoney -= _price;
         Save.Data.IsBungaShooterBought = true;
         _confirmPopUp.Hide();
         // _interactablePromptAnchor.gameObject.SetActive(false);
