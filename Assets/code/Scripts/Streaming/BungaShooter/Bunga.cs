@@ -24,8 +24,11 @@ public class Bunga : MonoBehaviour
     {
         _shakeAnimation.Play();
     }
+
+    public static Action s_OnBungaShot;
     public void Throw()
     {
+        s_OnBungaShot?.Invoke();
         foreach(var obj in _toDisableOnDeath)
         {
             obj.enabled = false;

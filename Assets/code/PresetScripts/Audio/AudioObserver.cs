@@ -40,6 +40,7 @@ public class AudioObserver : MonoBehaviour
         PieChartItemSpawner.s_OnItemPieThrown += SFXOnItemPieThrown;
         StreamingManager.s_OnIncreaseViews += SFXWin;
         StreamingManager.s_OnDecreaseViews += SFXLose;
+        Bunga.s_OnBungaShot += SFXOnBungaShot;
     }
     void OnDisable()
     {
@@ -75,7 +76,10 @@ public class AudioObserver : MonoBehaviour
         PieChartItemSpawner.s_OnItemPieThrown -= SFXOnItemPieThrown;
         StreamingManager.s_OnIncreaseViews -= SFXWin;
         StreamingManager.s_OnDecreaseViews -= SFXLose;
+        Bunga.s_OnBungaShot -= SFXOnBungaShot;
     }
+
+    void SFXOnBungaShot() => _audio.PlaySound(32);
 
     void SFXOnItemPieThrown() => _audio.PlaySound(22);
 
