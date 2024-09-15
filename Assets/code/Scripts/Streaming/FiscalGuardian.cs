@@ -119,17 +119,17 @@ public class FiscalGuardian : StreamingGames
     public void StartGame()
     {
         if(Save.Data.CurrentDay == 0) {
-            CurrentFiscalGuardianData = _data[Save.Data.CurrentDayData.StreamingCounter % _data.Length];
+            CurrentFiscalGuardianData = Instantiate(_data[Save.Data.CurrentDayData.StreamingCounter % _data.Length]);
         } else {
             int rand = UnityEngine.Random.Range(0, _data.Length);
             Debug.Log(rand);
-            CurrentFiscalGuardianData = _data[rand];
+            CurrentFiscalGuardianData = Instantiate(_data[rand]);
         }
 
         OnGameStart?.Invoke();
         _peopleAppearAnimation.Play();
         // Make copy of CurrentFiscalGuardianData
-        CurrentFiscalGuardianData = Instantiate(CurrentFiscalGuardianData);
+        // CurrentFiscalGuardianData = Instantiate(CurrentFiscalGuardianData);
         // Shuffle the people
         for (int i = 0; i < CurrentFiscalGuardianData.People.Length; i++)
         {
