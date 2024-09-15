@@ -34,7 +34,7 @@ public class AfterStreaming : MonoBehaviour
     long CalculateProfit(long views)
     {
         float p = 0.3f;
-        float q = 6400f;
+        float q = 7500f;
         long profit = (long)(Mathf.Pow(views, p) * q * UnityEngine.Random.Range(0.9f, 1.5f));
 
         float mul = 1 + Save.Data.OtherLevel * 0.05f;

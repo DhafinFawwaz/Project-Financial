@@ -199,11 +199,12 @@ public class BungaShooter : StreamingGames
         Save.Data.CurrentDayData.StreamingCounter++;
         
         float mul = 1 + Save.Data.KursiLevel * 0.05f;
-        Save.Data.CurrentDayData.GainedViews += (long)(_viewCounter*Mathf.Pow(1.03f, _currentShotCount) * mul);
+        int views = (int)(_viewCounter*Mathf.Pow(1.3f, _currentShotCount) * mul);
+        Save.Data.CurrentDayData.GainedViews += views;
 
         // Save.Data.CurrentDayData.GainedSubscriber += (long)(_viewCounter*_currentShotCount * UnityEngine.Random.Range(1f, 1.5f));
         // Save.Data.CurrentDayData.GainedMoney = (long)(_viewCounter*_currentShotCount * UnityEngine.Random.Range(150f, 200f));
-        OnIncreaseViews(_viewCounter*_currentShotCount);
+        OnIncreaseViews(views);
         MouseCursor.Main.SetToCursor();
     }
 
