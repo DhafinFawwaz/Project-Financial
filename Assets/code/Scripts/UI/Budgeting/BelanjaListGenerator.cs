@@ -52,8 +52,8 @@ public class BelanjaListGenerator : MonoBehaviour
         long needsMoney = (long)(Save.Data.NeedsMoney * _currentValue);
         _kebutuhanText.text = needsMoney.ToStringRupiahFormat();
         _kebutuhanDiv3Text.text = (needsMoney / 3).ToStringRupiahFormat();
-        _happinessText.text = Clamp0to100(_budgetingData.PredictHappiness(needsMoney, Save.Data.CurrentDay)).ToString("F2");
-        _healthText.text = Clamp0to100(_budgetingData.PredictHealth(needsMoney, Save.Data.CurrentDay)).ToString("F2");
+        _happinessText.text = Clamp0to100(_budgetingData.PredictHappiness(needsMoney/3, Save.Data.CurrentDay)).ToString("F2");
+        _healthText.text = Clamp0to100(_budgetingData.PredictHealth(needsMoney/3, Save.Data.CurrentDay)).ToString("F2");
     }
     float Clamp0to100(float value)
     {

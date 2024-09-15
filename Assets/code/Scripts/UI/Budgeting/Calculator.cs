@@ -21,10 +21,10 @@ public class Calculator : MonoBehaviour
         _kebutuhanText.text = needsMoney.ToStringRupiahFormat();
         _kebutuhanDiv3Text.text = (needsMoney / 3).ToStringRupiahFormat();
         
-        int happiness = Clamp0to100toInt(_budgetingData.PredictHappiness(needsMoney, Save.Data.CurrentDay));
+        int happiness = Clamp0to100toInt(_budgetingData.PredictHappiness(needsMoney/3, Save.Data.CurrentDay));
         _happinessText.text = happiness.ToString();
 
-        int health = Clamp0to100toInt(_budgetingData.PredictHealth(needsMoney, Save.Data.CurrentDay));
+        int health = Clamp0to100toInt(_budgetingData.PredictHealth(needsMoney/3, Save.Data.CurrentDay));
         _healthText.text = health.ToString();
 
         Save.Data.CurrentPredictedHappiness = happiness;
