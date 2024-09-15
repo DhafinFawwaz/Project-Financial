@@ -1801,7 +1801,7 @@ PrefabInstance:
     - target: {fileID: 6647457785147903149, guid: ebcb1f06cf221e549b8f3a19f8666b5e, type: 3}
       propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[5].m_Target
       value: 
-      objectReference: {fileID: 1559678392}
+      objectReference: {fileID: 1833317904}
     - target: {fileID: 6647457785147903149, guid: ebcb1f06cf221e549b8f3a19f8666b5e, type: 3}
       propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -1848,7 +1848,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6647457785147903149, guid: ebcb1f06cf221e549b8f3a19f8666b5e, type: 3}
       propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
-      value: IncrementStreamingCounter
+      value: PlaySFX
       objectReference: {fileID: 0}
     - target: {fileID: 6647457785147903149, guid: ebcb1f06cf221e549b8f3a19f8666b5e, type: 3}
       propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -1872,7 +1872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6647457785147903149, guid: ebcb1f06cf221e549b8f3a19f8666b5e, type: 3}
       propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
-      value: StoryBedroom, Assembly-CSharp
+      value: SFXOnSceneTrigger, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6647457785147903149, guid: ebcb1f06cf221e549b8f3a19f8666b5e, type: 3}
       propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
@@ -8150,6 +8150,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sceneTransition: {fileID: 5644601496464344134, guid: 3401eac2280b27243b5b1c5da04b2024, type: 3}
   _delay: 0.5
+--- !u!114 &1833317904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833317897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18f021aedda7fe4d8e5127aabb1d8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxIndex: 14
 --- !u!1001 &1865000745
 PrefabInstance:
   m_ObjectHideFlags: 0

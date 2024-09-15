@@ -22,6 +22,11 @@ public class AfterStreaming : MonoBehaviour
 
     void OnEnable()
     {
+        if(Save.Data.CurrentDay == 10) {
+            Save.Data.CurrentDayData.GainedMoney = 0;
+        }
+        
+
         var viewsEachDay = Save.Data.ViewsEachDay; viewsEachDay.Insert(0, 0);
         var subscriberEachDay = Save.Data.SubscriberEachDay; subscriberEachDay.Insert(0, 0);
         var moneyEachDay = Save.Data.MoneyEachDay; moneyEachDay.Insert(0, 0);

@@ -18,8 +18,8 @@ public class Kuliah : MonoBehaviour
 
     void Start()
     {
-        _counterText.text = "x2";
-        _worldUI.RefreshStates();
+        // _counterText.text = "x2";
+        // _worldUI.RefreshStates();
     }
 
     int _counter = 0;

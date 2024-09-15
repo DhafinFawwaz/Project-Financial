@@ -92,6 +92,8 @@ public class StoryBedroom : MonoBehaviour
     {
         // lol hard coded i dont want to mess this up
         int d = Save.Data.CurrentDay;
+        if(d >= 14) d = 14;
+        
         if(d == 1) ApplyStocks(0);
         else if(d == 2) ApplyStocks(2);
         else if(d == 5) ApplyStocks(5);

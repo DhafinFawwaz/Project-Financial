@@ -46,6 +46,9 @@ public class AudioObserver : MonoBehaviour
         Dialog.s_OnDialogNext += SFXOnDialogNext;
         Dialog.s_OnDialogFinished += SFXOnDialogFinished;
         TextRupiahAnimation.s_OnRupiahAnimationStart += SFXRupiahAnimationStart;
+        ScreenWipeSceneTransition.s_OnScreenWipeTransitionStart += SFXScreenWipeTransitionStart;
+        WalletChangeTransition.s_onWalletSceneTransition += SFXScreenWipeTransitionStart;
+        ClickToZoom.s_OnZoom += SFXScreenWipeTransitionStart;
     }
     void OnDisable()
     {
@@ -87,7 +90,12 @@ public class AudioObserver : MonoBehaviour
         Dialog.s_OnDialogNext -= SFXOnDialogNext;
         Dialog.s_OnDialogFinished -= SFXOnDialogFinished;
         TextRupiahAnimation.s_OnRupiahAnimationStart -= SFXRupiahAnimationStart;
+        ScreenWipeSceneTransition.s_OnScreenWipeTransitionStart -= SFXScreenWipeTransitionStart;
+        WalletChangeTransition.s_onWalletSceneTransition -= SFXScreenWipeTransitionStart;
+        ClickToZoom.s_OnZoom -= SFXScreenWipeTransitionStart;
     }
+
+    void SFXScreenWipeTransitionStart() => _audio.PlaySound(16);
 
     void SFXRupiahAnimationStart() {
         // _audio.PlaySound(18);

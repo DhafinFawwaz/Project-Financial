@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class ScreenWipeSceneTransition : SceneTransition
 {
@@ -8,12 +9,15 @@ public class ScreenWipeSceneTransition : SceneTransition
     [SerializeField] float _startXScale = 0;
     [SerializeField] float _endXScale = 1;
 
+    public static Action s_OnScreenWipeTransitionStart;
+
     /// <summary>
     /// The out animation itself
     /// </summary>
     /// <returns></returns>
     public override IEnumerator OutAnimation()
     {
+        s_OnScreenWipeTransitionStart?.Invoke();
         _orangeSquareRT.pivot = new Vector2(0.5f, 1);
         float t = 0;
         while(t <= 1)
@@ -32,6 +36,7 @@ public class ScreenWipeSceneTransition : SceneTransition
     /// <returns></returns>
     public override IEnumerator InAnimation()
     {
+        s_OnScreenWipeTransitionStart?.Invoke();
         _orangeSquareRT.pivot = new Vector2(0.5f, 0);
         float t = 0;
         while(t <= 1)

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using System;
 
 public class ClickToZoom : MonoBehaviour
 {
@@ -15,13 +16,17 @@ public class ClickToZoom : MonoBehaviour
         _initialFoV = _vcam.m_Lens.FieldOfView;
     }
 
+
+    public static Action s_OnZoom;
     void Update()
     {
         if(Input.GetMouseButtonDown(1))
         {
+            s_OnZoom?.Invoke();
             StartCoroutine(TweenFov(_vcam, _vcam.m_Lens.FieldOfView, _zoomFov, 0.5f, Ease.OutQuart));
         } else if(Input.GetMouseButtonUp(1))
         {
+            s_OnZoom?.Invoke();
             StartCoroutine(TweenFov(_vcam, _vcam.m_Lens.FieldOfView, _initialFoV, 0.5f, Ease.OutQuart));
         }
     }

@@ -3110,11 +3110,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7485018761266739751, guid: 8e848e97aaf5a7a4cad4e5e7d638f4a5, type: 3}
       propertyPath: m_Radius
-      value: 0.24150172
+      value: 0.17592666
       objectReference: {fileID: 0}
     - target: {fileID: 7485018761266739751, guid: 8e848e97aaf5a7a4cad4e5e7d638f4a5, type: 3}
       propertyPath: m_Center.z
-      value: 0.058498293
+      value: 0.12407336
       objectReference: {fileID: 0}
     - target: {fileID: 7485018761266739758, guid: 8e848e97aaf5a7a4cad4e5e7d638f4a5, type: 3}
       propertyPath: _price
@@ -3310,6 +3310,7 @@ GameObject:
   m_Component:
   - component: {fileID: 832826734}
   - component: {fileID: 832826733}
+  - component: {fileID: 832826735}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -3371,6 +3372,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0.01}
+--- !u!114 &832826735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832826732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aaa75dab71f28145b68c14ecda55099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _zoomFov: 7
 --- !u!23 &833640370 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 6751633120933811950, guid: 3e093ab7d15ba72479a2c565e8c87ff8, type: 3}
@@ -7684,7 +7698,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7485018761266739751, guid: 8e848e97aaf5a7a4cad4e5e7d638f4a5, type: 3}
       propertyPath: m_Radius
-      value: 0.3
+      value: 0.25940135
+      objectReference: {fileID: 0}
+    - target: {fileID: 7485018761266739751, guid: 8e848e97aaf5a7a4cad4e5e7d638f4a5, type: 3}
+      propertyPath: m_Center.z
+      value: 0.04059866
       objectReference: {fileID: 0}
     - target: {fileID: 7485018761266739758, guid: 8e848e97aaf5a7a4cad4e5e7d638f4a5, type: 3}
       propertyPath: _price

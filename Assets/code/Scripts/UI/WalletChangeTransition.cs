@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +26,8 @@ public class WalletChangeTransition : SceneTransition
         _desireWallet.SetActive(!_toDesire);
     }
 
+    public static Action s_onWalletSceneTransition;
+
     /// <summary>
     /// The out animation itself
     /// </summary>
@@ -43,6 +46,7 @@ public class WalletChangeTransition : SceneTransition
         
         Time.timeScale = 1;
         _walletAnimation.Play();
+        s_onWalletSceneTransition?.Invoke();
         yield return new WaitForSeconds(_walletAnimationDuration);
         Time.timeScale = 0;
     }
