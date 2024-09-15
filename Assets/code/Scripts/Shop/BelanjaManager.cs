@@ -46,7 +46,7 @@ public class BelanjaManager : MonoBehaviour
         if(Save.Data.CurrentDay >= 4)
             _timerDiscountStartInvisible.Begin();
 
-        _belanjaList.ListToBuy = Save.Data.CurrentListBelanja;
+        // _belanjaList.ListToBuy = Save.Data.CurrentListBelanja;
 
         this.Invoke(() => {
             InputManager.SetActiveMouseAndKey(true);

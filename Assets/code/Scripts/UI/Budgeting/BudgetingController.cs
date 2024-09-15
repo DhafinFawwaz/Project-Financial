@@ -577,9 +577,6 @@ public class BudgetingController : MonoBehaviour
         // _belanjaListGenerator.GenerateBelanjaList();
         _sceneTransitionStarter.StartTransition("World");
 
-        // foreach(var item in Save.Data.CurrentListBelanja) {
-        //     Debug.Log(item.Item.Name);
-        // }
     }
 
 

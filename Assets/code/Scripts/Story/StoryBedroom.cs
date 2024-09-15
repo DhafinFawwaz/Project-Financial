@@ -108,7 +108,9 @@ public class StoryBedroom : MonoBehaviour
     }
     void ApplyStocks(int _dayIndex)
     {
-        Save.Data.HealthItemStocks = _dayData.State[_dayIndex].HealthItemStocks;
+        for(int i = 0; i < Save.Data.HealthItemStocks.Count; i++) {
+            Save.Data.HealthItemStocks[i] += _dayData.State[_dayIndex].HealthItemStocks[i];
+        }
     }
 
 }
