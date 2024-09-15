@@ -21,7 +21,7 @@ public class PopUp : MonoBehaviour
 
         _blocker.SetActive(true);
         StartCoroutine(TweenLocalScaleAnimation(_rt, _rt.localScale, Vector3.one, 0.3f, Ease.OutQuart));
-        StartCoroutine(TweenCanvasGroupAlphaAnimation(_canvasGroup, 0, 1, 0.3f, Ease.OutQuart));
+        StartCoroutine(TweenCanvasGroupAlphaAnimation(_canvasGroup, _canvasGroup.alpha, 1, 0.3f, Ease.OutQuart));
         s_OnPopUpShow?.Invoke();
     }
 

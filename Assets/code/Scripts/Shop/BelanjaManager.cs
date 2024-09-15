@@ -40,8 +40,11 @@ public class BelanjaManager : MonoBehaviour
         float diskonTime = Random.Range(_diskonBesarMin, _diskonBesarMax);
         _timerDiscountStartInvisible.SetTime(diskonTime);
         _shadow.gameObject.SetActive(true);
-        _timer.Begin();
-        _timerDiscountStartInvisible.Begin();
+        
+        if(Save.Data.CurrentDay >= 3)
+            _timer.Begin();
+        if(Save.Data.CurrentDay >= 4)
+            _timerDiscountStartInvisible.Begin();
 
         _belanjaList.ListToBuy = Save.Data.CurrentListBelanja;
 

@@ -34,7 +34,7 @@ public class BungaShooter : StreamingGames
     long _maxMoney = 10000000;
     long _currentMoney = 0;
     long _moneyMinus = 200000;
-    long _moneyPlus = 50000;
+    long _moneyPlus = 250000;
     public void SetCurrentMoney(long currentMoney)
     {
         _currentMoneyBarFillAnimation.SetFill((float)_currentMoney/_maxMoney);
@@ -199,7 +199,7 @@ public class BungaShooter : StreamingGames
         Save.Data.CurrentDayData.StreamingCounter++;
         
         float mul = 1 + Save.Data.KursiLevel * 0.05f;
-        Save.Data.CurrentDayData.GainedViews += (long)(_viewCounter*Mathf.Pow(1.3f, _currentShotCount) * mul);
+        Save.Data.CurrentDayData.GainedViews += (long)(_viewCounter*Mathf.Pow(1.03f, _currentShotCount) * mul);
 
         // Save.Data.CurrentDayData.GainedSubscriber += (long)(_viewCounter*_currentShotCount * UnityEngine.Random.Range(1f, 1.5f));
         // Save.Data.CurrentDayData.GainedMoney = (long)(_viewCounter*_currentShotCount * UnityEngine.Random.Range(150f, 200f));

@@ -1381,9 +1381,9 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 37408281}
-          m_TargetAssemblyTypeName: StoryKuliah, Assembly-CSharp
-          m_MethodName: LoadNext
+        - m_Target: {fileID: 127545622}
+          m_TargetAssemblyTypeName: DayStateSetter, Assembly-CSharp
+          m_MethodName: SetAfterKuliah
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1393,9 +1393,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 127545622}
-          m_TargetAssemblyTypeName: DayStateSetter, Assembly-CSharp
-          m_MethodName: SetAfterKuliah
+        - m_Target: {fileID: 37408281}
+          m_TargetAssemblyTypeName: StoryKuliah, Assembly-CSharp
+          m_MethodName: LoadNext
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

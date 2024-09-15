@@ -12,7 +12,7 @@ public class JudolManager : MonoBehaviour
     {
         if(Save.Data.CurrentDay == 13) {
             _streamCutscene.enabled = false;
-            _judolPopUp.Show();
+            this.Invoke(_judolPopUp.Show, 1f);
         }
         else Destroy(_judolPopUp.transform.parent.gameObject);
     }
