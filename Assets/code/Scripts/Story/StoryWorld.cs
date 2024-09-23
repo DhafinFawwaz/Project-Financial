@@ -157,4 +157,10 @@ public class StoryWorld : MonoBehaviour
         Save.Data.Day7State++;
         RefreshStates();
     }
+
+    public void SetDay7State(int state)
+    {
+        Save.Data.Day7State = state;
+        RefreshStates();
+    }
 }
