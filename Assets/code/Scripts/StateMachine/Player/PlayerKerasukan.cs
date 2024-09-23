@@ -83,13 +83,20 @@ public class PlayerKerasukan : MonoBehaviour
     ItemKerasukan item;
     [SerializeField] BelanjaList _belanjaList;
     [SerializeField] SpacebarSpam _spacebarSpam;
+
+
+    float _lastBuyTime = 0;
+    [SerializeField] float _buyTimeInterval = 1;
     void Update()
     {
         if(!_isKerasukan) return;
 
         if(Vector3.Distance(_agent.transform.position, item.transform.position) < _arriveDistance)
         {
-            Buy(item);
+            if(Time.time - _lastBuyTime > _buyTimeInterval) {
+                _lastBuyTime = Time.time;
+                Buy(item);
+            }
 
             item = _itemKerasukanCopy[Random.Range(0, _itemKerasukanCopy.Count)];
             _itemKerasukanCopy.Remove(item);
