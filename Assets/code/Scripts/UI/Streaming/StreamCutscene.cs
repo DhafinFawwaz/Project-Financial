@@ -44,7 +44,7 @@ public class StreamCutscene : MonoBehaviour
 
     void Start()
     {
-        if(IsHappinessLowerThanAllGames() || IsHealthLowerThanAllGames()) LoadLoseCutscene();
+        if(IsHappinessLowerThanAllGames() || IsHealthLowerThanAllGames()) PlayLose();
         else Play();
     }
     [SerializeField] GameObject _blocker;
@@ -116,6 +116,17 @@ public class StreamCutscene : MonoBehaviour
     public void Play()
     {
         _currentCutscene = _cutscenes[Save.Data.CurrentDay];
+        PlayNormal();
+    }
+
+    public void PlayLose()
+    {
+        _currentCutscene = _loseCutscene;
+        PlayNormal();
+    }
+
+    void PlayNormal()
+    {
         _blocker.SetActive(true);
         _cutsceneIndex = -1;
 
@@ -137,6 +148,9 @@ public class StreamCutscene : MonoBehaviour
         }, 0.1f);
     }
 
+
+
+
     void Update()
     {
         if(!_isPlaying) return;
@@ -157,6 +171,7 @@ public class StreamCutscene : MonoBehaviour
             DespawnAllToasters();
             _isPlaying = false;
             this.Invoke(() => _blocker.SetActive(false), 0.5f);
+            if(IsHappinessLowerThanAllGames() || IsHealthLowerThanAllGames()) LoadLoseCutscene();
             return;
         }
         var dialog = _currentCutscene.Dialogs[_cutsceneIndex];

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class NPC : Interactable
 {
@@ -27,5 +28,16 @@ public class NPC : Interactable
             case DayState.AfterBudgeting: s_OnNPCInteract?.Invoke(_commentListAfterBudgeting); break;
             case DayState.AfterBelanja: s_OnNPCInteract?.Invoke(_commentListAfterBelanja); break;
         }
+
+        Dialog.s_OnDialogFinished += OnDialogDone;
     }
+
+    [SerializeField] UnityEvent _onDialogFinished;
+    void OnDialogDone(DialogData data)
+    {
+        _onDialogFinished?.Invoke();
+        Dialog.s_OnDialogFinished -= OnDialogDone;
+    }
+
+    
 }
