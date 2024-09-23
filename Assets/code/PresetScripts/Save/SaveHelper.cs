@@ -7,7 +7,7 @@ public class SaveHelper : MonoBehaviour
     public void SetSaveData()
     {
         Save.Data = _newSaveDataToSet;
-        // Save.SaveDataToFile();
+        Save.SaveDataToFile();
         Debug.Log("Data value has been set to " + Save.Path);
     }
     
