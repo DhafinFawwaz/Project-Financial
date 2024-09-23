@@ -159,6 +159,8 @@ public class SaveData
         IsFirstTimeGold = false;
         IsFirstTimeDiamond = false;
 
+        HasTalkedToShadowInDay5 = false;
+
         // TODO, DONT FORGET TO REMOVE BELOW
         // DayDatas[1].CreditMoney = 50000;
         // DayDatas[2].CreditMoney = 60000;
@@ -179,6 +181,8 @@ public class SaveData
         public long GainedViews = 0;
         public long GainedMoney = 100000;
 
+        public bool HasTalkedToNaoRiki = false;
+
         public DayData()
         {
             StreamingCounter = 0;
@@ -187,6 +191,8 @@ public class SaveData
             GainedSubscriber = 0;
             GainedViews = 0;
             GainedMoney = 0;
+
+            HasTalkedToNaoRiki = false;
 
             // DONT FORGET TO REMOVE BELOW
             // GainedMoney = UnityEngine.Random.Range(10000, 100000);
@@ -258,8 +264,6 @@ public class SaveData
 
     public DayData CurrentDayData => DayDatas[CurrentDay];
 
-    // Story booleans
-    public bool HasTalkedToNaoRikiInDay2 = false;
 
     // After kuliah
     public bool HasDoneKuliah = false;
@@ -321,4 +325,11 @@ public class SaveData
     public int KursiLevel = 0;
     public int MonitorLevel = 0;
     public int OtherLevel = 0;
+
+
+    // Story
+    public bool HasTalkedToShadowInDay5 = false;
+    public bool HasTalkedToShadowInDay6 = false;
+
+    public int Day7State = 0;
 }

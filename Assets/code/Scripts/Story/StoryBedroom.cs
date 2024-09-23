@@ -51,6 +51,7 @@ public class StoryBedroom : MonoBehaviour
 
         else if(Save.Data.DayState == DayState.AfterSleeping)
         {
+            // _missionText.text = "Ayo kuliah ke ITB!";
             _missionText.text = "Ayo kuliah ke ITB!";
             _keluarBlocker.SetActive(false);
             _streamingInteractable.SetActive(false);

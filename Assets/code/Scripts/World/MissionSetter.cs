@@ -13,8 +13,9 @@ public class MissionSetter : MonoBehaviour
     public void Set()
     {
         ArrowGuide.Instance.Set(_arrowPosition);
-        if(MissionText.Instance)
+        if(MissionText.Instance) {
             MissionText.Instance.Set(_missionText);
+        }
         _onSet?.Invoke();
     }
 

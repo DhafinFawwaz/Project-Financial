@@ -34,6 +34,10 @@ public class ArrowGuide : MonoBehaviour
     [SerializeField] Vector3 _pcPosition;
     [SerializeField] Vector3 _keluarHomePosition;
 
+    [SerializeField] Vector3 _day5ShadowPosition;
+    [SerializeField] Vector3 _day6ShadowPosition;
+    [SerializeField] Vector3[] _day7MissionPositions;
+
 
 #if UNITY_EDITOR
     [Header("Editor Only")]
@@ -61,7 +65,7 @@ public class ArrowGuide : MonoBehaviour
 
     void DelayedRefresh()
     {
-        if(Save.Data.CurrentDay == 1 && !Save.Data.HasTalkedToNaoRikiInDay2 && Save.Data.DayState == DayState.JustGotOutside)
+        if(!Save.Data.CurrentDayData.HasTalkedToNaoRiki && Save.Data.DayState == DayState.JustGotOutside)
         {
             _targetPosition = _naoRikiPosition;
             return;
@@ -82,6 +86,17 @@ public class ArrowGuide : MonoBehaviour
         if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Bedroom" && (Save.Data.DayState == DayState.JustGotOutside || Save.Data.DayState == DayState.AfterKuliah || Save.Data.DayState == DayState.AfterBudgeting))
         {
             _targetPosition = _keluarHomePosition;
+        }
+
+
+        if(Save.Data.CurrentDay == 4 && !Save.Data.HasTalkedToShadowInDay5) {
+            _targetPosition = _day5ShadowPosition;
+        }
+        if(Save.Data.CurrentDay == 5 && !Save.Data.HasTalkedToShadowInDay6) {
+            _targetPosition = _day6ShadowPosition;
+        }
+        if(Save.Data.CurrentDay == 6 && Save.Data.Day7State < _day7MissionPositions.Length) {
+            _targetPosition = _day7MissionPositions[Save.Data.Day7State];
         }
     }
 
