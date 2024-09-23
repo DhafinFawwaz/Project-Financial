@@ -11,6 +11,10 @@ public class SaveSetter : MonoBehaviour
     [SerializeField] bool _isBungaShooterUnlocked = false;
     [SerializeField] bool _disableBGM = false;
 
+    [SerializeField] bool _setStats = false;
+    [SerializeField] int _health = 0;
+    [SerializeField] int _happiness = 0;
+
     void Awake()
     {
         Save.Data.CurrentDay = _day;
@@ -19,6 +23,11 @@ public class SaveSetter : MonoBehaviour
         Debug.Log("Day and state set to " + _day + " and " + _dayState);
         if(_disableBGM) {
             Audio.SetMusicMixerVolume(-100);
+        }
+
+        if(_setStats) {
+            Save.Data.Health = _health;
+            Save.Data.Happiness = _happiness;
         }
     }
 }

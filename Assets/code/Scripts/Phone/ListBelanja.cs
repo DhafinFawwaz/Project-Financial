@@ -41,7 +41,7 @@ public class ListBelanja : MonoBehaviour
             }
             _text[i].text = "";
             if(inventory.Find(x => x.Item.Name == list[i].Item.Name)?.Count >= list[i].Count){
-                _text[i].text = "<s>" + list[i].Item.Name + " x" + list[i].Count + "</s>";
+                _text[i].text = "<alpha=#77><s>" + list[i].Item.Name + " x" + list[i].Count + "</s><alpha=#ff>";
             } else {
                 _text[i].text = list[i].Item.Name + " x" + list[i].Count;
             }

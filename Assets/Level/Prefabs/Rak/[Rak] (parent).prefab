@@ -4916,6 +4916,7 @@ GameObject:
   - component: {fileID: 3914189446115555671}
   - component: {fileID: 8818049565640427034}
   - component: {fileID: 2875105683812580470}
+  - component: {fileID: 8195136295358599153}
   m_Layer: 7
   m_Name: '[Rak] (parent)'
   m_TagString: Untagged
@@ -4993,6 +4994,19 @@ MonoBehaviour:
   Player: {fileID: 0}
   _lightenGO: {fileID: 5854236473618890570}
   _darkenGO: {fileID: 9177581393958946872}
+--- !u!114 &8195136295358599153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3914189446115555673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75b429c0738ed5c408737591d4146dae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemData: {fileID: 0}
 --- !u!1 &4637077240851210747
 GameObject:
   m_ObjectHideFlags: 0

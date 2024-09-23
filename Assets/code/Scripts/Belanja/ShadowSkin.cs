@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ShadowSkin : MonoBehaviour
 {
@@ -20,16 +21,24 @@ public class ShadowSkin : MonoBehaviour
     int _facing = 1;
     float _lastFlipTime = 0;
     [SerializeField] float _flipCooldown = 0.8f;
+    [SerializeField] NavMeshAgent _agent;
     void RefreshFacing()
     {
-        if(Time.time - _lastFlipTime < _flipCooldown) return;
-        if (_velocity.x > _flipXThreshold && _facing == -1)
+        // if(Time.time - _lastFlipTime < _flipCooldown) return;
+
+        float xVel = 0;
+        if(_agent) xVel = _agent.velocity.x;
+        else xVel = _velocity.x;
+
+        if (xVel > _flipXThreshold && _facing == -1
+        )
         {
             _lastFlipTime = Time.time;
             _facing = 1;
             _skin.localScale = new Vector3(-_initLocalScale.x, _initLocalScale.y, _initLocalScale.z);
         }
-        else if (_velocity.x < -_flipXThreshold && _facing == 1)
+        else if (xVel < -_flipXThreshold && _facing == 1
+        )
         {
             _lastFlipTime = Time.time;
             _facing = -1;

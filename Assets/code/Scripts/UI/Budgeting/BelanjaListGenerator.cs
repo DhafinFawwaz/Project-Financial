@@ -149,10 +149,11 @@ public class BelanjaListGenerator : MonoBehaviour
         int loop = 0;
 
         long maxMoney = (long) (needsMoneyDiv3 * (float)_budgetingData.BudgetingDayData[Save.Data.CurrentDay].PercentageFromNeedsMoneyDiv3/100f);
+        Debug.Log("MaxMoney: " + maxMoney.ToStringRupiahFormat());
 
         while(loop++ < maxLoop){
             ItemData item = _itemData[UnityEngine.Random.Range(0, _itemData.Length)];
-            if(_belanjaList.CalculateTotalPrive() + item.Price > maxMoney) break;
+            if(_belanjaList.CalculateTotalPrive() + item.Price > maxMoney) continue;
 
             _belanjaList.AddItem(item);
         }

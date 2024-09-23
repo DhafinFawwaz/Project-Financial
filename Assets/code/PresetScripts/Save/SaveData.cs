@@ -153,6 +153,12 @@ public class SaveData
         MonitorLevel = 0;
         OtherLevel = 0;
 
+
+        // PlayButton
+        IsFirstTimeSilver = false;
+        IsFirstTimeGold = false;
+        IsFirstTimeDiamond = false;
+
         // TODO, DONT FORGET TO REMOVE BELOW
         // DayDatas[1].CreditMoney = 50000;
         // DayDatas[2].CreditMoney = 60000;
@@ -302,6 +308,11 @@ public class SaveData
     public const long SILVER_PLAY_BUTTON = 60000;
     public const long GOLD_PLAY_BUTTON = 100000;
     public const long DIAMOND_PLAY_BUTTON = 200000;
+
+    public bool IsFirstTimeSilver = false;
+    public bool IsFirstTimeGold = false;
+    public bool IsFirstTimeDiamond = false;
+
 
     // Streamer Games
     public bool IsBungaShooterBought = false;
