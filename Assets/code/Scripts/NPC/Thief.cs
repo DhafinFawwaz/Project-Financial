@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class Thief : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class Thief : MonoBehaviour
     }
 
     public static Action s_OnStolen;
+    [SerializeField] UnityEvent _onStolenManual;
     void OnStolen()
     {
         s_OnStolen?.Invoke();
@@ -36,6 +38,8 @@ public class Thief : MonoBehaviour
         // Do Stuff
         Save.Data.DesireMoney = 0;
         _worldUI.RefreshKTP();
+
+        _onStolenManual?.Invoke();
     }
 
     void Start()

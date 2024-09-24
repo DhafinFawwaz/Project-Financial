@@ -25,7 +25,7 @@ public class BelanjaManager : MonoBehaviour
     [SerializeField] GameObject _shadow;
     void Start()
     {
-        _qualityBar.SetNoAnimation(100, Save.Data.CurrentPredictedHealth, Save.Data.CurrentPredictedHappiness);
+        // _qualityBar.SetNoAnimation(100, Save.Data.CurrentPredictedHealth, Save.Data.CurrentPredictedHappiness);
     }
     [SerializeField] BelanjaListGenerator _belanjaListGenerator;    
     [SerializeField] WorldUI _worldUI;

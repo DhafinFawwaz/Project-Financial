@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 public class DialogTrigger : MonoBehaviour
@@ -10,6 +11,14 @@ public class DialogTrigger : MonoBehaviour
     {
         this.Invoke(() => {
             NPC.s_OnNPCInteract?.Invoke(_dialogData);
+            Dialog.s_OnDialogFinished += OnDialogDone;
         }, 0.05f);
+    }
+
+    [SerializeField] UnityEvent _onDialogFinished;
+    void OnDialogDone(DialogData data)
+    {
+        _onDialogFinished?.Invoke();
+        Dialog.s_OnDialogFinished -= OnDialogDone;
     }
 }

@@ -80,7 +80,7 @@ public class BelanjaList : MonoBehaviour
             int amountInCart = _listCart.Find(x => x.Item.Name == item.Item.Name)?.Count ?? 0;
             if(amountInCart == 0) continue;
             else if(amountInCart < item.Count) text.text += " (" + amountInCart + ")";
-            else text.text = $"<s>{text.text} ({amountInCart})</s>";
+            else text.text = $"<alpha=#77><s>{text.text} ({amountInCart})</s><alpha=#FF>";
         }
         OnListChange?.Invoke(_listToBuy);
     }

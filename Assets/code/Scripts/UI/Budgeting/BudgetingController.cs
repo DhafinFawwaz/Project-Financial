@@ -19,7 +19,7 @@ public class BudgetingController : MonoBehaviour
     [SerializeField] GameObject _unclickableCreditButton;
 
     [Header("Deadline")] 
-    [SerializeField] GameObject _deadlineText;
+    [SerializeField] TextMeshProUGUI _deadlineText;
     [SerializeField] GameObject _kreditBackButton;
     [SerializeField] GameObject _kreditBackButtonToPopUp;
 
@@ -114,22 +114,37 @@ public class BudgetingController : MonoBehaviour
 
         _debitText.text = Save.Data.DebitTabunganMoney.ToStringRupiahFormat() + "<color=#00000066> + " + Save.Data.DebitMoney.ToStringRupiahFormat();
     
-    
-        // Deadline
-        if(HasCreditDeadlineToday()) {
-            _kreditBackButton.SetActive(false);
-            _kreditBackButtonToPopUp.SetActive(true);
-        } else {
+
+
+        if((Save.Data.CurrentDay+1) % 3 == 0) {
             _kreditBackButton.SetActive(true);
             _kreditBackButtonToPopUp.SetActive(false);
+            if(HasCreditDeadlineToday()) {
+                _kreditBackButton.SetActive(false);
+                _kreditBackButtonToPopUp.SetActive(true);
+            } 
+        } else {
+            _kreditBackButton.SetActive(false);
+            _kreditBackButtonToPopUp.SetActive(false);
+            if(HasCreditDeadlineToday()) {
+                _kreditBackButton.SetActive(false);
+                _kreditBackButtonToPopUp.SetActive(false);
+            } 
         }
+        // Deadline
+        
 
 
         // Lose if all money is 0 and credit in deadline not paid
-        if(_choosenKreditDay+3 <= Save.Data.CurrentDay) {
-            _deadlineText.SetActive(true);
-        } else {
-            _deadlineText.SetActive(false);
+        // if(_choosenKreditDay+3 <= Save.Data.CurrentDay) {
+        //     _deadlineText.gameObject.SetActive(true);
+        // } else {
+        //     _deadlineText.gameObject.SetActive(false);
+        // }
+        _deadlineText.gameObject.SetActive(true);
+        _deadlineText.text = ((_choosenKreditDay + 3) - Save.Data.CurrentDay).ToString() + "hari lagi";
+        if(_choosenKreditDay+3 == Save.Data.CurrentDay) {
+            _deadlineText.text = "HARI INI!";
         }
 
         if(IsLoseCredit()) {
@@ -141,7 +156,8 @@ public class BudgetingController : MonoBehaviour
     {
         for(int i = 0; i < Save.Data.DayDatas.Count; i++)
         {
-            if(i+3 <= Save.Data.CurrentDay && Save.Data.DayDatas[i].CreditMoney > 0) {
+            // if <=, we should have already lose.
+            if(i+3 == Save.Data.CurrentDay && Save.Data.DayDatas[i].CreditMoney > 0) {
                 return true;
             }
         }
@@ -565,8 +581,15 @@ public class BudgetingController : MonoBehaviour
     [SerializeField] SceneTransitionStarter _sceneTransitionStarter;
     [SerializeField] BelanjaList _belanjaList;
     [SerializeField] BelanjaListGenerator _belanjaListGenerator;
+
+    [SerializeField] PopUp _kreditDeadlineTodayPopUp;
     public void Exit()
     {
+        if(HasCreditDeadlineToday()) {
+            _kreditDeadlineTodayPopUp.Show();
+            return;
+        }
+
         // if(_belanjaList.ListToBuy.Count <= 0) {
         //     _popUpText.text = "Tolong atur agar belanjaan tidak kosong!";
         //     _popUp.Show();

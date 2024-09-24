@@ -33,22 +33,22 @@ public class SettingsManager : MonoBehaviour
         _soundSlider.SetValueWithoutNotify(soundVolume);
 
         // Resolution dropdown
-        _resolutions = ResolutionManager.GetResolutions();
-        _resolutionDropdown.ClearOptions();
-        List<string> options = new List<string>();
+        // _resolutions = ResolutionManager.GetResolutions();
+        // _resolutionDropdown.ClearOptions();
+        // List<string> options = new List<string>();
         
-        int currentResolutionIndex = 0;
-        for(int i = 0; i < _resolutions.Length; i++)
-        {
-            string option = _resolutions[i].width + " × " + _resolutions[i].height;
-            options.Add(option);
+        // int currentResolutionIndex = 0;
+        // for(int i = 0; i < _resolutions.Length; i++)
+        // {
+        //     string option = _resolutions[i].width + " × " + _resolutions[i].height;
+        //     options.Add(option);
 
-            if(_resolutions[i].width == Screen.currentResolution.width && _resolutions[i].height == Screen.currentResolution.height)
-            {currentResolutionIndex = i;}
-        }
-        _resolutionDropdown.AddOptions(options);
-        _resolutionDropdown.value = currentResolutionIndex;
-        _resolutionDropdown.RefreshShownValue();
+        //     if(_resolutions[i].width == Screen.currentResolution.width && _resolutions[i].height == Screen.currentResolution.height)
+        //     {currentResolutionIndex = i;}
+        // }
+        // _resolutionDropdown.AddOptions(options);
+        // _resolutionDropdown.value = currentResolutionIndex;
+        // _resolutionDropdown.RefreshShownValue();
 
         // Fullscreen toggle
         _fullscreenToggle.isOn = Screen.fullScreen;
